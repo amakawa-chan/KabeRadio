@@ -54,6 +54,21 @@ Spotify、YouTubeなどの各エピソードURLは、手動更新を前提とし
 
 Git履歴そのものもキャラクター設定の変遷記録として扱う。
 
+### Persona Maintenance
+
+Character Profileは増やすこと自体を目的としない。
+
+基本原則は **Personaは薄く、履歴は厚く** とする。
+
+- Core Personalityは、そのキャラクターを演じるために必要な少数の強い原則に留める。
+- Episodeで生まれた単発の冗談、反応、出来事は原則としてCharacter Historyに記録し、すぐにPersonaへ固定しない。
+- 台本生成・Episode保存時には、新しい性格・関係性・世界認識が生まれた可能性がある場合のみCharacter Historyへの追記を検討する。変化がなければ更新しない。
+- 同じ性質が複数Episodeで自然に繰り返される、今後その設定を知らないとキャラクターが不自然になる、恒常的な関係性として定着した、などの場合にPersonaへの昇格を検討する。
+- 数Episodeごと、またはCharacter Historyがある程度蓄積した段階で履歴を見直し、定着した性質だけをPersonaへ昇格・整理する。
+- 単発ネタをすべてPersona化して設定を肥大化させない。
+
+Episode Historyはキャラクターがどのように育ったかを残す記録であり、すべてを毎回のロールプレイへ読み込ませるための設定集ではない。
+
 ## Update History
 
 NEWSやCHANGELOGを手動で二重管理しない。
@@ -89,5 +104,7 @@ iPhoneのメモなどを中継地点として使用することは必須とし�
 ## Principle
 
 > 自動化できない公開後情報は、原則としてMarkdownの必須項目にしない。
+
+> Character Profileは増やすことを目的としない。Episode Historyを蓄積し、繰り返し現れる性質だけをPersonaへ昇格する。
 
 Repositoryを維持するための手作業を増やすより、台本とキャラクターの記録を残すことを優先する。
