@@ -37,6 +37,12 @@ AIとの壁打ち。
 
 [EPISODES →](episodes/README.md)
 
+## Experiments
+
+固定台本を作る前の実証実験も、正本のエピソードと混同しない形で記録します。
+
+- [壁ラジ1](docs/wall-radio1.md)：モブ子のLocal LLM一人雑談 / Queue / TTS実験
+
 ## Listen / Watch
 
 YouTube / Spotifyへのリンクは後日設定します。
