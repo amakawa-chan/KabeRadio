@@ -2,7 +2,7 @@
 
 ## 現在の成果物
 
-今回の配信用ビジュアルは、モブ子の基準絵を固定したまま、差分画像を局所的に合成して動かしています。画面全体のズームやクロスフェードを使わないため、以前の版で発生していた画面揺れを避けられます。最新版では、視線・筆記に加えて、ユーザー提供の頬杖ポーズを終点にした8段階の中間キーを追加しています。
+今回の配信用ビジュアルは、モブ子の全画面キー画像をコマ送りで並べています。局所合成やクロスフェードを使わないため、手・頬・袖の境界が崩れる問題を避けられます。最新版v4では、視線・筆記・頬杖をすべて全画面の完成コマとして収録しています。
 
 成果物は `assets/mobuko-radio/` にまとめています。
 
@@ -15,6 +15,10 @@
 - `mobuko-radio-story-loop-v3.gif`: スマホ確認用の頬杖8段階版GIF
 - `mobuko-radio-story-loop-v3-preview.png`: v3の1秒ごとの一覧プレビュー
 - `mobuko-radio-cheek-focus-v3-preview.png`: 頬杖の段階確認用拡大プレビュー
+- `mobuko-radio-story-loop-v4.mp4`: 1280x720、24fps、14秒、全画面コマ送り版
+- `mobuko-radio-story-loop-v4.gif`: スマホ確認用の全画面コマ送り版
+- `mobuko-radio-story-loop-v4-preview.png`: v4の1秒ごとの一覧プレビュー
+- `mobuko-radio-cheek-focus-v4-preview.png`: v4頬杖の拡大プレビュー
 - `mobuko-radio-diff-writing.png`: ノートを書く差分
 - `mobuko-radio-diff-writing-early.png`: 筆記開始の中間差分
 - `mobuko-radio-diff-writing-mid.png`: 筆記途中の中間差分
@@ -32,14 +36,14 @@
 
 ## ループ構成
 
-`tools/build_mobuko_story_loop_v3.py` が以下の差分を、固定背景に対する局所マスクと補間で336フレームへ展開します。
+`tools/build_mobuko_story_loop_v4.py` が完成済みの全画面キー画像を補間せずにコマ送りで並べ、336フレームへ展開します。v3の局所マスク版も比較用に残しています。
 
 1. 待機
 2. ノートを書く
 3. 待機
 4. 瞬き
 5. 待機
-6. 頬杖つきなおし（15% → 30% → 45% → 60% → 75% → 90% → 目標）
+6. 頬杖つきなおし（15% → 30% → 45% → 60% → 75% → 90% → 目標の全画面コマ）
 7. 待機
 8. 視線をこちらへ25%移す
 9. 視線を50%移す
@@ -48,22 +52,22 @@
 12. 視線を段階的に画面へ戻す
 13. 待機
 
-開始・終了フレームは同じ基準絵です。現在は発話・口パク・音声トラックを含みません。頬杖の往復は約3秒、視線の往復はそれぞれ約1秒、筆記は往復約2秒、全体は14秒です。
+開始・終了フレームは同じ基準絵です。現在は発話・口パク・音声トラックを含みません。頬杖の往復は約3秒、視線の往復はそれぞれ約1秒、筆記は往復約2秒、全体は14秒です。v4は全画面コマの切り替えのみで、フレーム間の画像ブレンドは行いません。
 
 ## 再生成
 
 Python で差分画像とPNGフレームを生成します。
 
 ```powershell
-python tools/build_mobuko_story_loop_v3.py
+python tools/build_mobuko_story_loop_v4.py
 ```
 
 FFmpegでMP4へ変換する例です。
 
 ```powershell
-ffmpeg -y -framerate 24 -i _tmp_mobuko_story_v3/frame-%04d.png `
+ffmpeg -y -framerate 24 -i _tmp_mobuko_story_v4/frame-%04d.png `
   -c:v libx264 -pix_fmt yuv420p -movflags +faststart `
-  assets/mobuko-radio/mobuko-radio-story-loop-v3.mp4
+  assets/mobuko-radio/mobuko-radio-story-loop-v4.mp4
 ```
 
 ## 次のIssue候補：長時間配信・定期データ収集
