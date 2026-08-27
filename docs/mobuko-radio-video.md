@@ -16,6 +16,10 @@
 - `mobuko-radio-{notebook,window,headband}-v9-comparison.mp4`: 左に従来A版、右に瞬き追加B版を同期表示した比較動画
 - `mobuko-radio-{notebook,window,headband}-v9-blink.png`: ポーズと背景を固定した閉眼の全画面完成コマ
 - `mobuko-radio-{notebook,window,headband}-v9-comparison-preview.png`: 瞬きフレームのA/B静止画比較
+- `mobuko-radio-notebook-v10-down.mp4`: 顔をわずかに下げ、筆記・ページめくり・白紙の各段階で視線をノートへ向け、筆記中に瞬きを1回入れたC版
+- `mobuko-radio-notebook-v10-abc-comparison.mp4`: 左からA従来版、Bまばたき版、C下向き＋まばたき版を同期表示した比較動画
+- `mobuko-radio-notebook-v10-down-01.png` ～ `05.png`: 書き始めから白紙まで、ノートや紙を追う下向き視線の全画面完成コマ
+- `mobuko-radio-notebook-v10-down-blink.png`: C版の頭角度を維持した閉眼コマ
 - `mobuko-radio-*-v9-contact-sheet.png`: 各クリップと長尺版のコマ確認用一覧
 - `mobuko-radio-{notebook,yawn,headphones,window,headband}-v9-*.png`: v9の全画面完成コマ17枚
 
@@ -83,6 +87,12 @@ python tools/build_mobuko_story_loop_v9.py
 
 ```powershell
 python tools/build_mobuko_blink_compare_v9.py
+```
+
+ノート下向きC版とA/B/C比較動画は次のコマンドで再生成します。
+
+```powershell
+python tools/build_mobuko_notebook_compare_v10.py
 ```
 
 Python で差分画像とPNGフレームを生成します。
