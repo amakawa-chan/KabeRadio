@@ -2,7 +2,7 @@
 
 ## 現在の成果物
 
-今回の配信用ビジュアルは、モブ子の全画面キー画像をコマ送りで並べています。最新版v5では頬杖の差分を物理的な動作順に作り直し、その区間だけFFmpegの双方向動き補間で24fpsへ展開しています。指が途中で開閉する旧差分を外し、猫招きのように見える反復を解消しています。
+今回の配信用ビジュアルは、モブ子の全画面キー画像をコマ送りで並べています。最新版v6では動き補間を完全に外し、全動作を数フレームずつ保持するリミテッドアニメ方式へ統一しました。頬杖は形が安定した4段階だけを使い、残像と猫招きのような反復を避けています。
 
 成果物は `assets/mobuko-radio/` にまとめています。
 
@@ -25,6 +25,11 @@
 - `mobuko-radio-cheek-motion-v5.mp4`: 9.33秒の頬杖区間単体プレビュー
 - `mobuko-radio-cheek-motion-v5-preview.png`: 頬杖区間の1秒ごとの一覧プレビュー
 - `mobuko-radio-cheek-v5-01.png` ～ `mobuko-radio-cheek-v5-06.png`: 指をほどき、手のひらへ重心を移し、頬を預ける順番の全画面差分
+- `mobuko-radio-story-loop-v6.mp4`: 1280x720、24fps、30秒、補間なしのパラパラアニメ版
+- `mobuko-radio-story-loop-v6.gif`: スマホ確認用のv6 GIF
+- `mobuko-radio-story-loop-v6-preview.png`: v6の3秒ごとの一覧プレビュー
+- `mobuko-radio-cheek-motion-v6.mp4`: 補間なしの頬杖区間単体プレビュー
+- `mobuko-radio-cheek-motion-v6-preview.png`: 頬杖区間の1秒ごとの一覧プレビュー
 - `mobuko-radio-diff-writing.png`: ノートを書く差分
 - `mobuko-radio-diff-writing-early.png`: 筆記開始の中間差分
 - `mobuko-radio-diff-writing-mid.png`: 筆記途中の中間差分
@@ -42,7 +47,7 @@
 
 ## ループ構成
 
-`tools/build_mobuko_story_loop_v5.py` が全画面キー画像を640フレームへ展開します。頬杖は6枚の新しい差分を一方向に通過し、完成姿勢を3秒保ち、同じ差分を逆順で戻します。頬杖区間は224フレームで、ループ中の実行は1回だけです。v3・v4も比較用に残しています。
+`tools/build_mobuko_story_loop_v6.py` が全画面キー画像を720フレームへ展開します。頬杖は4枚の安定した差分を8フレームずつ保持し、完成姿勢を3秒保ち、同じ差分を逆順で戻します。局所合成、クロスフェード、動き補間は使いません。筆記・瞬き・頬杖・視線移動は30秒ループ中に各1回です。v3〜v5も比較用に残しています。
 
 1. 待機
 2. ノートを書く
@@ -58,22 +63,22 @@
 12. 視線を段階的に画面へ戻す
 13. 待機
 
-開始・終了フレームは同じ基準絵です。現在は発話・口パク・音声トラックを含みません。v5全体は26.67秒で、頬杖区間は9.33秒です。頬杖は約2.4秒で姿勢を移し、3秒静止し、約2.4秒で戻ります。動き補間は全画面差分間に限定し、局所マスク合成は行いません。
+開始・終了フレームは同じ基準絵です。現在は発話・口パク・音声トラックを含みません。v6全体は30秒です。動画は24fpsですが、筆記は5フレーム、頬杖は8フレーム、視線は5フレームずつ各完成コマを保持します。補間画像を作らないため、意図的にパラパラアニメらしい切り替えになります。
 
 ## 再生成
 
 Python で差分画像とPNGフレームを生成します。
 
 ```powershell
-python tools/build_mobuko_story_loop_v5.py
+python tools/build_mobuko_story_loop_v6.py
 ```
 
 FFmpegでMP4へ変換する例です。
 
 ```powershell
-ffmpeg -y -framerate 24 -i _tmp_mobuko_story_v5/frame-%04d.png `
+ffmpeg -y -framerate 24 -i _tmp_mobuko_story_v6/frame-%04d.png `
   -c:v libx264 -pix_fmt yuv420p -movflags +faststart `
-  assets/mobuko-radio/mobuko-radio-story-loop-v5.mp4
+  assets/mobuko-radio/mobuko-radio-story-loop-v6.mp4
 ```
 
 ## 次のIssue候補：長時間配信・定期データ収集
