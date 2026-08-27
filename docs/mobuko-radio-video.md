@@ -2,9 +2,18 @@
 
 ## 現在の成果物
 
-今回の配信用ビジュアルは、モブ子の全画面キー画像をコマ送りで並べています。最新版v8では小さなマグカップの寸法を全コマで揃え、飲み物と背伸びの移行・静止時間を延長しました。補間なしのリミテッドアニメ方式を維持し、60秒の中で6種類の動作を各1回だけ行います。
+今回の配信用ビジュアルは、モブ子の全画面キー画像をコマ送りで並べています。局所合成やクロスフェードを使わないため、手・頬・袖の境界が崩れる問題を避けられます。最新版v9では、従来の頬杖・飲み物・背伸び・視線に加え、ノート、あくび、ヘッドホン、夜景、カチューシャの動作を収録しています。
 
 成果物は `assets/mobuko-radio/` にまとめています。
+
+- `mobuko-radio-story-loop-v9.mp4`: 1280x720、24fps、2分30秒、全9動作の配信用ショーケース
+- `mobuko-radio-notebook-v9.mp4`: 文字を書き足し、ページをめくって白紙へ戻る12.17秒のクリップ
+- `mobuko-radio-yawn-v9.mp4`: 口元を手で隠す9秒のあくびクリップ
+- `mobuko-radio-headphones-v9.mp4`: ヘッドホンを装着し、半目で微笑みながら頭を小さく左右へ揺らす16秒のクリップ
+- `mobuko-radio-window-v9.mp4`: 窓の夜景を眺める10.67秒のクリップ
+- `mobuko-radio-headband-v9.mp4`: ずれたカチューシャを両手で直す9秒のクリップ
+- `mobuko-radio-*-v9-contact-sheet.png`: 各クリップと長尺版のコマ確認用一覧
+- `mobuko-radio-{notebook,yawn,headphones,window,headband}-v9-*.png`: v9の全画面完成コマ17枚
 
 - `mobuko-radio-story-loop-v2.mp4`: 1280x720、24fps、12秒、無音の最新版ループ
 - `mobuko-radio-story-loop-v2.gif`: スマホ確認用の640x360 GIF
@@ -19,34 +28,6 @@
 - `mobuko-radio-story-loop-v4.gif`: スマホ確認用の全画面コマ送り版
 - `mobuko-radio-story-loop-v4-preview.png`: v4の1秒ごとの一覧プレビュー
 - `mobuko-radio-cheek-focus-v4-preview.png`: v4頬杖の拡大プレビュー
-- `mobuko-radio-story-loop-v5.mp4`: 1280x720、24fps、26.67秒、頬杖低頻度・滑らか版
-- `mobuko-radio-story-loop-v5.gif`: スマホ確認用のv5 GIF
-- `mobuko-radio-story-loop-v5-preview.png`: v5の3秒ごとの一覧プレビュー
-- `mobuko-radio-cheek-motion-v5.mp4`: 9.33秒の頬杖区間単体プレビュー
-- `mobuko-radio-cheek-motion-v5-preview.png`: 頬杖区間の1秒ごとの一覧プレビュー
-- `mobuko-radio-cheek-v5-01.png` ～ `mobuko-radio-cheek-v5-06.png`: 指をほどき、手のひらへ重心を移し、頬を預ける順番の全画面差分
-- `mobuko-radio-story-loop-v6.mp4`: 1280x720、24fps、30秒、補間なしのパラパラアニメ版
-- `mobuko-radio-story-loop-v6.gif`: スマホ確認用のv6 GIF
-- `mobuko-radio-story-loop-v6-preview.png`: v6の3秒ごとの一覧プレビュー
-- `mobuko-radio-cheek-motion-v6.mp4`: 補間なしの頬杖区間単体プレビュー
-- `mobuko-radio-cheek-motion-v6-preview.png`: 頬杖区間の1秒ごとの一覧プレビュー
-- `mobuko-radio-story-loop-v7.mp4`: 1280x720、24fps、50秒、飲み物・背伸び追加版
-- `mobuko-radio-story-loop-v7.gif`: スマホ確認用のv7 GIF
-- `mobuko-radio-story-loop-v7-preview.png`: v7の5秒ごとの一覧プレビュー
-- `mobuko-radio-drink-v7-01.png` ～ `mobuko-radio-drink-v7-04.png`: カップへ手を伸ばして一口飲む全画面差分
-- `mobuko-radio-drink-motion-v7.mp4`: 飲み物動作の単体プレビュー
-- `mobuko-radio-drink-motion-v7-preview.png`: 飲み物動作の一覧プレビュー
-- `mobuko-radio-stretch-v7-01.png` ～ `mobuko-radio-stretch-v7-03.png`: 座ったまま頭上へ腕を伸ばす全画面差分
-- `mobuko-radio-stretch-motion-v7.mp4`: 背伸び動作の単体プレビュー
-- `mobuko-radio-stretch-motion-v7-preview.png`: 背伸び動作の一覧プレビュー
-- `mobuko-radio-story-loop-v8.mp4`: 1280x720、24fps、60秒、マグ寸法修正・長尺版
-- `mobuko-radio-story-loop-v8.gif`: スマホ確認用のv8 GIF
-- `mobuko-radio-story-loop-v8-preview.png`: v8の6秒ごとの一覧プレビュー
-- `mobuko-radio-drink-v8-01.png` ～ `mobuko-radio-drink-v8-04.png`: 小型マグの寸法を統一した飲み物差分
-- `mobuko-radio-drink-motion-v8.mp4`: 約9秒の飲み物動作単体プレビュー
-- `mobuko-radio-drink-motion-v8-preview.png`: 修正版飲み物動作の一覧プレビュー
-- `mobuko-radio-stretch-motion-v8.mp4`: 約9秒の長尺背伸びプレビュー
-- `mobuko-radio-stretch-motion-v8-preview.png`: 長尺背伸びの一覧プレビュー
 - `mobuko-radio-diff-writing.png`: ノートを書く差分
 - `mobuko-radio-diff-writing-early.png`: 筆記開始の中間差分
 - `mobuko-radio-diff-writing-mid.png`: 筆記途中の中間差分
@@ -64,38 +45,48 @@
 
 ## ループ構成
 
-`tools/build_mobuko_story_loop_v8.py` が全画面キー画像を1440フレームへ展開します。飲み物は各移行コマを12フレーム、一口状態を60フレーム保持します。背伸びは各移行コマを14フレーム、伸び切った状態を72フレーム保持します。局所合成、クロスフェード、動き補間は使いません。6種類の動作は60秒ループ中に各1回です。v3〜v7も比較用に残しています。
+`tools/build_mobuko_story_loop_v9.py` は、全画面完成コマを補間・クロスフェードなしで24fpsへ展開します。単体5本に加え、各動作の間へ約7.7秒の待機を置いた2分30秒の長尺版を生成します。
+
+長尺版の順番は、ノートとページめくり、あくび、飲み物、ヘッドホンと軽い頭揺れ、夜景、カチューシャ直し、背伸び、頬杖、視線と微笑みです。ヘッドホンの頭揺れだけ中央→左→中央→右→中央を2往復し、その他の大きな動作は1周につき1回です。
+
+`tools/build_mobuko_story_loop_v4.py` が完成済みの全画面キー画像を補間せずにコマ送りで並べ、336フレームへ展開します。v3の局所マスク版も比較用に残しています。
 
 1. 待機
 2. ノートを書く
 3. 待機
 4. 瞬き
 5. 待機
-6. マグカップを取り、一口飲んで机へ戻す
+6. 頬杖つきなおし（15% → 30% → 45% → 60% → 75% → 90% → 目標の全画面コマ）
 7. 待機
-8. 頬杖つきなおし（指をほどく → 手首を内側へ回す → 頬へ触れる → 手のひらへ重心を移す → 3秒静止 → 同じ軌道で戻る）
-9. 待機
-10. 座ったまま頭上へ両腕を伸ばす
-11. 待機
-12. 視線をこちらへ段階的に移し、微笑んでから画面へ戻す
+8. 視線をこちらへ25%移す
+9. 視線を50%移す
+10. 視線を75%移し、微笑みを始める
+11. 軽く微笑む
+12. 視線を段階的に画面へ戻す
 13. 待機
 
-開始・終了フレームは同じ基準絵です。現在は発話・口パク・音声トラックを含みません。v8全体は60秒、飲み物と背伸びの単体動作はそれぞれ約9秒です。動画は24fpsですが、各完成コマを複数フレーム保持します。
+開始・終了フレームは同じ基準絵です。現在は発話・口パク・音声トラックを含みません。頬杖の往復は約3秒、視線の往復はそれぞれ約1秒、筆記は往復約2秒、全体は14秒です。v4は全画面コマの切り替えのみで、フレーム間の画像ブレンドは行いません。
 
 ## 再生成
+
+v9はPythonとFFmpegをPATHへ入れた状態で、次の1コマンドから単体5本と長尺版を再生成できます。
+
+```powershell
+python tools/build_mobuko_story_loop_v9.py
+```
 
 Python で差分画像とPNGフレームを生成します。
 
 ```powershell
-python tools/build_mobuko_story_loop_v8.py
+python tools/build_mobuko_story_loop_v4.py
 ```
 
 FFmpegでMP4へ変換する例です。
 
 ```powershell
-ffmpeg -y -framerate 24 -i _tmp_mobuko_story_v8/frame-%04d.png `
+ffmpeg -y -framerate 24 -i _tmp_mobuko_story_v4/frame-%04d.png `
   -c:v libx264 -pix_fmt yuv420p -movflags +faststart `
-  assets/mobuko-radio/mobuko-radio-story-loop-v8.mp4
+  assets/mobuko-radio/mobuko-radio-story-loop-v4.mp4
 ```
 
 ## 次のIssue候補：長時間配信・定期データ収集
