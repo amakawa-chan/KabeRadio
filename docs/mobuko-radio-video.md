@@ -12,6 +12,10 @@
 - `mobuko-radio-headphones-v9.mp4`: ヘッドホンを装着し、半目で微笑みながら頭を小さく左右へ揺らす16秒のクリップ
 - `mobuko-radio-window-v9.mp4`: 窓の夜景を眺める10.67秒のクリップ
 - `mobuko-radio-headband-v9.mp4`: ずれたカチューシャを両手で直す9秒のクリップ
+- `mobuko-radio-{notebook,window,headband}-v9-blink.mp4`: 各動作中に2フレームの瞬きを1回追加した比較用B版
+- `mobuko-radio-{notebook,window,headband}-v9-comparison.mp4`: 左に従来A版、右に瞬き追加B版を同期表示した比較動画
+- `mobuko-radio-{notebook,window,headband}-v9-blink.png`: ポーズと背景を固定した閉眼の全画面完成コマ
+- `mobuko-radio-{notebook,window,headband}-v9-comparison-preview.png`: 瞬きフレームのA/B静止画比較
 - `mobuko-radio-*-v9-contact-sheet.png`: 各クリップと長尺版のコマ確認用一覧
 - `mobuko-radio-{notebook,yawn,headphones,window,headband}-v9-*.png`: v9の全画面完成コマ17枚
 
@@ -75,6 +79,12 @@ v9はPythonとFFmpegをPATHへ入れた状態で、次の1コマンドから単�
 python tools/build_mobuko_story_loop_v9.py
 ```
 
+瞬き追加B版と左右比較動画は次のコマンドで再生成します。A版とB版の尺・フレーム数は同一です。
+
+```powershell
+python tools/build_mobuko_blink_compare_v9.py
+```
+
 Python で差分画像とPNGフレームを生成します。
 
 ```powershell
@@ -88,6 +98,10 @@ ffmpeg -y -framerate 24 -i _tmp_mobuko_story_v4/frame-%04d.png `
   -c:v libx264 -pix_fmt yuv420p -movflags +faststart `
   assets/mobuko-radio/mobuko-radio-story-loop-v4.mp4
 ```
+
+## グッズ化
+
+透明背景化、印刷向け修正、カットライン、白版、入稿テンプレート対応は GitHub Issue #3「アクリルスタンド向けモブ子グッズ入稿データを作成する」で管理します。
 
 ## 次のIssue候補：長時間配信・定期データ収集
 
