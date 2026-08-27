@@ -2,7 +2,7 @@
 
 ## 現在の成果物
 
-今回の配信用ビジュアルは、モブ子の全画面キー画像をコマ送りで並べています。最新版v7では補間なしのリミテッドアニメ方式を維持したまま、「マグカップで一口飲む」と「座ったまま背伸びする」を追加しました。筆記・瞬き・頬杖・視線移動と合わせ、50秒の中で6種類の動作を各1回だけ行います。
+今回の配信用ビジュアルは、モブ子の全画面キー画像をコマ送りで並べています。最新版v8では小さなマグカップの寸法を全コマで揃え、飲み物と背伸びの移行・静止時間を延長しました。補間なしのリミテッドアニメ方式を維持し、60秒の中で6種類の動作を各1回だけ行います。
 
 成果物は `assets/mobuko-radio/` にまとめています。
 
@@ -39,6 +39,14 @@
 - `mobuko-radio-stretch-v7-01.png` ～ `mobuko-radio-stretch-v7-03.png`: 座ったまま頭上へ腕を伸ばす全画面差分
 - `mobuko-radio-stretch-motion-v7.mp4`: 背伸び動作の単体プレビュー
 - `mobuko-radio-stretch-motion-v7-preview.png`: 背伸び動作の一覧プレビュー
+- `mobuko-radio-story-loop-v8.mp4`: 1280x720、24fps、60秒、マグ寸法修正・長尺版
+- `mobuko-radio-story-loop-v8.gif`: スマホ確認用のv8 GIF
+- `mobuko-radio-story-loop-v8-preview.png`: v8の6秒ごとの一覧プレビュー
+- `mobuko-radio-drink-v8-01.png` ～ `mobuko-radio-drink-v8-04.png`: 小型マグの寸法を統一した飲み物差分
+- `mobuko-radio-drink-motion-v8.mp4`: 約9秒の飲み物動作単体プレビュー
+- `mobuko-radio-drink-motion-v8-preview.png`: 修正版飲み物動作の一覧プレビュー
+- `mobuko-radio-stretch-motion-v8.mp4`: 約9秒の長尺背伸びプレビュー
+- `mobuko-radio-stretch-motion-v8-preview.png`: 長尺背伸びの一覧プレビュー
 - `mobuko-radio-diff-writing.png`: ノートを書く差分
 - `mobuko-radio-diff-writing-early.png`: 筆記開始の中間差分
 - `mobuko-radio-diff-writing-mid.png`: 筆記途中の中間差分
@@ -56,7 +64,7 @@
 
 ## ループ構成
 
-`tools/build_mobuko_story_loop_v7.py` が全画面キー画像を1200フレームへ展開します。各動作は完成コマを3〜10フレーム保持し、終点で静止してから同じ差分を逆順で戻します。局所合成、クロスフェード、動き補間は使いません。筆記・瞬き・飲み物・頬杖・背伸び・視線移動は50秒ループ中に各1回です。v3〜v6も比較用に残しています。
+`tools/build_mobuko_story_loop_v8.py` が全画面キー画像を1440フレームへ展開します。飲み物は各移行コマを12フレーム、一口状態を60フレーム保持します。背伸びは各移行コマを14フレーム、伸び切った状態を72フレーム保持します。局所合成、クロスフェード、動き補間は使いません。6種類の動作は60秒ループ中に各1回です。v3〜v7も比較用に残しています。
 
 1. 待機
 2. ノートを書く
@@ -72,22 +80,22 @@
 12. 視線をこちらへ段階的に移し、微笑んでから画面へ戻す
 13. 待機
 
-開始・終了フレームは同じ基準絵です。現在は発話・口パク・音声トラックを含みません。v7全体は50秒です。動画は24fpsですが、各完成コマを複数フレーム保持します。補間画像を作らないため、意図的にパラパラアニメらしい切り替えになります。
+開始・終了フレームは同じ基準絵です。現在は発話・口パク・音声トラックを含みません。v8全体は60秒、飲み物と背伸びの単体動作はそれぞれ約9秒です。動画は24fpsですが、各完成コマを複数フレーム保持します。
 
 ## 再生成
 
 Python で差分画像とPNGフレームを生成します。
 
 ```powershell
-python tools/build_mobuko_story_loop_v7.py
+python tools/build_mobuko_story_loop_v8.py
 ```
 
 FFmpegでMP4へ変換する例です。
 
 ```powershell
-ffmpeg -y -framerate 24 -i _tmp_mobuko_story_v7/frame-%04d.png `
+ffmpeg -y -framerate 24 -i _tmp_mobuko_story_v8/frame-%04d.png `
   -c:v libx264 -pix_fmt yuv420p -movflags +faststart `
-  assets/mobuko-radio/mobuko-radio-story-loop-v7.mp4
+  assets/mobuko-radio/mobuko-radio-story-loop-v8.mp4
 ```
 
 ## 次のIssue候補：長時間配信・定期データ収集
