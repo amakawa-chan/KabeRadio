@@ -2,7 +2,7 @@
 
 ## 現在の成果物
 
-今回の配信用ビジュアルは、モブ子の全画面キー画像をコマ送りで並べています。局所合成やクロスフェードを使わないため、手・頬・袖の境界が崩れる問題を避けられます。最新版v4では、視線・筆記・頬杖をすべて全画面の完成コマとして収録しています。
+今回の配信用ビジュアルは、モブ子の全画面キー画像をコマ送りで並べています。最新版v5では頬杖の差分を物理的な動作順に作り直し、その区間だけFFmpegの双方向動き補間で24fpsへ展開しています。指が途中で開閉する旧差分を外し、猫招きのように見える反復を解消しています。
 
 成果物は `assets/mobuko-radio/` にまとめています。
 
@@ -19,6 +19,12 @@
 - `mobuko-radio-story-loop-v4.gif`: スマホ確認用の全画面コマ送り版
 - `mobuko-radio-story-loop-v4-preview.png`: v4の1秒ごとの一覧プレビュー
 - `mobuko-radio-cheek-focus-v4-preview.png`: v4頬杖の拡大プレビュー
+- `mobuko-radio-story-loop-v5.mp4`: 1280x720、24fps、26.67秒、頬杖低頻度・滑らか版
+- `mobuko-radio-story-loop-v5.gif`: スマホ確認用のv5 GIF
+- `mobuko-radio-story-loop-v5-preview.png`: v5の3秒ごとの一覧プレビュー
+- `mobuko-radio-cheek-motion-v5.mp4`: 9.33秒の頬杖区間単体プレビュー
+- `mobuko-radio-cheek-motion-v5-preview.png`: 頬杖区間の1秒ごとの一覧プレビュー
+- `mobuko-radio-cheek-v5-01.png` ～ `mobuko-radio-cheek-v5-06.png`: 指をほどき、手のひらへ重心を移し、頬を預ける順番の全画面差分
 - `mobuko-radio-diff-writing.png`: ノートを書く差分
 - `mobuko-radio-diff-writing-early.png`: 筆記開始の中間差分
 - `mobuko-radio-diff-writing-mid.png`: 筆記途中の中間差分
@@ -36,14 +42,14 @@
 
 ## ループ構成
 
-`tools/build_mobuko_story_loop_v4.py` が完成済みの全画面キー画像を補間せずにコマ送りで並べ、336フレームへ展開します。v3の局所マスク版も比較用に残しています。
+`tools/build_mobuko_story_loop_v5.py` が全画面キー画像を640フレームへ展開します。頬杖は6枚の新しい差分を一方向に通過し、完成姿勢を3秒保ち、同じ差分を逆順で戻します。頬杖区間は224フレームで、ループ中の実行は1回だけです。v3・v4も比較用に残しています。
 
 1. 待機
 2. ノートを書く
 3. 待機
 4. 瞬き
 5. 待機
-6. 頬杖つきなおし（15% → 30% → 45% → 60% → 75% → 90% → 目標の全画面コマ）
+6. 頬杖つきなおし（指をほどく → 手首を内側へ回す → 頬へ触れる → 手のひらへ重心を移す → 3秒静止 → 同じ軌道で戻る）
 7. 待機
 8. 視線をこちらへ25%移す
 9. 視線を50%移す
@@ -52,22 +58,22 @@
 12. 視線を段階的に画面へ戻す
 13. 待機
 
-開始・終了フレームは同じ基準絵です。現在は発話・口パク・音声トラックを含みません。頬杖の往復は約3秒、視線の往復はそれぞれ約1秒、筆記は往復約2秒、全体は14秒です。v4は全画面コマの切り替えのみで、フレーム間の画像ブレンドは行いません。
+開始・終了フレームは同じ基準絵です。現在は発話・口パク・音声トラックを含みません。v5全体は26.67秒で、頬杖区間は9.33秒です。頬杖は約2.4秒で姿勢を移し、3秒静止し、約2.4秒で戻ります。動き補間は全画面差分間に限定し、局所マスク合成は行いません。
 
 ## 再生成
 
 Python で差分画像とPNGフレームを生成します。
 
 ```powershell
-python tools/build_mobuko_story_loop_v4.py
+python tools/build_mobuko_story_loop_v5.py
 ```
 
 FFmpegでMP4へ変換する例です。
 
 ```powershell
-ffmpeg -y -framerate 24 -i _tmp_mobuko_story_v4/frame-%04d.png `
+ffmpeg -y -framerate 24 -i _tmp_mobuko_story_v5/frame-%04d.png `
   -c:v libx264 -pix_fmt yuv420p -movflags +faststart `
-  assets/mobuko-radio/mobuko-radio-story-loop-v4.mp4
+  assets/mobuko-radio/mobuko-radio-story-loop-v5.mp4
 ```
 
 ## 次のIssue候補：長時間配信・定期データ収集
