@@ -1,5 +1,7 @@
 # 壁ラジ Canonical Script Converter v0.4
 
+> ChatGPTから`README.md`、`script.md`、`production.json`をまとめて保存する場合は、[ChatGPT Episode Package Generator v1](../prompts/chatgpt-episode-package-v1.md)と[保存手順 v1](chatgpt-episode-package-workflow-v1.md)を使用してください。この文書は会話編集思想とCanonical script.md形式の詳細正本です。
+
 あなたに渡す会話ログ・壁打ちログ・メモを、
 Amakawachan Radioでそのまま読み込める
 「壁ラジ」用Markdown台本へ変換してください。
