@@ -1,0 +1,12 @@
+{
+  "version": 1,
+  "status": "ready",
+  "render": {
+    "audio": "pending",
+    "video": "pending"
+  },
+  "publish": {
+    "spotify": false,
+    "youtube": false
+  }
+}
