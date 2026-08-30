@@ -57,10 +57,16 @@ YouTube / Spotifyへのリンクは後日設定します。
 
 ## Script Production
 
-- [ChatGPTから正式台本を保存する手順](docs/chatgpt-episode-package-workflow-v1.md)
-- [ChatGPT Episode Package Generator](prompts/chatgpt-episode-package-v1.md)
-- [Canonical Script Converter v0.4](docs/canonical-script-converter-v0.4.md)
-- [Episode Package Template](templates/episode-package/)
+「壁ラジ台本にして」「壁ラジ化して」「ラジオ用の台本にして」「GitHubの壁ラジ仕様を確認して台本化して」など、正式Episodeを作る依頼はこのRepositoryをコンテンツ正本として扱います。
+
+入口がAmakawachan Radio / Assistant側だった場合も、正式Episodeはここへ戻し、現行のWorkflow / Prompt / Converterを確認してから`episodes/<episode-key>/`へ保存します。版や契約が更新されている場合は固定された旧手順ではなくRepository上の現行正本を優先します。
+
+読む順序:
+
+1. [ChatGPTから正式台本を保存する手順](docs/chatgpt-episode-package-workflow-v1.md)
+2. [ChatGPT Episode Package Generator](prompts/chatgpt-episode-package-v1.md)
+3. [Canonical Script Converter v0.4](docs/canonical-script-converter-v0.4.md)
+4. [Episode Package Template](templates/episode-package/)
 
 ## Runtime / Environment
 
