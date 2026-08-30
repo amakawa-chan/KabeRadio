@@ -33,7 +33,7 @@ AIとの壁打ち。
 
 ## Episodes
 
-エピソードページは準備中です。
+正式Episodeは`episodes/<episode-key>/`単位で管理します。
 
 [EPISODES →](episodes/README.md)
 
@@ -61,3 +61,11 @@ YouTube / Spotifyへのリンクは後日設定します。
 - [ChatGPT Episode Package Generator](prompts/chatgpt-episode-package-v1.md)
 - [Canonical Script Converter v0.4](docs/canonical-script-converter-v0.4.md)
 - [Episode Package Template](templates/episode-package/)
+
+## Runtime / Environment
+
+壁ラジのコンテンツはこのRepositoryを正本とし、Podcast / Video / Remote Production / Telegramなどの制作Runtimeは`amakawa-chan/amakawachan-assistant`側で実行します。
+
+Repository間の責務、M6環境設定、Archive / Delivery、Casting / Voiceの境界は次を正本とします。
+
+- [KabeRadio / Amakawachan Radio Runtime Integration Contract v1](docs/runtime-integration-contract-v1.md)
