@@ -36,6 +36,10 @@ Amakawachan Radioで使用する正式な台本。
 - Cast
 - `script.md`へのリンク
 
+### Runtime Experiment
+
+固定台本のないLocal LLM実行や音声Queueの検証は、Canonical Episodeとは分けて`docs/`へ記録する。実行コードとrun成果物は実行基盤側で管理し、KabeRadioへ無加工のmanifest、イベントログ、一時音声、秘密情報をコピーしない。公開用に残す内容を選んで固定台本へ整形した時点で、通常の`episodes/<episode-key>/`へ追加する。
+
 ## 公開後情報
 
 Spotify、YouTubeなどの各エピソードURLは、手動更新を前提とした必須情報にしない。

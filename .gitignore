@@ -1,2 +1,7 @@
 .DS_Store
 Thumbs.db
+__pycache__/
+*.pyc
+
+# Generated frame work directories for Mobuko radio loops.
+_tmp_mobuko_*/
