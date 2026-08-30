@@ -54,3 +54,10 @@ YouTube / Spotifyへのリンクは後日設定します。
 その変化も含めて、壁ラジです。
 
 更新履歴はGitのコミット履歴を正本とし、専用NEWSの二重管理は行いません。将来GitHub Pages化する場合は、Git履歴をUPDATE表示へ利用する想定です。
+
+## Script Production
+
+- [ChatGPTから正式台本を保存する手順](docs/chatgpt-episode-package-workflow-v1.md)
+- [ChatGPT Episode Package Generator](prompts/chatgpt-episode-package-v1.md)
+- [Canonical Script Converter v0.4](docs/canonical-script-converter-v0.4.md)
+- [Episode Package Template](templates/episode-package/)
