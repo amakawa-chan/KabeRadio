@@ -8,6 +8,21 @@ ChatGPTで壁打ちログを台本化するとき、会話本文だけでなく�
 
 OpenAIの公式ガイダンスにある、目標・制約・成功条件・出力形を具体的に示し、代表的な形式で検証する考え方を採用しています。
 
+## 「壁ラジにして」の解釈ルール
+
+「壁ラジ台本にして」「壁ラジ化して」「正式に壁ラジにして」「壁ラジのエピソードにして」など、ユーザーが会話や壁打ちを壁ラジとして残す意図を示した場合は、単にMarkdown本文を返す依頼ではなく、**KabeRadioの正式Episode Packageを作成・保存する依頼**として扱います。
+
+特に次を混同しないでください。
+
+- `amakawachan-assistant/Radio/` は再生・Render・配信などのRuntime実装です。
+- `KabeRadio/episodes/` は壁ラジのコンテンツ正本です。
+- 正式Episodeを作る依頼では、入口の会話がAssistantやRadioの機能実装についてであっても、保存先はKabeRadio側です。
+- `Radio/scripts/` 等へ単独台本を追加することを「正式な壁ラジ化」の完了条件にしません。
+
+Repositoryへ書き込める環境では、ユーザーが「台本を書いて見せて」など出力だけを明示していない限り、現行Workflow / Prompt / Templateを確認してepisode packageを保存し、通常のGit運用に従って変更を提示します。
+
+判断に迷った場合は、まずKabeRadioの`README.md`とこの文書を確認し、既存Episodeを1件参照してから保存先・形式を決めます。過去の会話記憶よりRepository上の現行正本を優先します。
+
 ## 保存単位
 
 正式台本はMarkdownファイル1つではなく、次のepisode packageとして保存します。
@@ -125,4 +140,3 @@ MVPではWorkerがGit commit／pushを行わないため、GitHubの`ready`とM6
 - iCloudには投稿用5ファイルだけがある
 - ArchiveとDeliveryの投稿用ファイルhashが一致
 - 再DeliveryでArchive hashが変わらない
-
