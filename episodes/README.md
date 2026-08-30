@@ -26,6 +26,7 @@ GitHub上の正式Episodeは原則`status: ready`で保存し、M6ローカル�
 
 ## Episodes
 
+- [Telegramから壁ラジ制作を呼び出せるようになりました](telegram-remote-production-introduction/)
 - [AIが賢くなったら、人間が試され始めた](ai-prompt-engineering-reversal/)
 - [一度だけ作って、あとは届ける](remote-production-mvp-introduction/)
 - [Remote Production Casting Validation](remote-production-casting-validation/)
