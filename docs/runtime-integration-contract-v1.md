@@ -6,6 +6,21 @@
 
 この文書はRepository間の責務と制作フローの正本です。台本編集ルールは`canonical-script-converter-v0.4.md`、ChatGPTからの保存形式は`chatgpt-episode-package-workflow-v1.md`を正本とします。
 
+## タイトルコールとアイキャッチの境界
+
+Canonical台本は既存の編集ルールに沿ってタイトルコール発話を保持します。
+対応Runtimeのデスクトップ生成設定で「通常発話／種類を指定／ランダム」を選び、
+対象発話の出力を完成アイキャッチへ置き換えます。素材の選択はRuntimeの責務です。
+台本に素材IDの新構文は追加しません。
+
+Runtimeは選択モード、確定素材ID、元発話位置と行番号、素材コピーとSHA-256、
+開始・終了時刻、クレジットをEpisode成果物へ保存します。
+動画とPodcastは同じ確定素材を使い、同じ成果物の再生で再抽選しません。
+台本正本は変更せず、通常のタイトルコールTTSと素材内蔵の声を二重再生しません。
+
+この生成設定の初期対応はデスクトップRadioです。Remote Productionの
+production.jsonへ新しい選択フィールドを追加する変更は含めません。
+
 ## Repositoryの責務
 
 ### `amakawa-chan/KabeRadio`
