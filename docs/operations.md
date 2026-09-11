@@ -4,7 +4,29 @@
 
 KabeRadio Repositoryは、壁ラジの公式アーカイブおよび将来の公式サイト用Canonical Sourceとして管理する。
 
+現在のRepository可視性にかかわらず、**常にPublic化可能な内容だけを保存するPublic-facing Sourceとして扱う**。
+
 運用上の手作業を可能な限り増やさない。
+
+## Security / Publication Boundary
+
+KabeRadio Repositoryはコンテンツ公開面であり、実行環境・認証・セキュリティ設定の正本にはしない。
+
+以下の情報は保存禁止とする。
+
+- API key、Access token、Bot token、Password、Secret、Credential
+- Telegram等のUser ID / Chat ID、Allowlist、認証用識別子
+- ローカル絶対パス、PCユーザー名、端末固有パス、TTS executable path
+- `config.local.json`、`.env`、秘密鍵、証明書などの環境固有設定
+- 内部管理URL、非公開Endpoint、セキュリティ構成や認証手順の詳細
+- 公開を意図していない個人情報・家族情報・勤務先情報・位置情報
+- その他、RepositoryをPublic化した際に公開すべきでない情報
+
+これらは`amakawa-chan/amakawachan-assistant`側のRuntime、環境変数、ローカル設定、または適切なSecret管理へ分離する。
+
+台本、README、Character Profile、Episode Package、Prompt、Documentを追加・更新する際も、**「公式サイトからそのまま公開されても問題ないか」**を保存判断の基準とする。
+
+Git履歴を公開履歴として扱うため、秘密情報は「後で消す」のではなく、最初から一度もコミットしないことを優先する。
 
 ## Episode
 
@@ -106,5 +128,7 @@ iPhoneのメモなどを中継地点として使用することは必須とし�
 > 自動化できない公開後情報は、原則としてMarkdownの必須項目にしない。
 
 > Character Profileは増やすことを目的としない。Episode Historyを蓄積し、繰り返し現れる性質だけをPersonaへ昇格する。
+
+> Repositoryの内容は、現在の可視性設定にかかわらず、常に公式サイトから公開可能な状態を保つ。
 
 Repositoryを維持するための手作業を増やすより、台本とキャラクターの記録を残すことを優先する。
