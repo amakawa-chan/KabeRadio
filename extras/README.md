@@ -6,6 +6,7 @@ Runtime向けのCharacter Packデータやシステム設定はここでは管�
 
 ## Contents
 
+- [秋シーズン・オープニング「秋風のチューニング」](autumn-season-opening.md): モブ子が過ごす秋の一日を描くオリジナルMV
 - [LINEスタンプ](line-stickers.md): モブ子・壁ラジのスタンプ案内
 
 - [Gallery](gallery/) — ロゴ案、ジャケット案、制作途中のビジュアルなど
