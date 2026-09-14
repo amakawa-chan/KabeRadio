@@ -6,6 +6,8 @@
 
 [YouTubeでMVを見る →](https://youtu.be/xJwN_KheKJQ)
 
+[MV本編画像・NGシーン写真ギャラリー →](gallery/autumn-season/README.md)
+
 ## 作品について
 
 壁ラジの秋シーズン・オープニングテーマ「秋風のチューニング」。
