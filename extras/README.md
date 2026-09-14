@@ -6,6 +6,8 @@ Runtime向けのCharacter Packデータやシステム設定はここでは管�
 
 ## Contents
 
+- [LINEスタンプ](line-stickers.md): モブ子・壁ラジのスタンプ案内
+
 - [Gallery](gallery/) — ロゴ案、ジャケット案、制作途中のビジュアルなど
 - [End Cards](endcards/) — 各Episodeで使用するエンドカード
 

@@ -37,7 +37,22 @@ AIとの壁打ち。
 
 [EPISODES →](episodes/README.md)
 
-## Listen / Watch
+## 番組の演出
+
+タイトルコール「壁ラジ！」を、6種類のアイキャッチに置き換えられるようになりました。
+種類を指定するか、生成時にランダムで選べます。Podcast・動画・Realtime再生で使用します。
+対応Runtimeでは、動画に入ったアイキャッチをYouTubeサムネイルにも使用します。
+
+- [アイキャッチの制作ルール](docs/runtime-integration-contract-v1.md)
+- [YouTubeサムネイル・公開クレジット](docs/publishing-credits.md)
+
+## LINEスタンプ
+
+モブ子スタンプは発売中です。壁ラジスタンプ Vol.1・Vol.2 はともに審査中です。
+
+[LINEスタンプの案内](extras/line-stickers.md)
+
+## 配信先
 
 YouTube / Spotifyへのリンクは後日設定します。
 
