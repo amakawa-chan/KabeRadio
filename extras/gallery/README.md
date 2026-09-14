@@ -6,11 +6,11 @@
 
 ### 秋風のチューニング — MV & NGギャラリー
 
-秋シーズンOPの本編イラスト6枚と、モブ子の撮影失敗を描いた縦長のNGシーン写真6枚。
+秋シーズンOPの本編イラスト6枚と、モブ子の撮影失敗を描いた縦長のNGシーン写真10枚。
 
 [![秋風のチューニング：モブ子と壁ラジのスタジオ](autumn-season/mv/06-radio-studio.png)](autumn-season/README.md)
 
-[全12枚を見る →](autumn-season/README.md) / [MVをYouTubeで見る](https://youtu.be/xJwN_KheKJQ)
+[全16枚を見る →](autumn-season/README.md) / [MVをYouTubeで見る](https://youtu.be/xJwN_KheKJQ)
 
 ## 想定するもの
 
