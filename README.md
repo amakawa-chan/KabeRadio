@@ -46,6 +46,15 @@ AIとの壁打ち。
 - [アイキャッチの制作ルール](docs/runtime-integration-contract-v1.md)
 - [YouTubeサムネイル・公開クレジット](docs/publishing-credits.md)
 
+## 秋シーズン・オープニング
+
+**「秋風のチューニング」 — 壁ラジ Autumn Season Opening Theme**
+
+秋の街、カフェでのひと休み、夕暮れの帰り道、いつものスタジオ。
+モブ子が過ごす秋の一日を、少し懐かしく、あたたかなインストゥルメンタルにのせた80秒のオリジナルMVです。
+
+[YouTubeで見る →](https://youtu.be/xJwN_KheKJQ) / [作品紹介 →](extras/autumn-season-opening.md)
+
 ## LINEスタンプ
 
 モブ子スタンプは発売中です。壁ラジスタンプ Vol.1・Vol.2 はともに審査中です。
@@ -54,7 +63,7 @@ AIとの壁打ち。
 
 ## 配信先
 
-YouTube / Spotifyへのリンクは後日設定します。
+公開動画へのリンクをまとめています。Spotifyへのリンクは準備中です。
 
 [LISTEN / WATCH →](links/README.md)
 
