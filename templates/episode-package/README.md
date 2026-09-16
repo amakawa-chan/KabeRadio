@@ -11,7 +11,13 @@
 
 [台本を読む](script.md)
 
+## Shorts
+
+`script.md` のFront Matterに候補を記載します。初期状態は候補なし・Episode番号未設定です。
+[Shorts台本契約](../../docs/shorts-script-contract-v1.md) に沿って番号・Turn範囲・短い見出しを設定し、
+ローカル生成するIDを `selectedClipIds` に指定してください。候補は0〜3件、目安30〜60秒です。
+同時発話を追加する場合は自動音声補正設定を省略して、GUIで音声を確認してください。
+
 ## Verification
 
 機能実装会の場合は、確認する機能と経路を記載します。通常回ではこの節を削除できます。
-

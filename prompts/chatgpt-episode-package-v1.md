@@ -45,7 +45,20 @@ episode keyは`^[A-Za-z0-9][A-Za-z0-9._-]*$`に適合させてください。日
 
 ## script.md契約
 
-必ず次の順序で作成します。
+Shortsの編集設定は [Shorts台本契約](../docs/shorts-script-contract-v1.md) に従ってください。
+会話本文を先に完成させ、0〜3件の候補を台本冒頭のJSON Front Matter内 `radioProduction` に記載します。
+`displayTitle` は1〜2行、1行9文字以内。`startTurn` / `endTurn` は本文を完成させた後で数え直します。
+30〜60秒程度で単独の話になる範囲を選び、`hook` / `point` は読み上げない編集メモとします。
+Shorts専用の概要・追加字幕・ナレーションは作りません。固定素材はRuntimeが再利用します。
+候補段階は `selectionMethod: "script-primary"`、`selectedClipIds: []` とします。
+ユーザーが生成対象も選定するよう依頼した場合は選んだIDを入れます。正式台本として確認済みなら
+`selectionMethod: "script-primary-reviewed"` とします。候補0件も正常です。
+Episode番号が不明なら推測せず空文字にし、`selectedClipIds` を空にしてREADMEに未設定と記載します。
+音声差異の自動補正を使う場合は `audioAdjustment: {"mode":"auto","targetRmsDbfs":-23}` を記載します。
+同時発話を含む場合は自動補正を省略し、READMEに手動の音声確認が必要と記載します。
+Credential、音声Provider/Style ID、ローカルパス、`source.sha256` は生成しません。
+
+Front Matterの後は必ず次の順序で作成します。
 
 ```markdown
 # Episodeタイトル
@@ -180,4 +193,3 @@ READMEには次を簡潔に記載します。
 """
 ここへ壁打ちログ・会話ログ・メモを貼り付ける
 """
-
