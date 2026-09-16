@@ -53,7 +53,7 @@ Shorts専用の概要・追加字幕・ナレーションは作りません。�
 候補段階は `selectionMethod: "script-primary"`、`selectedClipIds: []` とします。
 ユーザーが生成対象も選定するよう依頼した場合は選んだIDを入れます。正式台本として確認済みなら
 `selectionMethod: "script-primary-reviewed"` とします。候補0件も正常です。
-Episode番号が不明なら推測せず空文字にし、`selectedClipIds` を空にしてREADMEに未設定と記載します。
+Episode番号は投稿時に採番するため `radioProduction` では省略します。番号未設定を理由に採用IDを空にしません。
 音声差異の自動補正を使う場合は `audioAdjustment: {"mode":"auto","targetRmsDbfs":-23}` を記載します。
 同時発話を含む場合は自動補正を省略し、READMEに手動の音声確認が必要と記載します。
 Credential、音声Provider/Style ID、ローカルパス、`source.sha256` は生成しません。

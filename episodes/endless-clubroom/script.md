@@ -1,3 +1,62 @@
+---
+{
+  "radioProduction": {
+    "schemaVersion": 1,
+    "selectionMethod": "script-primary",
+    "audioAdjustment": {
+      "mode": "auto",
+      "targetRmsDbfs": -23
+    },
+    "selectedClipIds": [
+      "festival-for-myself",
+      "memories-never-had",
+      "autumn-rice"
+    ],
+    "clips": [
+      {
+        "id": "festival-for-myself",
+        "title": "誰も見ていなくても、終わらない学園祭",
+        "displayTitle": "誰も見てない\nでも楽しい！",
+        "startTurn": 9,
+        "endTurn": 24,
+        "hook": "誰も見ていないのに設定だけ増える、という自虐をフックにする。",
+        "point": "作る本人の達成感から、自分のペースで続ける終わらない学園祭という言葉へ着地する。",
+        "targetDuration": 60,
+        "platforms": [
+          "youtube-shorts"
+        ]
+      },
+      {
+        "id": "memories-never-had",
+        "title": "なかった思い出が懐かしいから、今つくる",
+        "displayTitle": "なかったのに\n懐かしい青春",
+        "startTurn": 42,
+        "endTurn": 52,
+        "hook": "学園ものの青春に惹かれる、という話題から入る。",
+        "point": "経験していない青春への懐かしさを、今の自分で部室を作るという肯定へつなぐ。後続のタイトルコールは含めない。",
+        "targetDuration": 50,
+        "platforms": [
+          "youtube-shorts"
+        ]
+      },
+      {
+        "id": "autumn-rice",
+        "title": "秋のノスタルジー、その原因は芋ご飯？",
+        "displayTitle": "青春の余韻が\n芋ご飯に着地",
+        "startTurn": 57,
+        "endTurn": 69,
+        "hook": "秋のノスタルジーの理由を考える問いから始める。",
+        "point": "原因が芋ご飯へ飛ぶ生活感と、結局は部室にいるという締めを残す。",
+        "targetDuration": 45,
+        "platforms": [
+          "youtube-shorts"
+        ]
+      }
+    ]
+  }
+}
+---
+
 # 終わらない部室
 
 ## Episode Description

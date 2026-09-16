@@ -1,3 +1,62 @@
+---
+{
+  "radioProduction": {
+    "schemaVersion": 1,
+    "selectionMethod": "script-primary",
+    "audioAdjustment": {
+      "mode": "auto",
+      "targetRmsDbfs": -23
+    },
+    "selectedClipIds": [
+      "asmr-purpose",
+      "distance-not-volume",
+      "another-app"
+    ],
+    "clips": [
+      {
+        "id": "asmr-purpose",
+        "title": "ASMR企画、開始直後に用途を見失う",
+        "displayTitle": "作りたいけど\n作らない？",
+        "startTurn": 1,
+        "endTurn": 6,
+        "hook": "ASMRを作れそう、という思いつきから入る。",
+        "point": "作りたいかと聞かれて、たぶん作らないと返す。企画開始直後のツッコミまで含める。",
+        "targetDuration": 30,
+        "platforms": [
+          "youtube-shorts"
+        ]
+      },
+      {
+        "id": "distance-not-volume",
+        "title": "耳元の近さは、音量だけでは作れない",
+        "displayTitle": "近い声って\n大きい声？",
+        "startTurn": 34,
+        "endTurn": 43,
+        "hook": "近づいたら音を大きくするのか、という疑問から始める。",
+        "point": "距離を音量・EQ・部屋鳴りで考える会話から、機材を増やす前に試すという締めまで。",
+        "targetDuration": 45,
+        "platforms": [
+          "youtube-shorts"
+        ]
+      },
+      {
+        "id": "another-app",
+        "title": "ASMRの思いつきから、またアプリが増える",
+        "displayTitle": "またアプリが\n増えていく！",
+        "startTurn": 66,
+        "endTurn": 80,
+        "hook": "ASMR Studioですよね、という問いで話題を明示する。",
+        "point": "用途が壁ラジの演出全体へ広がり、まだ決まっていないと言いながら既に開発が始まっているオチまで。",
+        "targetDuration": 45,
+        "platforms": [
+          "youtube-shorts"
+        ]
+      }
+    ]
+  }
+}
+---
+
 # ASMRを作ろうとしたら空間音響スタジオになりそうな件
 
 ## Episode Description
