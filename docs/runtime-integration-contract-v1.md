@@ -23,6 +23,14 @@ production.jsonへ新しい選択フィールドを追加する変更は含め�
 
 ## Repositoryの責務
 
+Shortsの編集入力は [Shorts台本契約 v1](shorts-script-contract-v1.md) を使用します。
+`script.md` のJSON Front Matterに公開可能なClip候補と採用IDを保存し、Runtimeが
+音声生成・補正 → 本編 → 完成本編からShorts、の順で処理します。
+素材・音声設定・hash・秒数の解決・render receiptはAssistant側に保持します。
+既存の3ファイルPackage、`production.json`、Deliveryの5ファイル契約は変更しません。
+Shortsの失敗は完成済み本編を巻き戻さず、Shorts単独の再試行へ進みます。
+X PublisherとPodcast RSSは別のPublishing機能とし、この生成操作からは投稿しません。
+
 ### `amakawa-chan/KabeRadio`
 
 番組とコンテンツの正本です。

@@ -25,6 +25,11 @@ Repositoryへ書き込める環境では、ユーザーが「台本を書いて�
 
 ## 保存単位
 
+新しい台本には [Shorts台本契約](shorts-script-contract-v1.md) に沿ったJSON Front Matterを付けます。
+本文完成後に0〜3件の候補を選び、Turn番号・短い見出しを確認します。候補なしも正常です。
+ローカル動画生成の対象は `selectedClipIds` で指定します。候補だけでは自動採用しません。
+この設定は `script.md` に含め、4つ目のファイルや環境設定をPackageへ追加しません。
+
 正式台本はMarkdownファイル1つではなく、次のepisode packageとして保存します。
 
 ```text

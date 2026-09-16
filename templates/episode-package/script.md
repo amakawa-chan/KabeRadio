@@ -1,3 +1,16 @@
+---
+{
+  "radioProduction": {
+    "schemaVersion": 1,
+    "episodeNumber": "",
+    "selectionMethod": "script-primary",
+    "audioAdjustment": { "mode": "auto", "targetRmsDbfs": -23 },
+    "selectedClipIds": [],
+    "clips": []
+  }
+}
+---
+
 # Episodeタイトル
 
 ## Episode Description
@@ -55,4 +68,3 @@ Hostの発言を毎回要約せず、一緒に考える距離で返します。
 またどこかで
 
 ## Ending Sequence
-
