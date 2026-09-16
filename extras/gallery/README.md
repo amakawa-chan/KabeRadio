@@ -12,6 +12,14 @@
 
 [全16枚を見る →](autumn-season/README.md) / [MVをYouTubeで見る](https://youtu.be/xJwN_KheKJQ)
 
+### Xプロフィール用アイコン・バナー
+
+泡ひげモブ子のアイコンと、秋の壁ラジのバナー。設定用PNGと高解像度の生成原本を保存しています。
+
+[![秋の壁ラジバナー](x-profile/kaberaji_banner_1500x500.png)](x-profile/README.md)
+
+[アイコン・バナーを見る →](x-profile/README.md)
+
 ## 想定するもの
 
 - 番組ロゴ案
