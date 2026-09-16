@@ -1,3 +1,62 @@
+---
+{
+  "radioProduction": {
+    "schemaVersion": 1,
+    "selectionMethod": "script-primary",
+    "audioAdjustment": {
+      "mode": "auto",
+      "targetRmsDbfs": -23
+    },
+    "selectedClipIds": [
+      "leaf-outtake",
+      "mini-mobuko",
+      "give-me-a-script"
+    ],
+    "clips": [
+      {
+        "id": "leaf-outtake",
+        "title": "落ち葉が顔についたカット、使いたかった",
+        "displayTitle": "その落ち葉\n顔についた！",
+        "startTurn": 14,
+        "endTurn": 25,
+        "hook": "同じ道を何度も歩いた、という撮影の裏話から始める。",
+        "point": "落ち葉が顔につくNGと、それを使いたい監督、喋らなくていい後ろ姿を好む出演者の返しまで。作品世界内の撮影話として扱う。",
+        "targetDuration": 40,
+        "platforms": [
+          "youtube-shorts"
+        ]
+      },
+      {
+        "id": "mini-mobuko",
+        "title": "ミニモブ子に嫉妬しない理由",
+        "displayTitle": "小さい私に\n嫉妬しない？",
+        "startTurn": 43,
+        "endTurn": 57,
+        "hook": "現場にミニモブ子がいた驚きから入る。",
+        "point": "自分より愛想がいい分身への嫉妬を問われ、どちらが人気でも自分だと返す。メタトークのオチまで含める。",
+        "targetDuration": 45,
+        "platforms": [
+          "youtube-shorts"
+        ]
+      },
+      {
+        "id": "give-me-a-script",
+        "title": "主役だったのに、撮影前の説明が足りない",
+        "displayTitle": "主役なのに\n台本がない！",
+        "startTurn": 78,
+        "endTurn": 89,
+        "hook": "完成作品の感想を聞く問いから始める。",
+        "point": "撮影が一本の秋になった感想から、主役だと後で知らされ、次回は台本が欲しいと求めるところまで。作品世界内の会話として切り抜く。",
+        "targetDuration": 50,
+        "platforms": [
+          "youtube-shorts"
+        ]
+      }
+    ]
+  }
+}
+---
+
 # 秋風のチューニング アフタートーク
 
 ## Episode Description
