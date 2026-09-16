@@ -61,11 +61,11 @@ AIとの壁打ち。
 
 [LINEスタンプの案内](extras/line-stickers.md)
 
-## 配信先
+## 公式リンク・配信先
 
-公開動画へのリンクをまとめています。Spotifyへのリンクは準備中です。
+X「壁ラジ公式」、YouTube、制作資料・ギャラリーへのリンクをまとめています。Spotifyへのリンクは準備中です。
 
-[LISTEN / WATCH →](links/README.md)
+[公式リンク一覧 →](links/README.md) / [X：壁ラジ公式 →](https://x.com/kaberadi_mobuko)
 
 ## About this repository
 
