@@ -2,7 +2,6 @@
 {
   "radioProduction": {
     "schemaVersion": 1,
-    "episodeNumber": "",
     "selectionMethod": "script-primary",
     "audioAdjustment": { "mode": "auto", "targetRmsDbfs": -23 },
     "selectedClipIds": [],
