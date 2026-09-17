@@ -20,6 +20,14 @@
 
 [アイコン・バナーを見る →](x-profile/README.md)
 
+### あまかわちゃん — 秋のnoteプロフィール素材
+
+秋のカフェを舞台にしたアイコンと、ペンを止めて窓の外を眺める横顔ヘッダー。設定用PNGと高解像度の生成原本を保存しています。
+
+[![秋の街を眺めるあまかわちゃん](note-profile/amakawachan_header_side_1920x1006.png)](note-profile/README.md)
+
+[note用アイコン・ヘッダーを見る →](note-profile/README.md)
+
 ## 想定するもの
 
 - 番組ロゴ案
