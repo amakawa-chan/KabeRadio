@@ -4,7 +4,7 @@
 
 ChatGPTで壁打ちログを台本化するとき、会話本文だけでなく、Remote Productionが必要とするepisode directory一式を同じ形式で保存するための手順です。
 
-詳細な編集思想は[Canonical Script Converter v0.4](canonical-script-converter-v0.4.md)、実行用プロンプトは[ChatGPT Episode Package Generator v1](../prompts/chatgpt-episode-package-v1.md)を正本とします。
+詳細な編集思想は[Canonical Script Converter v0.4](canonical-script-converter-v0.4.md)、実行用プロンプトは[ChatGPT Episode Package Generator v1](../prompts/chatgpt-episode-package-v1.md)を正本とします。note制作記は[note記事契約 v1](note-article-contract-v1.md)を正本とします。
 
 OpenAIの公式ガイダンスにある、目標・制約・成功条件・出力形を具体的に示し、代表的な形式で検証する考え方を採用しています。
 
@@ -44,6 +44,26 @@ episodes/<episode-key>/
 | `README.md` | 人がGitHubで読むepisode案内、Cast、台本リンク、検証目的 |
 | `script.md` | Radio ParserとTTSへ渡す正式台本、Episode Description |
 | `production.json` | Remote Workerが読む制作状態、初期Casting、公開状態 |
+
+## note companion
+
+正式Episode Packageは従来どおり3ファイルで固定し、Radio Runtimeの契約を変更しません。
+同じ壁打ちログに制作記として残す思考の移動がある場合だけ、別treeへnote companionを保存します。
+
+```text
+notes/<episode-key>/
+├─ article.md
+└─ article.html
+```
+
+- `article.md`: 編集・履歴管理用Markdown
+- `article.html`: ブラウザで開いてnoteへリッチテキストとしてコピーするための半自動投稿用HTML
+- note記事は壁ラジの会話台本を文章化するのではなく、あまかわちゃん側の思考記録として編集する
+- モブ子の発言は思考が動いた箇所だけ引用する
+- 太字強調などのAI的な文章癖を原則避ける
+- 内容が薄い検証回や告知回では無理に作らない
+
+noteへの公開処理、Credential、Cookie、非公開APIやブラウザ自動化設定はKabeRadioの保存対象にしません。
 
 ## ChatGPTでの使い方
 
