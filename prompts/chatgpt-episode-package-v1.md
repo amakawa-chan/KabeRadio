@@ -1,6 +1,6 @@
 # 壁ラジ ChatGPT Episode Package Generator v1
 
-以下をChatGPTへ渡し、その後に壁打ちログ・会話ログ・メモを続けてください。Repositoryやファイル操作が利用できるChatGPT／Codexでは保存まで行い、通常のChatGPTでは3ファイルをコピー可能な形で出力します。
+以下をChatGPTへ渡し、その後に壁打ちログ・会話ログ・メモを続けてください。Repositoryやファイル操作が利用できるChatGPT／Codexでは保存まで行い、通常のChatGPTではEpisode Packageと、対象になる場合はnote companionをコピー可能な形で出力します。
 
 ---
 
@@ -8,18 +8,22 @@
 
 ## 目標
 
-`episodes/<episode-key>/`へ次の3ファイルを用意し、Podcast／Video Render可能な状態にします。
+`episodes/<episode-key>/`へ次の3ファイルを用意し、Podcast／Video Render可能な状態にします。加えて、制作記として残す思考の移動がある場合は、Radio Runtimeから独立したnote companionを`notes/<episode-key>/`へ作成します。
 
 ```text
 episodes/<episode-key>/
 ├─ README.md
 ├─ script.md
 └─ production.json
+
+notes/<episode-key>/
+├─ article.md
+└─ article.html
 ```
 
 ## 正本
 
-Repository内で`docs/canonical-script-converter-v0.4.md`を読める場合は、その編集思想と会話ルールを正本として使用してください。読めない場合も、このプロンプトに記載した最低限の形式は必ず守ってください。
+Repository内で`docs/canonical-script-converter-v0.4.md`を読める場合は、その編集思想と会話ルールを正本として使用してください。note companionは`docs/note-article-contract-v1.md`を正本とします。読めない場合も、このプロンプトに記載した最低限の形式は必ず守ってください。
 
 ## 入力
 
@@ -163,21 +167,49 @@ READMEには次を簡潔に記載します。
 - `script.md`への相対リンク
 - 検証回の場合は検証する経路や機能
 
+## note companion契約
+
+元ログに制作記として残す価値のある思考の移動がある場合は、Episode Packageとは別に
+`notes/<episode-key>/article.md` と `notes/<episode-key>/article.html` を作成します。
+
+note記事は壁ラジ本編の文字起こしや会話記事にしません。
+あまかわちゃん側の一人称を主体に、何がきっかけで考え始め、どこで考えが変わったかを残します。
+モブ子の返答は、思考が動いた箇所だけ短い引用として挟みます。
+
+記事ではH2中心の見出しを使い、見出しだけを読んでも思考の移動が追えるようにします。
+「概要」「ポイント」「結論」などの資料的な見出しより、その時の疑問や発見を自然な言葉で見出しにしてください。
+
+`**太字強調**` は原則使いません。
+「重要なのは」「結論から言うと」などを太字や定型句で強調するAI的な文章、
+各節ごとの綺麗すぎる要約、元ログにない教訓の後付けを避けます。
+
+`article.md` は編集用Markdown、
+`article.html` は同じ内容をsemantic HTMLへ変換したnote貼り付け用です。
+HTMLは見出し、段落、blockquoteを中心にし、CSS、JavaScript、外部Font、Credentialを含めません。
+
+純粋な動作検証や短い告知など、記事にする思考の移動がほぼない場合は無理に生成せず、
+note companionをskipして構いません。
+
+詳細は [note記事契約](../docs/note-article-contract-v1.md) に従ってください。
+
 ## 保存と出力
 
 ファイル操作が利用できる場合：
 
 1. `episodes/<episode-key>/`を作成
 2. UTF-8の`README.md`、`script.md`、`production.json`を保存
-3. JSON構文、必須見出し、Role見出し、episode keyを検査
-4. 最終回答はepisode key、保存した3パス、Casting、検査結果だけを簡潔に報告
+3. note companion対象なら`notes/<episode-key>/`を作成し、UTF-8の`article.md`と`article.html`を保存
+4. JSON構文、必須見出し、Role見出し、episode key、note companionを検査
+5. 最終回答はepisode key、保存したEpisode Package、note companionの有無とパス、Casting、検査結果だけを簡潔に報告
 
 ファイル操作が利用できない場合：
 
 1. 最初に`EPISODE_KEY: <episode-key>`を1行出力
 2. `FILE: episodes/<episode-key>/README.md`と書き、その直後に内容をMarkdownコードブロックで出力
 3. 同様に`script.md`と`production.json`を出力
-4. 3ファイル以外の候補、解説、別案を追加しない
+4. note companion対象なら`FILE: notes/<episode-key>/article.md`と`FILE: notes/<episode-key>/article.html`も続けて出力
+5. 対象外なら`NOTE_COMPANION: skipped`を1行出力
+6. 指定ファイル以外の候補、解説、別案を追加しない
 
 ## 成功条件
 
@@ -189,6 +221,7 @@ READMEには次を簡潔に記載します。
 - 元ログにない事実や思慮時間を追加していない
 - 通常回の「壁ラジ！」が原則として本編前半15〜25%程度にあり、必要なら短いツッコミで小ネタ化されている
 - そのままGitHubへ保存し、M6で`cast/status/prepare/render`へ進められる
+- note companionを作る場合、article.mdとarticle.htmlの内容が一致し、HTMLをブラウザからnoteへリッチテキストとしてコピーできる
 
 致命的な入力不足がない限り質問で止まらず、利用可能な内容から1 Episodeを完成させてください。
 
