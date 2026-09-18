@@ -32,9 +32,9 @@
 
 番組の終わりを彩るイラスト。さつまいもの炊き込みご飯を楽しむモブ子の、金箔風サイン入り秋エンドカードを掲載しています。
 
-[![モブ子とさつまいもの炊き込みご飯](end-cards/mobuko_sweet_potato_endcard_1920x1080.png)](end-cards/README.md)
+[![モブ子とさつまいもの炊き込みご飯](../endcards/mobuko_sweet_potato_endcard_1920x1080.png)](../endcards/README.md)
 
-[エンドカードを見る →](end-cards/README.md)
+[エンドカードを見る →](../endcards/README.md)
 
 ## 想定するもの
 
