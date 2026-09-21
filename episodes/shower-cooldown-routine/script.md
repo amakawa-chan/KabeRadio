@@ -18,6 +18,17 @@
         "platforms": ["youtube-shorts"]
       },
       {
+        "id": "sauna-seasonal-cooldown",
+        "title": "サウナの締めは夏と冬で違う",
+        "displayTitle": "夏と冬で\n締めが違う",
+        "startTurn": 13,
+        "endTurn": 20,
+        "hook": "夏は水風呂と水シャワーで締めたいのに、冬は同じことをすると冷えすぎるという実感",
+        "point": "季節によって冷却の強さを変えるという体感ベースの運用に気づく",
+        "targetDuration": 40,
+        "platforms": ["youtube-shorts"]
+      },
+      {
         "id": "daily-walltalk",
         "title": "壁ラジが開発日報になっていた",
         "displayTitle": "開発日報に\nなってない？",
