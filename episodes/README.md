@@ -26,6 +26,7 @@ GitHub上の正式Episodeは原則`status: ready`で保存し、M6ローカル�
 
 ## Episodes
 
+- [モブ子の一言をnoteに載せたかっただけなのに、ジェネレーターが生えた](note-card-generator-grew/)
 - [秋風のチューニング アフタートーク](autumn-opening-aftertalk/)
 - [終わらない部室](endless-clubroom/)
 - [未来の話をしたら、だいたいもう実装されてた](it-was-already-implemented/)
