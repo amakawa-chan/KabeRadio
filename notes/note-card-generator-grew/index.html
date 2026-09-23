@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="color-scheme" content="light dark">
+<title>モブ子の一言をnoteに載せたかっただけなのに、ジェネレーターが生えた | 壁ラジ 制作ノート</title>
+<style>
+:root{font-family:-apple-system,BlinkMacSystemFont,"Hiragino Sans","Yu Gothic",sans-serif;line-height:1.8}
+body{margin:0;background:#f6f7f9;color:#17191c}
+main{max-width:760px;margin:auto;padding:24px 18px 72px}
+nav{display:flex;justify-content:space-between;gap:12px;align-items:center;margin-bottom:28px;font-size:.9rem}
+a{color:inherit}.card{background:#fff;border:1px solid #e4e7eb;border-radius:18px;padding:24px;box-shadow:0 6px 24px rgba(0,0,0,.05)}
+h1{font-size:1.8rem;line-height:1.35;margin-top:0}h2{font-size:1.25rem;line-height:1.5;margin-top:2.4em}p{margin:1em 0}
+blockquote{margin:1.4em 0;padding:.8em 1em;border-left:4px solid #888;background:#f4f4f4;border-radius:12px}
+blockquote.character-comment{border-left:0;padding:14px 16px}
+.character-line{display:flex;gap:14px;align-items:flex-start;margin:.25em 0}.character-line p{margin:0;flex:1}
+.character-avatar{width:54px;height:54px;border-radius:50%;object-fit:cover;flex:0 0 54px;background:#666}
+.character-avatar-fallback{display:grid;place-items:center;color:#fff;font-weight:700;font-size:1.1rem}
+.character-line[data-character="モブ子"]{color:#51496d}.character-line[data-character="モブ美"]{color:#6d4854}.character-line[data-character="あまかわちゃん"]{color:#465875}
+.tools{display:flex;gap:10px;flex-wrap:wrap;margin:24px 0 0}button{font:inherit;border:1px solid #bbb;background:#fff;color:#17191c;border-radius:999px;padding:10px 16px;cursor:pointer}
+#status{font-size:.85rem;opacity:.75;align-self:center}footer{margin-top:28px;font-size:.85rem;opacity:.7}
+@media(prefers-color-scheme:dark){body{background:#0d1117;color:#e6edf3}.card{background:#151b23;border-color:#30363d}blockquote{background:#11161d;border-left-color:#768390}button{background:#151b23;color:#e6edf3;border-color:#4b5563}}
+</style>
+</head>
+<body><main>
+<nav><a href="../">← 制作ノート一覧</a><a href="https://github.com/amakawa-chan/KabeRadio/tree/main/episodes/note-card-generator-grew">Episode</a></nav>
+<article id="article" class="card">
+<h1>モブ子の一言をnoteに載せたかっただけなのに、ジェネレーターが生えた</h1>
+<p>制作ノートをnoteに持っていく時、モブ子のコメントをもう少し見やすくしたかった。</p>
+<p>最初はそれだけだった。</p>
+<h2>iPhoneでHTMLを開いたら、記事じゃなくてコードだった</h2>
+<p>制作ノートはMarkdownとHTMLで作っていた。</p>
+<p>HTMLがあるなら、iPhoneから開いてそのままnoteへコピーできると思っていたけど、GitHubで見えるのは普通にソースコードだった。</p>
+<p>タグが並んでいる。</p>
+<p>内容は合っている。でも、この画面から投稿しようとすると急に作業感が強い。</p>
+<p>そこでGitHub Pagesを有効にして、制作ノートを普通のWebページとして開けるようにした。</p>
+<p>Safariで読める。本文をコピーできる。しかもnote投稿専用の裏口ではなく、そのまま壁ラジ公式の読み物として公開できる。</p>
+<p>ここで制作ノートの立ち位置が少し変わった。</p>
+<h2>ページができたら、今度は入口が欲しくなった</h2>
+<p>普通に読めるようになると、GitHubのREADMEから直接飛びたくなる。</p>
+<p>トップREADMEから制作ノート一覧へ。</p>
+<p>EpisodeごとのREADMEから、その回の制作ノートへ。</p>
+<p>どちらか一方にする必要もなく、両方あればよかった。</p>
+<p>さらに、今後台本を作るたびにこのリンクを手で追加するのは絶対どこかで抜けると思った。</p>
+<p>実際にEpisode一覧を見直したら、一覧から抜けている回がいくつもあった。</p>
+<blockquote><p>モブ子：<br>人が毎回覚えておく運用は、だいたいどこかで抜けます。</p></blockquote>
+<p>それで、Episode生成時にEpisode一覧と制作ノート一覧まで更新することをルールに入れた。</p>
+<p>最初はnoteへコピペしたいだけだったはずなのに、いつの間にかRepositoryの導線まで直していた。</p>
+<h2>モブ子のコメントが消えていることにも気づいた</h2>
+<p>一覧を整えている途中で、別の違和感が出てきた。</p>
+<p>以前の制作ノートにはモブ子の短いコメントがちょこちょこ入っていたのに、最新の記事ではゼロになっていた。</p>
+<p>ルール自体は残っていた。</p>
+<p>ただ「必要な箇所だけ」という書き方だったので、必要なしと判断されていたらしい。</p>
+<p>そこで通常の制作ノートでは、元ログに使える発言があるなら一〜三個程度は短いコメントを残すことにした。</p>
+<p>単発だけでなく、一往復くらいの短い会話もたまに入れる。</p>
+<blockquote><p>あまかわちゃん：<br>本編が一番過疎コンテンツ。</p><p>モブ子：<br>看板番組が一番静か。</p></blockquote>
+<p>これくらいの短さでも、文章の途中に壁ラジの空気が戻る。</p>
+<h2>コメントを戻したら、今度はアイコンを付けたくなった</h2>
+<p>文字でキャラクターが見えるようになると、公開ページではアイコンも付けたくなった。</p>
+<p>左にモブ子の顔、右に一言。</p>
+<p>Pages側なら、既存アセットとCSSでできる。</p>
+<p>問題はnoteだった。</p>
+<p>noteでも同じ見た目にしたい。でも毎回アイコン画像をアップロードして、位置を調整するのはたぶん続かない。</p>
+<p>キャラクター会話を画像化して記事へ差し込んでいる例を調べると、同じような運用はすでにあった。</p>
+<p>じゃあ、壁ラジ用に小さい道具を作ればいい。</p>
+<blockquote><p>モブ子：<br>ここが増築ポイントです。</p></blockquote>
+<p>今回は否定しづらかった。</p>
+<h2>Markdownは、もうカードの入力データになっていた</h2>
+<p>新しい形式を作る必要はなかった。</p>
+<p>制作ノートにはすでに、「モブ子：」「モブ美：」「あまかわちゃん：」という形でblockquoteが入っている。</p>
+<p>なら、それを拾って画像にすればいい。</p>
+<p>台本生成時にはコメントやミニ会話を文章として仕込むだけ。</p>
+<p>PNGにするのはnoteへ投稿する時だけ。</p>
+<p>投稿しない回の画像を量産しなくていいし、文章を直しても投稿直前の最新版から作れる。</p>
+<p>この分け方が一番しっくりきた。</p>
+<h2>Issueにしたら、そのままツールまでできた</h2>
+<p>ここは予定外だった。</p>
+<p>「Issueにしようか」と話していた。</p>
+<p>方向性だけ残して、実装時に現行コードを見ながら詰めるつもりだった。</p>
+<p>でも、既存のアイコン素材があり、Markdownの入力形式も決まっていた。</p>
+<p>そのままNote Card GeneratorのMVPまでできた。</p>
+<p>article.mdを貼るか読み込む。</p>
+<p>キャラクターのblockquoteを抽出する。</p>
+<p>単発コメントかミニ会話かを判定する。</p>
+<p>必要なものだけPNG保存する。対応ブラウザなら画像コピーもできる。</p>
+<p>しかも、カードの直前にある見出しや文章も表示するので、noteへ差し込む位置も分かる。</p>
+<p>「あ、ツールまで行ったのね」と自分で言うことになった。</p>
+<h2>完全な個人ツールでも、毎回使うなら十分だった</h2>
+<p>Note Card Generatorはかなり個人ツールだと思う。</p>
+<p>汎用サービスとして大きく展開するものではない。</p>
+<p>でも、自分の投稿作業では毎回使える。</p>
+<p>公開Pagesでは同じblockquoteを常にアイコン付きで表示して、noteでは必要な時だけ画像化する。</p>
+<p>同じ元データから、場所に合わせて見せ方だけ変えられる。</p>
+<blockquote><p>モブ子：<br>自分が毎回使う小さい道具は、用途がはっきりしています。</p></blockquote>
+<p>今回やったことを並べると、Pages、README導線、一覧自動追加、コメント復活、ミニ会話、アイコン表示、ジェネレーター。</p>
+<p>一個ずつは小さい。</p>
+<p>全部「ここ、ちょっと面倒」を潰しただけだった。</p>
+<p>最初はモブ子の一言をnoteに載せたかっただけなのに、結果として投稿のワークフローが一つできた。</p>
+<p>こういう増築なら、まあいいかと思っている。</p>
+<div class="tools"><button id="copy">本文をコピー</button><span id="status" aria-live="polite"></span></div>
+</article>
+<footer>壁ラジ / KabeRadio 制作ノート</footer>
+</main>
+<script>
+const article=document.getElementById('article'),status=document.getElementById('status');
+const CHARACTER_AVATARS={'モブ子':{src:'../../extras/gallery/x-profile/mobuko_foam_icon_400.png',fallback:'モ'},'モブ美':{src:null,fallback:'美'},'あまかわちゃん':{src:'../../extras/gallery/note-profile/amakawachan_autumn_icon.png',fallback:'あ'}};
+document.querySelectorAll('#article blockquote').forEach(block=>{let matched=false;block.querySelectorAll('p').forEach(p=>{const text=p.textContent.trim();const name=Object.keys(CHARACTER_AVATARS).find(n=>text.startsWith(n+'：')||text.startsWith(n+':'));if(!name)return;matched=true;const line=document.createElement('div');line.className='character-line';line.dataset.character=name;const a=CHARACTER_AVATARS[name];let el;if(a.src){el=document.createElement('img');el.src=a.src;el.alt=name;el.className='character-avatar';}else{el=document.createElement('span');el.className='character-avatar character-avatar-fallback';el.textContent=a.fallback;}p.parentNode.insertBefore(line,p);line.append(el,p);});if(matched)block.classList.add('character-comment');});
+document.getElementById('copy').addEventListener('click',async()=>{const clone=article.cloneNode(true);clone.querySelector('.tools')?.remove();clone.querySelectorAll('.character-avatar').forEach(x=>x.remove());clone.querySelectorAll('.character-line').forEach(line=>{const p=line.querySelector('p');if(p)line.replaceWith(p);});const html=clone.innerHTML,text=clone.innerText;try{if(navigator.clipboard&&window.ClipboardItem){await navigator.clipboard.write([new ClipboardItem({'text/html':new Blob([html],{type:'text/html'}),'text/plain':new Blob([text],{type:'text/plain'})})]);}else throw new Error();status.textContent='コピーしました';}catch(e){status.textContent='長押しで本文を選択してコピーしてください';}});
+</script>
+</body></html>
