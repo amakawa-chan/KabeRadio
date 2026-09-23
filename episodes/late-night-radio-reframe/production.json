@@ -1,0 +1,16 @@
+{
+  "version": 1,
+  "status": "ready",
+  "casting": {
+    "Host": "amakawachan-layered",
+    "Guest": "mobuko-v2"
+  },
+  "render": {
+    "audio": "pending",
+    "video": "pending"
+  },
+  "publish": {
+    "spotify": false,
+    "youtube": false
+  }
+}
