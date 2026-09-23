@@ -26,7 +26,7 @@ Repositoryへ書き込める環境では、ユーザーが「台本を書いて�
 ## 保存単位
 
 新しい台本には [Shorts台本契約](shorts-script-contract-v1.md) に沿ったJSON Front Matterを付けます。
-本文完成後に0〜3件の候補を選び、Turn番号・短い見出しを確認します。候補なしも正常です。
+本文完成後に0〜6件の候補を選び、通常回では原則6件を目標にTurn番号・短い見出しを確認します。候補なしも正常です。
 ローカル動画生成の対象は `selectedClipIds` で指定します。候補だけでは自動採用しません。
 この設定は `script.md` に含め、4つ目のファイルや環境設定をPackageへ追加しません。
 
@@ -53,11 +53,15 @@ episodes/<episode-key>/
 ```text
 notes/<episode-key>/
 ├─ article.md
-└─ article.html
+├─ article.html
+└─ index.html
 ```
 
 - `article.md`: 編集・履歴管理用Markdown
-- `article.html`: ブラウザで開いてnoteへリッチテキストとしてコピーするための半自動投稿用HTML
+- `article.html`: note貼り付け用のsemantic HTML本文断片
+- `index.html`: 壁ラジ公式側で一般公開する制作ノートページ。iPhone / Safariから読めて本文コピーもできる
+- note companionを生成したら`episodes/<episode-key>/README.md`へ公開ページの「Webで読む」リンクを追加する
+- `notes/index.html` / `notes/README.md` の一覧にも新しい制作ノートを追加する
 - note記事は壁ラジの会話台本を文章化するのではなく、あまかわちゃん側の思考記録として編集する
 - モブ子の発言は思考が動いた箇所だけ引用する
 - 太字強調などのAI的な文章癖を原則避ける
@@ -72,8 +76,9 @@ noteへの公開処理、Credential、Cookie、非公開APIやブラウザ自動
 1. `prompts/chatgpt-episode-package-v1.md`をコピーして送信
 2. その後へ元ログを貼り付ける
 3. 出力されたepisode keyと3ファイルを同じdirectoryへ保存
-4. `production.json`がJSONとして開けることを確認
-5. GitHubへcommitする前に、タイトル、事実関係、公開してよい内容を人が確認
+4. note companion対象なら3ファイルを`notes/<episode-key>/`へ保存し、Episode READMEと制作ノート一覧のリンクも反映
+5. `production.json`がJSONとして開けることを確認
+6. GitHubへcommitする前に、タイトル、事実関係、公開してよい内容を人が確認
 
 ### Repositoryへ書き込めるChatGPT／Codex
 
@@ -153,6 +158,8 @@ MVPではWorkerがGit commit／pushを行わないため、GitHubの`ready`とM6
 - 見出しは`### Host`、`### Guest`、必要時だけ`### Host + Guest`
 - 1 Turnが長すぎず、TTSで読める口語になっている
 - `production.json`はコメントなしの有効なJSON
+- note companionを作った場合、Episode READMEにその回の制作ノート公開リンクがある
+- note companionを作った場合、制作ノート一覧に新記事が追加されている
 - `status`は`ready`
 - CastingはVoice IDではなくCharacter Pack ID
 - `publish.spotify/youtube`は初期値`false`
