@@ -20,11 +20,11 @@
         "id": "one-minute-is-long",
         "title": "1分ショートは長い",
         "displayTitle": "1分は\n長かった",
-        "startTurn": 1,
+        "startTurn": 4,
         "endTurn": 6,
         "hook": "ショートが1分近くあるという違和感から始まる",
         "point": "短くするだけでなく、本編との役割分担へ話が転がる",
-        "targetDuration": 20,
+        "targetDuration": 22,
         "platforms": [
           "youtube-shorts"
         ]
@@ -34,10 +34,10 @@
         "title": "本編が一番過疎",
         "displayTitle": "本編が\n一番過疎",
         "startTurn": 19,
-        "endTurn": 24,
+        "endTurn": 22,
         "hook": "壁ラジ24の方が再生されているという妙な現状",
         "point": "本編だけ中間尺で用途が曖昧だったと気づく",
-        "targetDuration": 20,
+        "targetDuration": 23,
         "platforms": [
           "youtube-shorts"
         ]
@@ -50,7 +50,7 @@
         "endTurn": 39,
         "hook": "6分台になる原因を探したら仕様通りだった",
         "point": "15分上限・5〜10分標準というルールが凝縮を生んでいた",
-        "targetDuration": 22,
+        "targetDuration": 18,
         "platforms": [
           "youtube-shorts"
         ]
@@ -60,7 +60,7 @@
         "title": "くだらない会話は創作OK",
         "displayTitle": "雑談は\n捏造OK",
         "startTurn": 53,
-        "endTurn": 62,
+        "endTurn": 56,
         "hook": "深夜ラジオ感を出すために軽い創作を許可する",
         "point": "事実は守りつつ、ツッコミや脱線は脚本として足してよいと整理する",
         "targetDuration": 24,
@@ -73,7 +73,7 @@
         "title": "ショートは6本取る",
         "displayTitle": "6本\n切り抜く",
         "startTurn": 73,
-        "endTurn": 82,
+        "endTurn": 79,
         "hook": "15分本編なら切り抜きも増やせるという発想",
         "point": "6本必須ではなく、できるだけ6本を取りにいく方針へ",
         "targetDuration": 22,
