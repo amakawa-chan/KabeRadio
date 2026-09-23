@@ -12,6 +12,10 @@
 - Guest：`mobuko-v2`
 
 
+## 制作ノート
+
+[Webで読む →](https://amakawa-chan.github.io/KabeRadio/notes/shower-cooldown-routine/)
+
 ## Script
 
 [台本を読む](script.md)
