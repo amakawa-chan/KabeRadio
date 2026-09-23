@@ -9,9 +9,6 @@
 - Host: `amakawachan-layered`
 - Guest: `mobuko-v2`
 
-## 制作ノート
-
-[Webで読む →](https://amakawa-chan.github.io/KabeRadio/notes/late-night-radio-reframe/)
 
 ## Script
 
