@@ -1,0 +1,185 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="color-scheme" content="light dark">
+<title>壁ラジ Note Card Generator</title>
+<style>
+:root{font-family:-apple-system,BlinkMacSystemFont,"Hiragino Sans","Yu Gothic",sans-serif;line-height:1.65}
+body{margin:0;background:#f6f7f9;color:#17191c}
+main{max-width:980px;margin:auto;padding:24px 16px 72px}
+h1{font-size:1.65rem;margin-bottom:.3em}.lead{opacity:.72;margin-top:0}
+.panel{background:#fff;border:1px solid #e3e6ea;border-radius:18px;padding:18px;margin:16px 0}
+textarea{width:100%;min-height:260px;box-sizing:border-box;font:14px/1.6 ui-monospace,SFMono-Regular,Menlo,monospace;padding:12px;border:1px solid #c8ccd2;border-radius:12px;background:transparent;color:inherit}
+.actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:12px}
+button,.button{font:inherit;border:1px solid #aaa;background:#fff;color:inherit;border-radius:999px;padding:9px 15px;cursor:pointer}
+input[type=file]{max-width:100%}
+.grid{display:grid;gap:16px}
+.preview{border:1px solid #ddd;border-radius:16px;padding:14px;background:#fafafa}
+.card-canvas{width:100%;max-width:640px;height:auto;border-radius:14px;display:block;margin:8px 0;background:#fff}
+.meta{font-size:.82rem;opacity:.7}
+.empty{opacity:.65}
+@media(prefers-color-scheme:dark){
+ body{background:#0d1117;color:#e6edf3}.panel{background:#151b23;border-color:#30363d}
+ textarea{border-color:#4b5563}.preview{background:#11161d;border-color:#30363d}
+ button,.button{background:#151b23;border-color:#4b5563}
+}
+</style>
+</head>
+<body>
+<main>
+<a href="../../">← 制作ノート一覧</a>
+<h1>壁ラジ Note Card Generator</h1>
+<p class="lead">制作ノートのMarkdownを読み込み、モブ子・モブ美・あまかわちゃんのblockquoteをnote投稿用PNGへ変換します。画像化は投稿時だけでOK。</p>
+
+<section class="panel">
+<label><strong>article.md</strong></label>
+<div style="margin:.6em 0"><input id="file" type="file" accept=".md,text/markdown,text/plain"></div>
+<textarea id="source" placeholder="article.md の内容を貼り付け"></textarea>
+<div class="actions">
+<button id="parse">カード候補を抽出</button>
+<button id="sample">サンプルを入れる</button>
+</div>
+</section>
+
+<section class="panel">
+<h2>カード候補</h2>
+<div id="cards" class="grid"><p class="empty">まだ候補はありません。</p></div>
+</section>
+</main>
+<script>
+const AVATARS={
+  'モブ子':{src:'../../../extras/gallery/x-profile/mobuko_foam_icon_400.png',fallback:'モ'},
+  'あまかわちゃん':{src:'../../../extras/gallery/note-profile/amakawachan_autumn_icon.png',fallback:'あ'},
+  'モブ美':{src:null,fallback:'美'}
+};
+const COLORS={
+  'モブ子':['#f8f5ff','#5c527a'],
+  'モブ美':['#fff5f7','#76525d'],
+  'あまかわちゃん':['#f4f8ff','#4e607c']
+};
+const source=document.getElementById('source');
+const file=document.getElementById('file');
+file.addEventListener('change',async()=>{const f=file.files?.[0];if(f)source.value=await f.text();});
+document.getElementById('sample').onclick=()=>{source.value=`# サンプル
+
+本文。
+
+> モブ子：
+> 深夜ラジオとしては、ちょっと仕事が早すぎる。
+
+本文。
+
+> あまかわちゃん：
+> 本編が一番過疎って、ちょっと面白いよね。
+>
+> モブ子：
+> 面白くはありますけど、喜ぶ現象ではないです。
+
+本文。
+
+> モブ美：
+> また増やす前提で話してない？`;parse();};
+document.getElementById('parse').onclick=parse;
+
+function parse(){
+ const lines=source.value.replace(/\r/g,'').split('\n');
+ const blocks=[];
+ for(let i=0;i<lines.length;i++){
+   if(!lines[i].startsWith('>'))continue;
+   const chunk=[];
+   const before=nearestContext(lines,i);
+   while(i<lines.length&&(lines[i].startsWith('>')||lines[i].trim()==='')){
+     if(lines[i].startsWith('>'))chunk.push(lines[i].replace(/^> ?/,''));
+     i++;
+   }
+   const turns=parseTurns(chunk);
+   if(turns.length)blocks.push({turns,context:before});
+ }
+ render(blocks);
+}
+function nearestContext(lines,i){
+ for(let j=i-1;j>=0;j--){
+   const s=lines[j].trim();
+   if(/^##?\s+/.test(s))return s.replace(/^#+\s+/,'');
+   if(s&&!s.startsWith('>'))return s.slice(0,80);
+ }
+ return '';
+}
+function parseTurns(lines){
+ const turns=[];let current=null;
+ for(const raw of lines){
+   const s=raw.trim();
+   if(!s)continue;
+   const m=s.match(/^(モブ子|モブ美|あまかわちゃん)[：:]\s*(.*)$/);
+   if(m){if(current)turns.push(current);current={name:m[1],text:m[2]||''};continue;}
+   if(current)current.text+=(current.text?' ':'')+s;
+ }
+ if(current)turns.push(current);
+ return turns;
+}
+function render(blocks){
+ const root=document.getElementById('cards');root.innerHTML='';
+ if(!blocks.length){root.innerHTML='<p class="empty">キャラクターblockquoteが見つかりませんでした。</p>';return;}
+ blocks.forEach((b,i)=>{
+   const wrap=document.createElement('div');wrap.className='preview';
+   const meta=document.createElement('div');meta.className='meta';
+   meta.textContent=`#${String(i+1).padStart(2,'0')} · ${b.turns.length===1?'単発コメント':'ミニ会話'}${b.context?' · '+b.context:''}`;
+   const canvas=document.createElement('canvas');canvas.className='card-canvas';
+   const actions=document.createElement('div');actions.className='actions';
+   const save=document.createElement('button');save.textContent='PNG保存';
+   const copy=document.createElement('button');copy.textContent='画像をコピー';
+   actions.append(save,copy);wrap.append(meta,canvas,actions);root.append(wrap);
+   drawCard(canvas,b.turns).then(()=>{
+     save.onclick=()=>download(canvas,`${String(i+1).padStart(2,'0')}-note-card.png`);
+     copy.onclick=async()=>{try{const blob=await canvasBlob(canvas);await navigator.clipboard.write([new ClipboardItem({'image/png':blob})]);copy.textContent='コピーしました';}catch(e){copy.textContent='PNG保存を使ってください';}};
+   });
+ });
+}
+async function drawCard(canvas,turns){
+ const W=1200,pad=64,avatar=128,gap=30,textX=pad+avatar+gap,textW=W-textX-pad;
+ const font='-apple-system,BlinkMacSystemFont,"Hiragino Sans","Yu Gothic",sans-serif';
+ const measure=document.createElement('canvas').getContext('2d');
+ const rows=[];
+ for(const t of turns){
+   measure.font=`42px ${font}`;
+   const lines=wrapText(measure,t.text,textW,42);
+   const h=Math.max(avatar,52+lines.length*58)+42;
+   rows.push({...t,lines,h});
+ }
+ const H=pad+rows.reduce((s,r)=>s+r.h,0)+pad;
+ canvas.width=W;canvas.height=H;
+ const ctx=canvas.getContext('2d');ctx.fillStyle='#ffffff';roundRect(ctx,0,0,W,H,34);ctx.fill();
+ let y=pad;
+ for(const r of rows){
+   const [bg,ink]=COLORS[r.name]||['#f7f7f7','#555'];
+   ctx.fillStyle=bg;roundRect(ctx,pad-16,y-12,W-pad*2+32,r.h-12,28);ctx.fill();
+   await drawAvatar(ctx,r.name,pad,y,avatar,ink);
+   ctx.fillStyle=ink;ctx.font=`600 30px ${font}`;ctx.fillText(r.name,textX,y+34);
+   ctx.fillStyle='#202124';ctx.font=`42px ${font}`;
+   let ty=y+94;r.lines.forEach(line=>{ctx.fillText(line,textX,ty);ty+=58;});
+   y+=r.h;
+ }
+}
+function wrapText(ctx,text,maxWidth){
+ const out=[];let line='';
+ for(const ch of [...text]){
+   const test=line+ch;
+   if(ctx.measureText(test).width>maxWidth&&line){out.push(line);line=ch;}else line=test;
+ }
+ if(line)out.push(line);return out;
+}
+async function drawAvatar(ctx,name,x,y,size,ink){
+ const a=AVATARS[name]||{};
+ if(a.src){try{const img=await loadImg(a.src);ctx.save();ctx.beginPath();ctx.arc(x+size/2,y+size/2,size/2,0,Math.PI*2);ctx.clip();ctx.drawImage(img,x,y,size,size);ctx.restore();return;}catch(e){}}
+ ctx.fillStyle=ink;ctx.beginPath();ctx.arc(x+size/2,y+size/2,size/2,0,Math.PI*2);ctx.fill();
+ ctx.fillStyle='#fff';ctx.font='600 50px sans-serif';ctx.textAlign='center';ctx.textBaseline='middle';ctx.fillText(a.fallback||name[0],x+size/2,y+size/2);ctx.textAlign='start';ctx.textBaseline='alphabetic';
+}
+function loadImg(src){return new Promise((res,rej)=>{const i=new Image();i.onload=()=>res(i);i.onerror=rej;i.src=src;});}
+function roundRect(ctx,x,y,w,h,r){ctx.beginPath();ctx.roundRect?ctx.roundRect(x,y,w,h,r):(ctx.rect(x,y,w,h));}
+function canvasBlob(canvas){return new Promise(res=>canvas.toBlob(res,'image/png'));}
+function download(canvas,name){canvas.toBlob(blob=>{const a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download=name;a.click();setTimeout(()=>URL.revokeObjectURL(a.href),1000);},'image/png');}
+</script>
+</body>
+</html>
