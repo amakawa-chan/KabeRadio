@@ -151,6 +151,14 @@ UTF-8の単純なHTMLとして、ブラウザで開いて記事本文を選択�
 GitHub Pages等でRepository rootを配信する場合、
 `/notes/<episode-key>/` を公開URLとして利用できる構成にします。
 
+note companionを生成したEpisodeでは、`episodes/<episode-key>/README.md` に
+`## 制作ノート` セクションを追加し、次の公開URLへ直接リンクしてください。
+
+`https://amakawa-chan.github.io/KabeRadio/notes/<episode-key>/`
+
+また、`notes/index.html` と `notes/README.md` の一覧にも新しい制作ノートを追加し、
+RepositoryトップREADMEの制作ノート入口から辿れる状態を維持します。
+
 ## タイトル
 
 壁ラジ本編と同じタイトルでも構いませんが、必ず同じにする必要はありません。
@@ -175,5 +183,7 @@ note記事では検索向けの説明タイトルに寄せすぎず、
 - AI的な太字強調や定型総括に頼っていない
 - article.mdとarticle.htmlの内容が実質的に一致している
 - index.htmlが一般閲覧用の制作ノートとして成立している
+- Episode READMEからその回の制作ノート公開ページへ直接移動できる
+- notes/index.html / notes/README.md の一覧から記事へ辿れる
 - iPhone / Safariを含むモバイルブラウザで本文を読み、コピー操作へ進める
 - HTMLをブラウザで開き、見出しと引用を含むリッチテキストとしてコピーできる
