@@ -168,6 +168,7 @@ READMEには次を簡潔に記載します。
 - episodeの説明
 - Host／GuestのCharacter Pack ID
 - `script.md`への相対リンク
+- note companionを生成した場合は `## 制作ノート` を追加し、GitHub Pagesの公開URL `https://amakawa-chan.github.io/KabeRadio/notes/<episode-key>/` への「Webで読む」リンクを必ず記載
 - 検証回の場合は検証する経路や機能
 
 ## note companion契約
@@ -204,8 +205,10 @@ note companionをskipして構いません。
 1. `episodes/<episode-key>/`を作成
 2. UTF-8の`README.md`、`script.md`、`production.json`を保存
 3. note companion対象なら`notes/<episode-key>/`を作成し、UTF-8の`article.md`、`article.html`、`index.html`を保存
-4. JSON構文、必須見出し、Role見出し、episode key、note companionを検査
-5. 最終回答はepisode key、保存したEpisode Package、note companionの有無とパス、Casting、検査結果だけを簡潔に報告
+4. note companion対象なら`episodes/<episode-key>/README.md`へ制作ノートの公開URLを追加
+5. `notes/index.html` / `notes/README.md` の一覧へ新しい制作ノートを追加
+6. JSON構文、必須見出し、Role見出し、episode key、note companion、README導線を検査
+7. 最終回答はepisode key、保存したEpisode Package、note companionの有無と公開URL、Casting、検査結果だけを簡潔に報告
 
 ファイル操作が利用できない場合：
 
@@ -227,6 +230,8 @@ note companionをskipして構いません。
 - 通常回の「壁ラジ！」が本編開始後おおむね2〜4分程度、または最初の話題が一区切りした自然な位置にある
 - そのままGitHubへ保存し、M6で`cast/status/prepare/render`へ進められる
 - note companionを作る場合、article.mdとarticle.htmlの内容が一致し、index.htmlが一般公開用の制作ノートとして成立し、モバイルブラウザから本文をnoteへコピーできる
+- note companionを作る場合、Episode READMEにその回の制作ノート公開リンクがある
+- note companionを作る場合、制作ノート一覧からその記事へ辿れる
 
 致命的な入力不足がない限り質問で止まらず、利用可能な内容から1 Episodeを完成させてください。
 
