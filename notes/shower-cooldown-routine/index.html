@@ -15,7 +15,15 @@ a{color:inherit}
 h1{font-size:1.8rem;line-height:1.35;margin-top:0}
 h2{font-size:1.25rem;line-height:1.5;margin-top:2.4em}
 p{margin:1em 0}
-blockquote{margin:1.4em 0;padding:.2em 1em;border-left:4px solid #888;background:#f4f4f4}
+blockquote{margin:1.4em 0;padding:.8em 1em;border-left:4px solid #888;background:#f4f4f4;border-radius:12px}
+blockquote.character-comment{border-left:0;padding:14px 16px}
+.character-line{display:flex;gap:14px;align-items:flex-start;margin:.25em 0}
+.character-line p{margin:0;flex:1}
+.character-avatar{width:54px;height:54px;border-radius:50%;object-fit:cover;flex:0 0 54px;background:#666}
+.character-avatar-fallback{display:grid;place-items:center;color:#fff;font-weight:700;font-size:1.1rem}
+.character-line[data-character="モブ子"]{color:#51496d}
+.character-line[data-character="モブ美"]{color:#6d4854}
+.character-line[data-character="あまかわちゃん"]{color:#465875}
 .tools{display:flex;gap:10px;flex-wrap:wrap;margin:24px 0 0}
 button,.button{font:inherit;border:1px solid #bbb;background:#fff;color:#17191c;border-radius:999px;padding:10px 16px;cursor:pointer;text-decoration:none}
 #status{font-size:.85rem;opacity:.75;align-self:center}
@@ -98,9 +106,38 @@ footer{margin-top:28px;font-size:.85rem;opacity:.7}
 const button=document.getElementById('copy');
 const article=document.getElementById('article');
 const status=document.getElementById('status');
+const CHARACTER_AVATARS={
+  'モブ子':{src:'../../extras/gallery/x-profile/mobuko_foam_icon_400.png',fallback:'モ'},
+  'モブ美':{src:null,fallback:'美'},
+  'あまかわちゃん':{src:'../../extras/gallery/note-profile/amakawachan_autumn_icon.png',fallback:'あ'}
+};
+decorateCharacterComments();
+function decorateCharacterComments(){
+  document.querySelectorAll('#article blockquote').forEach(block=>{
+    let matched=false;
+    block.querySelectorAll('p').forEach(p=>{
+      const text=p.textContent.trim();
+      const name=Object.keys(CHARACTER_AVATARS).find(n=>text.startsWith(n+'：')||text.startsWith(n+':'));
+      if(!name)return;
+      matched=true;
+      const line=document.createElement('div');line.className='character-line';line.dataset.character=name;
+      const avatar=CHARACTER_AVATARS[name];
+      let el;
+      if(avatar.src){el=document.createElement('img');el.src=avatar.src;el.alt=name;el.className='character-avatar';}
+      else{el=document.createElement('span');el.className='character-avatar character-avatar-fallback';el.textContent=avatar.fallback;}
+      p.parentNode.insertBefore(line,p);line.append(el,p);
+    });
+    if(matched)block.classList.add('character-comment');
+  });
+}
 button.addEventListener('click',async()=>{
   const clone=article.cloneNode(true);
   clone.querySelector('.tools')?.remove();
+  clone.querySelectorAll('.character-avatar').forEach(x=>x.remove());
+  clone.querySelectorAll('.character-line').forEach(line=>{
+    const p=line.querySelector('p');
+    if(p)line.replaceWith(p);
+  });
   const html=clone.innerHTML;
   const text=clone.innerText;
   try{
