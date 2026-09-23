@@ -10,6 +10,10 @@
 - Guest: `mobuko-v2`
 
 
+## 制作ノート
+
+[Webで読む →](https://amakawa-chan.github.io/KabeRadio/notes/late-night-radio-reframe/)
+
 ## Script
 
 [台本を読む](script.md)
