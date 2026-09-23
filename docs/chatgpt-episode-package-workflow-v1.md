@@ -76,9 +76,10 @@ noteへの公開処理、Credential、Cookie、非公開APIやブラウザ自動
 1. `prompts/chatgpt-episode-package-v1.md`をコピーして送信
 2. その後へ元ログを貼り付ける
 3. 出力されたepisode keyと3ファイルを同じdirectoryへ保存
-4. note companion対象なら3ファイルを`notes/<episode-key>/`へ保存し、Episode READMEと制作ノート一覧のリンクも反映
-5. `production.json`がJSONとして開けることを確認
-6. GitHubへcommitする前に、タイトル、事実関係、公開してよい内容を人が確認
+4. `episodes/README.md` のEpisode一覧へ新しいEpisodeを追加
+5. note companion対象なら3ファイルを`notes/<episode-key>/`へ保存し、Episode READMEと制作ノート一覧のリンクも反映
+6. `production.json`がJSONとして開けることを確認
+7. GitHubへcommitする前に、タイトル、事実関係、公開してよい内容を人が確認
 
 ### Repositoryへ書き込めるChatGPT／Codex
 
@@ -158,6 +159,7 @@ MVPではWorkerがGit commit／pushを行わないため、GitHubの`ready`とM6
 - 見出しは`### Host`、`### Guest`、必要時だけ`### Host + Guest`
 - 1 Turnが長すぎず、TTSで読める口語になっている
 - `production.json`はコメントなしの有効なJSON
+- `episodes/README.md` のEpisode一覧に新しいEpisodeが追加されている
 - note companionを作った場合、Episode READMEにその回の制作ノート公開リンクがある
 - note companionを作った場合、制作ノート一覧に新記事が追加されている
 - `status`は`ready`
