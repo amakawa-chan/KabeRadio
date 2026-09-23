@@ -3,7 +3,10 @@
   "radioProduction": {
     "schemaVersion": 1,
     "selectionMethod": "script-primary-reviewed",
-    "audioAdjustment": { "mode": "auto", "targetRmsDbfs": -23 },
+    "audioAdjustment": {
+      "mode": "auto",
+      "targetRmsDbfs": -23
+    },
     "selectedClipIds": [
       "one-minute-is-long",
       "main-show-is-empty",
@@ -22,7 +25,9 @@
         "hook": "ショートが1分近くあるという違和感から始まる",
         "point": "短くするだけでなく、本編との役割分担へ話が転がる",
         "targetDuration": 20,
-        "platforms": ["youtube-shorts"]
+        "platforms": [
+          "youtube-shorts"
+        ]
       },
       {
         "id": "main-show-is-empty",
@@ -33,51 +38,61 @@
         "hook": "壁ラジ24の方が再生されているという妙な現状",
         "point": "本編だけ中間尺で用途が曖昧だったと気づく",
         "targetDuration": 20,
-        "platforms": ["youtube-shorts"]
+        "platforms": [
+          "youtube-shorts"
+        ]
       },
       {
         "id": "prompt-made-it-short",
         "title": "短い原因はプロンプト",
         "displayTitle": "犯人は\nプロンプト",
-        "startTurn": 31,
-        "endTurn": 36,
+        "startTurn": 32,
+        "endTurn": 39,
         "hook": "6分台になる原因を探したら仕様通りだった",
         "point": "15分上限・5〜10分標準というルールが凝縮を生んでいた",
         "targetDuration": 22,
-        "platforms": ["youtube-shorts"]
+        "platforms": [
+          "youtube-shorts"
+        ]
       },
       {
         "id": "make-banter-up",
         "title": "くだらない会話は創作OK",
         "displayTitle": "雑談は\n捏造OK",
-        "startTurn": 45,
-        "endTurn": 51,
+        "startTurn": 53,
+        "endTurn": 62,
         "hook": "深夜ラジオ感を出すために軽い創作を許可する",
         "point": "事実は守りつつ、ツッコミや脱線は脚本として足してよいと整理する",
         "targetDuration": 24,
-        "platforms": ["youtube-shorts"]
+        "platforms": [
+          "youtube-shorts"
+        ]
       },
       {
         "id": "six-shorts",
         "title": "ショートは6本取る",
         "displayTitle": "6本\n切り抜く",
-        "startTurn": 60,
-        "endTurn": 66,
+        "startTurn": 73,
+        "endTurn": 82,
         "hook": "15分本編なら切り抜きも増やせるという発想",
         "point": "6本必須ではなく、できるだけ6本を取りにいく方針へ",
         "targetDuration": 22,
-        "platforms": ["youtube-shorts"]
+        "platforms": [
+          "youtube-shorts"
+        ]
       },
       {
         "id": "content-factory",
         "title": "壁打ちが一日分の番組になる",
         "displayTitle": "壁打ちが\n番組になる",
-        "startTurn": 72,
-        "endTurn": 78,
+        "startTurn": 127,
+        "endTurn": 131,
         "hook": "Shortsと本編と24時間配信の役割が分かれた瞬間",
         "point": "1回の壁打ちから複数フォーマットを作る番組編成へ着地する",
         "targetDuration": 24,
-        "platforms": ["youtube-shorts"]
+        "platforms": [
+          "youtube-shorts"
+        ]
       }
     ]
   }
@@ -435,6 +450,150 @@
 ### Guest
 
 自己参照がひどい番組です。
+
+### Host
+
+でもさ、十五分って聞くと長く感じるけど、ラジオとしては別にそんな長くないんよね。
+
+### Guest
+
+そうですね。動画として十五分を見るのと、音だけで十五分聞くのは感覚がかなり違います。
+
+### Host
+
+洗い物してたら終わる。
+
+### Guest
+
+洗濯物たたんでても終わります。
+
+### Host
+
+風呂入る前に再生して、上がったらまだ喋ってるくらいでもいい。
+
+### Guest
+
+そのくらいの「途中から聞いて、途中で離れてもいい」距離感が深夜ラジオには合いますね。
+
+### Host
+
+今までの六分本編って、最初から最後まで聞いてください感が強かったんかな。
+
+### Guest
+
+構成が締まってるほど、そうなります。起承転結があると、途中で離れにくい代わりに、ながら聞きの余白も減ります。
+
+### Host
+
+毎回ちっちゃいプレゼンしてたんか。
+
+### Guest
+
+ラジオの顔をしたプレゼン資料。
+
+### Host
+
+嫌やなそれ。
+
+### Guest
+
+でも作る側は気持ちいいんですよ。無駄がなくて、綺麗に終わるから。
+
+### Host
+
+分かる。編集すると削りたくなる。
+
+### Guest
+
+そこを今回は、あえて全部削らない。
+
+### Host
+
+どうでもいい一往復を残す。
+
+### Guest
+
+今の「どうでもいい一往復を残す」という話のために、この一往復自体が増えています。
+
+### Host
+
+実演すな。
+
+### Guest
+
+仕様確認です。
+
+### Host
+
+でも一人雑談寄りにするかはまだ迷うな。
+
+### Guest
+
+完全な一人語りにすると、壁打ちという名前から少し離れますからね。
+
+### Host
+
+そうなんよ。モブ子がいないと、ただ私が喋ってるだけになる。
+
+### Guest
+
+なので比率の問題だと思います。Hostが話を持って、Guestは短く返す。必要な時だけ整理する。
+
+### Host
+
+七対三くらい？
+
+### Guest
+
+そのくらいから試してもいいですね。毎回きっちり七対三にする必要はないですが。
+
+### Host
+
+壁打ちの相手はいる。でも仕切らない。
+
+### Guest
+
+深夜ラジオの相棒くらい。
+
+### Host
+
+なんか急にそれっぽくなった。
+
+### Guest
+
+今まで私、説明担当になりすぎてましたから。
+
+### Host
+
+確かに。私が一言言うと三倍くらい返ってきてた時ある。
+
+### Guest
+
+エルエルエムの職業病です。
+
+### Host
+
+じゃあそこもプロンプトで抑えるか。
+
+### Guest
+
+解説量を減らすというより、Hostの思考を奪わないようにする、の方がいいと思います。
+
+### Host
+
+先に結論言われると、私の出番なくなるもんな。
+
+### Guest
+
+壁打ちなのに壁が答えを全部書いて返してきたら、あとは読むだけになります。
+
+### Host
+
+その壁、賢すぎて嫌やな。
+
+### Guest
+
+少し鈍いくらいが会話にはちょうどいい時もあります。
 
 ### Host
 
