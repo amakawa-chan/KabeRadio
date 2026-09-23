@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="color-scheme" content="light dark">
+<title>本編が一番過疎なので、壁ラジを深夜ラジオへ戻すことにした | 壁ラジ 制作ノート</title>
+<style>
+:root{font-family:-apple-system,BlinkMacSystemFont,"Hiragino Sans","Yu Gothic",sans-serif;line-height:1.8}
+body{margin:0;background:#f6f7f9;color:#17191c}
+main{max-width:760px;margin:auto;padding:24px 18px 72px}
+nav{display:flex;justify-content:space-between;gap:12px;align-items:center;margin-bottom:28px;font-size:.9rem}
+a{color:inherit}
+.card{background:#fff;border:1px solid #e4e7eb;border-radius:18px;padding:24px;box-shadow:0 6px 24px rgba(0,0,0,.05)}
+h1{font-size:1.8rem;line-height:1.35;margin-top:0}
+h2{font-size:1.25rem;line-height:1.5;margin-top:2.4em}
+p{margin:1em 0}
+blockquote{margin:1.4em 0;padding:.2em 1em;border-left:4px solid #888;background:#f4f4f4}
+.tools{display:flex;gap:10px;flex-wrap:wrap;margin:24px 0 0}
+button,.button{font:inherit;border:1px solid #bbb;background:#fff;color:#17191c;border-radius:999px;padding:10px 16px;cursor:pointer;text-decoration:none}
+#status{font-size:.85rem;opacity:.75;align-self:center}
+footer{margin-top:28px;font-size:.85rem;opacity:.7}
+@media (prefers-color-scheme:dark){
+ body{background:#0d1117;color:#e6edf3}.card{background:#151b23;border-color:#30363d}
+ blockquote{background:#11161d;border-left-color:#768390}
+ button,.button{background:#151b23;color:#e6edf3;border-color:#4b5563}
+}
+</style>
+</head>
+<body>
+<main>
+<nav><a href="../">← 制作ノート一覧</a><a href="https://github.com/amakawa-chan/KabeRadio/tree/main/episodes/late-night-radio-reframe">Episode</a></nav>
+<article id="article" class="card">
+<h1>本編が一番過疎なので、壁ラジを深夜ラジオへ戻すことにした</h1>
+<p>YouTube Shortsの尺について考えていただけだった。</p>
+<p>今の切り抜きが一分近い。平均視聴時間を見ると、もっと短くした方がいいんじゃないか。最初はそれだけの話だった。</p>
+<h2>一分のショートを短くしたら、本編の立ち位置が気になった</h2>
+<p>Shortsを十五秒から二十五秒くらいへ寄せるなら、本編は逆に長くてもいいのではないか。</p>
+<p>そこで妙なことに気づいた。壁ラジの通常本編より、壁ラジ24の方が再生されていることがある。</p>
+<p>Shortsには「流れてきたから見る」がある。壁ラジ24には「何となく流しておく」がある。でも五分から十分くらいの本編は、わざわざ選んで聞く必要がある。</p>
+<p>本編だけ用途が曖昧なのかもしれない。</p>
+<h2>短い原因を探したら、完全に仕様通りだった</h2>
+<p>現在の台本生成プロンプトを確認すると、標準尺は五分から十分。Canonical Script Converterには「十五分は目標ではなく上限」とまで書いてあった。</p>
+<p>六分くらいで終わるのは、生成側が勝手に短くしていたわけではない。こちらがそう書いていた。</p>
+<p>しかも、元ログを使い切らない、冗長なら削る、結論を整理する、といった編集圧も強かった。深夜ラジオ感が薄いのは当然だった。</p>
+<h2>壁打ちログを、深夜ラジオの脚本へ変換する</h2>
+<p>方針を少し変えることにした。</p>
+<p>元ログの事実、体験、数値、結論は勝手に作らない。一方で、意味を変えない範囲なら、相槌、ツッコミ、言い直し、軽い勘違い、短い脱線、しょうもない冗談は足していい。</p>
+<p>情報を増やすための創作ではなく、会話の呼吸を作るための創作。</p>
+<p>目標尺は十二分から十八分。中心は十五分前後。</p>
+<p>ようやく「壁打ちログを深夜ラジオへ変換する」という言い方がしっくりきた。</p>
+<h2>本編が長くなるなら、Shortsも最大六本取れる</h2>
+<p>本編が十五分前後あれば、切り抜き候補も三本に限定する必要はない。</p>
+<p>Shortsは十五秒から二十五秒を中心に、最大六本。</p>
+<p>ただし六本を埋めるために弱い箇所を使うのではなく、一発ネタ、生活あるある、思考の移動、HostとGuestの認識ズレ、メタ発言など、違う角度からできるだけ多く拾う。</p>
+<p>Shortsは削る。本編は削りすぎない。</p>
+<h2>Shorts、本編、壁ラジ24で役割を分ける</h2>
+<p>最終的には、かなり単純な構造になった。</p>
+<p>Shortsは見つけてもらう場所。本編は十五分くらい浸る場所。壁ラジ24は流しっぱなしにする場所。</p>
+<p>さらにShortsから元本編へ関連動画を自動設定できれば、一回の壁打ちから一日分の番組編成を作れる。</p>
+<p>Shortsの長さを相談していただけなのに、番組の作り方そのものを変える話になった。</p>
+<p>こういう転がり方こそ、たぶん壁ラジだった。</p>
+<div class="tools">
+<button id="copy">本文をコピー</button>
+<span id="status" aria-live="polite"></span>
+</div>
+</article>
+<footer>壁ラジ / KabeRadio 制作ノート</footer>
+</main>
+<script>
+const button=document.getElementById('copy');
+const article=document.getElementById('article');
+const status=document.getElementById('status');
+button.addEventListener('click',async()=>{
+  const clone=article.cloneNode(true);
+  clone.querySelector('.tools')?.remove();
+  const html=clone.innerHTML;
+  const text=clone.innerText;
+  try{
+    if(navigator.clipboard && window.ClipboardItem){
+      const item=new ClipboardItem({
+        'text/html':new Blob([html],{type:'text/html'}),
+        'text/plain':new Blob([text],{type:'text/plain'})
+      });
+      await navigator.clipboard.write([item]);
+    }else{
+      const range=document.createRange(); range.selectNodeContents(clone);
+      const temp=document.createElement('div'); temp.style.position='fixed'; temp.style.left='-9999px';
+      temp.appendChild(clone); document.body.appendChild(temp);
+      const sel=getSelection(); sel.removeAllRanges(); sel.addRange(range);
+      document.execCommand('copy'); sel.removeAllRanges(); temp.remove();
+    }
+    status.textContent='コピーしました';
+  }catch(e){
+    status.textContent='長押しで本文を選択してコピーしてください';
+  }
+});
+</script>
+</body>
+</html>
