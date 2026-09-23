@@ -204,11 +204,12 @@ note companionをskipして構いません。
 
 1. `episodes/<episode-key>/`を作成
 2. UTF-8の`README.md`、`script.md`、`production.json`を保存
-3. note companion対象なら`notes/<episode-key>/`を作成し、UTF-8の`article.md`、`article.html`、`index.html`を保存
-4. note companion対象なら`episodes/<episode-key>/README.md`へ制作ノートの公開URLを追加
-5. `notes/index.html` / `notes/README.md` の一覧へ新しい制作ノートを追加
-6. JSON構文、必須見出し、Role見出し、episode key、note companion、README導線を検査
-7. 最終回答はepisode key、保存したEpisode Package、note companionの有無と公開URL、Casting、検査結果だけを簡潔に報告
+3. `episodes/README.md` のEpisode一覧へ新しいEpisodeを追加
+4. note companion対象なら`notes/<episode-key>/`を作成し、UTF-8の`article.md`、`article.html`、`index.html`を保存
+5. note companion対象なら`episodes/<episode-key>/README.md`へ制作ノートの公開URLを追加
+6. `notes/index.html` / `notes/README.md` の一覧へ新しい制作ノートを追加
+7. JSON構文、必須見出し、Role見出し、episode key、Episode一覧、note companion、README導線を検査
+8. 最終回答はepisode key、保存したEpisode Package、note companionの有無と公開URL、Casting、検査結果だけを簡潔に報告
 
 ファイル操作が利用できない場合：
 
@@ -222,6 +223,7 @@ note companionをskipして構いません。
 ## 成功条件
 
 - 3ファイルが同じepisode key配下に揃っている
+- `episodes/README.md` のEpisode一覧から新しいEpisodeへ辿れる
 - script.mdをRadio ParserがHost／Guest Turnとして解析できる
 - production.jsonが有効なJSONで`status=ready`
 - 初期CastingがCharacter Pack IDで明示されている
