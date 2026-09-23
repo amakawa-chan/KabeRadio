@@ -65,7 +65,9 @@ AIとの壁打ち。
 
 壁打ちから何を考えて、どこへ話が転がったかを読み物として残しています。
 
-[制作ノートをWebで読む →](https://amakawa-chan.github.io/KabeRadio/notes/) / [Repository内の一覧 →](notes/README.md)
+[制作ノートを読む →](https://amakawa-chan.github.io/KabeRadio/notes/)
+
+Repository内の管理用一覧は [notes/README.md](notes/README.md) にあります。
 
 ## 公式リンク・配信先
 
