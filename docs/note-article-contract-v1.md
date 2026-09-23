@@ -21,11 +21,13 @@ episodes/<episode-key>/
 
 notes/<episode-key>/
 ├─ article.md
-└─ article.html
+├─ article.html
+└─ index.html
 ```
 
 `article.md` は編集・履歴管理用の正本です。
-`article.html` はブラウザで開き、本文をコピーしてnoteへリッチテキストとして貼り付けるための半自動投稿用です。
+`article.html` はnote貼り付け用のsemantic HTML本文断片です。
+`index.html` は壁ラジ公式側で一般公開する制作ノートページです。iPhone / Safariから通常の記事として読め、本文をnoteへ持っていける「本文をコピー」導線を持たせます。
 
 noteへ自動公開するためのCredential、Cookie、非公開API、ブラウザ自動化設定はKabeRadioへ保存しません。
 
@@ -134,6 +136,21 @@ Markdownではblockquoteを使用します。
 
 UTF-8の単純なHTMLとして、ブラウザで開いて記事本文を選択・コピーできる形にします。
 
+## index.html 公開ページ
+
+`article.html` の内容を本文として埋め込み、一般閲覧者が通常の記事として読めるレスポンシブなHTMLページを生成します。
+
+- モバイル優先で読みやすいこと
+- 外部Font、Tracking、Credentialを含めない
+- Episodeへの導線を置けること
+- 「本文をコピー」操作を用意すること
+- コピー時は見出し・段落・blockquoteを可能な限りリッチテキストとして保持し、対応しない環境では通常の選択コピーへフォールバックする
+- 投稿専用UIに見せすぎず、制作ノートとして一般公開できる見た目にする
+- `notes/index.html` から各制作ノートへ辿れること
+
+GitHub Pages等でRepository rootを配信する場合、
+`/notes/<episode-key>/` を公開URLとして利用できる構成にします。
+
 ## タイトル
 
 壁ラジ本編と同じタイトルでも構いませんが、必ず同じにする必要はありません。
@@ -157,4 +174,6 @@ note記事では検索向けの説明タイトルに寄せすぎず、
 - モブ子の引用は必要な箇所だけ
 - AI的な太字強調や定型総括に頼っていない
 - article.mdとarticle.htmlの内容が実質的に一致している
+- index.htmlが一般閲覧用の制作ノートとして成立している
+- iPhone / Safariを含むモバイルブラウザで本文を読み、コピー操作へ進める
 - HTMLをブラウザで開き、見出しと引用を含むリッチテキストとしてコピーできる
