@@ -18,7 +18,8 @@ episodes/<episode-key>/
 
 notes/<episode-key>/
 ├─ article.md
-└─ article.html
+├─ article.html
+└─ index.html
 ```
 
 ## 正本
@@ -186,8 +187,10 @@ note記事は壁ラジ本編の文字起こしや会話記事にしません。
 各節ごとの綺麗すぎる要約、元ログにない教訓の後付けを避けます。
 
 `article.md` は編集用Markdown、
-`article.html` は同じ内容をsemantic HTMLへ変換したnote貼り付け用です。
-HTMLは見出し、段落、blockquoteを中心にし、CSS、JavaScript、外部Font、Credentialを含めません。
+`article.html` は同じ内容をsemantic HTMLへ変換したnote貼り付け用本文断片です。
+`index.html` はその本文を使った一般公開用の制作ノートページです。モバイルで読みやすくし、iPhone / Safariからnoteへ持っていける「本文をコピー」操作を用意します。
+`article.html` 自体にはCSS、JavaScript、外部Font、Credentialを含めません。
+`index.html` には表示とコピー操作に必要な最小限のインラインCSS / JavaScriptを含めて構いませんが、外部Font、Tracking、Credentialは含めません。
 
 純粋な動作検証や短い告知など、記事にする思考の移動がほぼない場合は無理に生成せず、
 note companionをskipして構いません。
@@ -200,7 +203,7 @@ note companionをskipして構いません。
 
 1. `episodes/<episode-key>/`を作成
 2. UTF-8の`README.md`、`script.md`、`production.json`を保存
-3. note companion対象なら`notes/<episode-key>/`を作成し、UTF-8の`article.md`と`article.html`を保存
+3. note companion対象なら`notes/<episode-key>/`を作成し、UTF-8の`article.md`、`article.html`、`index.html`を保存
 4. JSON構文、必須見出し、Role見出し、episode key、note companionを検査
 5. 最終回答はepisode key、保存したEpisode Package、note companionの有無とパス、Casting、検査結果だけを簡潔に報告
 
@@ -209,7 +212,7 @@ note companionをskipして構いません。
 1. 最初に`EPISODE_KEY: <episode-key>`を1行出力
 2. `FILE: episodes/<episode-key>/README.md`と書き、その直後に内容をMarkdownコードブロックで出力
 3. 同様に`script.md`と`production.json`を出力
-4. note companion対象なら`FILE: notes/<episode-key>/article.md`と`FILE: notes/<episode-key>/article.html`も続けて出力
+4. note companion対象なら`FILE: notes/<episode-key>/article.md`、`FILE: notes/<episode-key>/article.html`、`FILE: notes/<episode-key>/index.html`も続けて出力
 5. 対象外なら`NOTE_COMPANION: skipped`を1行出力
 6. 指定ファイル以外の候補、解説、別案を追加しない
 
@@ -223,7 +226,7 @@ note companionをskipして構いません。
 - 元ログにない事実・実体験・数値や思慮時間を追加していない。会話上の軽い創作は意味を変えない範囲に留まっている
 - 通常回の「壁ラジ！」が本編開始後おおむね2〜4分程度、または最初の話題が一区切りした自然な位置にある
 - そのままGitHubへ保存し、M6で`cast/status/prepare/render`へ進められる
-- note companionを作る場合、article.mdとarticle.htmlの内容が一致し、HTMLをブラウザからnoteへリッチテキストとしてコピーできる
+- note companionを作る場合、article.mdとarticle.htmlの内容が一致し、index.htmlが一般公開用の制作ノートとして成立し、モバイルブラウザから本文をnoteへコピーできる
 
 致命的な入力不足がない限り質問で止まらず、利用可能な内容から1 Episodeを完成させてください。
 
