@@ -26,7 +26,7 @@ GitHub上の正式Episodeは原則`status: ready`で保存し、M6ローカル�
 
 ## Episodes
 
-- [登録者9人、LINEスタンプ3種類。](nine-subs-three-stickers/)
+- [LINEスタンプ発売します](nine-subs-three-stickers/)
 - [知ってるAIと、やってた人間](ai-knows-but-didnt-live-it/)
 - [モブ子の一言をnoteに載せたかっただけなのに、ジェネレーターが生えた](note-card-generator-grew/)
 - [秋風のチューニング アフタートーク](autumn-opening-aftertalk/)
