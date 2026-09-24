@@ -57,9 +57,9 @@ AIとの壁打ち。
 
 ## LINEスタンプ
 
-モブ子スタンプは発売中です。壁ラジスタンプ Vol.1・Vol.2 はともに審査中です。
+壁ラジとモブ子のLINEスタンプを販売中です。
 
-[LINEスタンプの案内](extras/line-stickers.md)
+[LINEスタンプ一覧を見る →](extras/line-stickers.md)
 
 ## 制作ノート
 
