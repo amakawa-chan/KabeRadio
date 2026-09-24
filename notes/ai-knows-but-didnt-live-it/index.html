@@ -11,7 +11,7 @@ body{margin:0;background:#f6f7f9;color:#17191c}main{max-width:760px;margin:auto;
 nav{display:flex;justify-content:space-between;gap:12px;margin-bottom:28px;font-size:.9rem}a{color:inherit}
 .card{background:#fff;border:1px solid #e4e7eb;border-radius:18px;padding:24px;box-shadow:0 6px 24px rgba(0,0,0,.05)}
 h1{font-size:1.8rem;line-height:1.35;margin-top:0}h2{font-size:1.25rem;line-height:1.5;margin-top:2.4em}
-blockquote{margin:1.4em 0;padding:.8em 1em;background:#f4f4f4;border-radius:12px}
+blockquote{margin:1.4em 0;padding:.8em 1em;background:#f4f4f4;border-radius:12px}blockquote.character-comment{padding:14px 16px}.character-line{display:flex;gap:14px;align-items:flex-start;margin:.25em 0}.character-line p{margin:0;flex:1}.character-avatar{width:54px;height:54px;border-radius:50%;object-fit:cover;flex:0 0 54px;background:#666}.character-line[data-character="モブ子"]{color:#51496d}.character-line[data-character="あまかわちゃん"]{color:#465875}
 .tools{display:flex;gap:10px;align-items:center;margin-top:24px}button{font:inherit;border:1px solid #bbb;background:#fff;color:#17191c;border-radius:999px;padding:10px 16px}
 #status{font-size:.85rem;opacity:.75}footer{margin-top:28px;font-size:.85rem;opacity:.7}
 @media(prefers-color-scheme:dark){body{background:#0d1117;color:#e6edf3}.card{background:#151b23;border-color:#30363d}blockquote{background:#11161d}button{background:#151b23;color:#e6edf3;border-color:#4b5563}}
@@ -54,12 +54,38 @@ blockquote{margin:1.4em 0;padding:.8em 1em;background:#f4f4f4;border-radius:12px
 <footer>壁ラジ / KabeRadio 制作ノート</footer>
 </main>
 <script>
-document.getElementById('copy').addEventListener('click',async function(){
-  const article=document.getElementById('article').cloneNode(true);
-  article.querySelector('.tools').remove();
-  const text=article.innerText;
-  try{await navigator.clipboard.writeText(text);document.getElementById('status').textContent='コピーしました';}
-  catch(e){document.getElementById('status').textContent='長押しで本文を選択してコピーしてください';}
+const article=document.getElementById('article'),status=document.getElementById('status');
+const avatars={'モブ子':'../../extras/gallery/x-profile/mobuko_foam_icon_400.png','あまかわちゃん':'../../extras/gallery/note-profile/amakawachan_autumn_icon.png'};
+document.querySelectorAll('#article blockquote').forEach(block=>{
+  let matched=false;
+  block.querySelectorAll('p').forEach(p=>{
+    const text=p.textContent.trim();
+    const name=Object.keys(avatars).find(n=>text.startsWith(n+'：')||text.startsWith(n+':'));
+    if(!name)return;
+    matched=true;
+    const line=document.createElement('div');
+    line.className='character-line';
+    line.dataset.character=name;
+    const img=document.createElement('img');
+    img.src=avatars[name];img.alt=name;img.className='character-avatar';
+    p.parentNode.insertBefore(line,p);line.append(img,p);
+  });
+  if(matched)block.classList.add('character-comment');
+});
+document.getElementById('copy').addEventListener('click',async()=>{
+  const clone=article.cloneNode(true);
+  clone.querySelector('.tools')?.remove();
+  clone.querySelectorAll('.character-avatar').forEach(x=>x.remove());
+  clone.querySelectorAll('.character-line').forEach(line=>{const p=line.querySelector('p');if(p)line.replaceWith(p);});
+  const html=clone.innerHTML,text=clone.innerText;
+  try{
+    if(navigator.clipboard&&window.ClipboardItem){
+      await navigator.clipboard.write([new ClipboardItem({'text/html':new Blob([html],{type:'text/html'}),'text/plain':new Blob([text],{type:'text/plain'})})]);
+    }else{
+      await navigator.clipboard.writeText(text);
+    }
+    status.textContent='コピーしました';
+  }catch(e){status.textContent='長押しで本文を選択してコピーしてください';}
 });
 </script>
 </body></html>
