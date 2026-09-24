@@ -99,7 +99,7 @@
 }
 ---
 
-# 登録者9人、LINEスタンプ3種類。
+# LINEスタンプ発売します
 
 ## Episode Description
 
