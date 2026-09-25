@@ -107,6 +107,9 @@
 
 ## 本編
 
+[CAST: Host=amakawachan-layered]
+[CAST: Guest=mobumi]
+
 ### Guest
 
 今回は私なの？

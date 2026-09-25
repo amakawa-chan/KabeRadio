@@ -125,7 +125,20 @@ Character Pack IDは動画の見た目を決めます。VoiceはPackの`defaultV
 - `mobuko-layered`: 旧モブ子
 - `mobuko-v2`: モブ子v2
 
-本編途中の変更だけ、script.mdへ`[CAST: Guest=mobuko-layered]`のように記述します。
+デスクトップRadioでも同じ出演者で生成できるよう、`script.md`の`## 本編`直後、最初の発話見出しより前に、`production.json.casting`と同じHost・Guestの指定を必ず記載します。
+
+```markdown
+## 本編
+
+[CAST: Host=amakawachan-layered]
+[CAST: Guest=mobuko-v2]
+
+### Host
+```
+
+モブ美をGuestにする回は`Guest=mobumi`へ変更します。冒頭のCAST、`production.json.casting`、READMEのCastは常に一致させ、後から初期Castを変更する場合も3箇所を更新します。READMEや概要への名前の記載だけでは指定になりません。
+
+本編途中の交代も、交代後の最初の発話より前に`[CAST: Guest=mobuko-layered]`のように記述します。CAST行は発話ではなく、ShortsのTurn番号には数えません。
 
 ## GitHubとM6ローカルの状態
 
@@ -164,12 +177,15 @@ MVPではWorkerがGit commit／pushを行わないため、GitHubの`ready`とM6
 - note companionを作った場合、制作ノート一覧に新記事が追加されている
 - `status`は`ready`
 - CastingはVoice IDではなくCharacter Pack ID
+- script.mdの本編冒頭にHost・GuestのCASTがあり、production.json.castingとREADMEのCastに一致している
 - `publish.spotify/youtube`は初期値`false`
 
 ## Render後チェック
 
-- `manifest.json.initialCasting`がproduction.jsonと一致
+- Remote Productionでは`manifest.json.initialCasting`がproduction.jsonと一致
+- デスクトップRadioでは`initialCasting`がGUI設定のままでも、時刻0のCASTイベントと各Roleの最初の発話の`characterId`が台本指定に一致
 - manifestのTurnに期待した`characterId`とProviderが記録されている
+- manifestの出演・音声クレジットと投稿用概要欄が実際に生成された出演者・音声に一致している
 - ArchiveにMP3、MP4、master、manifest、source、説明文がある
 - iCloudには投稿用5ファイルだけがある
 - ArchiveとDeliveryの投稿用ファイルhashが一致

@@ -153,6 +153,7 @@ RenderはPodcastとVideoを一度だけ生成し、Archiveを成果物の正本�
 ## Casting / Voice境界
 
 - `production.json.casting`: Character Pack IDを保存
+- `script.md`: 本編冒頭に同じHost・Guestの`[CAST: Role=character-pack-id]`を記載し、デスクトップRadioにも初期出演者を伝える。READMEのCastも含めて同期する
 - Character Pack: 見た目と`defaultVoice`を保持
 - `config.local.json.voiceAssignments`: M6で明示的に上書きする場合のみ使用
 - 台本途中の変更: `[CAST: Role=character-pack-id]`

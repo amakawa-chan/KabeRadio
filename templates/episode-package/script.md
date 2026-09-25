@@ -18,6 +18,9 @@
 
 ## 本編
 
+[CAST: Host=amakawachan-layered]
+[CAST: Guest=mobuko-v2]
+
 ### Host
 
 最初から壁打ちの途中として話し始めます。

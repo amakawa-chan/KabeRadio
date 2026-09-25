@@ -3,7 +3,7 @@
   "status": "ready",
   "casting": {
     "Host": "amakawachan-layered",
-    "Guest": "mobumi-layered"
+    "Guest": "mobumi"
   },
   "render": {
     "audio": "pending",

@@ -509,6 +509,10 @@ Character名や表示名を
 「あまかわちゃん」「モブ子」等の表示名は
 Casting側で解決します。
 
+初期出演者はCharacter Pack IDで明示します。`## 本編`直後、最初の発話見出しより前にHost・Guest両方の`[CAST: Role=character-pack-id]`を独立した行で記載してください。既定値はHost=`amakawachan-layered`、Guest=`mobuko-v2`です。モブ美をGuestに指定された場合は`[CAST: Guest=mobumi]`とします。
+
+Episode Packageでは冒頭のCAST、`production.json.casting`、READMEのCastを一致させます。デスクトップRadioはproduction.jsonの初期Castを読み込まないため、台本側にも指定が必要です。本編途中の交代も、交代後の最初の発話より前にCAST行を置きます。CAST行は発話やShortsのTurn番号に数えません。
+
 
 ## 19. Host / Guest
 
@@ -908,6 +912,9 @@ Ending直前に、
 **思慮時間：約3時間42分**
 
 ## 本編
+
+[CAST: Host=amakawachan-layered]
+[CAST: Guest=mobuko-v2]
 
 ### Host
 

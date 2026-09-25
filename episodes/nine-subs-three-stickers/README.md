@@ -7,7 +7,7 @@
 ## Cast
 
 - Host: `amakawachan-layered`
-- Guest: `mobumi-layered`
+- Guest: `mobumi`
 
 ## Script
 

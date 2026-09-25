@@ -80,6 +80,9 @@ Front Matterの後は必ず次の順序で作成します。
 
 ## 本編
 
+[CAST: Host=amakawachan-layered]
+[CAST: Guest=mobuko-v2]
+
 ### Host
 
 発話
@@ -127,13 +130,15 @@ Front Matterの後は必ず次の順序で作成します。
 またどこかで
 ```
 
-本編途中の見た目・声の交代だけ、独立した行に次の形式で記述します。
+本編途中で見た目・声を交代する場合も、交代後の最初の発話より前の独立した行に次の形式で記述します。
 
 ```text
 [CAST: Guest=mobuko-layered]
 ```
 
-初期Castingはscript.mdへ書かず、production.jsonへ保存します。
+初期Castingは`production.json.casting`に保存し、同じHost・GuestのCharacter Pack IDを`script.md`の`## 本編`直後、最初の発話見出しより前に2行の`[CAST: Role=character-pack-id]`として必ず記載します。デスクトップRadioは`production.json`を読み込まないため、READMEや概要のキャラクター名だけでは指定になりません。
+
+上の出力例は既定Castです。出演者が指定された場合は、冒頭のCAST、`production.json.casting`、READMEのCastをすべてその指定に合わせます。例えばモブ美がGuestなら`[CAST: Guest=mobumi]`とします。Role見出しは`### Guest`のままです。CAST行は発話ではなく、ShortsのTurn番号には数えません。後から初期Castを変更するときも3箇所を同期します。Character Pack IDはRuntimeの登録keyで確認し、画像フォルダ名から推測しません。モブ美の登録IDは`mobumi`で、フォルダ名とは異なります。
 
 ## production.json契約
 
@@ -228,7 +233,7 @@ note companionをskipして構いません。
 - `episodes/README.md` のEpisode一覧から新しいEpisodeへ辿れる
 - script.mdをRadio ParserがHost／Guest Turnとして解析できる
 - production.jsonが有効なJSONで`status=ready`
-- 初期CastingがCharacter Pack IDで明示されている
+- 初期CastingがCharacter Pack IDで明示され、script.md冒頭のHost・GuestのCAST、production.json.casting、READMEのCastが一致している
 - Character名やProvider固有IDが発話見出しへ混入していない
 - 元ログにない事実・実体験・数値や思慮時間を追加していない。会話上の軽い創作は意味を変えない範囲に留まっている
 - 通常回の「壁ラジ！」が本編開始後おおむね2〜4分程度、または最初の話題が一区切りした自然な位置にある
