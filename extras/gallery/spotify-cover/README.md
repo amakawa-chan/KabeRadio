@@ -4,6 +4,12 @@
 
 ## ポップな3人イラスト案
 
+### 動きのある新案
+
+[![手振りとピースの3人カバー](proposals/kaberadio_spotify_cover_proposal_gen_05_dynamic_trio.png)](dynamic-trio.md)
+
+[3000×3000版・原本・プロンプト](dynamic-trio.md)。提供された画像の配置を参考に、従来のシンプルな画風で制作しました。
+
 このテイストから [モブ子アイコン・YouTubeバナー](../pop-branding/README.md)へ展開しました。[このカバーを含むプロンプト全文](../pop-branding/prompts.md)も保存しています。
 
 [![黄色い背景と大きなロゴ、デフォルメした3人のカバー案](proposals/kaberadio_spotify_cover_proposal_gen_04_pop_trio.png)](proposals/kaberadio_spotify_cover_proposal_gen_04_pop_trio.png)
