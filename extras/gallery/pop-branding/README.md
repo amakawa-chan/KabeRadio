@@ -32,6 +32,18 @@ Xの左下はプロフィールアイコンと重なることを想定して余�
 
 ## YouTubeバナー
 
+### ロゴを下げて余白を調整した全身版
+
+![スマホ表示の目安](youtube_fullbody_balanced_mobile.png)
+
+[設定用2560×1440 PNG](youtube_fullbody_balanced_2560x1440.png) / [原本・プロンプト](youtube-fullbody-balanced.md)
+
+### 全身版・ロゴを下げた修正版
+
+![スマホ表示の目安](youtube_fullbody_lower_logo_mobile.png)
+
+[設定用2560×1440 PNG](youtube_fullbody_lower_logo_2560x1440.png) / [原本・制作記録](youtube-lower-logo.md)
+
 ### テレビで全身・スマホで横長バナーの2人版
 
 ![スマホ表示の目安](youtube_fullbody_mobile_preview.png)
