@@ -16,7 +16,7 @@ stickers:
   - {id: "07", text: "早いですね", confidence: high}
   - {id: "08", text: "気をつけます", confidence: high}
   - {id: "09", text: "ゆっくり休んでください", confidence: high}
-  - {id: "10", text: null, confidence: low, note: "お疲れ〜系に見えるが要再確認"}
+  - {id: "10", text: "お茶飲みます？", confidence: high}
   - {id: "11", text: null, confidence: low, note: "縦組み文言。要再確認"}
   - {id: "12", text: "しょうがないですね", confidence: high}
   - {id: "13", text: "難しいですね", confidence: high}
