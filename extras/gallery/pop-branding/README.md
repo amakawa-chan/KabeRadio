@@ -32,6 +32,12 @@ Xの左下はプロフィールアイコンと重なることを想定して余�
 
 ## YouTubeバナー
 
+### 手の動き・装飾を追加した2人版
+
+![スマホ表示の目安](youtube_duo_motion_mobile_preview.png)
+
+[アップロード用2560×1440](youtube_duo_motion_2560x1440.png) / [原本・案・プロンプト](youtube-duo-motion.md)
+
 ### 2人＋KABE RADIO版
 
 ![スマホ表示の目安](youtube_duo_mobile_preview.png)
