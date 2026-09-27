@@ -4,6 +4,8 @@
 
 GitHub PagesをRepository rootから公開している場合、以下の公開ページをiPhone / Safariからそのまま閲覧できます。
 
+- [思考ログをラジオにしたら、AIの揺らぎが一番面白かった](https://amakawa-chan.github.io/KabeRadio/notes/thought-log-radio/)
+
 - [作れそうだったから増やしていたら、周りだけ先に育った](https://amakawa-chan.github.io/KabeRadio/notes/nine-subs-three-stickers/)
 - [AIは知ってる。でも、その時代は生きてない](https://amakawa-chan.github.io/KabeRadio/notes/ai-knows-but-didnt-live-it/)
 - [モブ子の一言をnoteに載せたかっただけなのに、ジェネレーターが生えた](https://amakawa-chan.github.io/KabeRadio/notes/note-card-generator-grew/)
