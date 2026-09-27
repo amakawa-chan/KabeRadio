@@ -32,6 +32,14 @@ Xの左下はプロフィールアイコンと重なることを想定して余�
 
 ## YouTubeバナー
 
+### 2人＋KABE RADIO版
+
+![スマホ表示の目安](youtube_duo_mobile_preview.png)
+
+[アップロード用2560×1440 PNG](youtube_duo_2560x1440.png) / [原本・制作案・プロンプト](youtube-duo.md)
+
+### モブ子1人版
+
 ![YouTube用バナー](youtube_banner_radio_pattern_2560x1440.png)
 
 [アップロード用PNG・2560×1440](youtube_banner_radio_pattern_2560x1440.png) / [生成原本](youtube_banner_radio_pattern_original.png)
