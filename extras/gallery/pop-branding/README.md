@@ -1,4 +1,26 @@
-# 壁ラジ — Popアイコン・YouTubeバナー
+# 壁ラジ — Popアイコン・YouTube / note / X バナー
+
+## あまかわちゃんアイコン
+
+![あまかわちゃんアイコン](amakawachan_icon_800.png)
+
+[800×800 PNG](amakawachan_icon_800.png) / [400×400 PNG](amakawachan_icon_400.png) / [生成原本](amakawachan_icon_original.png)
+
+## モブ子 noteバナー
+
+![note用バナー](mobuko_note_banner_1920x1006.png)
+
+[1920×1006 PNG](mobuko_note_banner_1920x1006.png) / [生成原本](mobuko_note_banner_original.png)
+
+## モブ子 Xバナー
+
+![X用バナー](mobuko_x_banner_1500x500.png)
+
+[1500×500 PNG](mobuko_x_banner_1500x500.png) / [生成原本](mobuko_x_banner_original.png)
+
+Xの左下はプロフィールアイコンと重なることを想定して余白を確保しています。各サービスへの設定は未実施です。
+
+[今回のプロンプト全文](prompts-note-x-amaka.md)。既存案も引き続き保存しています。
 
 黄色の背景、赤いロゴ、濃緑の太い輪郭線を使った、ポップな壁ラジのプロフィール素材です。[3人のカバー案](../spotify-cover/proposals/kaberadio_spotify_cover_proposal_gen_04_pop_trio.png)のテイストを引き継ぎました。
 
