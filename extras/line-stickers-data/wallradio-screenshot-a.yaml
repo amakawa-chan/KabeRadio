@@ -1,0 +1,49 @@
+schema_version: 1
+source:
+  type: creators-market-screenshot
+  captured_at: "2026-09-27"
+  mapping_status: presumed-upload-order
+  presumed_set: "壁ラジ！スタンプ vol.1"
+  note: "ユーザー提供スクリーンショット1枚目。Vol.1/Vol.2対応はアップロード順から仮置き。"
+sticker_count: 40
+stickers:
+  - {id: "01", text: "頭いたい…", confidence: high}
+  - {id: "02", text: "腰やった…", confidence: high}
+  - {id: "03", text: "肩こりつらい", confidence: high}
+  - {id: "04", text: "目がしょぼしょぼ", confidence: high}
+  - {id: "05", text: "お腹いたい…", confidence: high}
+  - {id: "06", text: "首がバキバキ", confidence: high}
+  - {id: "07", text: "寝不足です", confidence: high}
+  - {id: "08", text: "鼻がむずむず", confidence: high}
+  - {id: "09", text: "のどいたい", confidence: high}
+  - {id: "10", text: "なんかだるい", confidence: high}
+  - {id: "11", text: "今日は低空飛行", confidence: high}
+  - {id: "12", text: "今日は休みます", confidence: high}
+  - {id: "13", text: "電池切れ", confidence: high}
+  - {id: "14", text: "ちょっと横になる", confidence: high}
+  - {id: "15", text: "ひと休み", confidence: high}
+  - {id: "16", text: "返信ゆっくりです", confidence: high}
+  - {id: "17", text: "無理しないでね", confidence: high}
+  - {id: "18", text: "お大事に", confidence: high}
+  - {id: "19", text: "今日は早く寝る", confidence: high}
+  - {id: "20", text: "残業デス", confidence: high}
+  - {id: "21", text: "だいぶ元気", confidence: high}
+  - {id: "22", text: "ぼちぼちいこう", confidence: high}
+  - {id: "23", text: "ありがとう", confidence: high}
+  - {id: "24", text: "了解", confidence: high}
+  - {id: "25", text: "おつかれさま", confidence: high}
+  - {id: "26", text: "おはよう", confidence: high}
+  - {id: "27", text: "おやすみ", confidence: high}
+  - {id: "28", text: "よろしくね", confidence: high}
+  - {id: "29", text: "ごめんね", confidence: high}
+  - {id: "30", text: "OK", confidence: high}
+  - {id: "31", text: "助かります", confidence: high}
+  - {id: "32", text: "ちょっと待って", confidence: high}
+  - {id: "33", text: "帰りたい…", confidence: high}
+  - {id: "34", text: "今向かってます", confidence: high}
+  - {id: "35", text: "またね", confidence: high}
+  - {id: "36", text: "やだやだやだー！", confidence: high}
+  - {id: "37", text: "大丈夫？", confidence: high}
+  - {id: "38", text: "うれしい", confidence: high}
+  - {id: "39", text: "まだ仕事中", confidence: high}
+  - {id: "40", text: "本日終了", confidence: high}
