@@ -32,6 +32,12 @@ Xの左下はプロフィールアイコンと重なることを想定して余�
 
 ## YouTubeバナー
 
+### テレビで全身・スマホで横長バナーの2人版
+
+![スマホ表示の目安](youtube_fullbody_mobile_preview.png)
+
+[アップロード用2560×1440 PNG](youtube_fullbody_2560x1440.png) / [原本・案・プロンプト](youtube-fullbody.md)
+
 ### モチーフを控えめにした2人版
 
 ![スマホ表示の目安](youtube_duo_small_motifs_mobile_preview.png)
