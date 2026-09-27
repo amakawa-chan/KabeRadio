@@ -4,6 +4,8 @@
 
 ## ポップな3人イラスト案
 
+このテイストから [モブ子アイコン・YouTubeバナー](../pop-branding/README.md)へ展開しました。[このカバーを含むプロンプト全文](../pop-branding/prompts.md)も保存しています。
+
 [![黄色い背景と大きなロゴ、デフォルメした3人のカバー案](proposals/kaberadio_spotify_cover_proposal_gen_04_pop_trio.png)](proposals/kaberadio_spotify_cover_proposal_gen_04_pop_trio.png)
 
 黄色の背景、赤い大きな「壁ラジ」、太線のキャラクターイラストで構成したシンプルな案です。左からモブ子・あまかわちゃん・モブ美。小さなサムネイルでの見やすさを意識し、背景の収録室やサブタイトルを省いています。

@@ -1,0 +1,30 @@
+# 壁ラジ — Popアイコン・YouTubeバナー
+
+黄色の背景、赤いロゴ、濃緑の太い輪郭線を使った、ポップな壁ラジのプロフィール素材です。[3人のカバー案](../spotify-cover/proposals/kaberadio_spotify_cover_proposal_gen_04_pop_trio.png)のテイストを引き継ぎました。
+
+## モブ子アイコン
+
+![モブ子のポップなアイコン](mobuko_icon_800.png)
+
+[設定用PNG・800×800](mobuko_icon_800.png) / [生成原本](mobuko_icon_original.png)
+
+## YouTubeバナー
+
+![YouTube用バナー](youtube_banner_2560x1440.png)
+
+[アップロード用PNG・2560×1440](youtube_banner_2560x1440.png) / [生成原本](youtube_banner_original.png)
+
+中央の1544×422ピクセルを切り出した、スマホ表示範囲の目安：
+
+![スマホ表示範囲のプレビュー](youtube_banner_mobile_preview.png)
+
+アップロードにはプレビューではなく2560×1440版を使用してください。[YouTube公式の推奨サイズと表示範囲](https://support.google.com/youtube/answer/10456525?hl=ja)に合わせ、顔とロゴを中央へ収めています。実際のチャンネルへの設定は行っていません。
+
+## プロンプト・制作記録
+
+[カバー・アイコン・バナーのプロンプト全文](prompts.md)を保存しています。内蔵画像生成ツールで制作し、設定用画像は生成原本を指定寸法へリサイズしました。
+
+[バナー初回案](youtube_banner_draft.png)も保存しています。初回案は中央の絵が大きかったため、表示範囲に収まるよう画像生成で縮小しました。
+
+[Galleryに戻る](../README.md)
+

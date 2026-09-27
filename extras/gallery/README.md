@@ -22,6 +22,8 @@
 
 ### Xプロフィール用アイコン・バナー
 
+新しいポップなテイストの [モブ子アイコン・YouTubeバナー](pop-branding/README.md)も保存しています。[生成プロンプト全文](pop-branding/prompts.md)も参照できます。
+
 泡ひげモブ子のアイコンと、秋の壁ラジのバナー。設定用PNGと高解像度の生成原本を保存しています。
 
 [![秋の壁ラジバナー](x-profile/kaberaji_banner_1500x500.png)](x-profile/README.md)
