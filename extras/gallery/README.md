@@ -12,6 +12,14 @@
 
 [全16枚を見る →](autumn-season/README.md) / [MVをYouTubeで見る](https://youtu.be/xJwN_KheKJQ)
 
+### Spotifyカバーアート
+
+初期ジャケットと、現在のキャラクター素材を参照して作り直したカバーアートを保存しています。
+
+[![壁ラジ Spotifyカバーアート](spotify-cover/kaberadio_spotify_cover_current.png)](spotify-cover/README.md)
+
+[初期案と現行カバーを見る →](spotify-cover/README.md)
+
 ### Xプロフィール用アイコン・バナー
 
 泡ひげモブ子のアイコンと、秋の壁ラジのバナー。設定用PNGと高解像度の生成原本を保存しています。
