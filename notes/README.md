@@ -9,6 +9,7 @@ GitHub PagesをRepository rootから公開している場合、以下の公開�
 - [モブ子の一言をnoteに載せたかっただけなのに、ジェネレーターが生えた](https://amakawa-chan.github.io/KabeRadio/notes/note-card-generator-grew/)
 - [本編が一番過疎なので、壁ラジを深夜ラジオへ戻すことにした](https://amakawa-chan.github.io/KabeRadio/notes/late-night-radio-reframe/)
 - [シャワーの最後だけ固定してしまえばいい](https://amakawa-chan.github.io/KabeRadio/notes/shower-cooldown-routine/)
+- [異常行動って、どこから異常なんだろう](https://amakawa-chan.github.io/KabeRadio/notes/influenza-abnormal-behavior/)
 
 各公開ページには「本文をコピー」ボタンがあり、noteへの貼り付け用にも使えます。
 
