@@ -1,0 +1,49 @@
+schema_version: 1
+source:
+  type: creators-market-screenshot
+  captured_at: "2026-09-27"
+  mapping_status: presumed-upload-order
+  presumed_set: "壁ラジ！スタンプ vol.2"
+  note: "ユーザー提供スクリーンショット2枚目。Vol.1/Vol.2対応はアップロード順から仮置き。低解像度箇所は推測せず要確認。"
+sticker_count: 40
+stickers:
+  - {id: "01", text: "壁ラジ！", confidence: high}
+  - {id: "02", text: "始めます", confidence: high}
+  - {id: "03", text: "どうぞ", confidence: high}
+  - {id: "04", text: "待ちます", confidence: high}
+  - {id: "05", text: "ちょっと待って", confidence: high}
+  - {id: "06", text: "できましたね", confidence: high}
+  - {id: "07", text: "早いですね", confidence: high}
+  - {id: "08", text: "気をつけます", confidence: high}
+  - {id: "09", text: "ゆっくり休んでください", confidence: high}
+  - {id: "10", text: null, confidence: low, note: "お疲れ〜系に見えるが要再確認"}
+  - {id: "11", text: null, confidence: low, note: "縦組み文言。要再確認"}
+  - {id: "12", text: "しょうがないですね", confidence: high}
+  - {id: "13", text: "難しいですね", confidence: high}
+  - {id: "14", text: "半分はそう", confidence: high}
+  - {id: "15", text: null, confidence: low, note: "タブレットを持つ緑髪キャラ。要再確認"}
+  - {id: "16", text: "でも楽しみではある", confidence: medium}
+  - {id: "17", text: null, confidence: low, note: "2人構図。要再確認"}
+  - {id: "18", text: null, confidence: low, note: "緑髪キャラ。要再確認"}
+  - {id: "19", text: "それはやる", confidence: high}
+  - {id: "20", text: null, confidence: low, note: "水晶玉風小物の2人構図。要再確認"}
+  - {id: "21", text: "やるんですね", confidence: high}
+  - {id: "22", text: "ここ気になる", confidence: high}
+  - {id: "23", text: null, confidence: low, note: "紙を持つ金髪キャラ。要再確認"}
+  - {id: "24", text: null, confidence: low, note: "緑髪キャラ。『〜後回しで』系に見える。要再確認"}
+  - {id: "25", text: "今後の参考に", confidence: high}
+  - {id: "26", text: null, confidence: low, note: "赤髪キャラ。『全部〜整理してる？』系に見える。要再確認"}
+  - {id: "27", text: null, confidence: low, note: "赤髪キャラ。要再確認"}
+  - {id: "28", text: "全員いますね", confidence: medium}
+  - {id: "29", text: "今何時です？", confidence: high}
+  - {id: "30", text: "今さらです？", confidence: high}
+  - {id: "31", text: null, confidence: low, note: "金髪キャラ。要再確認"}
+  - {id: "32", text: null, confidence: low, note: "緑髪＋金髪の2人構図。要再確認"}
+  - {id: "33", text: "ほら始まった", confidence: high}
+  - {id: "34", text: "あ、じゃあそれで", confidence: medium}
+  - {id: "35", text: "そういうの嫌いじゃない", confidence: medium}
+  - {id: "36", text: null, confidence: low, note: "緑髪キャラ。『便利で〜』系に見える。要再確認"}
+  - {id: "37", text: "聞きたくない", confidence: high}
+  - {id: "38", text: null, confidence: low, note: "赤髪キャラ。要再確認"}
+  - {id: "39", text: "一回休憩しよっか", confidence: high}
+  - {id: "40", text: "巻き込むな！", confidence: high}
