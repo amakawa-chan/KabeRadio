@@ -51,5 +51,7 @@ GitHub上の正式Episodeは原則`status: ready`で保存し、M6ローカル�
 - [なんか今日、違わない？](nanka-kyou-chigawanai/)
 - [インフルの異常行動って、どこから異常？](influenza-abnormal-behavior/)
 - [それ本人に聞かれます](sore-honnin-ni-kikaremasu/)
+- [シャツとパンツ、1日3セットいるよね？](three-sets-a-day/)
+- [おっさんとセンベロ行く服が一番むずい](senbero-outfit-is-hard/)
 
 キャラクター主体回やアフタートークも、同じEpisode Package契約で記録します。
