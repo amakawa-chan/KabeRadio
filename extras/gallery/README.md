@@ -12,13 +12,13 @@
 
 [全16枚を見る →](autumn-season/README.md) / [MVをYouTubeで見る](https://youtu.be/xJwN_KheKJQ)
 
-### Spotifyカバーアート
+### Spotifyカバーアート案
 
-初期ジャケットと、現在のキャラクター素材を参照して作り直したカバーアートを保存しています。
+3人が正面を向いた新案と、これまでの未採用案を保存しています。
 
-[![壁ラジ Spotifyカバーアート](spotify-cover/kaberadio_spotify_cover_current.png)](spotify-cover/README.md)
+[![3人正面向きの壁ラジカバー案](spotify-cover/proposals/kaberadio_spotify_cover_proposal_gen_03_three_hosts_front.png)](spotify-cover/README.md)
 
-[初期案と現行カバーを見る →](spotify-cover/README.md)
+[カバー案を見る →](spotify-cover/README.md)
 
 ### Xプロフィール用アイコン・バナー
 

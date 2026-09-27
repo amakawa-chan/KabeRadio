@@ -1,21 +1,29 @@
-# 壁ラジ — Spotifyカバーアート
+# 壁ラジ — Spotifyカバーアート案
 
-壁ラジのSpotify風ジャケット画像を、初期案と現行素材に合わせた再制作版の両方保存しています。
+壁ラジのジャケットデザイン案を、採用前の制作記録として保存しています。最新の3人版を含め、ここに掲載したものはすべて提案段階です。
 
-## 現行カバー
+## 現行キャラクター素材を使った案
 
-![現行キャラクター素材に合わせた壁ラジのカバーアート](kaberadio_spotify_cover_current.png)
+|案 — 2人のポートレート|案 — 2人の収録室|案 — 3人正面向き|
+|---|---|---|
+|[![2人のポートレート案](proposals/kaberadio_spotify_cover_proposal_gen_01_two_host_portrait.png)](proposals/kaberadio_spotify_cover_proposal_gen_01_two_host_portrait.png)|[![2人の収録室案](proposals/kaberadio_spotify_cover_proposal_gen_02_shared_studio.png)](proposals/kaberadio_spotify_cover_proposal_gen_02_shared_studio.png)|[![3人が並んで正面を向く案](proposals/kaberadio_spotify_cover_proposal_gen_03_three_hosts_front.png)](proposals/kaberadio_spotify_cover_proposal_gen_03_three_hosts_front.png)|
 
-[現行カバー PNG・1254×1254](kaberadio_spotify_cover_current.png)
+3人正面向き案では、モブ子・あまかわちゃん・モブ美を一列に配置しました。キャラクター素材はそれぞれ現在の公式画像を参照しています。
 
-あまかわちゃんとモブ子の現在のキャラクター素材を参照し、同じ収録室で会話する一場面として再制作しました。二人を別々のポートレートのように並べず、視線・照明・机のパースを一つの画面につないでいます。生成には画像生成を使用しています。
+## iCloudに保存されていた初期案
 
-## 初期案
+|案01 — ネオンスタジオ|案02 — 暖色のスタジオ|案03 — 吹き出しロゴ|
+|---|---|---|
+|[![案01](proposals/kaberadio_spotify_cover_proposal_icloud_01_initial.png)](proposals/kaberadio_spotify_cover_proposal_icloud_01_initial.png)|[![案02](proposals/kaberadio_spotify_cover_proposal_icloud_02_warm_studio.png)](proposals/kaberadio_spotify_cover_proposal_icloud_02_warm_studio.png)|[![案03](proposals/kaberadio_spotify_cover_proposal_icloud_03_bubble_logo.png)](proposals/kaberadio_spotify_cover_proposal_icloud_03_bubble_logo.png)|
 
-![iCloudに保存されていた壁ラジの初期カバー案](kaberadio_spotify_cover_initial.png)
+|案04 — 吹き出しロゴ別案|案05 — 縦組みタイトル|案06 — 夜のネオンスタジオ|
+|---|---|---|
+|[![案04](proposals/kaberadio_spotify_cover_proposal_icloud_04_bubble_logo_variant.png)](proposals/kaberadio_spotify_cover_proposal_icloud_04_bubble_logo_variant.png)|[![案05](proposals/kaberadio_spotify_cover_proposal_icloud_05_vertical_title.png)](proposals/kaberadio_spotify_cover_proposal_icloud_05_vertical_title.png)|[![案06](proposals/kaberadio_spotify_cover_proposal_icloud_06_neon_studio.png)](proposals/kaberadio_spotify_cover_proposal_icloud_06_neon_studio.png)|
 
-[初期案 PNG・1254×1254](kaberadio_spotify_cover_initial.png)
+|案07 — クローズアップ|案08 — 台本を持つ2人|案09 — マイク前の2人|
+|---|---|---|
+|[![案07](proposals/kaberadio_spotify_cover_proposal_icloud_07_bubble_closeup.png)](proposals/kaberadio_spotify_cover_proposal_icloud_07_bubble_closeup.png)|[![案08](proposals/kaberadio_spotify_cover_proposal_icloud_08_script_studio.png)](proposals/kaberadio_spotify_cover_proposal_icloud_08_script_studio.png)|[![案09](proposals/kaberadio_spotify_cover_proposal_icloud_09_host_studio.png)](proposals/kaberadio_spotify_cover_proposal_icloud_09_host_studio.png)|
 
-iCloud Driveの `kaberadi` フォルダに保存されていた初期ジャケットです。制作過程の記録として、画像をそのまま保管しています。
+初期案はiCloud Driveの `kaberadi` フォルダから保管しました。別構図を含め、過去の案も制作の記録として残しています。
 
 [Galleryに戻る](../README.md)
