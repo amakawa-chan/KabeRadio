@@ -22,6 +22,16 @@ Keep the design extremely economical: three faces, one huge title, a single tiny
 Edit the supplied YouTube banner. Preserve the exact Mobuko illustration, Japanese 壁ラジ logo, speech bubble, colors and overall design. Scale the ENTIRE central illustration-and-logo group uniformly to 62 percent of its current size, centered both vertically and horizontally in the same full 16:9 yellow canvas. The group currently occupies about 56% of width and 40% of height; the final group must occupy only about 35% of canvas width and 25% of height. All the other space is continuous plain yellow matching the existing background. At 1672x941 the complete group should fit inside x=535..1137 and y=350..591. Do not enlarge or reframe the canvas around the group. Preserve the large empty top and bottom areas. Do not add anything or change typography or character design. Output one full 16:9 banner, ideally 2560x1440, no guides.
 ```
 
+## Radio motif background revision
+
+参照画像：youtube_banner_2560x1440.png。内蔵画像生成ツールで外側のラジオモチーフを追加。出力原本はyoutube_banner_radio_pattern_original.png、設定用はyoutube_banner_radio_pattern_2560x1440.png。
+
+```text
+Edit the supplied full 16:9 YouTube banner. Preserve the existing small centered Mobuko portrait, speech bubble and exact Japanese 壁ラジ logo, with their current scale, position, colors and legibility. Do not enlarge or move the central branding: all of it must remain inside the centered 60%-wide, 29%-high mobile safe region. Keep a quiet yellow halo around this central group.
+Enrich the currently empty surrounding yellow canvas with a simple cheerful POP radio-themed pattern, matching the chunky dark teal outlines and coral-red, cream and yellow palette. Scatter about 14-18 generously spaced flat doodle icons across the upper and lower outer regions: retro tabletop radios, microphones, headphones, speech bubbles, music notes, simple sound waves, circles, triangles and small stars. Mix medium-sized radio motifs with small geometric accents. Put a modest radio or headphone motif near each far left/right side at mid-height so the desktop crop also has interest. The pattern should feel intentionally balanced across the full TV view, with plenty of breathing room and no busy texture. Some icons may be partially cropped at the outer canvas edges. Central mobile crop remains clear and readable; no doodles over the face, beret or title. All motifs share the same flat cartoon finish, thick dark teal strokes, limited coral/cream fills and a few lower-contrast golden-yellow outlines. No new text or numbers, no additional characters, no detailed scenery, no gradients, no 3D, no frame, no crop guides. Whole canvas 16:9, ideally 2560x1440. The result should feel complete on TV and desktop and preserve the clean original central composition on phones.
+```
+
+
 ## Mobuko icon
 
 ```text

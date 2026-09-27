@@ -10,13 +10,17 @@
 
 ## YouTubeバナー
 
-![YouTube用バナー](youtube_banner_2560x1440.png)
+![YouTube用バナー](youtube_banner_radio_pattern_2560x1440.png)
 
-[アップロード用PNG・2560×1440](youtube_banner_2560x1440.png) / [生成原本](youtube_banner_original.png)
+[アップロード用PNG・2560×1440](youtube_banner_radio_pattern_2560x1440.png) / [生成原本](youtube_banner_radio_pattern_original.png)
+
+テレビ表示ではラジオ・マイク・ヘッドホン・吹き出しなどが画面全体を彩ります。PC表示では左右のラジオとマイクが見え、スマホ表示では中央のモブ子とロゴを中心に見せます。
+
+![PC表示範囲のプレビュー](youtube_banner_radio_pattern_desktop_preview.png)
 
 中央の1544×422ピクセルを切り出した、スマホ表示範囲の目安：
 
-![スマホ表示範囲のプレビュー](youtube_banner_mobile_preview.png)
+![スマホ表示範囲のプレビュー](youtube_banner_radio_pattern_mobile_preview.png)
 
 アップロードにはプレビューではなく2560×1440版を使用してください。[YouTube公式の推奨サイズと表示範囲](https://support.google.com/youtube/answer/10456525?hl=ja)に合わせ、顔とロゴを中央へ収めています。実際のチャンネルへの設定は行っていません。
 
@@ -25,6 +29,8 @@
 [カバー・アイコン・バナーのプロンプト全文](prompts.md)を保存しています。内蔵画像生成ツールで制作し、設定用画像は生成原本を指定寸法へリサイズしました。
 
 [バナー初回案](youtube_banner_draft.png)も保存しています。初回案は中央の絵が大きかったため、表示範囲に収まるよう画像生成で縮小しました。
+
+[黄色い背景だけの旧版](youtube_banner_2560x1440.png) / [旧版の生成原本](youtube_banner_original.png)も制作案として残しています。
 
 [Galleryに戻る](../README.md)
 
