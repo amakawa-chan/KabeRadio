@@ -14,9 +14,9 @@
 
 ### Spotifyカバーアート案
 
-3人が正面を向いた新案と、これまでの未採用案を保存しています。
+ポップな3人イラストの新案と、これまでの未採用案を保存しています。
 
-[![3人正面向きの壁ラジカバー案](spotify-cover/proposals/kaberadio_spotify_cover_proposal_gen_03_three_hosts_front.png)](spotify-cover/README.md)
+[![ポップな3人イラストの壁ラジカバー案](spotify-cover/proposals/kaberadio_spotify_cover_proposal_gen_04_pop_trio.png)](spotify-cover/README.md)
 
 [カバー案を見る →](spotify-cover/README.md)
 
