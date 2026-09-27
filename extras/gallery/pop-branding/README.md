@@ -32,6 +32,12 @@ Xの左下はプロフィールアイコンと重なることを想定して余�
 
 ## YouTubeバナー
 
+### モチーフを控えめにした2人版
+
+![スマホ表示の目安](youtube_duo_small_motifs_mobile_preview.png)
+
+[アップロード用2560×1440 PNG](youtube_duo_small_motifs_2560x1440.png) / [原本・プロンプト](youtube-duo-small-motifs.md)
+
 ### 手の動き・装飾を追加した2人版
 
 ![スマホ表示の目安](youtube_duo_motion_mobile_preview.png)
