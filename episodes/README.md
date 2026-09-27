@@ -49,6 +49,7 @@ GitHub上の正式Episodeは原則`status: ready`で保存し、M6ローカル�
 - [この人なに？](kono-hito-nani/)
 - [こうして深夜の壁打ちは終わらない](koushite-shinya-no-kabeuchi-wa-owaranai/)
 - [なんか今日、違わない？](nanka-kyou-chigawanai/)
+- [インフルの異常行動って、どこから異常？](influenza-abnormal-behavior/)
 - [それ本人に聞かれます](sore-honnin-ni-kikaremasu/)
 
 キャラクター主体回やアフタートークも、同じEpisode Package契約で記録します。
