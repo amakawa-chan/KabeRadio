@@ -12,6 +12,8 @@ GitHub PagesをRepository rootから公開している場合、以下の公開�
 - [本編が一番過疎なので、壁ラジを深夜ラジオへ戻すことにした](https://amakawa-chan.github.io/KabeRadio/notes/late-night-radio-reframe/)
 - [シャワーの最後だけ固定してしまえばいい](https://amakawa-chan.github.io/KabeRadio/notes/shower-cooldown-routine/)
 - [異常行動って、どこから異常なんだろう](https://amakawa-chan.github.io/KabeRadio/notes/influenza-abnormal-behavior/)
+- [着替えは、清潔のためだけじゃなかった](https://amakawa-chan.github.io/KabeRadio/notes/three-sets-a-day/)
+- [オシャレじゃなくて、ちゃんとしていたい](https://amakawa-chan.github.io/KabeRadio/notes/senbero-outfit-is-hard/)
 
 各公開ページには「本文をコピー」ボタンがあり、noteへの貼り付け用にも使えます。
 
