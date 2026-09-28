@@ -1,0 +1,707 @@
+{
+  "schema_version": 1,
+  "title": "壁ラジPOP Vol.1",
+  "issue": "https://github.com/amakawa-chan/KabeRadio/issues/28",
+  "status": "design-proposal-awaiting-review",
+  "reference": "../../gallery/spotify-cover/proposals/kaberadio_spotify_cover_proposal_gen_04_pop_trio.png",
+  "spec": {
+    "count": 40,
+    "width": 370,
+    "height": 320,
+    "format": "PNG",
+    "transparent": true,
+    "max_bytes_each": 1000000
+  },
+  "stickers": [
+    {
+      "id": "01",
+      "text": "いってきます",
+      "original_text": "いってきます",
+      "category": "daily-contact",
+      "usage": "外出の挨拶",
+      "characters": [
+        "モブ子"
+      ],
+      "composition": "肩掛け鞄で手を振り、一歩踏み出す",
+      "tone": "元気",
+      "notes": "確認済みの既存文言に直接重複なし。B未確定13件との重複は未判定。",
+      "status": "proposed",
+      "output": "output/01.png",
+      "generation_prompt": "Use approved KabeRadio pop illustration reference. Transparent background, no yellow rectangle. Thick dark teal outlines, coral/cream/sunflower accents, flat simplified cartoon, large expressive faces and hands. Mobuko: blonde waves, brown beret, green eyes, freckles, cream sweater. Amakawachan: dark green-black bob, round glasses, gray-green sleepy eyes, tiny fangs, piercings, black collared shirt. Mobumi: auburn loose curls, gray eyes, freckles, cream blouse. Only specified characters. Compact near-square sticker, no scenery, at most one small prop, thin white outer keyline for dark chat backgrounds. Reserve upper 30% for exact large bold Japanese caption, max two lines, never overlap faces. At 370x320 keep all content at least 10px from edges. No logo or additional text. Characters: モブ子. Pose/composition: 肩掛け鞄で手を振り、一歩踏み出す. Mood: 元気. Exact text: 「いってきます」."
+    },
+    {
+      "id": "02",
+      "text": "ただいま",
+      "original_text": "ただいま",
+      "category": "daily-contact",
+      "usage": "帰宅報告",
+      "characters": [
+        "あまかわちゃん"
+      ],
+      "composition": "鍵を持ち、肩の力を抜いて片手を上げる",
+      "tone": "ほっとする",
+      "notes": "確認済みの既存文言に直接重複なし。B未確定13件との重複は未判定。",
+      "status": "proposed",
+      "output": "output/02.png",
+      "generation_prompt": "Use approved KabeRadio pop illustration reference. Transparent background, no yellow rectangle. Thick dark teal outlines, coral/cream/sunflower accents, flat simplified cartoon, large expressive faces and hands. Mobuko: blonde waves, brown beret, green eyes, freckles, cream sweater. Amakawachan: dark green-black bob, round glasses, gray-green sleepy eyes, tiny fangs, piercings, black collared shirt. Mobumi: auburn loose curls, gray eyes, freckles, cream blouse. Only specified characters. Compact near-square sticker, no scenery, at most one small prop, thin white outer keyline for dark chat backgrounds. Reserve upper 30% for exact large bold Japanese caption, max two lines, never overlap faces. At 370x320 keep all content at least 10px from edges. No logo or additional text. Characters: あまかわちゃん. Pose/composition: 鍵を持ち、肩の力を抜いて片手を上げる. Mood: ほっとする. Exact text: 「ただいま」."
+    },
+    {
+      "id": "03",
+      "text": "おかえり",
+      "original_text": "おかえり",
+      "category": "daily-contact",
+      "usage": "帰宅した相手を迎える",
+      "characters": [
+        "モブ美"
+      ],
+      "composition": "胸上で両手を広げる",
+      "tone": "やさしい",
+      "notes": "確認済みの既存文言に直接重複なし。B未確定13件との重複は未判定。",
+      "status": "proposed",
+      "output": "output/03.png",
+      "generation_prompt": "Use approved KabeRadio pop illustration reference. Transparent background, no yellow rectangle. Thick dark teal outlines, coral/cream/sunflower accents, flat simplified cartoon, large expressive faces and hands. Mobuko: blonde waves, brown beret, green eyes, freckles, cream sweater. Amakawachan: dark green-black bob, round glasses, gray-green sleepy eyes, tiny fangs, piercings, black collared shirt. Mobumi: auburn loose curls, gray eyes, freckles, cream blouse. Only specified characters. Compact near-square sticker, no scenery, at most one small prop, thin white outer keyline for dark chat backgrounds. Reserve upper 30% for exact large bold Japanese caption, max two lines, never overlap faces. At 370x320 keep all content at least 10px from edges. No logo or additional text. Characters: モブ美. Pose/composition: 胸上で両手を広げる. Mood: やさしい. Exact text: 「おかえり」."
+    },
+    {
+      "id": "04",
+      "text": "いってらっしゃい",
+      "original_text": "いってらっしゃい",
+      "category": "daily-contact",
+      "usage": "出発する相手を送る",
+      "characters": [
+        "モブ子"
+      ],
+      "composition": "少し身を乗り出し大きく手を振る",
+      "tone": "明るい",
+      "notes": "確認済みの既存文言に直接重複なし。B未確定13件との重複は未判定。",
+      "status": "proposed",
+      "output": "output/04.png",
+      "generation_prompt": "Use approved KabeRadio pop illustration reference. Transparent background, no yellow rectangle. Thick dark teal outlines, coral/cream/sunflower accents, flat simplified cartoon, large expressive faces and hands. Mobuko: blonde waves, brown beret, green eyes, freckles, cream sweater. Amakawachan: dark green-black bob, round glasses, gray-green sleepy eyes, tiny fangs, piercings, black collared shirt. Mobumi: auburn loose curls, gray eyes, freckles, cream blouse. Only specified characters. Compact near-square sticker, no scenery, at most one small prop, thin white outer keyline for dark chat backgrounds. Reserve upper 30% for exact large bold Japanese caption, max two lines, never overlap faces. At 370x320 keep all content at least 10px from edges. No logo or additional text. Characters: モブ子. Pose/composition: 少し身を乗り出し大きく手を振る. Mood: 明るい. Exact text: 「いってらっしゃい」."
+    },
+    {
+      "id": "05",
+      "text": "こんにちは",
+      "original_text": "こんにちは",
+      "category": "daily-contact",
+      "usage": "昼の挨拶",
+      "characters": [
+        "モブ美"
+      ],
+      "composition": "顔の横で小さく手を振る",
+      "tone": "親しみ",
+      "notes": "確認済みの既存文言に直接重複なし。B未確定13件との重複は未判定。",
+      "status": "proposed",
+      "output": "output/05.png",
+      "generation_prompt": "Use approved KabeRadio pop illustration reference. Transparent background, no yellow rectangle. Thick dark teal outlines, coral/cream/sunflower accents, flat simplified cartoon, large expressive faces and hands. Mobuko: blonde waves, brown beret, green eyes, freckles, cream sweater. Amakawachan: dark green-black bob, round glasses, gray-green sleepy eyes, tiny fangs, piercings, black collared shirt. Mobumi: auburn loose curls, gray eyes, freckles, cream blouse. Only specified characters. Compact near-square sticker, no scenery, at most one small prop, thin white outer keyline for dark chat backgrounds. Reserve upper 30% for exact large bold Japanese caption, max two lines, never overlap faces. At 370x320 keep all content at least 10px from edges. No logo or additional text. Characters: モブ美. Pose/composition: 顔の横で小さく手を振る. Mood: 親しみ. Exact text: 「こんにちは」."
+    },
+    {
+      "id": "06",
+      "text": "こんばんは",
+      "original_text": "こんばんは",
+      "category": "daily-contact",
+      "usage": "夜の挨拶",
+      "characters": [
+        "あまかわちゃん"
+      ],
+      "composition": "頬杖と控えめな笑顔、小さな月",
+      "tone": "穏やか",
+      "notes": "確認済みの既存文言に直接重複なし。B未確定13件との重複は未判定。",
+      "status": "proposed",
+      "output": "output/06.png",
+      "generation_prompt": "Use approved KabeRadio pop illustration reference. Transparent background, no yellow rectangle. Thick dark teal outlines, coral/cream/sunflower accents, flat simplified cartoon, large expressive faces and hands. Mobuko: blonde waves, brown beret, green eyes, freckles, cream sweater. Amakawachan: dark green-black bob, round glasses, gray-green sleepy eyes, tiny fangs, piercings, black collared shirt. Mobumi: auburn loose curls, gray eyes, freckles, cream blouse. Only specified characters. Compact near-square sticker, no scenery, at most one small prop, thin white outer keyline for dark chat backgrounds. Reserve upper 30% for exact large bold Japanese caption, max two lines, never overlap faces. At 370x320 keep all content at least 10px from edges. No logo or additional text. Characters: あまかわちゃん. Pose/composition: 頬杖と控えめな笑顔、小さな月. Mood: 穏やか. Exact text: 「こんばんは」."
+    },
+    {
+      "id": "07",
+      "text": "あとで見るね",
+      "original_text": "あとで見るね",
+      "category": "daily-contact",
+      "usage": "今すぐ内容を確認できない",
+      "characters": [
+        "あまかわちゃん"
+      ],
+      "composition": "伏せたスマホを脇に持ち指を一本上げる",
+      "tone": "気軽",
+      "notes": "確認済みの既存文言に直接重複なし。B未確定13件との重複は未判定。",
+      "status": "proposed",
+      "output": "output/07.png",
+      "generation_prompt": "Use approved KabeRadio pop illustration reference. Transparent background, no yellow rectangle. Thick dark teal outlines, coral/cream/sunflower accents, flat simplified cartoon, large expressive faces and hands. Mobuko: blonde waves, brown beret, green eyes, freckles, cream sweater. Amakawachan: dark green-black bob, round glasses, gray-green sleepy eyes, tiny fangs, piercings, black collared shirt. Mobumi: auburn loose curls, gray eyes, freckles, cream blouse. Only specified characters. Compact near-square sticker, no scenery, at most one small prop, thin white outer keyline for dark chat backgrounds. Reserve upper 30% for exact large bold Japanese caption, max two lines, never overlap faces. At 370x320 keep all content at least 10px from edges. No logo or additional text. Characters: あまかわちゃん. Pose/composition: 伏せたスマホを脇に持ち指を一本上げる. Mood: 気軽. Exact text: 「あとで見るね」."
+    },
+    {
+      "id": "08",
+      "text": "またあとで",
+      "original_text": "またあとで",
+      "category": "daily-contact",
+      "usage": "一時的に会話を離れる",
+      "characters": [
+        "モブ子"
+      ],
+      "composition": "振り返りながら片手を振る",
+      "tone": "軽快",
+      "notes": "A35「またね」と近い。一時離席の意味をポーズで示す",
+      "status": "proposed",
+      "output": "output/08.png",
+      "generation_prompt": "Use approved KabeRadio pop illustration reference. Transparent background, no yellow rectangle. Thick dark teal outlines, coral/cream/sunflower accents, flat simplified cartoon, large expressive faces and hands. Mobuko: blonde waves, brown beret, green eyes, freckles, cream sweater. Amakawachan: dark green-black bob, round glasses, gray-green sleepy eyes, tiny fangs, piercings, black collared shirt. Mobumi: auburn loose curls, gray eyes, freckles, cream blouse. Only specified characters. Compact near-square sticker, no scenery, at most one small prop, thin white outer keyline for dark chat backgrounds. Reserve upper 30% for exact large bold Japanese caption, max two lines, never overlap faces. At 370x320 keep all content at least 10px from edges. No logo or additional text. Characters: モブ子. Pose/composition: 振り返りながら片手を振る. Mood: 軽快. Exact text: 「またあとで」."
+    },
+    {
+      "id": "09",
+      "text": "また連絡するね",
+      "original_text": "また連絡するね",
+      "category": "daily-contact",
+      "usage": "次の連絡を約束",
+      "characters": [
+        "モブ美"
+      ],
+      "composition": "スマホを胸元に持ちうなずく",
+      "tone": "丁寧",
+      "notes": "確認済みの既存文言に直接重複なし。B未確定13件との重複は未判定。",
+      "status": "proposed",
+      "output": "output/09.png",
+      "generation_prompt": "Use approved KabeRadio pop illustration reference. Transparent background, no yellow rectangle. Thick dark teal outlines, coral/cream/sunflower accents, flat simplified cartoon, large expressive faces and hands. Mobuko: blonde waves, brown beret, green eyes, freckles, cream sweater. Amakawachan: dark green-black bob, round glasses, gray-green sleepy eyes, tiny fangs, piercings, black collared shirt. Mobumi: auburn loose curls, gray eyes, freckles, cream blouse. Only specified characters. Compact near-square sticker, no scenery, at most one small prop, thin white outer keyline for dark chat backgrounds. Reserve upper 30% for exact large bold Japanese caption, max two lines, never overlap faces. At 370x320 keep all content at least 10px from edges. No logo or additional text. Characters: モブ美. Pose/composition: スマホを胸元に持ちうなずく. Mood: 丁寧. Exact text: 「また連絡するね」."
+    },
+    {
+      "id": "10",
+      "text": "着いたよ",
+      "original_text": "着いたよ",
+      "category": "daily-contact",
+      "usage": "待ち合わせ場所への到着",
+      "characters": [
+        "モブ子"
+      ],
+      "composition": "小さな位置ピンと顔、片手を上げる",
+      "tone": "元気",
+      "notes": "確認済みの既存文言に直接重複なし。B未確定13件との重複は未判定。",
+      "status": "proposed",
+      "output": "output/10.png",
+      "generation_prompt": "Use approved KabeRadio pop illustration reference. Transparent background, no yellow rectangle. Thick dark teal outlines, coral/cream/sunflower accents, flat simplified cartoon, large expressive faces and hands. Mobuko: blonde waves, brown beret, green eyes, freckles, cream sweater. Amakawachan: dark green-black bob, round glasses, gray-green sleepy eyes, tiny fangs, piercings, black collared shirt. Mobumi: auburn loose curls, gray eyes, freckles, cream blouse. Only specified characters. Compact near-square sticker, no scenery, at most one small prop, thin white outer keyline for dark chat backgrounds. Reserve upper 30% for exact large bold Japanese caption, max two lines, never overlap faces. At 370x320 keep all content at least 10px from edges. No logo or additional text. Characters: モブ子. Pose/composition: 小さな位置ピンと顔、片手を上げる. Mood: 元気. Exact text: 「着いたよ」."
+    },
+    {
+      "id": "11",
+      "text": "少し遅れる",
+      "original_text": "いま行く",
+      "category": "daily-contact",
+      "usage": "遅刻の事前連絡",
+      "characters": [
+        "あまかわちゃん"
+      ],
+      "composition": "小さな時計と申し訳なさそうな片手",
+      "tone": "申し訳ない",
+      "notes": "A34「今向かってます」と重なる旧案を遅刻連絡に変更",
+      "status": "proposed",
+      "output": "output/11.png",
+      "generation_prompt": "Use approved KabeRadio pop illustration reference. Transparent background, no yellow rectangle. Thick dark teal outlines, coral/cream/sunflower accents, flat simplified cartoon, large expressive faces and hands. Mobuko: blonde waves, brown beret, green eyes, freckles, cream sweater. Amakawachan: dark green-black bob, round glasses, gray-green sleepy eyes, tiny fangs, piercings, black collared shirt. Mobumi: auburn loose curls, gray eyes, freckles, cream blouse. Only specified characters. Compact near-square sticker, no scenery, at most one small prop, thin white outer keyline for dark chat backgrounds. Reserve upper 30% for exact large bold Japanese caption, max two lines, never overlap faces. At 370x320 keep all content at least 10px from edges. No logo or additional text. Characters: あまかわちゃん. Pose/composition: 小さな時計と申し訳なさそうな片手. Mood: 申し訳ない. Exact text: 「少し遅れる」."
+    },
+    {
+      "id": "12",
+      "text": "どこ？",
+      "original_text": "どこ？",
+      "category": "daily-contact",
+      "usage": "待ち合わせ相手を探す",
+      "characters": [
+        "モブ美"
+      ],
+      "composition": "額に手を当て左右を見る",
+      "tone": "きょろきょろ",
+      "notes": "確認済みの既存文言に直接重複なし。B未確定13件との重複は未判定。",
+      "status": "proposed",
+      "output": "output/12.png",
+      "generation_prompt": "Use approved KabeRadio pop illustration reference. Transparent background, no yellow rectangle. Thick dark teal outlines, coral/cream/sunflower accents, flat simplified cartoon, large expressive faces and hands. Mobuko: blonde waves, brown beret, green eyes, freckles, cream sweater. Amakawachan: dark green-black bob, round glasses, gray-green sleepy eyes, tiny fangs, piercings, black collared shirt. Mobumi: auburn loose curls, gray eyes, freckles, cream blouse. Only specified characters. Compact near-square sticker, no scenery, at most one small prop, thin white outer keyline for dark chat backgrounds. Reserve upper 30% for exact large bold Japanese caption, max two lines, never overlap faces. At 370x320 keep all content at least 10px from edges. No logo or additional text. Characters: モブ美. Pose/composition: 額に手を当て左右を見る. Mood: きょろきょろ. Exact text: 「どこ？」."
+    },
+    {
+      "id": "13",
+      "text": "がんばれー！",
+      "original_text": "がんばれー！",
+      "category": "encouragement",
+      "usage": "相手への応援",
+      "characters": [
+        "モブ子"
+      ],
+      "composition": "小さな旗を振り拳を握る",
+      "tone": "応援",
+      "notes": "確認済みの既存文言に直接重複なし。B未確定13件との重複は未判定。",
+      "status": "proposed",
+      "output": "output/13.png",
+      "generation_prompt": "Use approved KabeRadio pop illustration reference. Transparent background, no yellow rectangle. Thick dark teal outlines, coral/cream/sunflower accents, flat simplified cartoon, large expressive faces and hands. Mobuko: blonde waves, brown beret, green eyes, freckles, cream sweater. Amakawachan: dark green-black bob, round glasses, gray-green sleepy eyes, tiny fangs, piercings, black collared shirt. Mobumi: auburn loose curls, gray eyes, freckles, cream blouse. Only specified characters. Compact near-square sticker, no scenery, at most one small prop, thin white outer keyline for dark chat backgrounds. Reserve upper 30% for exact large bold Japanese caption, max two lines, never overlap faces. At 370x320 keep all content at least 10px from edges. No logo or additional text. Characters: モブ子. Pose/composition: 小さな旗を振り拳を握る. Mood: 応援. Exact text: 「がんばれー！」."
+    },
+    {
+      "id": "14",
+      "text": "がんばった！",
+      "original_text": "がんばった！",
+      "category": "encouragement",
+      "usage": "自分の達成を報告",
+      "characters": [
+        "あまかわちゃん"
+      ],
+      "composition": "小さくガッツポーズ、得意な笑顔",
+      "tone": "満足",
+      "notes": "確認済みの既存文言に直接重複なし。B未確定13件との重複は未判定。",
+      "status": "proposed",
+      "output": "output/14.png",
+      "generation_prompt": "Use approved KabeRadio pop illustration reference. Transparent background, no yellow rectangle. Thick dark teal outlines, coral/cream/sunflower accents, flat simplified cartoon, large expressive faces and hands. Mobuko: blonde waves, brown beret, green eyes, freckles, cream sweater. Amakawachan: dark green-black bob, round glasses, gray-green sleepy eyes, tiny fangs, piercings, black collared shirt. Mobumi: auburn loose curls, gray eyes, freckles, cream blouse. Only specified characters. Compact near-square sticker, no scenery, at most one small prop, thin white outer keyline for dark chat backgrounds. Reserve upper 30% for exact large bold Japanese caption, max two lines, never overlap faces. At 370x320 keep all content at least 10px from edges. No logo or additional text. Characters: あまかわちゃん. Pose/composition: 小さくガッツポーズ、得意な笑顔. Mood: 満足. Exact text: 「がんばった！」."
+    },
+    {
+      "id": "15",
+      "text": "おめでとう！",
+      "original_text": "おめでとう！",
+      "category": "encouragement",
+      "usage": "相手への祝福",
+      "characters": [
+        "モブ美"
+      ],
+      "composition": "両手で拍手、小さな紙吹雪",
+      "tone": "祝福",
+      "notes": "確認済みの既存文言に直接重複なし。B未確定13件との重複は未判定。",
+      "status": "proposed",
+      "output": "output/15.png",
+      "generation_prompt": "Use approved KabeRadio pop illustration reference. Transparent background, no yellow rectangle. Thick dark teal outlines, coral/cream/sunflower accents, flat simplified cartoon, large expressive faces and hands. Mobuko: blonde waves, brown beret, green eyes, freckles, cream sweater. Amakawachan: dark green-black bob, round glasses, gray-green sleepy eyes, tiny fangs, piercings, black collared shirt. Mobumi: auburn loose curls, gray eyes, freckles, cream blouse. Only specified characters. Compact near-square sticker, no scenery, at most one small prop, thin white outer keyline for dark chat backgrounds. Reserve upper 30% for exact large bold Japanese caption, max two lines, never overlap faces. At 370x320 keep all content at least 10px from edges. No logo or additional text. Characters: モブ美. Pose/composition: 両手で拍手、小さな紙吹雪. Mood: 祝福. Exact text: 「おめでとう！」."
+    },
+    {
+      "id": "16",
+      "text": "えらい！",
+      "original_text": "えらい！",
+      "category": "encouragement",
+      "usage": "相手の努力を認める",
+      "characters": [
+        "モブ子"
+      ],
+      "composition": "大きな親指と笑顔",
+      "tone": "肯定",
+      "notes": "確認済みの既存文言に直接重複なし。B未確定13件との重複は未判定。",
+      "status": "proposed",
+      "output": "output/16.png",
+      "generation_prompt": "Use approved KabeRadio pop illustration reference. Transparent background, no yellow rectangle. Thick dark teal outlines, coral/cream/sunflower accents, flat simplified cartoon, large expressive faces and hands. Mobuko: blonde waves, brown beret, green eyes, freckles, cream sweater. Amakawachan: dark green-black bob, round glasses, gray-green sleepy eyes, tiny fangs, piercings, black collared shirt. Mobumi: auburn loose curls, gray eyes, freckles, cream blouse. Only specified characters. Compact near-square sticker, no scenery, at most one small prop, thin white outer keyline for dark chat backgrounds. Reserve upper 30% for exact large bold Japanese caption, max two lines, never overlap faces. At 370x320 keep all content at least 10px from edges. No logo or additional text. Characters: モブ子. Pose/composition: 大きな親指と笑顔. Mood: 肯定. Exact text: 「えらい！」."
+    },
+    {
+      "id": "17",
+      "text": "それな",
+      "original_text": "それな",
+      "category": "dialogue",
+      "usage": "強い共感",
+      "characters": [
+        "あまかわちゃん",
+        "モブ子"
+      ],
+      "composition": "あまかわが相手を指さし、モブ子が深くうなずく",
+      "tone": "共感",
+      "notes": "モブ子28の無言うなずきと用途が近い。2人の強い共感にする",
+      "status": "proposed",
+      "output": "output/17.png",
+      "generation_prompt": "Use approved KabeRadio pop illustration reference. Transparent background, no yellow rectangle. Thick dark teal outlines, coral/cream/sunflower accents, flat simplified cartoon, large expressive faces and hands. Mobuko: blonde waves, brown beret, green eyes, freckles, cream sweater. Amakawachan: dark green-black bob, round glasses, gray-green sleepy eyes, tiny fangs, piercings, black collared shirt. Mobumi: auburn loose curls, gray eyes, freckles, cream blouse. Only specified characters. Compact near-square sticker, no scenery, at most one small prop, thin white outer keyline for dark chat backgrounds. Reserve upper 30% for exact large bold Japanese caption, max two lines, never overlap faces. At 370x320 keep all content at least 10px from edges. No logo or additional text. Characters: あまかわちゃん,モブ子. Pose/composition: あまかわが相手を指さし、モブ子が深くうなずく. Mood: 共感. Exact text: 「それな」."
+    },
+    {
+      "id": "18",
+      "text": "わかる",
+      "original_text": "わかる",
+      "category": "dialogue",
+      "usage": "気持ちへの共感",
+      "characters": [
+        "モブ子",
+        "モブ美"
+      ],
+      "composition": "顔を近づけ、片方は胸に手、片方はうなずく",
+      "tone": "寄り添う",
+      "notes": "モブ子28と近い。感情への寄り添いにする",
+      "status": "proposed",
+      "output": "output/18.png",
+      "generation_prompt": "Use approved KabeRadio pop illustration reference. Transparent background, no yellow rectangle. Thick dark teal outlines, coral/cream/sunflower accents, flat simplified cartoon, large expressive faces and hands. Mobuko: blonde waves, brown beret, green eyes, freckles, cream sweater. Amakawachan: dark green-black bob, round glasses, gray-green sleepy eyes, tiny fangs, piercings, black collared shirt. Mobumi: auburn loose curls, gray eyes, freckles, cream blouse. Only specified characters. Compact near-square sticker, no scenery, at most one small prop, thin white outer keyline for dark chat backgrounds. Reserve upper 30% for exact large bold Japanese caption, max two lines, never overlap faces. At 370x320 keep all content at least 10px from edges. No logo or additional text. Characters: モブ子,モブ美. Pose/composition: 顔を近づけ、片方は胸に手、片方はうなずく. Mood: 寄り添う. Exact text: 「わかる」."
+    },
+    {
+      "id": "19",
+      "text": "たしかに",
+      "original_text": "たしかに",
+      "category": "dialogue",
+      "usage": "説明への納得",
+      "characters": [
+        "あまかわちゃん",
+        "モブ美"
+      ],
+      "composition": "あまかわは顎に手、モブ美は人差し指を上げる",
+      "tone": "納得",
+      "notes": "B14「半分はそう」と近いが全面納得",
+      "status": "proposed",
+      "output": "output/19.png",
+      "generation_prompt": "Use approved KabeRadio pop illustration reference. Transparent background, no yellow rectangle. Thick dark teal outlines, coral/cream/sunflower accents, flat simplified cartoon, large expressive faces and hands. Mobuko: blonde waves, brown beret, green eyes, freckles, cream sweater. Amakawachan: dark green-black bob, round glasses, gray-green sleepy eyes, tiny fangs, piercings, black collared shirt. Mobumi: auburn loose curls, gray eyes, freckles, cream blouse. Only specified characters. Compact near-square sticker, no scenery, at most one small prop, thin white outer keyline for dark chat backgrounds. Reserve upper 30% for exact large bold Japanese caption, max two lines, never overlap faces. At 370x320 keep all content at least 10px from edges. No logo or additional text. Characters: あまかわちゃん,モブ美. Pose/composition: あまかわは顎に手、モブ美は人差し指を上げる. Mood: 納得. Exact text: 「たしかに」."
+    },
+    {
+      "id": "20",
+      "text": "なるほどね",
+      "original_text": "なるほどね",
+      "category": "dialogue",
+      "usage": "新しい説明の理解",
+      "characters": [
+        "あまかわちゃん",
+        "モブ子"
+      ],
+      "composition": "モブ子が手で説明し、あまかわに小さなひらめき線",
+      "tone": "発見",
+      "notes": "B25「今後の参考に」と一部近い。理解した瞬間",
+      "status": "proposed",
+      "output": "output/20.png",
+      "generation_prompt": "Use approved KabeRadio pop illustration reference. Transparent background, no yellow rectangle. Thick dark teal outlines, coral/cream/sunflower accents, flat simplified cartoon, large expressive faces and hands. Mobuko: blonde waves, brown beret, green eyes, freckles, cream sweater. Amakawachan: dark green-black bob, round glasses, gray-green sleepy eyes, tiny fangs, piercings, black collared shirt. Mobumi: auburn loose curls, gray eyes, freckles, cream blouse. Only specified characters. Compact near-square sticker, no scenery, at most one small prop, thin white outer keyline for dark chat backgrounds. Reserve upper 30% for exact large bold Japanese caption, max two lines, never overlap faces. At 370x320 keep all content at least 10px from edges. No logo or additional text. Characters: あまかわちゃん,モブ子. Pose/composition: モブ子が手で説明し、あまかわに小さなひらめき線. Mood: 発見. Exact text: 「なるほどね」."
+    },
+    {
+      "id": "21",
+      "text": "いいね！",
+      "original_text": "いいね！",
+      "category": "dialogue",
+      "usage": "提案への好意",
+      "characters": [
+        "モブ子",
+        "モブ美"
+      ],
+      "composition": "2人が異なる高さで親指を上げる",
+      "tone": "明るい",
+      "notes": "確認済みの既存文言に直接重複なし。B未確定13件との重複は未判定。",
+      "status": "proposed",
+      "output": "output/21.png",
+      "generation_prompt": "Use approved KabeRadio pop illustration reference. Transparent background, no yellow rectangle. Thick dark teal outlines, coral/cream/sunflower accents, flat simplified cartoon, large expressive faces and hands. Mobuko: blonde waves, brown beret, green eyes, freckles, cream sweater. Amakawachan: dark green-black bob, round glasses, gray-green sleepy eyes, tiny fangs, piercings, black collared shirt. Mobumi: auburn loose curls, gray eyes, freckles, cream blouse. Only specified characters. Compact near-square sticker, no scenery, at most one small prop, thin white outer keyline for dark chat backgrounds. Reserve upper 30% for exact large bold Japanese caption, max two lines, never overlap faces. At 370x320 keep all content at least 10px from edges. No logo or additional text. Characters: モブ子,モブ美. Pose/composition: 2人が異なる高さで親指を上げる. Mood: 明るい. Exact text: 「いいね！」."
+    },
+    {
+      "id": "22",
+      "text": "それでいこ！",
+      "original_text": "それでいこ！",
+      "category": "dialogue",
+      "usage": "案を決定する",
+      "characters": [
+        "あまかわちゃん",
+        "モブ美"
+      ],
+      "composition": "あまかわが前を指しモブ美が小さく拳を上げる",
+      "tone": "決断",
+      "notes": "B34「あ、じゃあそれで」(medium)と近い。積極的な決定",
+      "status": "proposed",
+      "output": "output/22.png",
+      "generation_prompt": "Use approved KabeRadio pop illustration reference. Transparent background, no yellow rectangle. Thick dark teal outlines, coral/cream/sunflower accents, flat simplified cartoon, large expressive faces and hands. Mobuko: blonde waves, brown beret, green eyes, freckles, cream sweater. Amakawachan: dark green-black bob, round glasses, gray-green sleepy eyes, tiny fangs, piercings, black collared shirt. Mobumi: auburn loose curls, gray eyes, freckles, cream blouse. Only specified characters. Compact near-square sticker, no scenery, at most one small prop, thin white outer keyline for dark chat backgrounds. Reserve upper 30% for exact large bold Japanese caption, max two lines, never overlap faces. At 370x320 keep all content at least 10px from edges. No logo or additional text. Characters: あまかわちゃん,モブ美. Pose/composition: あまかわが前を指しモブ美が小さく拳を上げる. Mood: 決断. Exact text: 「それでいこ！」."
+    },
+    {
+      "id": "23",
+      "text": "まかせて！",
+      "original_text": "まかせて！",
+      "category": "dialogue",
+      "usage": "引き受ける",
+      "characters": [
+        "あまかわちゃん",
+        "モブ子"
+      ],
+      "composition": "あまかわが胸を叩きモブ子が期待して見上げる",
+      "tone": "自信",
+      "notes": "B19「それはやる」と近い。依頼の引き受け",
+      "status": "proposed",
+      "output": "output/23.png",
+      "generation_prompt": "Use approved KabeRadio pop illustration reference. Transparent background, no yellow rectangle. Thick dark teal outlines, coral/cream/sunflower accents, flat simplified cartoon, large expressive faces and hands. Mobuko: blonde waves, brown beret, green eyes, freckles, cream sweater. Amakawachan: dark green-black bob, round glasses, gray-green sleepy eyes, tiny fangs, piercings, black collared shirt. Mobumi: auburn loose curls, gray eyes, freckles, cream blouse. Only specified characters. Compact near-square sticker, no scenery, at most one small prop, thin white outer keyline for dark chat backgrounds. Reserve upper 30% for exact large bold Japanese caption, max two lines, never overlap faces. At 370x320 keep all content at least 10px from edges. No logo or additional text. Characters: あまかわちゃん,モブ子. Pose/composition: あまかわが胸を叩きモブ子が期待して見上げる. Mood: 自信. Exact text: 「まかせて！」."
+    },
+    {
+      "id": "24",
+      "text": "任せた！",
+      "original_text": "任せた！",
+      "category": "dialogue",
+      "usage": "役割を託す",
+      "characters": [
+        "モブ美",
+        "あまかわちゃん"
+      ],
+      "composition": "モブ美が手のひらであまかわを紹介、あまかわが敬礼",
+      "tone": "信頼",
+      "notes": "確認済みの既存文言に直接重複なし。B未確定13件との重複は未判定。",
+      "status": "proposed",
+      "output": "output/24.png",
+      "generation_prompt": "Use approved KabeRadio pop illustration reference. Transparent background, no yellow rectangle. Thick dark teal outlines, coral/cream/sunflower accents, flat simplified cartoon, large expressive faces and hands. Mobuko: blonde waves, brown beret, green eyes, freckles, cream sweater. Amakawachan: dark green-black bob, round glasses, gray-green sleepy eyes, tiny fangs, piercings, black collared shirt. Mobumi: auburn loose curls, gray eyes, freckles, cream blouse. Only specified characters. Compact near-square sticker, no scenery, at most one small prop, thin white outer keyline for dark chat backgrounds. Reserve upper 30% for exact large bold Japanese caption, max two lines, never overlap faces. At 370x320 keep all content at least 10px from edges. No logo or additional text. Characters: モブ美,あまかわちゃん. Pose/composition: モブ美が手のひらであまかわを紹介、あまかわが敬礼. Mood: 信頼. Exact text: 「任せた！」."
+    },
+    {
+      "id": "25",
+      "text": "なんで？",
+      "original_text": "なんで？",
+      "category": "dialogue",
+      "usage": "理由を尋ねる",
+      "characters": [
+        "モブ子",
+        "あまかわちゃん"
+      ],
+      "composition": "モブ子が首を傾げ、あまかわが肩をすくめる",
+      "tone": "素朴",
+      "notes": "モブ子09「はて？」と近い。理由の質問",
+      "status": "proposed",
+      "output": "output/25.png",
+      "generation_prompt": "Use approved KabeRadio pop illustration reference. Transparent background, no yellow rectangle. Thick dark teal outlines, coral/cream/sunflower accents, flat simplified cartoon, large expressive faces and hands. Mobuko: blonde waves, brown beret, green eyes, freckles, cream sweater. Amakawachan: dark green-black bob, round glasses, gray-green sleepy eyes, tiny fangs, piercings, black collared shirt. Mobumi: auburn loose curls, gray eyes, freckles, cream blouse. Only specified characters. Compact near-square sticker, no scenery, at most one small prop, thin white outer keyline for dark chat backgrounds. Reserve upper 30% for exact large bold Japanese caption, max two lines, never overlap faces. At 370x320 keep all content at least 10px from edges. No logo or additional text. Characters: モブ子,あまかわちゃん. Pose/composition: モブ子が首を傾げ、あまかわが肩をすくめる. Mood: 素朴. Exact text: 「なんで？」."
+    },
+    {
+      "id": "26",
+      "text": "どういうこと？",
+      "original_text": "どういうこと？",
+      "category": "dialogue",
+      "usage": "状況の説明を求める",
+      "characters": [
+        "モブ美",
+        "モブ子"
+      ],
+      "composition": "2人が逆方向に首を傾げ中央に小さな疑問符",
+      "tone": "困惑",
+      "notes": "モブ子09・13と近い。2人で状況に困惑",
+      "status": "proposed",
+      "output": "output/26.png",
+      "generation_prompt": "Use approved KabeRadio pop illustration reference. Transparent background, no yellow rectangle. Thick dark teal outlines, coral/cream/sunflower accents, flat simplified cartoon, large expressive faces and hands. Mobuko: blonde waves, brown beret, green eyes, freckles, cream sweater. Amakawachan: dark green-black bob, round glasses, gray-green sleepy eyes, tiny fangs, piercings, black collared shirt. Mobumi: auburn loose curls, gray eyes, freckles, cream blouse. Only specified characters. Compact near-square sticker, no scenery, at most one small prop, thin white outer keyline for dark chat backgrounds. Reserve upper 30% for exact large bold Japanese caption, max two lines, never overlap faces. At 370x320 keep all content at least 10px from edges. No logo or additional text. Characters: モブ美,モブ子. Pose/composition: 2人が逆方向に首を傾げ中央に小さな疑問符. Mood: 困惑. Exact text: 「どういうこと？」."
+    },
+    {
+      "id": "27",
+      "text": "マジ？",
+      "original_text": "マジ？",
+      "category": "dialogue",
+      "usage": "驚きの反応",
+      "characters": [
+        "あまかわちゃん",
+        "モブ美"
+      ],
+      "composition": "あまかわが眼鏡を押さえモブ美が目を丸くする",
+      "tone": "驚き",
+      "notes": "確認済みの既存文言に直接重複なし。B未確定13件との重複は未判定。",
+      "status": "proposed",
+      "output": "output/27.png",
+      "generation_prompt": "Use approved KabeRadio pop illustration reference. Transparent background, no yellow rectangle. Thick dark teal outlines, coral/cream/sunflower accents, flat simplified cartoon, large expressive faces and hands. Mobuko: blonde waves, brown beret, green eyes, freckles, cream sweater. Amakawachan: dark green-black bob, round glasses, gray-green sleepy eyes, tiny fangs, piercings, black collared shirt. Mobumi: auburn loose curls, gray eyes, freckles, cream blouse. Only specified characters. Compact near-square sticker, no scenery, at most one small prop, thin white outer keyline for dark chat backgrounds. Reserve upper 30% for exact large bold Japanese caption, max two lines, never overlap faces. At 370x320 keep all content at least 10px from edges. No logo or additional text. Characters: あまかわちゃん,モブ美. Pose/composition: あまかわが眼鏡を押さえモブ美が目を丸くする. Mood: 驚き. Exact text: 「マジ？」."
+    },
+    {
+      "id": "28",
+      "text": "ほんと？",
+      "original_text": "ほんと？",
+      "category": "dialogue",
+      "usage": "期待しながら確認",
+      "characters": [
+        "モブ子",
+        "モブ美"
+      ],
+      "composition": "モブ子が身を乗り出しモブ美が胸元で手を組む",
+      "tone": "期待",
+      "notes": "確認済みの既存文言に直接重複なし。B未確定13件との重複は未判定。",
+      "status": "proposed",
+      "output": "output/28.png",
+      "generation_prompt": "Use approved KabeRadio pop illustration reference. Transparent background, no yellow rectangle. Thick dark teal outlines, coral/cream/sunflower accents, flat simplified cartoon, large expressive faces and hands. Mobuko: blonde waves, brown beret, green eyes, freckles, cream sweater. Amakawachan: dark green-black bob, round glasses, gray-green sleepy eyes, tiny fangs, piercings, black collared shirt. Mobumi: auburn loose curls, gray eyes, freckles, cream blouse. Only specified characters. Compact near-square sticker, no scenery, at most one small prop, thin white outer keyline for dark chat backgrounds. Reserve upper 30% for exact large bold Japanese caption, max two lines, never overlap faces. At 370x320 keep all content at least 10px from edges. No logo or additional text. Characters: モブ子,モブ美. Pose/composition: モブ子が身を乗り出しモブ美が胸元で手を組む. Mood: 期待. Exact text: 「ほんと？」."
+    },
+    {
+      "id": "29",
+      "text": "まあええか",
+      "original_text": "まあええか",
+      "category": "dialogue",
+      "usage": "小さな問題を流す",
+      "characters": [
+        "あまかわちゃん",
+        "モブ子"
+      ],
+      "composition": "あまかわが両手を軽く広げモブ子が笑う",
+      "tone": "脱力",
+      "notes": "B12「しょうがないですね」と近い。自分で受け流す",
+      "status": "proposed",
+      "output": "output/29.png",
+      "generation_prompt": "Use approved KabeRadio pop illustration reference. Transparent background, no yellow rectangle. Thick dark teal outlines, coral/cream/sunflower accents, flat simplified cartoon, large expressive faces and hands. Mobuko: blonde waves, brown beret, green eyes, freckles, cream sweater. Amakawachan: dark green-black bob, round glasses, gray-green sleepy eyes, tiny fangs, piercings, black collared shirt. Mobumi: auburn loose curls, gray eyes, freckles, cream blouse. Only specified characters. Compact near-square sticker, no scenery, at most one small prop, thin white outer keyline for dark chat backgrounds. Reserve upper 30% for exact large bold Japanese caption, max two lines, never overlap faces. At 370x320 keep all content at least 10px from edges. No logo or additional text. Characters: あまかわちゃん,モブ子. Pose/composition: あまかわが両手を軽く広げモブ子が笑う. Mood: 脱力. Exact text: 「まあええか」."
+    },
+    {
+      "id": "30",
+      "text": "なんとかなる",
+      "original_text": "なんとかなる",
+      "category": "dialogue",
+      "usage": "不安を和らげる",
+      "characters": [
+        "モブ美",
+        "あまかわちゃん"
+      ],
+      "composition": "モブ美が親指を上げ、あまかわが肩の力を抜く",
+      "tone": "楽観",
+      "notes": "A22「ぼちぼちいこう」と近い。見通しへの励まし",
+      "status": "proposed",
+      "output": "output/30.png",
+      "generation_prompt": "Use approved KabeRadio pop illustration reference. Transparent background, no yellow rectangle. Thick dark teal outlines, coral/cream/sunflower accents, flat simplified cartoon, large expressive faces and hands. Mobuko: blonde waves, brown beret, green eyes, freckles, cream sweater. Amakawachan: dark green-black bob, round glasses, gray-green sleepy eyes, tiny fangs, piercings, black collared shirt. Mobumi: auburn loose curls, gray eyes, freckles, cream blouse. Only specified characters. Compact near-square sticker, no scenery, at most one small prop, thin white outer keyline for dark chat backgrounds. Reserve upper 30% for exact large bold Japanese caption, max two lines, never overlap faces. At 370x320 keep all content at least 10px from edges. No logo or additional text. Characters: モブ美,あまかわちゃん. Pose/composition: モブ美が親指を上げ、あまかわが肩の力を抜く. Mood: 楽観. Exact text: 「なんとかなる」."
+    },
+    {
+      "id": "31",
+      "text": "やったー！",
+      "original_text": "やったー！",
+      "category": "group-reaction",
+      "usage": "共同の成功",
+      "characters": [
+        "モブ子",
+        "あまかわちゃん",
+        "モブ美"
+      ],
+      "composition": "3人が三角配置で拳や両手を上げる",
+      "tone": "歓喜",
+      "notes": "A38「うれしい」と近い。共同成功",
+      "status": "proposed",
+      "output": "output/31.png",
+      "generation_prompt": "Use approved KabeRadio pop illustration reference. Transparent background, no yellow rectangle. Thick dark teal outlines, coral/cream/sunflower accents, flat simplified cartoon, large expressive faces and hands. Mobuko: blonde waves, brown beret, green eyes, freckles, cream sweater. Amakawachan: dark green-black bob, round glasses, gray-green sleepy eyes, tiny fangs, piercings, black collared shirt. Mobumi: auburn loose curls, gray eyes, freckles, cream blouse. Only specified characters. Compact near-square sticker, no scenery, at most one small prop, thin white outer keyline for dark chat backgrounds. Reserve upper 30% for exact large bold Japanese caption, max two lines, never overlap faces. At 370x320 keep all content at least 10px from edges. No logo or additional text. Characters: 全員. Pose/composition: 3人が三角配置で拳や両手を上げる. Mood: 歓喜. Exact text: 「やったー！」."
+    },
+    {
+      "id": "32",
+      "text": "最高！",
+      "original_text": "最高！",
+      "category": "group-reaction",
+      "usage": "強い好評価",
+      "characters": [
+        "モブ子",
+        "あまかわちゃん",
+        "モブ美"
+      ],
+      "composition": "3人の顔を寄せ、親指とピース",
+      "tone": "高揚",
+      "notes": "確認済みの既存文言に直接重複なし。B未確定13件との重複は未判定。",
+      "status": "proposed",
+      "output": "output/32.png",
+      "generation_prompt": "Use approved KabeRadio pop illustration reference. Transparent background, no yellow rectangle. Thick dark teal outlines, coral/cream/sunflower accents, flat simplified cartoon, large expressive faces and hands. Mobuko: blonde waves, brown beret, green eyes, freckles, cream sweater. Amakawachan: dark green-black bob, round glasses, gray-green sleepy eyes, tiny fangs, piercings, black collared shirt. Mobumi: auburn loose curls, gray eyes, freckles, cream blouse. Only specified characters. Compact near-square sticker, no scenery, at most one small prop, thin white outer keyline for dark chat backgrounds. Reserve upper 30% for exact large bold Japanese caption, max two lines, never overlap faces. At 370x320 keep all content at least 10px from edges. No logo or additional text. Characters: 全員. Pose/composition: 3人の顔を寄せ、親指とピース. Mood: 高揚. Exact text: 「最高！」."
+    },
+    {
+      "id": "33",
+      "text": "ありがとうー！",
+      "original_text": "ありがとうー！",
+      "category": "group-reaction",
+      "usage": "みんなからのお礼",
+      "characters": [
+        "モブ子",
+        "あまかわちゃん",
+        "モブ美"
+      ],
+      "composition": "3人が高さをずらし軽くお辞儀、手を胸元へ",
+      "tone": "感謝",
+      "notes": "A23・モブ子02「ありがとう」と意味重複。3人からの感謝として意図的に残す",
+      "status": "proposed",
+      "output": "output/33.png",
+      "generation_prompt": "Use approved KabeRadio pop illustration reference. Transparent background, no yellow rectangle. Thick dark teal outlines, coral/cream/sunflower accents, flat simplified cartoon, large expressive faces and hands. Mobuko: blonde waves, brown beret, green eyes, freckles, cream sweater. Amakawachan: dark green-black bob, round glasses, gray-green sleepy eyes, tiny fangs, piercings, black collared shirt. Mobumi: auburn loose curls, gray eyes, freckles, cream blouse. Only specified characters. Compact near-square sticker, no scenery, at most one small prop, thin white outer keyline for dark chat backgrounds. Reserve upper 30% for exact large bold Japanese caption, max two lines, never overlap faces. At 370x320 keep all content at least 10px from edges. No logo or additional text. Characters: 全員. Pose/composition: 3人が高さをずらし軽くお辞儀、手を胸元へ. Mood: 感謝. Exact text: 「ありがとうー！」."
+    },
+    {
+      "id": "34",
+      "text": "楽しみ！",
+      "original_text": "おめでとうー！",
+      "category": "group-reaction",
+      "usage": "予定への期待",
+      "characters": [
+        "モブ子",
+        "あまかわちゃん",
+        "モブ美"
+      ],
+      "composition": "中央あまかわの両側から2人が身を乗り出す",
+      "tone": "わくわく",
+      "notes": "確認済みの既存文言に直接重複なし。B未確定13件との重複は未判定。",
+      "status": "proposed",
+      "output": "output/34.png",
+      "generation_prompt": "Use approved KabeRadio pop illustration reference. Transparent background, no yellow rectangle. Thick dark teal outlines, coral/cream/sunflower accents, flat simplified cartoon, large expressive faces and hands. Mobuko: blonde waves, brown beret, green eyes, freckles, cream sweater. Amakawachan: dark green-black bob, round glasses, gray-green sleepy eyes, tiny fangs, piercings, black collared shirt. Mobumi: auburn loose curls, gray eyes, freckles, cream blouse. Only specified characters. Compact near-square sticker, no scenery, at most one small prop, thin white outer keyline for dark chat backgrounds. Reserve upper 30% for exact large bold Japanese caption, max two lines, never overlap faces. At 370x320 keep all content at least 10px from edges. No logo or additional text. Characters: 全員. Pose/composition: 中央あまかわの両側から2人が身を乗り出す. Mood: わくわく. Exact text: 「楽しみ！」."
+    },
+    {
+      "id": "35",
+      "text": "気をつけてね",
+      "original_text": "いってらっしゃーい！",
+      "category": "group-reaction",
+      "usage": "移動や外出への気遣い",
+      "characters": [
+        "モブ子",
+        "あまかわちゃん",
+        "モブ美"
+      ],
+      "composition": "3人がやさしく手を振り、モブ美は胸に手",
+      "tone": "見送り",
+      "notes": "A17「無理しないでね」、B08「気をつけます」と近いが外出への気遣い",
+      "status": "proposed",
+      "output": "output/35.png",
+      "generation_prompt": "Use approved KabeRadio pop illustration reference. Transparent background, no yellow rectangle. Thick dark teal outlines, coral/cream/sunflower accents, flat simplified cartoon, large expressive faces and hands. Mobuko: blonde waves, brown beret, green eyes, freckles, cream sweater. Amakawachan: dark green-black bob, round glasses, gray-green sleepy eyes, tiny fangs, piercings, black collared shirt. Mobumi: auburn loose curls, gray eyes, freckles, cream blouse. Only specified characters. Compact near-square sticker, no scenery, at most one small prop, thin white outer keyline for dark chat backgrounds. Reserve upper 30% for exact large bold Japanese caption, max two lines, never overlap faces. At 370x320 keep all content at least 10px from edges. No logo or additional text. Characters: 全員. Pose/composition: 3人がやさしく手を振り、モブ美は胸に手. Mood: 見送り. Exact text: 「気をつけてね」."
+    },
+    {
+      "id": "36",
+      "text": "おつかれ会！",
+      "original_text": "おかえりー！",
+      "category": "group-reaction",
+      "usage": "作業後の集まりへの誘い",
+      "characters": [
+        "モブ子",
+        "あまかわちゃん",
+        "モブ美"
+      ],
+      "composition": "3人が小さなマグを中央へ寄せる",
+      "tone": "ねぎらい",
+      "notes": "A25・モブ子24の終了挨拶と近いが集まりへの誘い",
+      "status": "proposed",
+      "output": "output/36.png",
+      "generation_prompt": "Use approved KabeRadio pop illustration reference. Transparent background, no yellow rectangle. Thick dark teal outlines, coral/cream/sunflower accents, flat simplified cartoon, large expressive faces and hands. Mobuko: blonde waves, brown beret, green eyes, freckles, cream sweater. Amakawachan: dark green-black bob, round glasses, gray-green sleepy eyes, tiny fangs, piercings, black collared shirt. Mobumi: auburn loose curls, gray eyes, freckles, cream blouse. Only specified characters. Compact near-square sticker, no scenery, at most one small prop, thin white outer keyline for dark chat backgrounds. Reserve upper 30% for exact large bold Japanese caption, max two lines, never overlap faces. At 370x320 keep all content at least 10px from edges. No logo or additional text. Characters: 全員. Pose/composition: 3人が小さなマグを中央へ寄せる. Mood: ねぎらい. Exact text: 「おつかれ会！」."
+    },
+    {
+      "id": "37",
+      "text": "全員そろった",
+      "original_text": "大集合！",
+      "category": "group-reaction",
+      "usage": "集合完了の報告",
+      "characters": [
+        "モブ子",
+        "あまかわちゃん",
+        "モブ美"
+      ],
+      "composition": "3人が肩を寄せて片手を上げる",
+      "tone": "集合",
+      "notes": "B28「全員いますね」(medium)と近い。集合完了の汎用報告",
+      "status": "proposed",
+      "output": "output/37.png",
+      "generation_prompt": "Use approved KabeRadio pop illustration reference. Transparent background, no yellow rectangle. Thick dark teal outlines, coral/cream/sunflower accents, flat simplified cartoon, large expressive faces and hands. Mobuko: blonde waves, brown beret, green eyes, freckles, cream sweater. Amakawachan: dark green-black bob, round glasses, gray-green sleepy eyes, tiny fangs, piercings, black collared shirt. Mobumi: auburn loose curls, gray eyes, freckles, cream blouse. Only specified characters. Compact near-square sticker, no scenery, at most one small prop, thin white outer keyline for dark chat backgrounds. Reserve upper 30% for exact large bold Japanese caption, max two lines, never overlap faces. At 370x320 keep all content at least 10px from edges. No logo or additional text. Characters: 全員. Pose/composition: 3人が肩を寄せて片手を上げる. Mood: 集合. Exact text: 「全員そろった」."
+    },
+    {
+      "id": "38",
+      "text": "またあそぼ！",
+      "original_text": "またあそぼ！",
+      "category": "group-reaction",
+      "usage": "次の遊びへの誘い",
+      "characters": [
+        "モブ子",
+        "あまかわちゃん",
+        "モブ美"
+      ],
+      "composition": "左右の2人が手を振り中央がピース",
+      "tone": "親しみ",
+      "notes": "確認済みの既存文言に直接重複なし。B未確定13件との重複は未判定。",
+      "status": "proposed",
+      "output": "output/38.png",
+      "generation_prompt": "Use approved KabeRadio pop illustration reference. Transparent background, no yellow rectangle. Thick dark teal outlines, coral/cream/sunflower accents, flat simplified cartoon, large expressive faces and hands. Mobuko: blonde waves, brown beret, green eyes, freckles, cream sweater. Amakawachan: dark green-black bob, round glasses, gray-green sleepy eyes, tiny fangs, piercings, black collared shirt. Mobumi: auburn loose curls, gray eyes, freckles, cream blouse. Only specified characters. Compact near-square sticker, no scenery, at most one small prop, thin white outer keyline for dark chat backgrounds. Reserve upper 30% for exact large bold Japanese caption, max two lines, never overlap faces. At 370x320 keep all content at least 10px from edges. No logo or additional text. Characters: 全員. Pose/composition: 左右の2人が手を振り中央がピース. Mood: 親しみ. Exact text: 「またあそぼ！」."
+    },
+    {
+      "id": "39",
+      "text": "また明日！",
+      "original_text": "また明日！",
+      "category": "group-reaction",
+      "usage": "翌日の再会",
+      "characters": [
+        "モブ子",
+        "あまかわちゃん",
+        "モブ美"
+      ],
+      "composition": "3人が違う高さで手を振る",
+      "tone": "明るい締め",
+      "notes": "A35「またね」と近いが翌日を明示",
+      "status": "proposed",
+      "output": "output/39.png",
+      "generation_prompt": "Use approved KabeRadio pop illustration reference. Transparent background, no yellow rectangle. Thick dark teal outlines, coral/cream/sunflower accents, flat simplified cartoon, large expressive faces and hands. Mobuko: blonde waves, brown beret, green eyes, freckles, cream sweater. Amakawachan: dark green-black bob, round glasses, gray-green sleepy eyes, tiny fangs, piercings, black collared shirt. Mobumi: auburn loose curls, gray eyes, freckles, cream blouse. Only specified characters. Compact near-square sticker, no scenery, at most one small prop, thin white outer keyline for dark chat backgrounds. Reserve upper 30% for exact large bold Japanese caption, max two lines, never overlap faces. At 370x320 keep all content at least 10px from edges. No logo or additional text. Characters: 全員. Pose/composition: 3人が違う高さで手を振る. Mood: 明るい締め. Exact text: 「また明日！」."
+    },
+    {
+      "id": "40",
+      "text": "集合ー！",
+      "original_text": "集合ー！",
+      "category": "group-reaction",
+      "usage": "集まるよう呼びかける",
+      "characters": [
+        "モブ子",
+        "あまかわちゃん",
+        "モブ美"
+      ],
+      "composition": "中央あまかわが口に手を添え、左右が手招き",
+      "tone": "呼びかけ",
+      "notes": "確認済みの既存文言に直接重複なし。B未確定13件との重複は未判定。",
+      "status": "proposed",
+      "output": "output/40.png",
+      "generation_prompt": "Use approved KabeRadio pop illustration reference. Transparent background, no yellow rectangle. Thick dark teal outlines, coral/cream/sunflower accents, flat simplified cartoon, large expressive faces and hands. Mobuko: blonde waves, brown beret, green eyes, freckles, cream sweater. Amakawachan: dark green-black bob, round glasses, gray-green sleepy eyes, tiny fangs, piercings, black collared shirt. Mobumi: auburn loose curls, gray eyes, freckles, cream blouse. Only specified characters. Compact near-square sticker, no scenery, at most one small prop, thin white outer keyline for dark chat backgrounds. Reserve upper 30% for exact large bold Japanese caption, max two lines, never overlap faces. At 370x320 keep all content at least 10px from edges. No logo or additional text. Characters: 全員. Pose/composition: 中央あまかわが口に手を添え、左右が手招き. Mood: 呼びかけ. Exact text: 「集合ー！」."
+    }
+  ],
+  "auxiliary": [
+    {
+      "id": "main",
+      "width": 240,
+      "height": 240,
+      "composition": "3人の顔を三角配置。小さく壁ラジPOP。",
+      "generation_prompt": "Use approved KabeRadio pop illustration reference. Transparent background, no yellow rectangle. Thick dark teal outlines, coral/cream/sunflower accents, flat simplified cartoon, large expressive faces and hands. Mobuko: blonde waves, brown beret, green eyes, freckles, cream sweater. Amakawachan: dark green-black bob, round glasses, gray-green sleepy eyes, tiny fangs, piercings, black collared shirt. Mobumi: auburn loose curls, gray eyes, freckles, cream blouse. Only specified characters. Compact near-square sticker, no scenery, at most one small prop, thin white outer keyline for dark chat backgrounds. Reserve upper 30% for exact large bold Japanese caption, max two lines, never overlap faces. At 370x320 keep all content at least 10px from edges. No logo or additional text. All three heads clustered in triangle. Main image 240x240 transparent. Only exact title 壁ラジPOP, coral bold. No other text."
+    },
+    {
+      "id": "tab",
+      "width": 96,
+      "height": 74,
+      "composition": "あまかわちゃんの眼鏡・黒髪と顔のみ。文字なし。",
+      "generation_prompt": "Transparent 96x74 chat tab. Approved pop Amakawachan head only, round glasses, dark bob, tiny fangs, dark teal outline and white outer keyline. Large simple face, no lettering, no props."
+    }
+  ]
+}

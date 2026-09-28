@@ -1,0 +1,338 @@
+[
+  {
+    "file": "01.png",
+    "width": 370,
+    "height": 320,
+    "bytes": 160607,
+    "alpha_min": 0,
+    "alpha_max": 255
+  },
+  {
+    "file": "02.png",
+    "width": 370,
+    "height": 320,
+    "bytes": 140726,
+    "alpha_min": 0,
+    "alpha_max": 255
+  },
+  {
+    "file": "03.png",
+    "width": 370,
+    "height": 320,
+    "bytes": 156394,
+    "alpha_min": 0,
+    "alpha_max": 255
+  },
+  {
+    "file": "04.png",
+    "width": 370,
+    "height": 320,
+    "bytes": 143531,
+    "alpha_min": 0,
+    "alpha_max": 255
+  },
+  {
+    "file": "05.png",
+    "width": 370,
+    "height": 320,
+    "bytes": 137668,
+    "alpha_min": 0,
+    "alpha_max": 255
+  },
+  {
+    "file": "06.png",
+    "width": 370,
+    "height": 320,
+    "bytes": 138748,
+    "alpha_min": 0,
+    "alpha_max": 255
+  },
+  {
+    "file": "07.png",
+    "width": 370,
+    "height": 320,
+    "bytes": 131649,
+    "alpha_min": 0,
+    "alpha_max": 255
+  },
+  {
+    "file": "08.png",
+    "width": 370,
+    "height": 320,
+    "bytes": 138240,
+    "alpha_min": 0,
+    "alpha_max": 255
+  },
+  {
+    "file": "09.png",
+    "width": 370,
+    "height": 320,
+    "bytes": 134402,
+    "alpha_min": 0,
+    "alpha_max": 255
+  },
+  {
+    "file": "10.png",
+    "width": 370,
+    "height": 320,
+    "bytes": 144261,
+    "alpha_min": 0,
+    "alpha_max": 255
+  },
+  {
+    "file": "11.png",
+    "width": 370,
+    "height": 320,
+    "bytes": 133561,
+    "alpha_min": 0,
+    "alpha_max": 255
+  },
+  {
+    "file": "12.png",
+    "width": 370,
+    "height": 320,
+    "bytes": 137630,
+    "alpha_min": 0,
+    "alpha_max": 255
+  },
+  {
+    "file": "13.png",
+    "width": 370,
+    "height": 320,
+    "bytes": 139005,
+    "alpha_min": 0,
+    "alpha_max": 255
+  },
+  {
+    "file": "14.png",
+    "width": 370,
+    "height": 320,
+    "bytes": 132988,
+    "alpha_min": 0,
+    "alpha_max": 255
+  },
+  {
+    "file": "15.png",
+    "width": 370,
+    "height": 320,
+    "bytes": 142145,
+    "alpha_min": 0,
+    "alpha_max": 255
+  },
+  {
+    "file": "16.png",
+    "width": 370,
+    "height": 320,
+    "bytes": 138010,
+    "alpha_min": 0,
+    "alpha_max": 255
+  },
+  {
+    "file": "17.png",
+    "width": 370,
+    "height": 320,
+    "bytes": 167822,
+    "alpha_min": 0,
+    "alpha_max": 255
+  },
+  {
+    "file": "18.png",
+    "width": 370,
+    "height": 320,
+    "bytes": 177021,
+    "alpha_min": 0,
+    "alpha_max": 255
+  },
+  {
+    "file": "19.png",
+    "width": 370,
+    "height": 320,
+    "bytes": 164928,
+    "alpha_min": 0,
+    "alpha_max": 255
+  },
+  {
+    "file": "20.png",
+    "width": 370,
+    "height": 320,
+    "bytes": 164501,
+    "alpha_min": 0,
+    "alpha_max": 255
+  },
+  {
+    "file": "21.png",
+    "width": 370,
+    "height": 320,
+    "bytes": 160857,
+    "alpha_min": 0,
+    "alpha_max": 255
+  },
+  {
+    "file": "22.png",
+    "width": 370,
+    "height": 320,
+    "bytes": 159294,
+    "alpha_min": 0,
+    "alpha_max": 255
+  },
+  {
+    "file": "23.png",
+    "width": 370,
+    "height": 320,
+    "bytes": 161834,
+    "alpha_min": 0,
+    "alpha_max": 255
+  },
+  {
+    "file": "24.png",
+    "width": 370,
+    "height": 320,
+    "bytes": 154185,
+    "alpha_min": 0,
+    "alpha_max": 255
+  },
+  {
+    "file": "25.png",
+    "width": 370,
+    "height": 320,
+    "bytes": 150251,
+    "alpha_min": 0,
+    "alpha_max": 255
+  },
+  {
+    "file": "26.png",
+    "width": 370,
+    "height": 320,
+    "bytes": 170168,
+    "alpha_min": 0,
+    "alpha_max": 255
+  },
+  {
+    "file": "27.png",
+    "width": 370,
+    "height": 320,
+    "bytes": 162001,
+    "alpha_min": 0,
+    "alpha_max": 255
+  },
+  {
+    "file": "28.png",
+    "width": 370,
+    "height": 320,
+    "bytes": 177551,
+    "alpha_min": 0,
+    "alpha_max": 255
+  },
+  {
+    "file": "29.png",
+    "width": 370,
+    "height": 320,
+    "bytes": 154730,
+    "alpha_min": 0,
+    "alpha_max": 255
+  },
+  {
+    "file": "30.png",
+    "width": 370,
+    "height": 320,
+    "bytes": 160013,
+    "alpha_min": 0,
+    "alpha_max": 255
+  },
+  {
+    "file": "31.png",
+    "width": 370,
+    "height": 320,
+    "bytes": 169094,
+    "alpha_min": 0,
+    "alpha_max": 255
+  },
+  {
+    "file": "32.png",
+    "width": 370,
+    "height": 320,
+    "bytes": 172275,
+    "alpha_min": 0,
+    "alpha_max": 255
+  },
+  {
+    "file": "33.png",
+    "width": 370,
+    "height": 320,
+    "bytes": 170105,
+    "alpha_min": 0,
+    "alpha_max": 255
+  },
+  {
+    "file": "34.png",
+    "width": 370,
+    "height": 320,
+    "bytes": 167493,
+    "alpha_min": 0,
+    "alpha_max": 255
+  },
+  {
+    "file": "35.png",
+    "width": 370,
+    "height": 320,
+    "bytes": 164265,
+    "alpha_min": 0,
+    "alpha_max": 255
+  },
+  {
+    "file": "36.png",
+    "width": 370,
+    "height": 320,
+    "bytes": 168207,
+    "alpha_min": 0,
+    "alpha_max": 255
+  },
+  {
+    "file": "37.png",
+    "width": 370,
+    "height": 320,
+    "bytes": 164019,
+    "alpha_min": 0,
+    "alpha_max": 255
+  },
+  {
+    "file": "38.png",
+    "width": 370,
+    "height": 320,
+    "bytes": 161127,
+    "alpha_min": 0,
+    "alpha_max": 255
+  },
+  {
+    "file": "39.png",
+    "width": 370,
+    "height": 320,
+    "bytes": 153242,
+    "alpha_min": 0,
+    "alpha_max": 255
+  },
+  {
+    "file": "40.png",
+    "width": 370,
+    "height": 320,
+    "bytes": 168735,
+    "alpha_min": 0,
+    "alpha_max": 255
+  },
+  {
+    "file": "main.png",
+    "width": 240,
+    "height": 240,
+    "bytes": 97812,
+    "corner_alpha": 0,
+    "dpi": 95.986595
+  },
+  {
+    "file": "tab.png",
+    "width": 96,
+    "height": 74,
+    "bytes": 9579,
+    "corner_alpha": 0,
+    "dpi": 95.986595
+  }
+]

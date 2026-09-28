@@ -1,0 +1,362 @@
+[
+  {
+    "display_order": 1,
+    "id": "A23",
+    "t": "壁ラジ！",
+    "file": "A23-radio-title-v1.png",
+    "status": "文言変更・新画像確認待ち",
+    "output": "01.png",
+    "source_sha256": "efd1735ea5bcb84aa16b19efe90853fc4164214f2813cccce2987235a213adad"
+  },
+  {
+    "display_order": 2,
+    "id": "A24",
+    "t": "始めます",
+    "file": "A24-radio-start-v1.png",
+    "status": "文言変更・新画像確認待ち",
+    "output": "02.png",
+    "source_sha256": "10039d4fa83ee2e8f881b609ebd064b06b982d54b3029d3c4e69fba3426967c0"
+  },
+  {
+    "display_order": 3,
+    "id": "A34",
+    "t": "どうぞ",
+    "file": "A34.png",
+    "status": "検証候補",
+    "output": "03.png",
+    "source_sha256": "44b8e156176aef494533111599d8079d3cf7ea6c4cb2e243e5033fc5345b725a"
+  },
+  {
+    "display_order": 4,
+    "id": "A35",
+    "t": "待ちます",
+    "file": "A35.png",
+    "status": "検証候補",
+    "output": "04.png",
+    "source_sha256": "7beef813469e0806811044a3130cddcc0f95b38e36bf8e5cd15dc7edd0af512d"
+  },
+  {
+    "display_order": 5,
+    "id": "A28",
+    "t": "ちょっと待って",
+    "file": "A28-wait-v1.png",
+    "status": "文言変更・新画像確認待ち",
+    "output": "05.png",
+    "source_sha256": "0396f873a086e0feae1814b3ce16aeee5fbe5359c6aed6d865fd85c9b488e2cf"
+  },
+  {
+    "display_order": 6,
+    "id": "A12",
+    "t": "できましたね",
+    "file": "A12-expression-v1.png",
+    "status": "検証候補",
+    "output": "06.png",
+    "source_sha256": "71620b37d5a7933aeeb1ae735fa61c1ca863f058fd03b746f5b3f17183da6d96"
+  },
+  {
+    "display_order": 7,
+    "id": "A33",
+    "t": "早いですね",
+    "file": "A33.png",
+    "status": "検証候補",
+    "output": "07.png",
+    "source_sha256": "e01b26df0c74358c2c96a56b38c77e218428d966598cef6636743bb526994008"
+  },
+  {
+    "display_order": 8,
+    "id": "A02",
+    "t": "気をつけます",
+    "file": "A02-expression-v1.png",
+    "status": "検証候補",
+    "output": "08.png",
+    "source_sha256": "ab2d09deec0dea9289e46d1ba2f52b2915fe750461791cd2571e99d42591d80a"
+  },
+  {
+    "display_order": 9,
+    "id": "A20",
+    "t": "ゆっくり休んでください",
+    "file": "A20.png",
+    "status": "検証候補",
+    "output": "09.png",
+    "source_sha256": "da2033a2c2967e63b9e9ca3c4105ba8eafb652a3c608ecd28f6c810c008c07a5"
+  },
+  {
+    "display_order": 10,
+    "id": "A04",
+    "t": "お茶飲みます？",
+    "file": "A04-expression-v1.png",
+    "status": "検証候補",
+    "output": "10.png",
+    "source_sha256": "a24f96586c864d0f1606153c3e2caaf488f7d1ee993c9892d20212eef525ab03"
+  },
+  {
+    "display_order": 11,
+    "id": "A14",
+    "t": "そのうち慣れますよ",
+    "file": "A14.png",
+    "status": "検証候補",
+    "output": "11.png",
+    "source_sha256": "a256a429d1c9cb18426ed2e04a6bb2e9febca7a50edbe4d783f9bea899f79a91"
+  },
+  {
+    "display_order": 12,
+    "id": "A15",
+    "t": "しょうがないですね",
+    "file": "A15.png",
+    "status": "検証候補",
+    "output": "12.png",
+    "source_sha256": "6bfd7959215d3960fc02fe20147942f833a04ee856df10cd1ccfd086c579387e"
+  },
+  {
+    "display_order": 13,
+    "id": "A18",
+    "t": "難しいですね",
+    "file": "A18.png",
+    "status": "検証候補",
+    "output": "13.png",
+    "source_sha256": "2bde667b8f3eb8b160c1ea18aabf01a53bb4c1c2fbf353a823c090b99340efff"
+  },
+  {
+    "display_order": 14,
+    "id": "A27",
+    "t": "半分はそう",
+    "file": "A27.png",
+    "status": "検証候補",
+    "output": "14.png",
+    "source_sha256": "cffa630d33533bac8cd4ea4497cf5b539759e4d6597237ceb8be3317d612ca10"
+  },
+  {
+    "display_order": 15,
+    "id": "A26",
+    "t": "それ、結構気に入ってる",
+    "file": "A26-face-reset-v1.png",
+    "status": "顔修正版・確認待ち",
+    "output": "15.png",
+    "source_sha256": "fa42c3beaa0c1b135e4e4a280d29e95e162c91fcc2bfcd66731e33d94b93be6b"
+  },
+  {
+    "display_order": 16,
+    "id": "A16",
+    "t": "でも楽しそうでしたよ",
+    "file": "A16-finish-v1.png",
+    "status": "局所修正済み・入稿処理待ち",
+    "output": "16.png",
+    "source_sha256": "5cdfe0d3d7d4551ec6240806072f371f6621b7538ed8bbeed32c03035f914adb"
+  },
+  {
+    "display_order": 17,
+    "id": "A01",
+    "t": "ちょっと思いついたんですけど",
+    "file": "A01-v2.png",
+    "status": "検証候補",
+    "output": "17.png",
+    "source_sha256": "bd8a21000ef60d965b35358e6459a82e5d346b8bc63fb21db06e86d77f79ba85"
+  },
+  {
+    "display_order": 18,
+    "id": "A31",
+    "t": "試してみよっか",
+    "file": "A31-face-reset-v1.png",
+    "status": "顔修正版承認済み",
+    "output": "18.png",
+    "source_sha256": "25156b47b065f655cbf24b51e9eed98c4ede95df6ab319ed8f82fd6f171e25d8"
+  },
+  {
+    "display_order": 19,
+    "id": "A25",
+    "t": "それはやる",
+    "file": "A25-expression-v1.png",
+    "status": "検証候補",
+    "output": "19.png",
+    "source_sha256": "53e03c4e10543c5cc45e04205016e798dfbb434ac560b7999f700f1cdac0aecd"
+  },
+  {
+    "display_order": 20,
+    "id": "A06",
+    "t": "でも便利そうですよ",
+    "file": "A06-finish-v1.png",
+    "status": "局所修正済み・入稿処理待ち",
+    "output": "20.png",
+    "source_sha256": "650363b6fb8b015c1fb1dcba954363c9972ea9c8c26383ac169015c18805aa4b"
+  },
+  {
+    "display_order": 21,
+    "id": "A07",
+    "t": "やるんですね",
+    "file": "A07.png",
+    "status": "検証候補",
+    "output": "21.png",
+    "source_sha256": "88a45a58e19bf51d490be10bc2f0aff505ad558854e515c796e621fabf7dfc3f"
+  },
+  {
+    "display_order": 22,
+    "id": "A32",
+    "t": "ここ、気になる",
+    "file": "A32-finish-v1.png",
+    "status": "局所修正済み・入稿処理待ち",
+    "output": "22.png",
+    "source_sha256": "b677154921d017db95ea33df309eb812e287cfaf37082bd5292eb8e409d6fbd9"
+  },
+  {
+    "display_order": 23,
+    "id": "A08",
+    "t": "優先順位は大事です",
+    "file": "A08.png",
+    "status": "検証候補",
+    "output": "23.png",
+    "source_sha256": "e5b4cc93061a7ab2471b8576a413486e1592d769b3be8fa99ebff0e8458e4ef2"
+  },
+  {
+    "display_order": 24,
+    "id": "A30",
+    "t": "そこは後回しで",
+    "file": "A30-face-reset-v1.png",
+    "status": "顔修正版・確認待ち",
+    "output": "24.png",
+    "source_sha256": "3e3f31f06489a1fd28a6f8c54a325f2b70793be2e71726819e4bc964bce4f786"
+  },
+  {
+    "display_order": 25,
+    "id": "A17",
+    "t": "今後の参考に",
+    "file": "A17-finish-v1.png",
+    "status": "局所修正済み・入稿処理待ち",
+    "output": "25.png",
+    "source_sha256": "3c83ba523a6788d96cc297aab59d5d407cd208b011083b96732740cfc93d3121"
+  },
+  {
+    "display_order": 26,
+    "id": "A39",
+    "t": "今、頭の中で整理してる",
+    "file": "A39.png",
+    "status": "検証候補",
+    "output": "26.png",
+    "source_sha256": "d8988ef8065f058be6a3aca217621a7eac87b14978484d0abf10803048d17aff"
+  },
+  {
+    "display_order": 27,
+    "id": "A37",
+    "t": "それはちょっと見たい",
+    "file": "A37-face-reset-v2.png",
+    "status": "顔修正版承認済み",
+    "output": "27.png",
+    "source_sha256": "ce0234f79ef94840b2fdd2434ab314ab18d843b6d1f99a46d037783cfb2e9f68"
+  },
+  {
+    "display_order": 28,
+    "id": "A36",
+    "t": "全員いますね",
+    "file": "A36.png",
+    "status": "検証候補",
+    "output": "28.png",
+    "source_sha256": "cbde0b0aab04cc906274f8caeadeb561ca52e163d293222e5b4a348ae8747405"
+  },
+  {
+    "display_order": 29,
+    "id": "A09",
+    "t": "今、何時です？",
+    "file": "A09.png",
+    "status": "検証候補",
+    "output": "29.png",
+    "source_sha256": "fd8fcb03e0aa3cf0625b0cbeb41d27e8377ab2fb214472db5fd68bbbba93845d"
+  },
+  {
+    "display_order": 30,
+    "id": "A13",
+    "t": "今さらです？",
+    "file": "A13.png",
+    "status": "検証候補",
+    "output": "30.png",
+    "source_sha256": "72a8c5f3be3db8ee08162aba214d4bb7e845ecad12fc6ccbdb4a8faad89b0fd7"
+  },
+  {
+    "display_order": 31,
+    "id": "A19",
+    "t": "聞かれなかったので",
+    "file": "A19-face-reset-v1.png",
+    "status": "顔修正版承認済み",
+    "output": "31.png",
+    "source_sha256": "62cbe41115ff724abbda8289a8cd1e579a33aadfeab49a638ec766e0c1950863"
+  },
+  {
+    "display_order": 32,
+    "id": "A21",
+    "t": "気のせいです",
+    "file": "A21.png",
+    "status": "検証候補",
+    "output": "32.png",
+    "source_sha256": "865a915809154fb72c91ab2d8eddeece235910be7e3c35c7d6db4e50ae01eeb7"
+  },
+  {
+    "display_order": 33,
+    "id": "A05",
+    "t": "ほら始まった",
+    "file": "A05-finish-v1.png",
+    "status": "局所修正済み・入稿処理待ち",
+    "output": "33.png",
+    "source_sha256": "6d09a32d96eb718376d65a1fcff96260dc49efb54f97c62b97831875a074c296"
+  },
+  {
+    "display_order": 34,
+    "id": "A10",
+    "t": "あ、じゃないんよ",
+    "file": "A10.png",
+    "status": "検証候補",
+    "output": "34.png",
+    "source_sha256": "d7cb7e2eab0abaa64eca043d6392098a6972fdcfb9963fb4e4baf1f979982f0d"
+  },
+  {
+    "display_order": 35,
+    "id": "A11",
+    "t": "そういう話じゃない",
+    "file": "A11.png",
+    "status": "検証候補",
+    "output": "35.png",
+    "source_sha256": "4c5a622123fea4635e022e56d13a97d5bf2a7484e82abb51e671c88a76f74927"
+  },
+  {
+    "display_order": 36,
+    "id": "A29",
+    "t": "便利で済ませるな",
+    "file": "A29.png",
+    "status": "検証候補",
+    "output": "36.png",
+    "source_sha256": "4f4c28687e58c91bb889108d696ee0c08bf8e53b322ca130acfbed00bf95a8e9"
+  },
+  {
+    "display_order": 37,
+    "id": "A03",
+    "t": "聞きたくない",
+    "file": "A03-expression-v1.png",
+    "status": "検証候補",
+    "output": "37.png",
+    "source_sha256": "6f8f124e863120cb136514e4f4808b1df61734545e2027c3744faf76d5e45d1b"
+  },
+  {
+    "display_order": 38,
+    "id": "A38",
+    "t": "本当に分かった？",
+    "file": "A38.png",
+    "status": "検証候補",
+    "output": "38.png",
+    "source_sha256": "88b9c1e3af94434ba285c0b63f04492010fa04404d9ee004c7f125e9fd082481"
+  },
+  {
+    "display_order": 39,
+    "id": "A22",
+    "t": "一回回復したのに",
+    "file": "A22.png",
+    "status": "検証候補",
+    "output": "39.png",
+    "source_sha256": "1564d0bc3e248188ad90e8f5795e385438ecfc1cd3d8c2313b229e6aafe0f80a"
+  },
+  {
+    "display_order": 40,
+    "id": "A40",
+    "t": "巻き込むな！",
+    "file": "A40.png",
+    "status": "検証候補",
+    "output": "40.png",
+    "source_sha256": "46c08c8d1ea38c4dafe9d282ee1fc8b327a70e069db7df496c4abd7e225a7308"
+  }
+]

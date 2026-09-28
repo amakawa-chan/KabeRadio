@@ -1,0 +1,12 @@
+{
+  "corrections": [
+    {
+      "id": "33",
+      "prompt": "Edit this transparent sticker. Preserve the exact three characters, poses, colors and thick outlines. Correct ONLY the caption: it must read exactly 「ありがとうー！」 including the character う after と. Use two lines if needed: first line ありがとう, second line ー！. Clearly include all characters あ り が と う ー ！. Keep whole sticker fully inside canvas, transparent background."
+    },
+    {
+      "id": "main",
+      "prompt": "Correct only the title in this transparent sticker. It MUST read exactly 壁ラジPOP. The current image is missing ラ. Set the title in two lines: 壁ラジ on the first line, POP on the second. Every character 壁 ラ ジ P O P must be present and distinct. Preserve the three characters and their poses, same pop style, transparent background. Keep all edges inside canvas."
+    }
+  ]
+}
