@@ -1,0 +1,1108 @@
+{
+  "date": "2026-09-28",
+  "guideline": "https://creator.line.me/ja/guideline/sticker/",
+  "files": [
+    {
+      "file": "01.png",
+      "mode": "RGBA",
+      "size": [
+        370,
+        320
+      ],
+      "dpi": [
+        95.9866,
+        95.9866
+      ],
+      "bytes": 160607,
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "transparent_pixels": 52511,
+      "margins": [
+        42,
+        15,
+        43,
+        12
+      ],
+      "sha256": "29ca3585d213f8e7101564b83f7d663598a960eb9959d82f09874d08299a1362",
+      "pass": true
+    },
+    {
+      "file": "02.png",
+      "mode": "RGBA",
+      "size": [
+        370,
+        320
+      ],
+      "dpi": [
+        95.9866,
+        95.9866
+      ],
+      "bytes": 140726,
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "transparent_pixels": 55519,
+      "margins": [
+        50,
+        21,
+        47,
+        14
+      ],
+      "sha256": "728edd2ea3dc1a5997f639d02f57e298d22de0c1148568b89b6b0df5edff1f60",
+      "pass": true
+    },
+    {
+      "file": "03.png",
+      "mode": "RGBA",
+      "size": [
+        370,
+        320
+      ],
+      "dpi": [
+        95.9866,
+        95.9866
+      ],
+      "bytes": 156394,
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "transparent_pixels": 54077,
+      "margins": [
+        37,
+        19,
+        39,
+        12
+      ],
+      "sha256": "29a5ddfcb37e9de3ece2ab2e3de2cbccd45d9ba17b8c22a1affe62cd0d3c4480",
+      "pass": true
+    },
+    {
+      "file": "04.png",
+      "mode": "RGBA",
+      "size": [
+        370,
+        320
+      ],
+      "dpi": [
+        95.9866,
+        95.9866
+      ],
+      "bytes": 143531,
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "transparent_pixels": 58923,
+      "margins": [
+        45,
+        21,
+        40,
+        14
+      ],
+      "sha256": "5052ffd7b6d2a5409548d1b0f14d5ca8649c5713400c2208633afc549fdfaf67",
+      "pass": true
+    },
+    {
+      "file": "05.png",
+      "mode": "RGBA",
+      "size": [
+        370,
+        320
+      ],
+      "dpi": [
+        95.9866,
+        95.9866
+      ],
+      "bytes": 137668,
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "transparent_pixels": 61012,
+      "margins": [
+        56,
+        23,
+        45,
+        12
+      ],
+      "sha256": "26061ae8e25cb92b0c354cd7452c8472a347c0421f18cb75974e2278bbd6c202",
+      "pass": true
+    },
+    {
+      "file": "06.png",
+      "mode": "RGBA",
+      "size": [
+        370,
+        320
+      ],
+      "dpi": [
+        95.9866,
+        95.9866
+      ],
+      "bytes": 138748,
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "transparent_pixels": 56392,
+      "margins": [
+        43,
+        22,
+        41,
+        17
+      ],
+      "sha256": "6fbe4c81edcd18d840200629dd426c0ae67759f8abb0027ed4cd9e780f868c7a",
+      "pass": true
+    },
+    {
+      "file": "07.png",
+      "mode": "RGBA",
+      "size": [
+        370,
+        320
+      ],
+      "dpi": [
+        95.9866,
+        95.9866
+      ],
+      "bytes": 131649,
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "transparent_pixels": 61162,
+      "margins": [
+        60,
+        20,
+        51,
+        12
+      ],
+      "sha256": "261f481e513c0bf131b7189b14823f353a8b28be4f74628f92e1e12b1f8d723d",
+      "pass": true
+    },
+    {
+      "file": "08.png",
+      "mode": "RGBA",
+      "size": [
+        370,
+        320
+      ],
+      "dpi": [
+        95.9866,
+        95.9866
+      ],
+      "bytes": 138240,
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "transparent_pixels": 59590,
+      "margins": [
+        52,
+        22,
+        46,
+        14
+      ],
+      "sha256": "2493a9081766c8e4a6033e0500c336fbe884c3d2a799504f5105df1db1e760b5",
+      "pass": true
+    },
+    {
+      "file": "09.png",
+      "mode": "RGBA",
+      "size": [
+        370,
+        320
+      ],
+      "dpi": [
+        95.9866,
+        95.9866
+      ],
+      "bytes": 134402,
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "transparent_pixels": 65171,
+      "margins": [
+        77,
+        16,
+        74,
+        12
+      ],
+      "sha256": "4701345bc62d637feb9343f7dc445d431ce9599ea7158733988c0a8c82d1e737",
+      "pass": true
+    },
+    {
+      "file": "10.png",
+      "mode": "RGBA",
+      "size": [
+        370,
+        320
+      ],
+      "dpi": [
+        95.9866,
+        95.9866
+      ],
+      "bytes": 144261,
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "transparent_pixels": 56188,
+      "margins": [
+        51,
+        17,
+        48,
+        12
+      ],
+      "sha256": "9eb9ffdc83d305c4ec1d5ae42daab05bdd4b1983e50e8b98bb30095bab983cd0",
+      "pass": true
+    },
+    {
+      "file": "11.png",
+      "mode": "RGBA",
+      "size": [
+        370,
+        320
+      ],
+      "dpi": [
+        95.9866,
+        95.9866
+      ],
+      "bytes": 133561,
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "transparent_pixels": 59149,
+      "margins": [
+        46,
+        17,
+        46,
+        16
+      ],
+      "sha256": "db0f8e50033bdbaf998a2a1c85c7d703fa10d83701faa266b861efd2f91ece4a",
+      "pass": true
+    },
+    {
+      "file": "12.png",
+      "mode": "RGBA",
+      "size": [
+        370,
+        320
+      ],
+      "dpi": [
+        95.9866,
+        95.9866
+      ],
+      "bytes": 137630,
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "transparent_pixels": 61792,
+      "margins": [
+        55,
+        13,
+        63,
+        12
+      ],
+      "sha256": "b5cc6ae5478577423de3b3e494afa2e3929059658b30aa808043278f65d88b7c",
+      "pass": true
+    },
+    {
+      "file": "13.png",
+      "mode": "RGBA",
+      "size": [
+        370,
+        320
+      ],
+      "dpi": [
+        95.9866,
+        95.9866
+      ],
+      "bytes": 139005,
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "transparent_pixels": 60600,
+      "margins": [
+        54,
+        27,
+        48,
+        14
+      ],
+      "sha256": "deee422e22d3e872d431793e89911bf8c676acb445f6192d6ecf398101c7c2c3",
+      "pass": true
+    },
+    {
+      "file": "14.png",
+      "mode": "RGBA",
+      "size": [
+        370,
+        320
+      ],
+      "dpi": [
+        95.9866,
+        95.9866
+      ],
+      "bytes": 132988,
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "transparent_pixels": 59334,
+      "margins": [
+        42,
+        21,
+        38,
+        14
+      ],
+      "sha256": "8f744a0b4c47974e894c083660f8452e29cfb5e108a5d53b78f84e3f2efd8d40",
+      "pass": true
+    },
+    {
+      "file": "15.png",
+      "mode": "RGBA",
+      "size": [
+        370,
+        320
+      ],
+      "dpi": [
+        95.9866,
+        95.9866
+      ],
+      "bytes": 142145,
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "transparent_pixels": 61598,
+      "margins": [
+        53,
+        21,
+        43,
+        12
+      ],
+      "sha256": "a2018241fbc07260177b8a1e68f4755a8d7906da9a15754ba6b4867ed5dd06ee",
+      "pass": true
+    },
+    {
+      "file": "16.png",
+      "mode": "RGBA",
+      "size": [
+        370,
+        320
+      ],
+      "dpi": [
+        95.9866,
+        95.9866
+      ],
+      "bytes": 138010,
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "transparent_pixels": 58992,
+      "margins": [
+        63,
+        20,
+        45,
+        12
+      ],
+      "sha256": "f93b2057bd21fb73f49a763304c6176cb126600fe5621eaca0aff41208a6613a",
+      "pass": true
+    },
+    {
+      "file": "17.png",
+      "mode": "RGBA",
+      "size": [
+        370,
+        320
+      ],
+      "dpi": [
+        95.9866,
+        95.9866
+      ],
+      "bytes": 167822,
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "transparent_pixels": 47130,
+      "margins": [
+        37,
+        21,
+        37,
+        18
+      ],
+      "sha256": "6a415a9d20abccb805d76f507cc5105aaff6c24d077c75d9079b42a73e7613ab",
+      "pass": true
+    },
+    {
+      "file": "18.png",
+      "mode": "RGBA",
+      "size": [
+        370,
+        320
+      ],
+      "dpi": [
+        95.9866,
+        95.9866
+      ],
+      "bytes": 177021,
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "transparent_pixels": 45767,
+      "margins": [
+        37,
+        21,
+        37,
+        14
+      ],
+      "sha256": "5c7153953dc11de3d7e6376f842996c2f0803361b5d49206c94d6b91b89c7698",
+      "pass": true
+    },
+    {
+      "file": "19.png",
+      "mode": "RGBA",
+      "size": [
+        370,
+        320
+      ],
+      "dpi": [
+        95.9866,
+        95.9866
+      ],
+      "bytes": 164928,
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "transparent_pixels": 48879,
+      "margins": [
+        37,
+        23,
+        37,
+        17
+      ],
+      "sha256": "146cfb9b8693c7e724f563bbd97edb4d10314735f78754e6ad7b29960e16df3b",
+      "pass": true
+    },
+    {
+      "file": "20.png",
+      "mode": "RGBA",
+      "size": [
+        370,
+        320
+      ],
+      "dpi": [
+        95.9866,
+        95.9866
+      ],
+      "bytes": 164501,
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "transparent_pixels": 50169,
+      "margins": [
+        37,
+        30,
+        37,
+        24
+      ],
+      "sha256": "efc38fae681559c1c02f1f909c676154b131fb06e79c7694d7db237e91ebbd5b",
+      "pass": true
+    },
+    {
+      "file": "21.png",
+      "mode": "RGBA",
+      "size": [
+        370,
+        320
+      ],
+      "dpi": [
+        95.9866,
+        95.9866
+      ],
+      "bytes": 160857,
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "transparent_pixels": 53522,
+      "margins": [
+        37,
+        25,
+        37,
+        20
+      ],
+      "sha256": "7ed01b23511a1a55adb3bc08d609ddde973f8352a8fe0c7822e5cdbef2173ca7",
+      "pass": true
+    },
+    {
+      "file": "22.png",
+      "mode": "RGBA",
+      "size": [
+        370,
+        320
+      ],
+      "dpi": [
+        95.9866,
+        95.9866
+      ],
+      "bytes": 159294,
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "transparent_pixels": 52962,
+      "margins": [
+        37,
+        36,
+        37,
+        21
+      ],
+      "sha256": "32f862c9e4399e6b7d44f7bfa4c84a626bd69bb23dd6049c2c4c61ced71c1142",
+      "pass": true
+    },
+    {
+      "file": "23.png",
+      "mode": "RGBA",
+      "size": [
+        370,
+        320
+      ],
+      "dpi": [
+        95.9866,
+        95.9866
+      ],
+      "bytes": 161834,
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "transparent_pixels": 49649,
+      "margins": [
+        40,
+        28,
+        41,
+        21
+      ],
+      "sha256": "98ae07d9365f468fbd92ab2b9a161804d8c6a7b322286c06dd61deda6336ffbd",
+      "pass": true
+    },
+    {
+      "file": "24.png",
+      "mode": "RGBA",
+      "size": [
+        370,
+        320
+      ],
+      "dpi": [
+        95.9866,
+        95.9866
+      ],
+      "bytes": 154185,
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "transparent_pixels": 53216,
+      "margins": [
+        37,
+        30,
+        37,
+        28
+      ],
+      "sha256": "df32fcf109dd74e431dffb0f47a63f094789b3def7b739bba86bdaa950ccd4e8",
+      "pass": true
+    },
+    {
+      "file": "25.png",
+      "mode": "RGBA",
+      "size": [
+        370,
+        320
+      ],
+      "dpi": [
+        95.9866,
+        95.9866
+      ],
+      "bytes": 150251,
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "transparent_pixels": 55637,
+      "margins": [
+        37,
+        39,
+        40,
+        25
+      ],
+      "sha256": "bf347465ea11b2edba91843499face4d4b77388395378e9af899cb54bd6e6d9b",
+      "pass": true
+    },
+    {
+      "file": "26.png",
+      "mode": "RGBA",
+      "size": [
+        370,
+        320
+      ],
+      "dpi": [
+        95.9866,
+        95.9866
+      ],
+      "bytes": 170168,
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "transparent_pixels": 50810,
+      "margins": [
+        37,
+        26,
+        37,
+        14
+      ],
+      "sha256": "978c138ef83509eb97a59852846eb972f38b45d943ef44459795b4ad5377df06",
+      "pass": true
+    },
+    {
+      "file": "27.png",
+      "mode": "RGBA",
+      "size": [
+        370,
+        320
+      ],
+      "dpi": [
+        95.9866,
+        95.9866
+      ],
+      "bytes": 162001,
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "transparent_pixels": 51720,
+      "margins": [
+        37,
+        24,
+        37,
+        16
+      ],
+      "sha256": "8cef196f7608b6eaa98142da8eac542956e192ab91d9a3458fdb261567e367aa",
+      "pass": true
+    },
+    {
+      "file": "28.png",
+      "mode": "RGBA",
+      "size": [
+        370,
+        320
+      ],
+      "dpi": [
+        95.9866,
+        95.9866
+      ],
+      "bytes": 177551,
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "transparent_pixels": 47913,
+      "margins": [
+        37,
+        24,
+        37,
+        14
+      ],
+      "sha256": "2eddd1b0fb0e20bbdf953408546b44e79069a20fcf49b8b32bd5f6dce586a423",
+      "pass": true
+    },
+    {
+      "file": "29.png",
+      "mode": "RGBA",
+      "size": [
+        370,
+        320
+      ],
+      "dpi": [
+        95.9866,
+        95.9866
+      ],
+      "bytes": 154730,
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "transparent_pixels": 52511,
+      "margins": [
+        37,
+        28,
+        37,
+        18
+      ],
+      "sha256": "33b70a56e6759f9040a645e948022a4d12bd6634c42a31bf6fc205009f2bef29",
+      "pass": true
+    },
+    {
+      "file": "30.png",
+      "mode": "RGBA",
+      "size": [
+        370,
+        320
+      ],
+      "dpi": [
+        95.9866,
+        95.9866
+      ],
+      "bytes": 160013,
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "transparent_pixels": 51292,
+      "margins": [
+        37,
+        34,
+        38,
+        21
+      ],
+      "sha256": "8c49e5e40986e465a32c6e1891e396b41482e827a313495ba359a3e1a6a77b10",
+      "pass": true
+    },
+    {
+      "file": "31.png",
+      "mode": "RGBA",
+      "size": [
+        370,
+        320
+      ],
+      "dpi": [
+        95.9866,
+        95.9866
+      ],
+      "bytes": 169094,
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "transparent_pixels": 52573,
+      "margins": [
+        37,
+        28,
+        37,
+        18
+      ],
+      "sha256": "2bbda7e327d14c3e0dea24d1f5b0d088332c4dc718b96e219314b221ca98bed8",
+      "pass": true
+    },
+    {
+      "file": "32.png",
+      "mode": "RGBA",
+      "size": [
+        370,
+        320
+      ],
+      "dpi": [
+        95.9866,
+        95.9866
+      ],
+      "bytes": 172275,
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "transparent_pixels": 50898,
+      "margins": [
+        37,
+        30,
+        37,
+        22
+      ],
+      "sha256": "e5cd5ce2e9244a6d1ef8127dc56f294cb6d3b71a578d418a7a5ed0187d25400c",
+      "pass": true
+    },
+    {
+      "file": "33.png",
+      "mode": "RGBA",
+      "size": [
+        370,
+        320
+      ],
+      "dpi": [
+        95.9866,
+        95.9866
+      ],
+      "bytes": 170105,
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "transparent_pixels": 51612,
+      "margins": [
+        37,
+        26,
+        37,
+        23
+      ],
+      "sha256": "72715268baf09a2b88e8322ceefdba9df61c25fbd0811d3c5d3504c1fc42b157",
+      "pass": true
+    },
+    {
+      "file": "34.png",
+      "mode": "RGBA",
+      "size": [
+        370,
+        320
+      ],
+      "dpi": [
+        95.9866,
+        95.9866
+      ],
+      "bytes": 167493,
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "transparent_pixels": 51453,
+      "margins": [
+        37,
+        30,
+        37,
+        24
+      ],
+      "sha256": "4f217bee09d7f2b3e88f5ba5eb01b4e2c3ec1a4b934c6e95a3661161a7116d24",
+      "pass": true
+    },
+    {
+      "file": "35.png",
+      "mode": "RGBA",
+      "size": [
+        370,
+        320
+      ],
+      "dpi": [
+        95.9866,
+        95.9866
+      ],
+      "bytes": 164265,
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "transparent_pixels": 53365,
+      "margins": [
+        37,
+        34,
+        37,
+        25
+      ],
+      "sha256": "74ddd1ba4703f5816d2a781d322a99b86d21f01ec438f603d1ea1c536e0bab9c",
+      "pass": true
+    },
+    {
+      "file": "36.png",
+      "mode": "RGBA",
+      "size": [
+        370,
+        320
+      ],
+      "dpi": [
+        95.9866,
+        95.9866
+      ],
+      "bytes": 168207,
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "transparent_pixels": 52215,
+      "margins": [
+        37,
+        36,
+        37,
+        24
+      ],
+      "sha256": "5d773e1974117e6e38eca815d4787466e3e32818bff4bb898279e2e1ea9cd986",
+      "pass": true
+    },
+    {
+      "file": "37.png",
+      "mode": "RGBA",
+      "size": [
+        370,
+        320
+      ],
+      "dpi": [
+        95.9866,
+        95.9866
+      ],
+      "bytes": 164019,
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "transparent_pixels": 54316,
+      "margins": [
+        37,
+        25,
+        37,
+        16
+      ],
+      "sha256": "b0384446a455aa43d58067b75919680f49fc491dd4ab6fb00ad10ea054909671",
+      "pass": true
+    },
+    {
+      "file": "38.png",
+      "mode": "RGBA",
+      "size": [
+        370,
+        320
+      ],
+      "dpi": [
+        95.9866,
+        95.9866
+      ],
+      "bytes": 161127,
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "transparent_pixels": 54775,
+      "margins": [
+        37,
+        23,
+        37,
+        17
+      ],
+      "sha256": "0c0606c339d089568657c7849ab80e51b6760404cb215909bca29d7e2b1b9261",
+      "pass": true
+    },
+    {
+      "file": "39.png",
+      "mode": "RGBA",
+      "size": [
+        370,
+        320
+      ],
+      "dpi": [
+        95.9866,
+        95.9866
+      ],
+      "bytes": 153242,
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "transparent_pixels": 58912,
+      "margins": [
+        37,
+        46,
+        37,
+        38
+      ],
+      "sha256": "d63b59c647a4f370a4dabb38aa694ca31a1ee1049769be91382f9c4dfec6c24b",
+      "pass": true
+    },
+    {
+      "file": "40.png",
+      "mode": "RGBA",
+      "size": [
+        370,
+        320
+      ],
+      "dpi": [
+        95.9866,
+        95.9866
+      ],
+      "bytes": 168735,
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "transparent_pixels": 51967,
+      "margins": [
+        37,
+        30,
+        37,
+        22
+      ],
+      "sha256": "cd2a088ee51eb73309dd9bc4476c372fc42b09902a048601e9566a7905967c2b",
+      "pass": true
+    },
+    {
+      "file": "main.png",
+      "mode": "RGBA",
+      "size": [
+        240,
+        240
+      ],
+      "dpi": [
+        95.9866,
+        95.9866
+      ],
+      "bytes": 97812,
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "transparent_pixels": 21763,
+      "margins": [
+        8,
+        14,
+        8,
+        12
+      ],
+      "sha256": "bee89008a7d712fc81e287eaed76a81aba0a412eddd89f999afbbfc2dfe5294e",
+      "pass": true
+    },
+    {
+      "file": "tab.png",
+      "mode": "RGBA",
+      "size": [
+        96,
+        74
+      ],
+      "dpi": [
+        95.9866,
+        95.9866
+      ],
+      "bytes": 9579,
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "transparent_pixels": 3919,
+      "margins": [
+        14,
+        6,
+        12,
+        6
+      ],
+      "sha256": "2f95ff943175e9a3503743d22d6dd34f57af265e71b8675946a97efaa1f004d7",
+      "pass": true
+    }
+  ],
+  "zip_exact_match": true,
+  "zip_bytes": 6295601,
+  "text_counts": {
+    "title_ja": 15,
+    "description_ja": 139,
+    "title_en": 19,
+    "description_en": 134
+  },
+  "text_pass": true,
+  "pass_all": true
+}
