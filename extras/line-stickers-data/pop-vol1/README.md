@@ -1,6 +1,8 @@
-# 壁ラジPOP Vol.1 — Issue #28 設計案
+# 壁ラジPOP Vol.1 — 完成版
 
-状態: 40枚とmain・tabを制作。制作指示は production-v2.json、修正指示は corrections.json、制作記録は PRODUCTION.md。LINEへの申請は未実施。
+状態: 2026-09-28、ユーザー了承により現行40枚とmain・tabを完成版として確定。制作指示は production-v2.json、修正指示は corrections.json、制作記録は PRODUCTION.md。LINEへの申請は未実施。
+
+[販売ページ用文面と入稿メモ](RELEASE.md) / [完成版ファイル記録](release.json)
 
 ## 制作画像
 
@@ -96,6 +98,7 @@
 上記5件の文言差し替え、3人10枚の割合、mainの3人/ tabのあまかわちゃん単独を提案。B未確定13件はローカル制作元により照合済み。訂正内容は PRODUCTION.md を参照。
 
 本作業は独立した制作設計資料のため通常ランチャーの確認・反映対象外。コードや起動動作は変更しない。
+
 
 
 
