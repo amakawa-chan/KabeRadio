@@ -26,6 +26,7 @@ GitHub上の正式Episodeは原則`status: ready`で保存し、M6ローカル�
 
 ## Episodes
 
+- [ずっとラジオを聞いてきたら、気づけば自分用のラジオを作っていた](kept-listening-made-my-own-radio/)
 - [LINEスタンプ発売します](nine-subs-three-stickers/)
 - [知ってるAIと、やってた人間](ai-knows-but-didnt-live-it/)
 - [モブ子の一言をnoteに載せたかっただけなのに、ジェネレーターが生えた](note-card-generator-grew/)
