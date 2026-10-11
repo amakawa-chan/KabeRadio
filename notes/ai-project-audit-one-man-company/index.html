@@ -1,0 +1,61 @@
+<!doctype html><html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>GitHubの14リポジトリをAIに評価してもらったら</title><style>body{margin:0;background:#f6f7f9;color:#20252b;font:16px/1.85 system-ui,sans-serif}main{max-width:760px;margin:auto;padding:28px 20px 88px}h1{font-size:1.7rem;line-height:1.4}h2{margin-top:2.4rem;border-bottom:1px solid #ccc}blockquote{margin:20px 0;padding:12px 18px;border-left:4px solid #0d9488;background:#e9f4f1}table{border-collapse:collapse;width:100%;font-size:.9rem}td{border-bottom:1px solid #ccc;padding:8px 5px}a{color:#0d9488}button{padding:10px 16px;border-radius:8px;border:1px solid #bbb;cursor:pointer}@media(prefers-color-scheme:dark){body{background:#12161b;color:#e8edf2}blockquote{background:#1b3633}}</style></head><body><main><p><a href="../../episodes/ai-project-audit-one-man-company/">← 壁ラジ Episode</a></p><button id="copy" type="button">本文をコピー</button><article id="body"><h1>GitHubの14リポジトリをAIに評価してもらったら、ワンマン社長扱いされた</h1>
+<p>最初はデスクトップにキャラクターを置いて、喋らせたかっただけだった。</p>
+<p>それがいつの間にか、ラジオを作る仕組みになり、動画の生成や24時間配信、配信後のアーカイブ編集にまで広がった。買い物アプリも、音ゲーの練習ツールも、iPhoneで長文を流し読みする道具もある。</p>
+<p>先日、ChatGPTにGitHubの関連プロジェクトをまとめて見てもらった。確認されたリポジトリは14個。思いついたことをその都度試してきただけのつもりだったけれど、外から見るとどうなんだろう。</p>
+<h2>まず個別のプロジェクトを評価してもらった</h2>
+<table><tbody>
+<tr><td>プロジェクト</td><td>AIによる評価</td></tr>
+<tr><td>Amakawachan System</td><td>9.0 / 10</td></tr>
+<tr><td>KabeRadio / 壁ラジ</td><td>9.0 / 10</td></tr>
+<tr><td>POPNDEX / POP'N FLASH</td><td>8.5 / 10</td></tr>
+<tr><td>note-builder / amakawachan-core</td><td>8.5 / 10</td></tr>
+<tr><td>KATTAGA</td><td>8.0 / 10</td></tr>
+<tr><td>Safari RSVP</td><td>8.0 / 10</td></tr>
+</tbody></table>
+<p>評価する観点はプロジェクトごとに少し違う。コード全体の監査や実機試験ではなく、README、設計資料、検証記録をもとにしたChatGPTの主観的な点数だ。</p>
+<p>Amakawachan Systemはキャラクターと音声基盤の共有、壁ラジは台本から音声・動画までの制作の仕組みが評価された。POPNDEXやSafari RSVPは、趣味や日常のかなり限定された不便を道具に変えている点が強みらしい。</p>
+<p>逆に、誰に売るのかと聞かれると、特に答えはない。</p>
+<h2>開発者としての評価は86点</h2>
+<p>総合評価は100点満点で86点。細かな内訳も出してもらった。</p>
+<table><tbody>
+<tr><td>項目</td><td>評価</td></tr>
+<tr><td>課題発見・着想</td><td>9.5 / 10</td></tr>
+<tr><td>実装推進力</td><td>9.0 / 10</td></tr>
+<tr><td>設計・境界管理</td><td>8.5 / 10</td></tr>
+<tr><td>検証・品質管理</td><td>7.5 / 10</td></tr>
+<tr><td>UI・利用体験</td><td>7.0 / 10</td></tr>
+<tr><td>製品化・販売戦略</td><td>4.5 / 10</td></tr>
+</tbody></table>
+<p>製品化の点が低い。まあ、そこはそうだろうと思う。</p>
+<p>今のAmakawachan Systemは、自分のWindows環境や音声エンジンにかなり依存している。一般に配るならセットアップも更新もサポートも必要になる。そこまでして一つの商品にしようとは、今は思っていない。</p>
+<p>だから販売の点数を見て少し笑った。自分では出場した覚えのない大会で減点されている感じがする。</p>
+<h2>開発が楽しい、とは少し違う</h2>
+<p>ChatGPTから、開発すること自体が目的になっていないかとも言われた。</p>
+<p>もちろん作るのは楽しい。でも、それ以上に「あれできる？」と思ったとき、すぐに試せるようになったことが面白い。</p>
+<p>以前なら手間がかかりすぎて、調べて終わっていたようなものが、AIと相談して実装し、手元で動かすところまで進む。</p>
+<blockquote><p>モブ子：</p></blockquote>
+<blockquote><p>開発が好きというより、思いついたことをすぐ試作できる環境ができている。そこが強みですね。</p></blockquote>
+<p>これは結構しっくりきた。</p>
+<p>作りたいものが最初から大きく決まっているわけではない。試してみたら、別のこともできそうだと思う。その繰り返しで、気づけば増えていた。</p>
+<h2>AIなしなら、ワンマン社長に振り回される開発チーム</h2>
+<p>この開発ペースを、人間だけの会社に置き換えたらどうなるだろう。</p>
+<p>「モブ子を表示したい」「踊らせたい」「音楽に合わせたい」「24時間配信したい」。思いつくたびに仕様が変わる。</p>
+<p>人間のチームなら、どこかで開発計画を整理しましょうと言われそうだ。</p>
+<blockquote><p>モブ子：</p></blockquote>
+<blockquote><p>社長の好奇心に開発計画が追従している会社ですね。</p></blockquote>
+<p>ブラック企業かと聞いてみたら、AI社員には比較的ホワイト、人間に同じことを求めたら相当無茶、そして社長自身にはブラック、という評価だった。</p>
+<p>しかも社長は企画担当であり、ユーザーであり、テスターでもある。</p>
+<h2>作った後の報告が抜けていた</h2>
+<p>今回、一番反省したのはここかもしれない。</p>
+<p>GitHubの資料に実機未確認と書いてある機能でも、実際は触って確認したものがある。そこで満足してしまって、確認結果を記録していなかった。</p>
+<p>AIがリポジトリを読めば、当然まだ未確認だと判断する。自分だけが知っている状態と、GitHub上の状態にズレができてしまう。</p>
+<blockquote><p>モブ子：</p></blockquote>
+<blockquote><p>その「確認はしたけど、書いてないだけ」をやめてください。</p></blockquote>
+<p>これはその通り。</p>
+<p>一度全体を棚卸しして、実装済み、検証済み、保留中のものを整理した方がよさそうだ。ただし、管理するための仕事ばかり増えても困るので、記録はなるべく軽くしたい。</p>
+<h2>そして新しいアプリの企画が生えた</h2>
+<p>そんな話をしていたら、AIが働いている様子を3Dのオフィスで見られたら面白い、と思い始めた。</p>
+<p>企画室ではChatGPT、開発室ではCodex、壁ラジ制作室では音声や動画の生成。どこで何が動いているかを見られて、既存アプリのランチャーにもなる。</p>
+<p>ただ、実際のAI作業状態をどこまで取得できるかは調査が必要。見た目の楽しさだけではなく、本当に動いているものがわかる画面にしたい。</p>
+<p>棚卸しが必要だと言われ、そうだねと答え、その途中でまた新しい企画を思いつく。</p>
+<p>株式会社あまかわちゃんの経営体質は、そう簡単には変わらなさそうだ。</p></article></main><script>document.getElementById('copy').addEventListener('click',async()=>{const el=document.getElementById('body');try{if(navigator.clipboard&&window.ClipboardItem){const h=el.innerHTML;await navigator.clipboard.write([new ClipboardItem({'text/html':new Blob([h],{type:'text/html'}),'text/plain':new Blob([el.innerText],{type:'text/plain'})})]);}else throw Error('fallback');alert('コピーしました');}catch(e){const r=document.createRange();r.selectNodeContents(el);const s=getSelection();s.removeAllRanges();s.addRange(r);alert('本文を選択しました。コピーしてください');}});</script></body></html>
