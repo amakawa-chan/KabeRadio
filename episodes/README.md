@@ -26,6 +26,8 @@ GitHub上の正式Episodeは原則`status: ready`で保存し、M6ローカル�
 
 ## Episodes
 
+- [AIに開発プロジェクトを監査させたら、ワンマン社長だった](ai-project-audit-one-man-company/)
+
 - [たこ焼きは朝ごはんになりえるのか](takoyaki-breakfast/)
 - [ずっとラジオを聞いてきたら、気づけば自分用のラジオを作っていた](kept-listening-made-my-own-radio/)
 - [LINEスタンプ発売します](nine-subs-three-stickers/)
