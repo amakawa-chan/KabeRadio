@@ -19,6 +19,8 @@ GitHub PagesをRepository rootから公開している場合、以下の公開�
 - [シャツとパンツ、1日3セットいるよね？](https://amakawa-chan.github.io/KabeRadio/notes/three-sets-a-day/)
 - [おっさんとセンベロ行く服が一番むずい](https://amakawa-chan.github.io/KabeRadio/notes/senbero-outfit-is-hard/)
 
+- [GitHubの14リポジトリをAIに評価してもらったら、ワンマン社長扱いされた](https://amakawa-chan.github.io/KabeRadio/notes/ai-project-audit-one-man-company/)
+
 各公開ページには「本文をコピー」ボタンがあり、noteへの貼り付け用にも使えます。
 
 
