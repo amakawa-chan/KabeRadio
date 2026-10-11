@@ -125,3 +125,5 @@ X「壁ラジ公式」、YouTube、制作資料・ギャラリーへのリンク
 Repository間の責務、M6環境設定、Archive / Delivery、Casting / Voiceの境界は次を正本とします。
 
 - [KabeRadio / Amakawachan Radio Runtime Integration Contract v1](docs/runtime-integration-contract-v1.md)
+
+- [壁ラジ24 アーカイブ編集MVP・検証状況・アプリrepo分割の判断](docs/wallradio24-archive-editor-mvp.md)

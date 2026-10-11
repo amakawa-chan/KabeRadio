@@ -191,3 +191,9 @@ Repository間の契約を変更する場合は、次の順に更新します。
 5. 必要なら新しい「壁ラジ機能実装会」Episodeで実TTS・Podcast・Video・Deliveryを検証
 
 既存の公開Episodeを仕様確認のために再Renderしません。
+
+## 壁ラジ24のアーカイブ編集
+
+保存音声・YouTubeアーカイブからの話題選択、横動画生成、概要欄編集、投稿・再認証はAssistant側のRuntimeで扱います。KabeRadioには公開仕様と検証状況を残し、元音声・配信映像・認証情報を保存しません。現時点で編集アプリ用の別repoは作らず、独立配布が必要になった際に入力・認証・素材の依存を切り出します。
+
+- [アーカイブ編集MVPとrepo分割の検討](wallradio24-archive-editor-mvp.md)
