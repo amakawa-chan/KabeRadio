@@ -26,6 +26,7 @@ GitHub上の正式Episodeは原則`status: ready`で保存し、M6ローカル�
 
 ## Episodes
 
+- [日常生活にも装備マイセットが必要だと思う](daily-gear-presets/)
 - [AIに開発プロジェクトを監査させたら、ワンマン社長だった](ai-project-audit-one-man-company/)
 
 - [たこ焼きは朝ごはんになりえるのか](takoyaki-breakfast/)
