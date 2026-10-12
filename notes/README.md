@@ -6,6 +6,8 @@ GitHub PagesをRepository rootから公開している場合、以下の公開�
 
 - [歴史の観測は、小銭稼ぎから始まる。](https://amakawa-chan.github.io/KabeRadio/notes/history-begins-with-pocket-change/)
 
+- [定食の呪い](https://amakawa-chan.github.io/KabeRadio/notes/teishoku-curse/)
+
 - [日常生活にも装備マイセットが必要だと思う](https://amakawa-chan.github.io/KabeRadio/notes/daily-gear-presets/)
 
 - [たこ焼きは朝ごはんになりえるのか](https://amakawa-chan.github.io/KabeRadio/notes/takoyaki-breakfast/)
