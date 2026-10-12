@@ -26,6 +26,8 @@ GitHub上の正式Episodeは原則`status: ready`で保存し、M6ローカル�
 
 ## Episodes
 
+- [歴史の観測は、小銭稼ぎから始まる。](history-begins-with-pocket-change/)
+
 - [日常生活にも装備マイセットが必要だと思う](daily-gear-presets/)
 - [AIに開発プロジェクトを監査させたら、ワンマン社長だった](ai-project-audit-one-man-company/)
 
