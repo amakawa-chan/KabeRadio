@@ -4,6 +4,8 @@
 
 GitHub PagesをRepository rootから公開している場合、以下の公開ページをiPhone / Safariからそのまま閲覧できます。
 
+- [日常生活にも装備マイセットが必要だと思う](https://amakawa-chan.github.io/KabeRadio/notes/daily-gear-presets/)
+
 - [たこ焼きは朝ごはんになりえるのか](https://amakawa-chan.github.io/KabeRadio/notes/takoyaki-breakfast/)
 
 - [ずっとラジオを聞いてきたら、気づけば自分用のラジオを作っていた](https://amakawa-chan.github.io/KabeRadio/notes/kept-listening-made-my-own-radio/)
