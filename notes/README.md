@@ -1,5 +1,7 @@
 # 制作ノート
 
+- [サウナで脳内にテクノを流している話](https://amakawa-chan.github.io/KabeRadio/notes/sauna-brain-techno/)
+
 - [人に聞かせられない、私のチープカシオの話](https://amakawa-chan.github.io/KabeRadio/notes/cant-tell-people-about-my-casio/)
 
 壁ラジ本編の文字起こしではなく、壁打ちから何を考えてどこへ話が転がったかを残す制作記です。
