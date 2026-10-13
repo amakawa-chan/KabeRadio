@@ -26,6 +26,8 @@ GitHub上の正式Episodeは原則`status: ready`で保存し、M6ローカル�
 
 ## Episodes
 
+- [人に聞かせられない、私のチープカシオの話](cant-tell-people-about-my-casio/)
+
 - [熱性けいれんで救急車を呼んだ日。鍋の火は消せたが、母子手帳は見つからなかった](febrile-seizure-kitchen-fire/)
 
 - [定食の呪い](teishoku-curse/)
