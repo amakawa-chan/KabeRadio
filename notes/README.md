@@ -1,5 +1,7 @@
 # 制作ノート
 
+- [電話をかけるために、トーストを焼こうと思った](https://amakawa-chan.github.io/KabeRadio/notes/phone-call-toast-deadline/)
+
 - [サウナで脳内にテクノを流している話](https://amakawa-chan.github.io/KabeRadio/notes/sauna-brain-techno/)
 
 - [人に聞かせられない、私のチープカシオの話](https://amakawa-chan.github.io/KabeRadio/notes/cant-tell-people-about-my-casio/)
