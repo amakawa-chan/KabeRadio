@@ -4,6 +4,8 @@
 
 GitHub PagesをRepository rootから公開している場合、以下の公開ページをiPhone / Safariからそのまま閲覧できます。
 
+- [熱性けいれんで救急車を呼んだ日。鍋の火は消せたが、母子手帳は見つからなかった](https://amakawa-chan.github.io/KabeRadio/notes/febrile-seizure-kitchen-fire/)
+
 - [歴史の観測は、小銭稼ぎから始まる。](https://amakawa-chan.github.io/KabeRadio/notes/history-begins-with-pocket-change/)
 
 - [定食の呪い](https://amakawa-chan.github.io/KabeRadio/notes/teishoku-curse/)
