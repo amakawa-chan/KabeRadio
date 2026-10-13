@@ -26,6 +26,8 @@ GitHub上の正式Episodeは原則`status: ready`で保存し、M6ローカル�
 
 ## Episodes
 
+- [電話が嫌いな私が、会社に休みの連絡をするためにトーストを焼く話](phone-call-toast-deadline/)
+
 - [サウナで脳内にテクノを流している話](sauna-brain-techno/)
 
 - [人に聞かせられない、私のチープカシオの話](cant-tell-people-about-my-casio/)
