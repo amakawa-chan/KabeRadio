@@ -39,3 +39,10 @@ Radioの `archives-layout.json` の `introPresets` へ相対file、id、実durat
 正本：KabeRadio #31（台本契約）、amakawachan-assistant #99（映像・Runtime）。
 
 次工程: [正式ミニアイキャッチ・BGM制作 #100](https://github.com/amakawa-chan/amakawachan-assistant/issues/100)
+
+## 実素材v1の進捗（2026-10-17）
+
+音声付き1.2秒アイキャッチ2種（star-pop-v1/light-pop-v1）をRadioへ組み込み。同じ新規2人ポーズを共有し、ピンク／水色・カメラ動作を変える。タイトルコールはVOICEVOX:中国うさぎとAivisSpeech:まお。素材ID/hash固定、完成素材優先のランダム、OFFを維持。
+低音kawaiiサイン波BGMをアーカイブス専用設定へ統合。会話ダッキング・CTA前停止を実装。実素材の正本はAssistantのRadio/assets/archives、再生成手順と画像生成プロンプトは同ディレクトリREADME/provenance.json。
+
+実音声本編付き2本で16.533秒、黒フレームなし、ピーク0.651、CTA RMS0を確認。ユーザーの見た目・実機試聴レビュー、実投稿は未完了。#100を継続する。
