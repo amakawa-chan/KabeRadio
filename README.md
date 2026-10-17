@@ -131,3 +131,7 @@ Repository間の責務、M6環境設定、Archive / Delivery、Casting / Voice�
 ## 壁ラジアーカイブス台本
 
 [追加6本（3本ずつの読込パッケージ）](archives/batches/README.md)。Radioの「アーカイブス作成」→「GitHubの台本を読み込む」で取得します。元動画IDは未確認のため、投稿前に補完してください。
+
+- [アーカイブス制作ルール・メタデータ契約](docs/archives-script-contract-v1.md)
+- [ChatGPT/Codex生成手順・GitHub保存運用](prompts/chatgpt-archives-v1.md)
+- [アーカイブス台本テンプレート](templates/archives/script.md)
