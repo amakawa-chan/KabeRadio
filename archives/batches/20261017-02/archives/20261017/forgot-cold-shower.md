@@ -16,8 +16,8 @@
       28,
       29
     ],
-    "sourceYouTubeVideoId": "",
-    "sourceYouTubeUrl": "",
+    "sourceYouTubeVideoId": "jV730W_T6P0",
+    "sourceYouTubeUrl": "https://www.youtube.com/watch?v=jV730W_T6P0",
     "renderPreset": "archives-speaker-follow",
     "cta": "blur-related-video"
   }
