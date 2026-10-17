@@ -127,3 +127,7 @@ Repository間の責務、M6環境設定、Archive / Delivery、Casting / Voice�
 - [KabeRadio / Amakawachan Radio Runtime Integration Contract v1](docs/runtime-integration-contract-v1.md)
 
 - [壁ラジ24 アーカイブ編集MVP・検証状況・アプリrepo分割の判断](docs/wallradio24-archive-editor-mvp.md)
+
+## 壁ラジアーカイブス台本
+
+[追加6本（3本ずつの読込パッケージ）](archives/batches/README.md)。Radioの「アーカイブス作成」→「GitHubの台本を読み込む」で取得します。元動画IDは未確認のため、投稿前に補完してください。
