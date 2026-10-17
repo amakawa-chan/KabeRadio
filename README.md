@@ -127,3 +127,14 @@ Repository間の責務、M6環境設定、Archive / Delivery、Casting / Voice�
 - [KabeRadio / Amakawachan Radio Runtime Integration Contract v1](docs/runtime-integration-contract-v1.md)
 
 - [壁ラジ24 アーカイブ編集MVP・検証状況・アプリrepo分割の判断](docs/wallradio24-archive-editor-mvp.md)
+
+## 壁ラジアーカイブス
+
+「15秒だけ壁ラジを浴びる。」
+
+- [制作契約](docs/archives-script-contract-v1.md)
+- [制作プロンプト](prompts/chatgpt-archives-v1.md)
+- [台本テンプレート](templates/archives/script.md)
+- [出典付き3本例](archives/20261017/README.md)
+
+- [採用デザイン・アイキャッチ制作ブリーフ](docs/archives-visual-and-eyecatch-brief-v1.md)
