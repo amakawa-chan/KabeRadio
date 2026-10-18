@@ -1,5 +1,7 @@
 # 制作ノート
 
+- [【ミリしら】VIVANTのドラムを考察したら、エヴァになった](https://amakawa-chan.github.io/KabeRadio/notes/vivant-drum-mirishira-hayashibara/)
+
 - [蝶々の寿命を考えていたら、人間の方が不思議になった](https://amakawa-chan.github.io/KabeRadio/notes/butterfly-lifespan-human-longevity/)
 
 - [SNSを見るたびに、勝手にダウトを始めてしまう](https://amakawa-chan.github.io/KabeRadio/notes/sns-monetization-doubt/)
