@@ -1,5 +1,7 @@
 # 制作ノート
 
+- [SNSを見るたびに、勝手にダウトを始めてしまう](https://amakawa-chan.github.io/KabeRadio/notes/sns-monetization-doubt/)
+
 - [電話をかけるために、トーストを焼こうと思った](https://amakawa-chan.github.io/KabeRadio/notes/phone-call-toast-deadline/)
 
 - [サウナで脳内にテクノを流している話](https://amakawa-chan.github.io/KabeRadio/notes/sauna-brain-techno/)
