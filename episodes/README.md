@@ -26,6 +26,8 @@ GitHub上の正式Episodeは原則`status: ready`で保存し、M6ローカル�
 
 ## Episodes
 
+- [【ミリしら】VIVANTのドラムを考察したら、エヴァになった](vivant-drum-mirishira-hayashibara/)
+
 - [蝶々は短命なのか、人間が長生きすぎるのか？](butterfly-lifespan-human-longevity/)
 
 - [焼きそばは主食なのか、おかずなのか？](yakisoba-main-or-side/)
