@@ -135,3 +135,10 @@ Repository間の責務、M6環境設定、Archive / Delivery、Casting / Voice�
 - [アーカイブス制作ルール・メタデータ契約](docs/archives-script-contract-v1.md)
 - [ChatGPT/Codex生成手順・GitHub保存運用](prompts/chatgpt-archives-v1.md)
 - [アーカイブス台本テンプレート](templates/archives/script.md)
+
+### アーカイブスの採用演出・制作例
+
+- [採用デザインと4種類のアイキャッチ制作仕様](docs/archives-visual-and-eyecatch-brief-v1.md)
+- [初期の出典付き3本例](archives/20261017/README.md)
+
+台本制作の正本は上記の制作契約・生成手順です。音声・映像の確定素材と投稿処理はRadio Runtimeで管理します。
