@@ -26,6 +26,8 @@ GitHub上の正式Episodeは原則`status: ready`で保存し、M6ローカル�
 
 ## Episodes
 
+- [焼きそばは主食なのか、おかずなのか？](yakisoba-main-or-side/)
+
 - [SNSを見るたびに、勝手にダウトを始めてしまう](sns-monetization-doubt/)
 
 - [電話が嫌いな私が、会社に休みの連絡をするためにトーストを焼く話](phone-call-toast-deadline/)
