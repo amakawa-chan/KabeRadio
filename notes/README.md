@@ -40,6 +40,8 @@ GitHub PagesをRepository rootから公開している場合、以下の公開�
 各公開ページには「本文をコピー」ボタンがあり、noteへの貼り付け用にも使えます。
 
 
+- [焼きそばは主食なのか、おかずなのか？](yakisoba-main-or-side/)
+
 ## Note Card Generator
 
 noteへ投稿するタイミングで、制作ノートのキャラクター引用をPNGカードへ変換できます。
