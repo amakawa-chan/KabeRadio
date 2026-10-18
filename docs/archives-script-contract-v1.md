@@ -34,7 +34,7 @@ Radioの既存Canonical ParserがFront Matterを読み飛ばす契約を維持�
 | `renderPreset` | `archives-speaker-follow` |
 | `cta` | `blur-related-video` |
 
-元動画URL/IDは確認できる公開記録からのみ取得します。推測・架空IDは保存しません。空欄でも候補を保存・レンダーできますが、投稿前には同じチャンネルの公開／限定公開動画として存在・権限を確認する必要があります。Shorts関連動画の設定はアップロード成功とは別で、現行RuntimeはYouTube Studioでの手動設定待ちを記録します。
+元動画URL/IDは確認できる公開記録からのみ取得します。推測・架空IDは保存しません。空欄でも候補を保存・レンダーできますが、投稿前には同じチャンネルの公開／限定公開動画として存在・権限を確認する必要があります。Shorts関連動画の設定はアップロード成功とは別で、RuntimeはYouTube Studioでの設定状態を別途記録し、対応版では任意の自動設定と設定だけの再試行を利用できます。保存確認前は設定済みと扱いません。
 
 ## Runtimeとの境界
 
@@ -45,7 +45,13 @@ Radioの既存Canonical ParserがFront Matterを読み飛ばす契約を維持�
 ## 例と確認
 
 - [テンプレート](../templates/archives/script.md)
-- [1本から使える3本例](../archives/20261017/README.md)。各ファイルは元台本のセリフとTurnを直接照合でき、途中終了例を含みます。元動画未確認のためID/URLは空欄です。
+- [3本ずつ使える6本](../archives/batches/README.md)。各ファイルは元台本のセリフとTurnを直接照合でき、途中終了例を含みます。元動画未確認のためID/URLは空欄です。
 - [制作プロンプト](../prompts/chatgpt-archives-v1.md)
 
 保存前にCanonicalで発話が読めること、出典との一致、CAST、ID/URLの一致、直近重複、公開情報だけであることを確認します。実TTS後の尺と字幕の可読性はRuntimeでレビューします。
+
+## GitHub保存運用（2026-10-17）
+
+台本の正本はKabeRadioのGitHub既定ブランチです。通常保存先は専用の `archives/YYYYMMDD/`。一括読込の上限は3本であり、ユーザーが4本以上を指定した場合は3本以下の組に分けて制作します。同日追加で既存フォルダが満杯の場合も `archives/batches/YYYYMMDD-NN/archives/YYYYMMDD/` に保存し、既存の台本・IDを上書きしません。NNは一意な連番です。各組でJSONメタデータ・Canonical Parser・元Turn・CAST・重複を検証します。
+
+GitHub保存を依頼されたセッションではcommit/pushし、既定ブランチへの保存を確認します。指示がないセッションではGit書込の権限はユーザー指示に従います。PRだけへの保存は未マージと明記します。アプリは通常壁ラジと同じ `remoteProduction.kabeRadioRepository` とGit認証を使って、既定ブランチの保存コミットを取得します。画面は「アーカイブス作成」→「GitHubの台本を読み込む」→「GitHubから最新版を取得」。取得済みコピーを使い、ローカルの未保存編集は正本として扱いません。iCloudは確認用コピーで、音声・MP4・公開日時・認証情報はRuntime側で管理します。
