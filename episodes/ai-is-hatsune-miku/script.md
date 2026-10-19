@@ -15,7 +15,12 @@
         "startTurn": 4,
         "endTurn": 8,
         "hook": "作れたと品質",
-        "point": "会話の思考移動を短く切り出す候補"
+        "point": "会話の思考移動を短く切り出す候補",
+        "title": "作れたと品質",
+        "targetDuration": 22,
+        "platforms": [
+          "youtube-shorts"
+        ]
       },
       {
         "id": "clip-02",
@@ -23,7 +28,12 @@
         "startTurn": 16,
         "endTurn": 20,
         "hook": "コードの自虐",
-        "point": "会話の思考移動を短く切り出す候補"
+        "point": "会話の思考移動を短く切り出す候補",
+        "title": "コードの自虐",
+        "targetDuration": 22,
+        "platforms": [
+          "youtube-shorts"
+        ]
       },
       {
         "id": "clip-03",
@@ -31,7 +41,12 @@
         "startTurn": 28,
         "endTurn": 32,
         "hook": "DTMerの悲哀",
-        "point": "会話の思考移動を短く切り出す候補"
+        "point": "会話の思考移動を短く切り出す候補",
+        "title": "DTMerの悲哀",
+        "targetDuration": 22,
+        "platforms": [
+          "youtube-shorts"
+        ]
       },
       {
         "id": "clip-04",
@@ -39,7 +54,12 @@
         "startTurn": 34,
         "endTurn": 39,
         "hook": "ミクとP文化",
-        "point": "会話の思考移動を短く切り出す候補"
+        "point": "会話の思考移動を短く切り出す候補",
+        "title": "ミクとP文化",
+        "targetDuration": 22,
+        "platforms": [
+          "youtube-shorts"
+        ]
       },
       {
         "id": "clip-05",
@@ -47,7 +67,12 @@
         "startTurn": 43,
         "endTurn": 48,
         "hook": "作れるその先",
-        "point": "会話の思考移動を短く切り出す候補"
+        "point": "会話の思考移動を短く切り出す候補",
+        "title": "作れるその先",
+        "targetDuration": 22,
+        "platforms": [
+          "youtube-shorts"
+        ]
       },
       {
         "id": "clip-06",
@@ -55,7 +80,12 @@
         "startTurn": 55,
         "endTurn": 60,
         "hook": "会社と変革",
-        "point": "会話の思考移動を短く切り出す候補"
+        "point": "会話の思考移動を短く切り出す候補",
+        "title": "会社と変革",
+        "targetDuration": 22,
+        "platforms": [
+          "youtube-shorts"
+        ]
       }
     ]
   }
