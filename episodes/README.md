@@ -26,6 +26,8 @@ GitHub上の正式Episodeは原則`status: ready`で保存し、M6ローカル�
 
 ## Episodes
 
+- [AIは初音ミクなのかもしれない。](ai-is-hatsune-miku/)
+
 - [モブ美監査室：趣味の規模が合っていない](mobumi-audit-room/)
 - [楽しみだったはずが、いつの間にか仕事になる（モブ美Guest）](mobumi-guest-why-everything-becomes-project/)
 
