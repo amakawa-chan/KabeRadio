@@ -1,5 +1,7 @@
 # 制作ノート
 
+- [AIは初音ミクなのかもしれない。](https://amakawa-chan.github.io/KabeRadio/notes/ai-is-hatsune-miku/)
+
 - [【ミリしら】VIVANTのドラムを考察したら、エヴァになった](https://amakawa-chan.github.io/KabeRadio/notes/vivant-drum-mirishira-hayashibara/)
 
 - [蝶々の寿命を考えていたら、人間の方が不思議になった](https://amakawa-chan.github.io/KabeRadio/notes/butterfly-lifespan-human-longevity/)
