@@ -229,6 +229,8 @@ note companionをskipして構いません。
 
 ## 成功条件
 
+- 終了カードは対応デスクトップRadioの「レンダー・配信」出力条件で生成前に選べるため、台本のOUTRO指定は必須にしない。台本で指定したい場合のみ `## Ending Sequence` に `[OUTRO: fixed-aftertalk-v1]` を置く。YouTubeのおすすめ動画・壁ラジプレイリストの2リンクはStudioで最後の6秒へ設定する別工程であり、画像やOUTRO指定だけでリンクが設定されたと報告しない。
+
 - 3ファイルが同じepisode key配下に揃っている
 - `episodes/README.md` のEpisode一覧から新しいEpisodeへ辿れる
 - script.mdをRadio ParserがHost／Guest Turnとして解析できる
