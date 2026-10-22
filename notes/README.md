@@ -1,5 +1,7 @@
 # 制作ノート
 
+- [AIとGitHubによって、人間は忘れる自由を失いつつあるのか？](https://amakawa-chan.github.io/KabeRadio/notes/freedom-to-forget/)
+
 - [意志ある暴走](https://amakawa-chan.github.io/KabeRadio/notes/intentional-rampage/)
 - [AIと作った、小さな過疎村の話](https://amakawa-chan.github.io/KabeRadio/notes/merch-ideas-keep-growing/)
 
