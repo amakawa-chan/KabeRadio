@@ -11,78 +11,78 @@
     "clips": [
       {
         "id": "merch-1",
-        "title": "最初のお客",
-        "displayTitle": "最初のお客",
+        "title": "ストアって何",
+        "displayTitle": "ストアって何",
         "startTurn": 3,
         "endTurn": 8,
-        "hook": "認識がずれる場面",
-        "point": "短い掛け合い",
-        "targetDuration": 22,
+        "hook": "会話のズレ",
+        "point": "アイデアの転換",
+        "targetDuration": 23,
         "platforms": [
           "youtube-shorts"
         ]
       },
       {
         "id": "merch-2",
-        "title": "キャラとの距離",
-        "displayTitle": "キャラとの距離",
+        "title": "他人の発言",
+        "displayTitle": "他人の発言",
         "startTurn": 23,
         "endTurn": 28,
-        "hook": "認識がずれる場面",
-        "point": "短い掛け合い",
-        "targetDuration": 22,
+        "hook": "会話のズレ",
+        "point": "アイデアの転換",
+        "targetDuration": 23,
         "platforms": [
           "youtube-shorts"
         ]
       },
       {
         "id": "merch-3",
-        "title": "自分の分身",
-        "displayTitle": "自分の分身",
-        "startTurn": 46,
-        "endTurn": 51,
-        "hook": "認識がずれる場面",
-        "point": "短い掛け合い",
-        "targetDuration": 22,
+        "title": "自分が視聴者",
+        "displayTitle": "一番の視聴者",
+        "startTurn": 48,
+        "endTurn": 53,
+        "hook": "会話のズレ",
+        "point": "アイデアの転換",
+        "targetDuration": 23,
         "platforms": [
           "youtube-shorts"
         ]
       },
       {
         "id": "merch-4",
-        "title": "意志ある暴走",
-        "displayTitle": "意志ある暴走",
-        "startTurn": 62,
-        "endTurn": 67,
-        "hook": "認識がずれる場面",
-        "point": "短い掛け合い",
-        "targetDuration": 22,
+        "title": "過疎村",
+        "displayTitle": "幸福度は高い",
+        "startTurn": 72,
+        "endTurn": 77,
+        "hook": "会話のズレ",
+        "point": "アイデアの転換",
+        "targetDuration": 23,
         "platforms": [
           "youtube-shorts"
         ]
       },
       {
         "id": "merch-5",
-        "title": "ツアーTシャツ",
-        "displayTitle": "ツアーTシャツ",
-        "startTurn": 85,
-        "endTurn": 90,
-        "hook": "認識がずれる場面",
-        "point": "短い掛け合い",
-        "targetDuration": 22,
+        "title": "村営土産物店",
+        "displayTitle": "村営土産物店",
+        "startTurn": 99,
+        "endTurn": 104,
+        "hook": "会話のズレ",
+        "point": "アイデアの転換",
+        "targetDuration": 23,
         "platforms": [
           "youtube-shorts"
         ]
       },
       {
         "id": "merch-6",
-        "title": "企画会議",
-        "displayTitle": "企画会議",
-        "startTurn": 108,
-        "endTurn": 113,
-        "hook": "認識がずれる場面",
-        "point": "短い掛け合い",
-        "targetDuration": 22,
+        "title": "メタルツアー",
+        "displayTitle": "メタルツアー",
+        "startTurn": 128,
+        "endTurn": 133,
+        "hook": "会話のズレ",
+        "point": "アイデアの転換",
+        "targetDuration": 23,
         "platforms": [
           "youtube-shorts"
         ]
@@ -322,6 +322,102 @@
 ### Host
 
 それでモブ子の衣装差分とかアセットをどんどん積みたい気持ちがある。
+
+### Host
+
+今のモブ子やモブ美を見てると、自分で全部決めたキャラクターなのに、自分が知らないやり取りが生まれてるんよね。
+
+### Guest
+
+そりゃ台本はAIが再構成してるものね。
+
+### Host
+
+そう。最初は自分の壁打ちをポッドキャストにしたかっただけ。それなら会話ログを音声向けに直せば終わるはずだった。
+
+### Guest
+
+ところがキャラクターと掛け合いを入れた。
+
+### Host
+
+そしたら、想定外のツッコミが出てくる。元の思考は自分のものなのに、完成した音声を自分でも初めて聴く感覚がある。
+
+### Guest
+
+自分で作って、自分が一番の視聴者になってるんだ。
+
+### Host
+
+そうなんよ。好きなキャラの新しいエピソードも衣装も、自分が作れる。でも内容は全部思いどおりにはならない。
+
+### Guest
+
+好きなコンテンツの供給元が自分、というわけね。
+
+### Host
+
+オタクとしては、最高の自給自足生活かもしれん。
+
+### Guest
+
+ただしアプリ開発で勝手に仕様を増やされたら困るでしょ。
+
+### Host
+
+そこはそう。開発はちゃんと意図どおりに完成させたい。予想外が嬉しいのはコンテンツの会話や演出の部分。
+
+### Guest
+
+制御するところと、余白を残すところを分けるのね。
+
+### Host
+
+そのうちラジオ小屋も大きくなって、スタジオができて、放送局ができて、オフィスも作り始めた。
+
+### Guest
+
+山奥で自給自足してたら、村になっちゃったみたいね。
+
+### Host
+
+あ、それや。壁ラジ村。
+
+### Guest
+
+誰でも入れるけど、中の文化はちょっと独特な村。
+
+### Host
+
+そう。地方の村役場が運営する、PRなのか趣味なのかわからないYouTubeみたいな。
+
+### Guest
+
+登録者二十一人なら、だいぶ小さい村ね。
+
+### Host
+
+過疎村やね。でも住民の幸福度は高い。
+
+### Guest
+
+村民の幸福度、誰が調査したの？
+
+### Host
+
+少なくとも村長はめっちゃ楽しい。
+
+### Guest
+
+サンプル数、一。
+
+### Host
+
+そこで村営土産物店が必要なわけよ。
+
+### Guest
+
+どうしてそうなるのよ！ 人口が増える前に店を建てるな！
 
 ### Guest
 
