@@ -1,5 +1,8 @@
 # 制作ノート
 
+- [意志ある暴走](https://amakawa-chan.github.io/KabeRadio/notes/intentional-rampage/)
+- [自分が欲しいグッズを考えていたら、壁ラジストアが生まれた](https://amakawa-chan.github.io/KabeRadio/notes/merch-ideas-keep-growing/)
+
 - [AIは初音ミクなのかもしれない。](https://amakawa-chan.github.io/KabeRadio/notes/ai-is-hatsune-miku/)
 
 - [【ミリしら】VIVANTのドラムを考察したら、エヴァになった](https://amakawa-chan.github.io/KabeRadio/notes/vivant-drum-mirishira-hayashibara/)
