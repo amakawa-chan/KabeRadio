@@ -5,6 +5,7 @@
 
 - 原作：[article.md](article.md)
 - 朗読台本：[reading-spatial.md](reading-spatial.md)
+- 音響試聴用抜粋：[reading-spatial-preview.md](reading-spatial-preview.md)
 - 実行環境：[Spatial Audio Studio](https://github.com/amakawa-chan/amakawachan-assistant/blob/main/Radio/spatial/STUDIO.md)（Amakawachan Assistant本体のmainにも配置済み）
 - 音声：現在の既存2話者設定（モブ美・モブ子）をそのまま利用する。原稿の内容は改変しない。
 
