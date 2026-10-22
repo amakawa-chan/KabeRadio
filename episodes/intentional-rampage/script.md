@@ -39,8 +39,8 @@
         "id": "solo",
         "title": "個人開発の罠",
         "displayTitle": "個人開発の罠",
-        "startTurn": 53,
-        "endTurn": 62,
+        "startTurn": 61,
+        "endTurn": 70,
         "hook": "掛け合いの転換点",
         "point": "自分が依頼主でもある",
         "targetDuration": 24,
@@ -52,8 +52,8 @@
         "id": "rules",
         "title": "寄り道の監査",
         "displayTitle": "寄り道の監査",
-        "startTurn": 79,
-        "endTurn": 88,
+        "startTurn": 87,
+        "endTurn": 96,
         "hook": "掛け合いの転換点",
         "point": "開発ナレッジの発想",
         "targetDuration": 24,
@@ -65,8 +65,8 @@
         "id": "rampage",
         "title": "意志ある暴走",
         "displayTitle": "意志ある暴走",
-        "startTurn": 101,
-        "endTurn": 110,
+        "startTurn": 109,
+        "endTurn": 118,
         "hook": "掛け合いの転換点",
         "point": "止める条文が暴走を許す",
         "targetDuration": 24,
@@ -78,8 +78,8 @@
         "id": "ending",
         "title": "結局止まらん",
         "displayTitle": "結局止まらん",
-        "startTurn": 119,
-        "endTurn": 128,
+        "startTurn": 127,
+        "endTurn": 136,
         "hook": "掛け合いの転換点",
         "point": "記事制作自体が寄り道",
         "targetDuration": 24,
@@ -318,6 +318,38 @@ AI制作管制室の進捗を確認していたはずが、表示バグから生
 ### Guest
 
 キャラクターが先に生活を始めてしまう。
+
+### Host
+
+あと、作ってるうちに見た目が良くなると、完成したような気になるのも自覚してるんよね。
+
+### Guest
+
+そこは本当に使ってみないと、必要なものが見えてこないかもしれません。
+
+### Host
+
+そう。仕事の一覧が出てても、ボタンを押して実際に制作できなかったら、管制室の看板だけ立派なことになる。
+
+### Guest
+
+それは以前のオフィスの時と同じ満足の仕方になってしまう。
+
+### Host
+
+だから今回は実用の確認を一つずつ終わらせたい。実装したかどうかより、ちゃんと最後まで使えたかどうか。
+
+### Guest
+
+飾りの完成と、作業の完成を分けて考えるんですね。
+
+### Host
+
+でも、モブ子が可愛く動いたら、そこはやっぱり喜びたい。
+
+### Guest
+
+喜んでいいですよ。そのあと元の作業に戻れば。
 
 ### Host
 
