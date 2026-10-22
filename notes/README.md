@@ -1,5 +1,9 @@
 # 制作ノート
 
+## 小説・ショートショート
+
+小説を続けるかは未定。壁打ちから生まれた短編の「奇妙な味」を再現するための[創作コンセプト（暫定）](../docs/short-fiction-concept.md)を記録しています。ラジオ台本化は必須ではありません。
+
 - [【ショートショート】忘れ物のない村](https://amakawa-chan.github.io/KabeRadio/notes/unforgotten-village/)
 
 - [AIとGitHubによって、人間は忘れる自由を失いつつあるのか？](https://amakawa-chan.github.io/KabeRadio/notes/freedom-to-forget/)
