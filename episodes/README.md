@@ -26,6 +26,8 @@ GitHub上の正式Episodeは原則`status: ready`で保存し、M6ローカル�
 
 ## Episodes
 
+- [忘れる自由を失いつつあるのか？](freedom-to-forget/)
+
 - [意志ある暴走](intentional-rampage/)
 - [壁ラジストア開発会議](merch-ideas-keep-growing/)
 
