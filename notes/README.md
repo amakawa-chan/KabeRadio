@@ -1,6 +1,6 @@
 # 制作ノート
 
-- [忘れられなかった村（短編小説）](https://amakawa-chan.github.io/KabeRadio/notes/unforgotten-village/)
+- [【ショートショート】忘れ物のない村](https://amakawa-chan.github.io/KabeRadio/notes/unforgotten-village/)
 
 - [AIとGitHubによって、人間は忘れる自由を失いつつあるのか？](https://amakawa-chan.github.io/KabeRadio/notes/freedom-to-forget/)
 
