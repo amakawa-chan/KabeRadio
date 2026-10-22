@@ -26,6 +26,9 @@ GitHub上の正式Episodeは原則`status: ready`で保存し、M6ローカル�
 
 ## Episodes
 
+- [意志ある暴走](intentional-rampage/)
+- [自分が欲しいグッズを考えていたら、壁ラジストアが生まれた](merch-ideas-keep-growing/)
+
 - [AIは初音ミクなのかもしれない。](ai-is-hatsune-miku/)
 
 - [モブ美監査室：趣味の規模が合っていない](mobumi-audit-room/)
