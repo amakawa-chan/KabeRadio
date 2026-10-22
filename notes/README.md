@@ -1,7 +1,7 @@
 # 制作ノート
 
 - [意志ある暴走](https://amakawa-chan.github.io/KabeRadio/notes/intentional-rampage/)
-- [自分が欲しいグッズを考えていたら、壁ラジストアが生まれた](https://amakawa-chan.github.io/KabeRadio/notes/merch-ideas-keep-growing/)
+- [AIと作った、小さな過疎村の話](https://amakawa-chan.github.io/KabeRadio/notes/merch-ideas-keep-growing/)
 
 - [AIは初音ミクなのかもしれない。](https://amakawa-chan.github.io/KabeRadio/notes/ai-is-hatsune-miku/)
 
