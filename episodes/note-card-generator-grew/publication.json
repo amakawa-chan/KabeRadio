@@ -1,0 +1,32 @@
+{
+  "schemaVersion": 2,
+  "status": "uploaded",
+  "generation": {
+    "status": "generated",
+    "video": "video.mp4",
+    "sha256": "7a002e3f4087f71df6bd87c9154c71e860dbc961aebe6e7638c823a185ab391a",
+    "generatedAt": "2026-09-25T01:50:00.056696+00:00",
+    "sourceSha256": "f33a0cb0082765a6c5c65e0fe244d1b949fe6168f6c8988a8986d423dd3b1feb",
+    "scriptSha256": "f33a0cb0082765a6c5c65e0fe244d1b949fe6168f6c8988a8986d423dd3b1feb",
+    "sourceMatchesGitHub": true
+  },
+  "youtube": {
+    "videoId": "zbJtvRRFePc",
+    "url": "https://www.youtube.com/watch?v=zbJtvRRFePc",
+    "actualPrivacy": "public",
+    "status": "uploaded",
+    "uploadedAt": "2026-09-25T08:15:08.528198+00:00",
+    "sha256": "7a002e3f4087f71df6bd87c9154c71e860dbc961aebe6e7638c823a185ab391a",
+    "verification": "upload-record-only"
+  },
+  "spotify": {
+    "title": "【壁ラジ】#22 モブ子の一言をnoteに載せたかっただけなのに、ジェネレーターが生えた",
+    "episodeNumber": "22",
+    "episodeUrl": "https://open.spotify.com/episode/64A3nyZ5wX9ZvYLaa7Gw4P?si=Is_9pt_JTNKkHD05pMEFaw",
+    "status": "published",
+    "verification": "user-confirmed",
+    "publishedAt": "2026-09-25T17:33:26.9776886+09:00",
+    "sha256": "7a002e3f4087f71df6bd87c9154c71e860dbc961aebe6e7638c823a185ab391a"
+  },
+  "updatedAt": "2026-10-22T03:36:46.323350+00:00"
+}

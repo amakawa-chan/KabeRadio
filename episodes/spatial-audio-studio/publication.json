@@ -1,0 +1,32 @@
+{
+  "schemaVersion": 2,
+  "status": "uploaded",
+  "generation": {
+    "status": "generated",
+    "video": "video.mp4",
+    "sha256": "d274b29b1e210a6fbe87f7158ed9c0fd8c796110f6be45a2477bee8142d98c3d",
+    "generatedAt": "2026-09-18T23:28:30.374854+00:00",
+    "sourceSha256": "6cf068095a96bfa677bed7f29e36d6c76495f9197d59bb33c0ef54e80b3f4719",
+    "scriptSha256": "6cf068095a96bfa677bed7f29e36d6c76495f9197d59bb33c0ef54e80b3f4719",
+    "sourceMatchesGitHub": true
+  },
+  "youtube": {
+    "videoId": "gs18kkU1w64",
+    "url": "https://www.youtube.com/watch?v=gs18kkU1w64",
+    "actualPrivacy": "public",
+    "status": "uploaded",
+    "uploadedAt": "2026-09-19T02:18:49.805654+00:00",
+    "sha256": "d274b29b1e210a6fbe87f7158ed9c0fd8c796110f6be45a2477bee8142d98c3d",
+    "verification": "upload-record-only"
+  },
+  "spotify": {
+    "title": "【壁ラジ】#18 ASMRを作ろうとしたら空間音響スタジオになりそうな件",
+    "episodeNumber": "18",
+    "episodeUrl": "https://open.spotify.com/episode/4CXkQScRdpQBJDBgNcK7uh?si=kdPWCEwXRtidxAjrSCRsZQ",
+    "status": "published",
+    "verification": "user-confirmed",
+    "publishedAt": "2026-09-19T11:22:41.8138419+09:00",
+    "sha256": "d274b29b1e210a6fbe87f7158ed9c0fd8c796110f6be45a2477bee8142d98c3d"
+  },
+  "updatedAt": "2026-10-22T03:36:46.500984+00:00"
+}

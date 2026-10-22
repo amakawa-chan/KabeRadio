@@ -1,0 +1,33 @@
+{
+  "schemaVersion": 2,
+  "status": "uploaded",
+  "generation": {
+    "status": "generated",
+    "video": "video.mp4",
+    "sha256": "196a86feef4bb49cef6aeff89357a8f6d2310957e041cabed0c25f803be3dfb1",
+    "generatedAt": "2026-09-25T03:19:28.987079+00:00",
+    "sourceSha256": "91c259f5c14f01ae1c777b7f0c558660ecec417515b7fd13082374ad28636269",
+    "scriptSha256": "91c259f5c14f01ae1c777b7f0c558660ecec417515b7fd13082374ad28636269",
+    "sourceMatchesGitHub": true
+  },
+  "youtube": {
+    "videoId": "wRea8Wxm0YI",
+    "url": "https://www.youtube.com/watch?v=wRea8Wxm0YI",
+    "actualPrivacy": "private",
+    "status": "uploaded",
+    "uploadedAt": "2026-09-25T08:49:37.358238+00:00",
+    "sha256": "196a86feef4bb49cef6aeff89357a8f6d2310957e041cabed0c25f803be3dfb1",
+    "verification": "upload-record-only",
+    "publishAt": "2026-09-26T06:00:00+09:00"
+  },
+  "spotify": {
+    "title": "【壁ラジ】#23 知ってるAIと、やってた人間",
+    "episodeNumber": "23",
+    "episodeUrl": "https://open.spotify.com/episode/3C2nf7aNMTkTZunoaxitLO?si=le9WzpECQLm8JAYldbP39Q",
+    "status": "published",
+    "verification": "user-confirmed",
+    "publishedAt": "2026-09-25T17:53:39.2904598+09:00",
+    "sha256": "196a86feef4bb49cef6aeff89357a8f6d2310957e041cabed0c25f803be3dfb1"
+  },
+  "updatedAt": "2026-10-22T03:36:45.954696+00:00"
+}

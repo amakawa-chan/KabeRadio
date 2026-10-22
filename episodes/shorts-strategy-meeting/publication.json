@@ -1,0 +1,32 @@
+{
+  "schemaVersion": 2,
+  "status": "uploaded",
+  "generation": {
+    "status": "generated",
+    "video": "video.mp4",
+    "sha256": "461a8fcb4e08fd426135a1937f88251e50bf80717a881baaf29cecf74b4535db",
+    "generatedAt": "2026-09-18T23:38:24.058538+00:00",
+    "sourceSha256": "239f0584c3001c057a8176aa3013a9fb4fc1e7de693a2f52aeb039ceedaf40ee",
+    "scriptSha256": "239f0584c3001c057a8176aa3013a9fb4fc1e7de693a2f52aeb039ceedaf40ee",
+    "sourceMatchesGitHub": true
+  },
+  "youtube": {
+    "videoId": "h5cAN0VQRCE",
+    "url": "https://www.youtube.com/watch?v=h5cAN0VQRCE",
+    "actualPrivacy": "public",
+    "status": "uploaded",
+    "uploadedAt": "2026-09-23T00:31:32.194236+00:00",
+    "sha256": "461a8fcb4e08fd426135a1937f88251e50bf80717a881baaf29cecf74b4535db",
+    "verification": "upload-record-only"
+  },
+  "spotify": {
+    "title": "【壁ラジ】#19 ショートの時代に、ショートを狙いすぎない",
+    "episodeNumber": "19",
+    "episodeUrl": "https://open.spotify.com/episode/4NlBx7IVApoOFs9kL9MK1Y?si=lBCPgr-eT9CVbxCNsECl_Q",
+    "status": "published",
+    "verification": "user-confirmed",
+    "publishedAt": "2026-09-23T09:35:37.5033923+09:00",
+    "sha256": "461a8fcb4e08fd426135a1937f88251e50bf80717a881baaf29cecf74b4535db"
+  },
+  "updatedAt": "2026-10-22T03:36:46.416599+00:00"
+}

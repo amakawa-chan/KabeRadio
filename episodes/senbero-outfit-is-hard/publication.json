@@ -1,0 +1,33 @@
+{
+  "schemaVersion": 2,
+  "status": "uploaded",
+  "generation": {
+    "status": "generated",
+    "video": "video.mp4",
+    "sha256": "96b56559301da3fc1de03ea6c4dddf13958612991a9828c9a8d36e935116ca77",
+    "generatedAt": "2026-09-29T04:18:18.248034+00:00",
+    "sourceSha256": "fbbf9d0569646678253273ad4a6508d23b903f41555ec9e8b0229ea07db11f9f",
+    "scriptSha256": "fbbf9d0569646678253273ad4a6508d23b903f41555ec9e8b0229ea07db11f9f",
+    "sourceMatchesGitHub": true
+  },
+  "youtube": {
+    "videoId": "wtGdZk_rSkY",
+    "url": "https://www.youtube.com/watch?v=wtGdZk_rSkY",
+    "actualPrivacy": "private",
+    "status": "uploaded",
+    "uploadedAt": "2026-09-30T05:15:14.256420+00:00",
+    "sha256": "96b56559301da3fc1de03ea6c4dddf13958612991a9828c9a8d36e935116ca77",
+    "verification": "upload-record-only",
+    "publishAt": "2026-09-30T17:00:00+09:00"
+  },
+  "spotify": {
+    "title": "【壁ラジ】#27 おっさんとセンベロ行く服が一番むずい",
+    "episodeNumber": "27",
+    "episodeUrl": "https://open.spotify.com/episode/36eLa13uLFExlhUhK8iO4Y?si=buHspXiUTs6SxMs0vi_leQ",
+    "status": "published",
+    "verification": "user-confirmed",
+    "publishedAt": "2026-09-30T14:18:24.6890674+09:00",
+    "sha256": "96b56559301da3fc1de03ea6c4dddf13958612991a9828c9a8d36e935116ca77"
+  },
+  "updatedAt": "2026-10-22T03:36:46.400200+00:00"
+}

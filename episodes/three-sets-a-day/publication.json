@@ -1,0 +1,33 @@
+{
+  "schemaVersion": 2,
+  "status": "uploaded",
+  "generation": {
+    "status": "generated",
+    "video": "video.mp4",
+    "sha256": "dd963f6e1e11a0ca28265fe240ec30fb185bfb440afbe087436d6667bdf51ed8",
+    "generatedAt": "2026-09-28T06:03:50.925857+00:00",
+    "sourceSha256": "f43adffdb2ffb69631ed9ca00be26fe54e6e5d86c00bd868ca16f3845fd8b128",
+    "scriptSha256": "f43adffdb2ffb69631ed9ca00be26fe54e6e5d86c00bd868ca16f3845fd8b128",
+    "sourceMatchesGitHub": true
+  },
+  "youtube": {
+    "videoId": "esTMwbBAWfw",
+    "url": "https://www.youtube.com/watch?v=esTMwbBAWfw",
+    "actualPrivacy": "private",
+    "status": "uploaded",
+    "uploadedAt": "2026-09-29T07:03:57.546981+00:00",
+    "sha256": "dd963f6e1e11a0ca28265fe240ec30fb185bfb440afbe087436d6667bdf51ed8",
+    "verification": "upload-record-only",
+    "publishAt": "2026-09-30T06:00:00+09:00"
+  },
+  "spotify": {
+    "title": "【壁ラジ】#26 シャツとパンツ、1日3セットいるよね？",
+    "episodeNumber": "26",
+    "episodeUrl": "https://open.spotify.com/episode/4UPuAxxZb1lpe3z3VjC1yI?si=KfjfW1sMSn-1n5Bh2HObmQ",
+    "status": "published",
+    "verification": "user-confirmed",
+    "publishedAt": "2026-09-29T16:06:18.3484545+09:00",
+    "sha256": "dd963f6e1e11a0ca28265fe240ec30fb185bfb440afbe087436d6667bdf51ed8"
+  },
+  "updatedAt": "2026-10-22T03:36:46.575623+00:00"
+}

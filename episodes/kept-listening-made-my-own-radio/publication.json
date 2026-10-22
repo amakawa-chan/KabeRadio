@@ -1,0 +1,32 @@
+{
+  "schemaVersion": 2,
+  "status": "uploaded",
+  "generation": {
+    "status": "generated",
+    "video": "video.mp4",
+    "sha256": "38e7aeda2038d94667969d0d018bdfa657834d8db2430c274bccd6eb3c1fcb13",
+    "generatedAt": "2026-10-04T10:04:35.215039+00:00",
+    "sourceSha256": "b1302e57a0c1df976c47e865d683ce7e8ee47ef35ac1598508d3c84cb4cdcb57",
+    "scriptSha256": "b1302e57a0c1df976c47e865d683ce7e8ee47ef35ac1598508d3c84cb4cdcb57",
+    "sourceMatchesGitHub": true
+  },
+  "youtube": {
+    "videoId": "Qakc7lxZGSs",
+    "url": "https://www.youtube.com/watch?v=Qakc7lxZGSs",
+    "actualPrivacy": "public",
+    "status": "uploaded",
+    "uploadedAt": "2026-10-04T21:50:16.521153+00:00",
+    "sha256": "38e7aeda2038d94667969d0d018bdfa657834d8db2430c274bccd6eb3c1fcb13",
+    "verification": "upload-record-only"
+  },
+  "spotify": {
+    "title": "【壁ラジ】#28 ずっとラジオを聞いてきたら、気づけば自分用のラジオを作っていた",
+    "episodeNumber": "28",
+    "episodeUrl": "https://open.spotify.com/episode/70gcZwgxjGH2gqoqTmIkEX?si=mw4FWCCYTriI9SKwRpqUCA",
+    "status": "published",
+    "verification": "user-confirmed",
+    "publishedAt": "2026-10-05T06:52:46.5944360+09:00",
+    "sha256": "38e7aeda2038d94667969d0d018bdfa657834d8db2430c274bccd6eb3c1fcb13"
+  },
+  "updatedAt": "2026-10-22T03:36:46.190505+00:00"
+}

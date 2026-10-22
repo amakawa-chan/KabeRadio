@@ -1,0 +1,32 @@
+{
+  "schemaVersion": 2,
+  "status": "uploaded",
+  "generation": {
+    "status": "generated",
+    "video": "video.mp4",
+    "sha256": "c91646d6536fbf6b83056e5eb1efc39639eb1e316179af2f7b1e6313a3d93f4c",
+    "generatedAt": "2026-09-12T23:12:36.138762+00:00",
+    "sourceSha256": "200a9c6c8e30f8ff31e5f0f0bbfce9ac894259773a064f89187f3313834dff12",
+    "scriptSha256": "200a9c6c8e30f8ff31e5f0f0bbfce9ac894259773a064f89187f3313834dff12",
+    "sourceMatchesGitHub": true
+  },
+  "youtube": {
+    "videoId": "z4fBHlRhWBk",
+    "url": "https://www.youtube.com/watch?v=z4fBHlRhWBk",
+    "actualPrivacy": "public",
+    "status": "uploaded",
+    "uploadedAt": "2026-09-12T23:59:50.864407+00:00",
+    "sha256": "c91646d6536fbf6b83056e5eb1efc39639eb1e316179af2f7b1e6313a3d93f4c",
+    "verification": "upload-record-only"
+  },
+  "spotify": {
+    "title": "【壁ラジ】#06 ところで、この人何してるんですか？",
+    "episodeNumber": "06",
+    "episodeUrl": "https://open.spotify.com/episode/5TOWTtUAR7aZ2adY8MoDVu?si=m1Zp7XbgS5efe1W1j90DZg",
+    "status": "published",
+    "verification": "user-confirmed",
+    "publishedAt": "2026-09-13T09:19:24.3757410+09:00",
+    "sha256": "c91646d6536fbf6b83056e5eb1efc39639eb1e316179af2f7b1e6313a3d93f4c"
+  },
+  "updatedAt": "2026-10-22T03:36:46.211417+00:00"
+}

@@ -1,0 +1,33 @@
+{
+  "schemaVersion": 2,
+  "status": "uploaded",
+  "generation": {
+    "status": "generated",
+    "video": "video.mp4",
+    "sha256": "1d5412539194b412ca1abf5a2424952acffa5e5555032db70322fc0a268548a5",
+    "generatedAt": "2026-09-24T07:47:10.311414+00:00",
+    "sourceSha256": "7fb6840044fd223d1d65c5db69c41a7200e493a2d45028e91815598ea9d94b63",
+    "scriptSha256": "7fb6840044fd223d1d65c5db69c41a7200e493a2d45028e91815598ea9d94b63",
+    "sourceMatchesGitHub": true
+  },
+  "youtube": {
+    "videoId": "7jRg-x6OtEs",
+    "url": "https://www.youtube.com/watch?v=7jRg-x6OtEs",
+    "actualPrivacy": "private",
+    "status": "uploaded",
+    "uploadedAt": "2026-09-24T07:57:17.254924+00:00",
+    "sha256": "1d5412539194b412ca1abf5a2424952acffa5e5555032db70322fc0a268548a5",
+    "verification": "upload-record-only",
+    "publishAt": "2026-09-24T20:00:00+09:00"
+  },
+  "spotify": {
+    "title": "【壁ラジ】#21 本編が一番過疎なので、深夜ラジオに戻します",
+    "episodeNumber": "21",
+    "episodeUrl": "https://open.spotify.com/episode/2T3YySH6wHbchkgksfsBhj?si=c7rr0T2BTgKeFd3wqBQmKQ",
+    "status": "published",
+    "verification": "user-confirmed",
+    "publishedAt": "2026-09-24T17:01:35.7338594+09:00",
+    "sha256": "1d5412539194b412ca1abf5a2424952acffa5e5555032db70322fc0a268548a5"
+  },
+  "updatedAt": "2026-10-22T03:36:46.257486+00:00"
+}

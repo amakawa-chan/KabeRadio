@@ -1,0 +1,32 @@
+{
+  "schemaVersion": 2,
+  "status": "uploaded",
+  "generation": {
+    "status": "generated",
+    "video": "video.mp4",
+    "sha256": "5a761a8761a066c24ea9a58ac2f4a7127dfd44f97ea6e6f9c1e23a637b565ef0",
+    "generatedAt": "2026-09-13T01:03:57.683092+00:00",
+    "sourceSha256": "9e28d251ab4c3b6c1d912a6a3a715ea801a43e26c89d6184558bfb5a62b5734c",
+    "scriptSha256": "2a78c48dbcf1f221dc6e5f0df9b4fbd0fd765ca09c3b25d280d09d8e8a81e915",
+    "sourceMatchesGitHub": false
+  },
+  "youtube": {
+    "videoId": "CBxn3GtsxGs",
+    "url": "https://www.youtube.com/watch?v=CBxn3GtsxGs",
+    "actualPrivacy": "public",
+    "status": "uploaded",
+    "uploadedAt": "2026-09-13T01:09:52.449806+00:00",
+    "sha256": "5a761a8761a066c24ea9a58ac2f4a7127dfd44f97ea6e6f9c1e23a637b565ef0",
+    "verification": "upload-record-only"
+  },
+  "spotify": {
+    "title": "【壁ラジ】#07 なんか今日、違わない？",
+    "episodeNumber": "07",
+    "episodeUrl": "https://open.spotify.com/episode/67BtBA9Mj8dNc3hfwqsStX?si=Ok-mckOKSICbIk-uGPgvqw",
+    "status": "published",
+    "verification": "user-confirmed",
+    "publishedAt": "2026-09-13T10:20:09.5588167+09:00",
+    "sha256": "5a761a8761a066c24ea9a58ac2f4a7127dfd44f97ea6e6f9c1e23a637b565ef0"
+  },
+  "updatedAt": "2026-10-22T03:36:46.275559+00:00"
+}

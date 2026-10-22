@@ -1,0 +1,14 @@
+{
+  "schemaVersion": 2,
+  "status": "generated",
+  "generation": {
+    "status": "generated",
+    "video": "youtube.mp4",
+    "sha256": "b6c937c14ea06ed244121ddbbe3d6a5142dfe9d6948ee0326788b769dead0808",
+    "generatedAt": "2026-08-29T04:38:49.122111+00:00",
+    "sourceSha256": "508fc01da7f21053ea5d89ec19371c549f46df5065d47725a92803bc5d4dc30a",
+    "scriptSha256": "508fc01da7f21053ea5d89ec19371c549f46df5065d47725a92803bc5d4dc30a",
+    "sourceMatchesGitHub": true
+  },
+  "updatedAt": "2026-10-22T03:36:46.365714+00:00"
+}

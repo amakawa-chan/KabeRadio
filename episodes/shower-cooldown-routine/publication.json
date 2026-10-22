@@ -1,0 +1,33 @@
+{
+  "schemaVersion": 2,
+  "status": "uploaded",
+  "generation": {
+    "status": "generated",
+    "video": "video.mp4",
+    "sha256": "03ac5c92ed2d5330dae9a7fd587577f5e8dcf51cdfc3d8dd4e2d804738bbd740",
+    "generatedAt": "2026-09-24T06:57:35.777472+00:00",
+    "sourceSha256": "046211385ff3ab35265813ee182f0d26474418ffef01c045c63c5d1defeb8ea8",
+    "scriptSha256": "046211385ff3ab35265813ee182f0d26474418ffef01c045c63c5d1defeb8ea8",
+    "sourceMatchesGitHub": true
+  },
+  "youtube": {
+    "videoId": "jV730W_T6P0",
+    "url": "https://www.youtube.com/watch?v=jV730W_T6P0",
+    "actualPrivacy": "private",
+    "status": "uploaded",
+    "uploadedAt": "2026-09-24T07:51:33.361322+00:00",
+    "sha256": "03ac5c92ed2d5330dae9a7fd587577f5e8dcf51cdfc3d8dd4e2d804738bbd740",
+    "verification": "upload-record-only",
+    "publishAt": "2026-09-24T18:00:00+09:00"
+  },
+  "spotify": {
+    "title": "【壁ラジ】#20 体調で変わる、シャワーの締め方",
+    "episodeNumber": "20",
+    "episodeUrl": "https://open.spotify.com/episode/4mCQAIfkmYNpfa1XliHzgn?si=dXGUEaxXSuCsmNHOkMXOiQ",
+    "status": "published",
+    "verification": "user-confirmed",
+    "publishedAt": "2026-09-24T16:55:15.3298272+09:00",
+    "sha256": "03ac5c92ed2d5330dae9a7fd587577f5e8dcf51cdfc3d8dd4e2d804738bbd740"
+  },
+  "updatedAt": "2026-10-22T03:36:46.428845+00:00"
+}

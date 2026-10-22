@@ -1,0 +1,32 @@
+{
+  "schemaVersion": 2,
+  "status": "uploaded",
+  "generation": {
+    "status": "generated",
+    "video": "video.mp4",
+    "sha256": "c309bb2c133a478c77d6e18e1e34124c469bd9bdaccd9f463d36b660fe89a1cc",
+    "generatedAt": "2026-09-13T02:56:04.423923+00:00",
+    "sourceSha256": "6e6bf2d816bf01b5ca186711ea0dbf98a159f73be88b1bef294af3a1332d34cf",
+    "scriptSha256": "6e6bf2d816bf01b5ca186711ea0dbf98a159f73be88b1bef294af3a1332d34cf",
+    "sourceMatchesGitHub": true
+  },
+  "youtube": {
+    "videoId": "pf_rVM389M8",
+    "url": "https://www.youtube.com/watch?v=pf_rVM389M8",
+    "actualPrivacy": "public",
+    "status": "uploaded",
+    "uploadedAt": "2026-09-13T03:00:23.392005+00:00",
+    "sha256": "c309bb2c133a478c77d6e18e1e34124c469bd9bdaccd9f463d36b660fe89a1cc",
+    "verification": "upload-record-only"
+  },
+  "spotify": {
+    "title": "【壁ラジ】#09 一度だけ作って、あとは届ける",
+    "episodeNumber": "09",
+    "episodeUrl": "https://open.spotify.com/episode/1DPe47qYR0nE46mtMNw93I?si=SatWe6tURgitxBJPzpjt_A",
+    "status": "published",
+    "verification": "user-confirmed",
+    "publishedAt": "2026-09-13T12:05:46.0818735+09:00",
+    "sha256": "c309bb2c133a478c77d6e18e1e34124c469bd9bdaccd9f463d36b660fe89a1cc"
+  },
+  "updatedAt": "2026-10-22T03:36:46.363480+00:00"
+}

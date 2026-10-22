@@ -1,0 +1,32 @@
+{
+  "schemaVersion": 2,
+  "youtube": {
+    "videoId": "onKaEd1P0hU",
+    "url": "https://www.youtube.com/watch?v=onKaEd1P0hU",
+    "actualPrivacy": "public",
+    "status": "uploaded",
+    "uploadedAt": "2026-09-19T01:17:14.338750+00:00",
+    "sha256": "d2dea3feef73f0a40cf9fedb0265c867974964ae2367fe44b08c863659ac9dd0",
+    "verification": "upload-record-only"
+  },
+  "spotify": {
+    "title": "【壁ラジ】#17 秋風のチューニング アフタートーク",
+    "episodeNumber": "17",
+    "episodeUrl": "https://open.spotify.com/episode/2xXKtTYevBjVoq0PJk1CZq?si=xTU-SLuPR0up0Bdo4HQAyQ",
+    "status": "published",
+    "verification": "user-confirmed",
+    "publishedAt": "2026-09-19T10:21:15.9091215+09:00",
+    "sha256": "d2dea3feef73f0a40cf9fedb0265c867974964ae2367fe44b08c863659ac9dd0"
+  },
+  "updatedAt": "2026-10-22T03:36:46.017963+00:00",
+  "status": "uploaded",
+  "generation": {
+    "status": "generated",
+    "video": "video.mp4",
+    "sha256": "d2dea3feef73f0a40cf9fedb0265c867974964ae2367fe44b08c863659ac9dd0",
+    "generatedAt": "2026-09-18T23:17:44.818891+00:00",
+    "sourceSha256": "66b8fac4bbde8eda630ffe0856ad7a2bafce56499f1eaa9d591799b2cf4fc703",
+    "scriptSha256": "66b8fac4bbde8eda630ffe0856ad7a2bafce56499f1eaa9d591799b2cf4fc703",
+    "sourceMatchesGitHub": true
+  }
+}

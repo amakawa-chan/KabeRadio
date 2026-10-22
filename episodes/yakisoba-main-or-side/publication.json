@@ -1,0 +1,23 @@
+{
+  "schemaVersion": 2,
+  "status": "uploaded",
+  "generation": {
+    "status": "generated",
+    "video": "video.mp4",
+    "sha256": "2a0051d82bf5e2eeb25508e2481142d5c635ba990c0e9e2d0ca1d3f5f5902754",
+    "generatedAt": "2026-10-21T00:22:54.573949+00:00",
+    "sourceSha256": "64b45b5549b2be488869425de049c3fc8d08eb07f80a143f2635b190a35ba23b",
+    "scriptSha256": "64b45b5549b2be488869425de049c3fc8d08eb07f80a143f2635b190a35ba23b",
+    "sourceMatchesGitHub": true
+  },
+  "youtube": {
+    "videoId": "PIUcSHioslo",
+    "url": "https://www.youtube.com/watch?v=PIUcSHioslo",
+    "actualPrivacy": "public",
+    "status": "uploaded",
+    "uploadedAt": "2026-10-21T00:29:34.744405+00:00",
+    "sha256": "2a0051d82bf5e2eeb25508e2481142d5c635ba990c0e9e2d0ca1d3f5f5902754",
+    "verification": "upload-record-only"
+  },
+  "updatedAt": "2026-10-22T03:36:46.602975+00:00"
+}

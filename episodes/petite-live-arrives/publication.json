@@ -1,0 +1,32 @@
+{
+  "schemaVersion": 2,
+  "youtube": {
+    "videoId": "xVsgoBx1rwk",
+    "url": "https://www.youtube.com/watch?v=xVsgoBx1rwk",
+    "actualPrivacy": "public",
+    "status": "uploaded",
+    "uploadedAt": "2026-09-13T23:53:07.001817+00:00",
+    "sha256": "b51c7ef383ec0d91cd0dd09c8bc1ab0c7c823310dd77f6bd1ed56efb60e26b90",
+    "verification": "upload-record-only"
+  },
+  "spotify": {
+    "title": "【壁ラジ】#12 ミニキャラを出したら、踊り始めた",
+    "episodeNumber": "12",
+    "episodeUrl": "https://open.spotify.com/episode/7Ag4y4X17aLPETrVkaPMOQ?si=gD-2Y4G0TRia4PDL6qiS5w",
+    "status": "published",
+    "verification": "user-confirmed",
+    "publishedAt": "2026-09-14T08:56:31.0489640+09:00",
+    "sha256": "b51c7ef383ec0d91cd0dd09c8bc1ab0c7c823310dd77f6bd1ed56efb60e26b90"
+  },
+  "updatedAt": "2026-10-22T03:36:46.329675+00:00",
+  "status": "uploaded",
+  "generation": {
+    "status": "generated",
+    "video": "video.mp4",
+    "sha256": "b51c7ef383ec0d91cd0dd09c8bc1ab0c7c823310dd77f6bd1ed56efb60e26b90",
+    "generatedAt": "2026-09-13T09:04:40.729621+00:00",
+    "sourceSha256": "304eb98265ec8b79ff8c60ea84f95df7fcdc1ec7f942fc4f76ae0259e423237b",
+    "scriptSha256": "304eb98265ec8b79ff8c60ea84f95df7fcdc1ec7f942fc4f76ae0259e423237b",
+    "sourceMatchesGitHub": true
+  }
+}

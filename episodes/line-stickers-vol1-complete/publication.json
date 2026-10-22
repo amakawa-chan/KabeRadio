@@ -1,0 +1,32 @@
+{
+  "schemaVersion": 2,
+  "status": "uploaded",
+  "generation": {
+    "status": "generated",
+    "video": "video.mp4",
+    "sha256": "fbdffc8d253ef821f1937c73a717a3b9e2df76295ab14447e5225d010345890b",
+    "generatedAt": "2026-09-13T09:26:01.659602+00:00",
+    "sourceSha256": "8884e3ca10d86fb0116c35445f1a00bfc25bb1b42e4e6df5ac6e34b3a010056a",
+    "scriptSha256": "8884e3ca10d86fb0116c35445f1a00bfc25bb1b42e4e6df5ac6e34b3a010056a",
+    "sourceMatchesGitHub": true
+  },
+  "youtube": {
+    "videoId": "0OAUzKhzvnU",
+    "url": "https://www.youtube.com/watch?v=0OAUzKhzvnU",
+    "actualPrivacy": "public",
+    "status": "uploaded",
+    "uploadedAt": "2026-09-14T00:18:14.429072+00:00",
+    "sha256": "fbdffc8d253ef821f1937c73a717a3b9e2df76295ab14447e5225d010345890b",
+    "verification": "upload-record-only"
+  },
+  "spotify": {
+    "title": "【壁ラジ】#14 自分のキャラクターがスタンプになった",
+    "episodeNumber": "14",
+    "episodeUrl": "https://open.spotify.com/episode/39ufmU3M7XXt6bRvjM2bkI?si=eRIN0rZ2SIGLPFHDQ4zjZQ",
+    "status": "published",
+    "verification": "user-confirmed",
+    "publishedAt": "2026-09-14T09:21:03.4433695+09:00",
+    "sha256": "fbdffc8d253ef821f1937c73a717a3b9e2df76295ab14447e5225d010345890b"
+  },
+  "updatedAt": "2026-10-22T03:36:46.265830+00:00"
+}

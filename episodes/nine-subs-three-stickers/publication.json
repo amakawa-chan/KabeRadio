@@ -1,0 +1,32 @@
+{
+  "schemaVersion": 2,
+  "status": "uploaded",
+  "generation": {
+    "status": "generated",
+    "video": "video.mp4",
+    "sha256": "532620528df6707ff71be121d0705050b5c6a41ba6d5d76e84023f0fb106d04c",
+    "generatedAt": "2026-09-25T10:14:22.914876+00:00",
+    "sourceSha256": "1cff9e8247ca9167ddf3168369fb0803f67514189dfbbd2ca6ab9cc626fc4bca",
+    "scriptSha256": "1cff9e8247ca9167ddf3168369fb0803f67514189dfbbd2ca6ab9cc626fc4bca",
+    "sourceMatchesGitHub": true
+  },
+  "youtube": {
+    "videoId": "Uqutm2EN3ps",
+    "url": "https://www.youtube.com/watch?v=Uqutm2EN3ps",
+    "actualPrivacy": "public",
+    "status": "uploaded",
+    "uploadedAt": "2026-09-26T08:53:04.929013+00:00",
+    "sha256": "532620528df6707ff71be121d0705050b5c6a41ba6d5d76e84023f0fb106d04c",
+    "verification": "upload-record-only"
+  },
+  "spotify": {
+    "title": "【壁ラジ】#24 LINEスタンプ発売します",
+    "episodeNumber": "24",
+    "episodeUrl": "https://open.spotify.com/episode/7nnIV4vUuptn57MYozqUa8?si=BqWlWUUdT0qAVHyzegelJA",
+    "status": "published",
+    "verification": "user-confirmed",
+    "publishedAt": "2026-09-26T17:57:23.4615842+09:00",
+    "sha256": "532620528df6707ff71be121d0705050b5c6a41ba6d5d76e84023f0fb106d04c"
+  },
+  "updatedAt": "2026-10-22T03:36:46.293979+00:00"
+}

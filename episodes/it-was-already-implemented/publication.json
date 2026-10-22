@@ -1,0 +1,32 @@
+{
+  "schemaVersion": 2,
+  "status": "uploaded",
+  "generation": {
+    "status": "generated",
+    "video": "video.mp4",
+    "sha256": "3fcb50fd8a8eaa2b940d9aa49c791577732bbe82a4bf279e622aacad7b7b4c37",
+    "generatedAt": "2026-09-13T09:14:00.726185+00:00",
+    "sourceSha256": "98301aa92c45f2f215130b6e65529b282b127be2a5e30c3ba17a38ee267e8cd7",
+    "scriptSha256": "98301aa92c45f2f215130b6e65529b282b127be2a5e30c3ba17a38ee267e8cd7",
+    "sourceMatchesGitHub": true
+  },
+  "youtube": {
+    "videoId": "hitEVPhKoU4",
+    "url": "https://www.youtube.com/watch?v=hitEVPhKoU4",
+    "actualPrivacy": "public",
+    "status": "uploaded",
+    "uploadedAt": "2026-09-13T23:58:19.815443+00:00",
+    "sha256": "3fcb50fd8a8eaa2b940d9aa49c791577732bbe82a4bf279e622aacad7b7b4c37",
+    "verification": "upload-record-only"
+  },
+  "spotify": {
+    "title": "【壁ラジ】#13 未来の話をしたら、だいたいもう実装されてた",
+    "episodeNumber": "13",
+    "episodeUrl": "https://open.spotify.com/episode/5UHFWeJpeoasjQ1QuPEWcF?si=OCfjUFJxTw2OL9ef5iRuPg",
+    "status": "published",
+    "verification": "user-confirmed",
+    "publishedAt": "2026-09-14T09:25:39.0130818+09:00",
+    "sha256": "3fcb50fd8a8eaa2b940d9aa49c791577732bbe82a4bf279e622aacad7b7b4c37"
+  },
+  "updatedAt": "2026-10-22T03:36:46.157207+00:00"
+}

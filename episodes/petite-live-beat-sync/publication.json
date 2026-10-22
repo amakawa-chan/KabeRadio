@@ -1,0 +1,32 @@
+{
+  "schemaVersion": 2,
+  "updatedAt": "2026-10-22T03:36:46.336869+00:00",
+  "youtube": {
+    "videoId": "nYs8pTPqtvU",
+    "url": "https://www.youtube.com/watch?v=nYs8pTPqtvU",
+    "actualPrivacy": "public",
+    "status": "uploaded",
+    "uploadedAt": "2026-09-13T04:17:17.907796+00:00",
+    "sha256": "ba6848385c57e71b6d7759e9fcfe816c830c9486b6722a65abb644b00752f694",
+    "verification": "upload-record-only"
+  },
+  "spotify": {
+    "title": "【壁ラジ】#11 終わるはずだったのに、ミニキャラをBPM同期したくなった",
+    "episodeNumber": "11",
+    "episodeUrl": "https://open.spotify.com/episode/6JkFDNpwiGJlUlsqPAvptL?si=_X5dFFE_RsqtEIIiRyQRxw",
+    "status": "published",
+    "verification": "user-confirmed",
+    "publishedAt": "2026-09-13T13:20:54.7792006+09:00",
+    "sha256": "ba6848385c57e71b6d7759e9fcfe816c830c9486b6722a65abb644b00752f694"
+  },
+  "status": "uploaded",
+  "generation": {
+    "status": "generated",
+    "video": "video.mp4",
+    "sha256": "ba6848385c57e71b6d7759e9fcfe816c830c9486b6722a65abb644b00752f694",
+    "generatedAt": "2026-09-13T04:12:55.399865+00:00",
+    "sourceSha256": "826ba66a7d3e11d714a5dbc82bdffe175d8abdfac1a6ab347ce9ba6963d1b93f",
+    "scriptSha256": "826ba66a7d3e11d714a5dbc82bdffe175d8abdfac1a6ab347ce9ba6963d1b93f",
+    "sourceMatchesGitHub": true
+  }
+}

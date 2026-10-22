@@ -1,0 +1,23 @@
+{
+  "schemaVersion": 2,
+  "status": "uploaded",
+  "generation": {
+    "status": "generated",
+    "video": "video.mp4",
+    "sha256": "6ef7da755419ce19fb68313d6b76ba6f431b0debae278bb246634588bf8b15f1",
+    "generatedAt": "2026-10-20T04:52:55.980358+00:00",
+    "sourceSha256": "d93bc6f23fddf0cf1f213b630ec604bf4eeba409c5699bce77d0eb629e504750",
+    "scriptSha256": "d93bc6f23fddf0cf1f213b630ec604bf4eeba409c5699bce77d0eb629e504750",
+    "sourceMatchesGitHub": true
+  },
+  "youtube": {
+    "videoId": "KAgMyH_Uw74",
+    "url": "https://www.youtube.com/watch?v=KAgMyH_Uw74",
+    "actualPrivacy": "public",
+    "status": "uploaded",
+    "uploadedAt": "2026-10-21T00:00:37.076826+00:00",
+    "sha256": "6ef7da755419ce19fb68313d6b76ba6f431b0debae278bb246634588bf8b15f1",
+    "verification": "upload-record-only"
+  },
+  "updatedAt": "2026-10-22T03:36:46.382020+00:00"
+}

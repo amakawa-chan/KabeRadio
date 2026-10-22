@@ -1,0 +1,32 @@
+{
+  "schemaVersion": 2,
+  "status": "uploaded",
+  "generation": {
+    "status": "generated",
+    "video": "video.mp4",
+    "sha256": "8a0d0a8ee8c2bb26fcc6cc56f6f262de6edd2b40eb46909feed45199ef270d01",
+    "generatedAt": "2026-09-13T03:15:57.523061+00:00",
+    "sourceSha256": "300773a2d0eb3efc4cf1a04bd0dc8fd5cddaa9c2fdd9b0b021c98ae3b7615414",
+    "scriptSha256": "300773a2d0eb3efc4cf1a04bd0dc8fd5cddaa9c2fdd9b0b021c98ae3b7615414",
+    "sourceMatchesGitHub": true
+  },
+  "youtube": {
+    "videoId": "D8_qNniVu8w",
+    "url": "https://www.youtube.com/watch?v=D8_qNniVu8w",
+    "actualPrivacy": "public",
+    "status": "uploaded",
+    "uploadedAt": "2026-09-13T03:21:58.026283+00:00",
+    "sha256": "8a0d0a8ee8c2bb26fcc6cc56f6f262de6edd2b40eb46909feed45199ef270d01",
+    "verification": "upload-record-only"
+  },
+  "spotify": {
+    "title": "【壁ラジ】#10 AIが賢くなったら、人間が試され始めた",
+    "episodeNumber": "10",
+    "episodeUrl": "https://open.spotify.com/episode/37tnPcTsof1S9DnGqRBDZQ?si=LgADfV_SR9GIpQ-g7C7Q2w",
+    "status": "published",
+    "verification": "user-confirmed",
+    "publishedAt": "2026-09-13T12:25:39.9141535+09:00",
+    "sha256": "8a0d0a8ee8c2bb26fcc6cc56f6f262de6edd2b40eb46909feed45199ef270d01"
+  },
+  "updatedAt": "2026-10-22T03:36:46.002215+00:00"
+}
