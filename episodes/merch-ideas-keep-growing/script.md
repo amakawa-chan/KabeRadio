@@ -10,79 +10,79 @@
     "selectedClipIds": [],
     "clips": [
       {
-        "id": "merch-1",
-        "title": "ストアって何",
-        "displayTitle": "ストアって何",
-        "startTurn": 3,
-        "endTurn": 8,
-        "hook": "会話のズレ",
-        "point": "アイデアの転換",
-        "targetDuration": 23,
+        "id": "want-shop",
+        "title": "ストアが欲しい",
+        "displayTitle": "ストア会議",
+        "startTurn": 1,
+        "endTurn": 6,
+        "hook": "異なる視点の掛け合い",
+        "point": "会話の自然な転換点",
+        "targetDuration": 22,
         "platforms": [
           "youtube-shorts"
         ]
       },
       {
-        "id": "merch-2",
-        "title": "他人の発言",
-        "displayTitle": "他人の発言",
-        "startTurn": 23,
-        "endTurn": 28,
-        "hook": "会話のズレ",
-        "point": "アイデアの転換",
-        "targetDuration": 23,
+        "id": "character-love",
+        "title": "作品への愛着",
+        "displayTitle": "娘感の愛着",
+        "startTurn": 20,
+        "endTurn": 25,
+        "hook": "異なる視点の掛け合い",
+        "point": "会話の自然な転換点",
+        "targetDuration": 22,
         "platforms": [
           "youtube-shorts"
         ]
       },
       {
-        "id": "merch-3",
-        "title": "自分が視聴者",
-        "displayTitle": "一番の視聴者",
-        "startTurn": 48,
-        "endTurn": 53,
-        "hook": "会話のズレ",
-        "point": "アイデアの転換",
-        "targetDuration": 23,
+        "id": "ai-surprise",
+        "title": "予想外の発話",
+        "displayTitle": "知らない会話",
+        "startTurn": 55,
+        "endTurn": 60,
+        "hook": "異なる視点の掛け合い",
+        "point": "会話の自然な転換点",
+        "targetDuration": 22,
         "platforms": [
           "youtube-shorts"
         ]
       },
       {
-        "id": "merch-4",
-        "title": "過疎村",
-        "displayTitle": "幸福度は高い",
-        "startTurn": 72,
-        "endTurn": 77,
-        "hook": "会話のズレ",
-        "point": "アイデアの転換",
-        "targetDuration": 23,
+        "id": "village",
+        "title": "幸福度は高い",
+        "displayTitle": "過疎村",
+        "startTurn": 73,
+        "endTurn": 78,
+        "hook": "異なる視点の掛け合い",
+        "point": "会話の自然な転換点",
+        "targetDuration": 22,
         "platforms": [
           "youtube-shorts"
         ]
       },
       {
-        "id": "merch-5",
-        "title": "村営土産物店",
-        "displayTitle": "村営土産物店",
-        "startTurn": 103,
-        "endTurn": 108,
-        "hook": "会話のズレ",
-        "point": "アイデアの転換",
-        "targetDuration": 23,
-        "platforms": [
-          "youtube-shorts"
-        ]
-      },
-      {
-        "id": "merch-6",
+        "id": "metal-tour",
         "title": "メタルツアー",
-        "displayTitle": "メタルツアー",
-        "startTurn": 132,
-        "endTurn": 137,
-        "hook": "会話のズレ",
-        "point": "アイデアの転換",
-        "targetDuration": 23,
+        "displayTitle": "架空のツアー",
+        "startTurn": 113,
+        "endTurn": 118,
+        "hook": "異なる視点の掛け合い",
+        "point": "会話の自然な転換点",
+        "targetDuration": 22,
+        "platforms": [
+          "youtube-shorts"
+        ]
+      },
+      {
+        "id": "collection",
+        "title": "季節コレクション",
+        "displayTitle": "コレクション",
+        "startTurn": 128,
+        "endTurn": 133,
+        "hook": "異なる視点の掛け合い",
+        "point": "会話の自然な転換点",
+        "targetDuration": 22,
         "platforms": [
           "youtube-shorts"
         ]
