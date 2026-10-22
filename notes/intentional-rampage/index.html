@@ -1,9 +1,9 @@
-<!doctype html><html lang="ja"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>意志ある暴走 | 壁ラジ制作ノート</title><style>body{background:#faf9f7;color:#222;font:17px/1.9 system-ui}main{max-width:720px;margin:auto;padding:24px}blockquote{border-left:3px solid #aaa;padding-left:16px;background:#eee}h2{margin-top:2em}button{font:inherit;padding:8px 12px}</style><main><a href="../">制作ノート一覧</a><p><button id="copy">本文をコピー</button></p><article id="article"><h1>意志ある暴走</h1>
+<!doctype html><html lang="ja"><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>意志ある暴走 | 壁ラジ制作ノート</title><style>body{margin:0;background:#faf9f7;color:#242424;font-family:system-ui,sans-serif;line-height:1.9}main{max-width:720px;margin:auto;padding:32px 22px 80px}h1{line-height:1.4}h2{margin-top:2.2em}blockquote{margin:24px 0;padding:8px 20px;border-left:3px solid #aaa;background:#f0efed}button{font:inherit;padding:8px 16px}a{color:#355779}</style><main><p><a href="../">← 制作ノート一覧</a></p><button id="copy">本文をコピー</button><article id="article"><h1>意志ある暴走</h1>
 <p>AI Officeの実装状況を確認していた。</p>
 <p>壁ラジの制作、ショート動画の生成、Codexへの依頼。それぞれのツールを別々に開くのではなく、ひとつの画面で作業の状況を見て、決まった操作ならそこから実行できるようにしたい。そんな制作管制室を作っている。</p>
 <p>ところが進捗の話をしていたはずなのに、いつの間にかモブ子のデコの話になった。</p>
 <h2>以前のオフィスは、動いたところで満足してしまった</h2>
-<p>もともと、二点五ディーのオフィスを作っていた。キャラクターが部屋を歩き回り、席に座り、仕事をしているようなポーズを取る。</p>
+<p>もともと、2.5Dのオフィスを作っていた。キャラクターが部屋を歩き回り、席に座り、仕事をしているようなポーズを取る。</p>
 <p>実際に動くと、これがなかなか面白い。動きができた時点で、かなり満足してしまったところがある。</p>
 <p>開発のクレジットを使ったこともあれば、その間に別のアプリを作り始めたこともあった。見た目ができて、キャラクターが動く。その時点で、自分の中では相当な完成体験になっていたのだと思う。</p>
 <p>でも今回作りたいのは、単に働いているように見えるオフィスではない。台本を選んで制作したり、ショート動画をレンダーしたり、Codexへ続きの作業を依頼したり。実際の制作を進められる場所にしたい。</p>
@@ -53,4 +53,4 @@
 <blockquote><p>モブ子：<br>その時間に、ショートのレンダー機能を作る選択肢もあったんですよね。</p></blockquote>
 <p>ある。でも、これは壁ラジの企画会議だから。コンテンツを作るという意味では本筋だ。</p>
 <p>……という理屈まで用意して、今日も寄り道している。</p>
-<p>結局、止まらんのかい。</p></article><p><a href="../../episodes/intentional-rampage/">台本</a></p></main><script>document.getElementById('copy').onclick=async()=>{let a=document.getElementById('article');try{await navigator.clipboard.write([new ClipboardItem({'text/html':new Blob([a.innerHTML],{type:'text/html'}),'text/plain':new Blob([a.innerText],{type:'text/plain'})})])}catch(e){let r=document.createRange();r.selectNodeContents(a);getSelection().removeAllRanges();getSelection().addRange(r)}};</script></html>
+<p>結局、止まらんのかい。</p></article><p><a href="../../episodes/intentional-rampage/">Episodeを見る</a></p></main><script>document.getElementById('copy').onclick=async()=>{const a=document.getElementById('article');try{await navigator.clipboard.write([new ClipboardItem({'text/html':new Blob([a.innerHTML],{type:'text/html'}),'text/plain':new Blob([a.innerText],{type:'text/plain'})})]);document.getElementById('copy').textContent='コピーしました'}catch(e){const r=document.createRange();r.selectNodeContents(a);getSelection().removeAllRanges();getSelection().addRange(r);document.getElementById('copy').textContent='本文を選択しました'}};</script></html>
