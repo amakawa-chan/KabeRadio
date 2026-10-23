@@ -130,6 +130,9 @@ Repository間の責務、M6環境設定、Archive / Delivery、Casting / Voice�
 
 ## 壁ラジアーカイブス台本
 
+アーカイブス台本の作成は、原則GitHub既定ブランチへの保存（commit/push）まで行います。「ローカルのみ」「pushしない」等の明示指定がある場合は、その指定を優先します。毎回の追加確認は不要です。
+
+
 [追加6本（3本ずつの読込パッケージ）](archives/batches/README.md)。Radioの「アーカイブス作成」→「GitHubの台本を読み込む」で取得します。元動画IDは未確認のため、投稿前に補完してください。
 
 - [アーカイブス制作ルール・メタデータ契約](docs/archives-script-contract-v1.md)
