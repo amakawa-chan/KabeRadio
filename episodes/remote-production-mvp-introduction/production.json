@@ -6,7 +6,7 @@
     "video": "pending"
   },
   "publish": {
-    "spotify": false,
-    "youtube": false
+    "spotify": true,
+    "youtube": true
   }
 }
