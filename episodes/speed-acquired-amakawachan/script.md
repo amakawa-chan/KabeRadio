@@ -14,9 +14,9 @@
         "title": "いつもと違う？",
         "displayTitle": "何か変わった？",
         "startTurn": 1,
-        "endTurn": 10,
+        "endTurn": 7,
         "hook": "変化に気づいてほしいのに普段の実装癖で片付けられる",
-        "point": "！ Guest:あ、また何か実装したんですか？ Host:それはいつもでしょ！ Guest:そうですね。 Host:納得するの早いな！　ほら、今こうして喋ってる私！ Guest:ああ。音声の速度設定が反映された話ですか？",
+        "point": "変化がわからず、いつもの実装かと勘違いする",
         "targetDuration": 22,
         "platforms": [
           "youtube-shorts"
@@ -27,9 +27,9 @@
         "title": "速さを手に入れた",
         "displayTitle": "速さを\n手に入れた",
         "startTurn": 10,
-        "endTurn": 18,
+        "endTurn": 14,
         "hook": "速くなったつもりが未反映だっただけ",
-        "point": "Guest:キャラクターパックでは話速を1.2にしていたのに、ラジオの音声生成には渡っていなかったんです。 Host:つまり私は速いつもりで、ずっと普通の速度で喋ってた。 Guest:本人の意気込みだけ先行していました。",
+        "point": "速度の未反映を直しただけと見破られる",
         "targetDuration": 22,
         "platforms": [
           "youtube-shorts"
@@ -40,9 +40,9 @@
         "title": "気持ちは3倍",
         "displayTitle": "気持ちは3倍",
         "startTurn": 25,
-        "endTurn": 32,
+        "endTurn": 31,
         "hook": "1.2倍と3倍の差を気合いで埋める",
-        "point": ":倍率で言って！　小さく聞こえるから！ Guest:1.2倍ですね。 Host:気持ちは3倍！ Guest:残りの1.8倍はどこから来たんですか？ Host:気合い。 Guest:気合いは音声合成に反映されないんですよ。",
+        "point": "3倍との差は気合いと主張し音声合成に反映できないと返される",
         "targetDuration": 22,
         "platforms": [
           "youtube-shorts"
@@ -55,7 +55,7 @@
         "startTurn": 29,
         "endTurn": 35,
         "hook": "冗談からまた実装案が生えかける",
-        "point": ":残りの1.8倍はどこから来たんですか？ Host:気合い。 Guest:気合いは音声合成に反映されないんですよ。 Host:そこも実装するか。 Guest:あっ。 Host:……いや、今のは冗談。今日は増やさないから。",
+        "point": "気合いの実装という新しい増築案が生えかける",
         "targetDuration": 22,
         "platforms": [
           "youtube-shorts"
@@ -66,9 +66,9 @@
         "title": "思考速度は等倍",
         "displayTitle": "考える時間は\n等倍",
         "startTurn": 43,
-        "endTurn": 50,
+        "endTurn": 49,
         "hook": "発話速度と考える時間のズレ",
-        "point": "かに。普通に言い返しただけだわ。 Guest:喋り始めてからの時間は短くなっても、何を言うか考える時間は別です。 Host:じゃあ私がめちゃくちゃ悩んだあと、答えだけ早口で言ったら。 Guest:悩む時間はそのままです。",
+        "point": "考える時間は話速の影響を受けない",
         "targetDuration": 22,
         "platforms": [
           "youtube-shorts"
@@ -79,9 +79,9 @@
         "title": "先に行って待つ",
         "displayTitle": "先に行って\n待ってる",
         "startTurn": 64,
-        "endTurn": 71,
+        "endTurn": 70,
         "hook": "先に行くという発想が会話では間になる",
-        "point": "t:そう。先に行って待ってる。 Guest:会話でそれをやると、単に間ができますよ。 Host:あ、そうか。 Guest:結局、待つんですね。 Host:でもさ、声が変わると、同じセリフでもちょっとキャラの印象が違うね。",
+        "point": "会話で先に行くと結局待つことになる",
         "targetDuration": 22,
         "platforms": [
           "youtube-shorts"
