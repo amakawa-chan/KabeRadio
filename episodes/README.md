@@ -26,6 +26,8 @@ GitHub上の正式Episodeは原則`status: ready`で保存し、M6ローカル�
 
 ## Episodes
 
+- [速さを手に入れたあまかわちゃん](speed-acquired-amakawachan/)
+
 - [忘れる自由を失いつつあるのか？](freedom-to-forget/)
 
 - [意志ある暴走](intentional-rampage/)
