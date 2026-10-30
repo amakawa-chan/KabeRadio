@@ -28,16 +28,15 @@ Jotaさんのプロンプトをお借りし、うちのChatGPTこと「ノウ」
 
 なかなかノリノリである。
 
-以下、各回の結果と感想。52曲すべての推薦理由と評価は別ページにまとめた。
+以下、各回の結果と感想。曲数が多いので、全52曲の推薦理由と評価はスマホでも読める別ページにまとめた。
 
-## AIが選んだA〜Z、全26曲の評価結果
+## Vol.1｜AIが選んだA〜Z、全26曲の評価結果
 
 **結果：〇24曲／△2曲／×0曲（〇率92.3%）**
 
 評価：〇＝好き／△＝いまひとつ／×＝好みではない
 
-[全52曲の推薦理由・評価・感想を読む（GitHub Pages）](https://amakawa-chan.github.io/KabeRadio/notes/ai-music-a-to-z-nou-revenge/reviews.html)
-
+[Vol.1・Vol.2の全52曲レビュー（推薦理由と私の感想）](https://amakawa-chan.github.io/KabeRadio/notes/ai-music-a-to-z-nou-revenge/)
 
 ### 集計
 
@@ -77,8 +76,7 @@ Jotaさんのプロンプトをお借りし、うちのChatGPTこと「ノウ」
 
 評価：〇＝好き／△＝いまひとつ／×＝好みではない
 
-[全52曲の推薦理由・評価・感想を読む（GitHub Pages）](https://amakawa-chan.github.io/KabeRadio/notes/ai-music-a-to-z-nou-revenge/reviews.html)
-
+[全52曲の推薦理由・評価・感想を読む](https://amakawa-chan.github.io/KabeRadio/notes/ai-music-a-to-z-nou-revenge/)
 
 ### 集計
 
@@ -122,9 +120,9 @@ Jotaさんのプロンプトをお借りし、うちのChatGPTこと「ノウ」
 
 ## 今週末のプレイリスト
 
-※Apple Musicのプレイリストは作成済み。一部の曲は未収録のため、全52曲のデータは上記レビューに掲載している。
-
 せっかくなので、Vol.1とVol.2の楽曲をApple Musicのプレイリストにしてもらった。一部収録されていない曲もあったけれど。
+
+※Apple Musicのプレイリストへのリンクは、公開URLを確認してから掲載する予定。全52曲の記録は[こちらのレビュー一覧](https://amakawa-chan.github.io/KabeRadio/notes/ai-music-a-to-z-nou-revenge/)から読める。
 
 Vol.1は、いわゆるメジャーなアーティストや一般的に広く知られているアーティストばかりではないが、素晴らしい曲が多い。
 
