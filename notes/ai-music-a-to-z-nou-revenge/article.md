@@ -44,6 +44,8 @@ Jotaさんのプロンプトをお借りし、うちのChatGPTこと「ノウ」
 
 ※「未聴」は評価時点までアーティストを聴いたことがなかったもの。既知の好きなアーティストも選曲対象に含むため、〇率は新規推薦だけの的中率ではありません。
 
+[Apple MusicでVol.1を聴く](https://music.apple.com/jp/playlist/%E3%83%8E%E3%82%A6%E3%81%AE%E9%81%B8%E6%9B%B2-a-z-vol-1/pl.u-K00Btm4qozk)
+
 ## 第2回「ノウの逆襲」
 
 結果は26曲中24曲が〇。
@@ -84,6 +86,8 @@ Jotaさんのプロンプトをお借りし、うちのChatGPTこと「ノウ」
 
 ※「未聴」は評価時点までアーティストを聴いたことがなかったもの。第2回は前回の26組を除外し、代表ジャンルの重複を避けて未聴の可能性が高いアーティストを優先しました。
 
+[Apple MusicでVol.2を聴く](https://music.apple.com/jp/playlist/%E3%83%8E%E3%82%A6%E3%81%AE%E9%80%86%E8%A5%B2-a-z-vol-2/pl.u-ojjYF0b6vPM)
+
 ## 2回の選曲を終えて
 
 2回の評価を終えた私の素直な感想は2つ。
@@ -122,7 +126,7 @@ Jotaさんのプロンプトをお借りし、うちのChatGPTこと「ノウ」
 
 せっかくなので、Vol.1とVol.2の楽曲をApple Musicのプレイリストにしてもらった。一部収録されていない曲もあったけれど。
 
-※Apple Musicのプレイリストへのリンクは、公開URLを確認してから掲載する予定。全52曲の記録は[こちらのレビュー一覧](https://amakawa-chan.github.io/KabeRadio/notes/ai-music-a-to-z-nou-revenge/)から読める。
+プレイリストはこちら：[Vol.1](https://music.apple.com/jp/playlist/%E3%83%8E%E3%82%A6%E3%81%AE%E9%81%B8%E6%9B%B2-a-z-vol-1/pl.u-K00Btm4qozk) ／ [Vol.2](https://music.apple.com/jp/playlist/%E3%83%8E%E3%82%A6%E3%81%AE%E9%80%86%E8%A5%B2-a-z-vol-2/pl.u-ojjYF0b6vPM)。全52曲の記録は[レビュー一覧](https://amakawa-chan.github.io/KabeRadio/notes/ai-music-a-to-z-nou-revenge/)から読める。
 
 Vol.1は、いわゆるメジャーなアーティストや一般的に広く知られているアーティストばかりではないが、素晴らしい曲が多い。
 
