@@ -65,11 +65,26 @@
   .stage.intro .hub-crt{width:100%}
   #list-btn{display:none;cursor:pointer;margin-top:10px;width:100%;border:2px solid var(--navy);border-radius:9px;
     background:#fff;color:var(--navy);font-weight:800;font-size:13px;padding:9px 14px}
+
+  /* ===== contents (top page link guide; hidden in intro mode) ===== */
+  .contents{margin-top:18px}
+  .stage.intro .contents{display:none}
+  .contents h2{font-size:14px;letter-spacing:.06em;margin:0 0 9px;color:var(--deep)}
+  .contents h2 span{font:700 11px ui-monospace,Menlo,monospace;color:var(--accent);letter-spacing:.1em}
+  .link-cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:8px}
+  .link-cards a{display:block;text-decoration:none;background:#fff;border:1px solid var(--line);
+    border-radius:11px;padding:11px 13px;color:var(--ink)}
+  .link-cards a:hover{border-color:var(--navy);box-shadow:3px 3px 0 var(--navy)}
+  .link-cards .lt{font-weight:900;font-size:14px;color:var(--navy)}
+  .link-cards .ld{font-size:12px;color:#5c6650;margin-top:2px;line-height:1.5}
+
   @media(max-width:820px){
+    body{height:auto;min-height:100dvh;overflow:visible}
+    .stage{overflow:visible !important;flex:0 0 auto}
     body.mode-intro #list-btn{display:block}
     header{gap:8px}
     #home-btn{white-space:nowrap;padding:7px 10px}
-    .stage.intro{gap:10px;padding:2px 10px 10px;overflow-y:auto;overflow-x:hidden;grid-template-rows:auto auto}
+    .stage.intro{gap:10px;padding:2px 10px 10px;grid-template-rows:auto auto}
     .stage.intro .content-col{overflow:visible}
     .stage.intro .ep-scroll{overflow:visible}
     .stage.intro .crt-panel{padding:10px;display:grid;
@@ -222,15 +237,31 @@
     <section class="content-col">
       <div class="info-panel" id="info-panel">
         <div class="ep-meta" id="ep-meta">EPISODE</div>
-        <h1 class="ep-title" id="ep-title">エピソードを選んでください</h1>
+        <h1 class="ep-title" id="ep-title">壁ラジ放送局へようこそ</h1>
         <div class="msg-window" id="msg-window" title="タップで全文表示">
           <span class="msg-name">モブ子</span>
-          <div class="msg-text" id="msg-text">一覧から公開済みのエピソードを選ぶと、モブ子が紹介文を読み上げるように、1文字ずつ表示します。</div>
+          <div class="msg-text" id="msg-text">CRTの「▶ 電源を入れる」を押すと、モブ子があいさつします。エピソード紹介はアーカイブから聞きたい回を選んでください。</div>
           <div class="msg-hint"><span id="msg-mode">TEXT MODE</span><span class="next">▼</span></div>
         </div>
         <div class="ep-links" id="ep-links"></div>
         <button id="next-btn" class="hidden" type="button">つぎのエピソード ▶</button>
         <button id="list-btn" type="button">▼ エピソード一覧へ</button>
+      </div>
+
+      <div class="contents">
+        <h2>コンテンツ <span>CONTENTS</span></h2>
+        <div class="link-cards">
+          <a href="https://amakawa-chan.github.io/KabeRadio/" target="_blank" rel="noopener">
+            <div class="lt">公式サイト</div><div class="ld">壁ラジの総合案内トップページです</div></a>
+          <a href="https://www.youtube.com/@kaberadi" target="_blank" rel="noopener">
+            <div class="lt">YouTube</div><div class="ld">本編の動画はこちらで公開しています</div></a>
+          <a href="https://open.spotify.com/show/0345KBagDfhEyJFd4xstHI" target="_blank" rel="noopener">
+            <div class="lt">Spotify</div><div class="ld">音声だけでも聴けます</div></a>
+          <a href="https://note.com/loyal_okapi1848" target="_blank" rel="noopener">
+            <div class="lt">note（あまかわちゃん）</div><div class="ld">制作記や小説などを置いています</div></a>
+          <a href="https://x.com/kaberadi_mobuko" target="_blank" rel="noopener">
+            <div class="lt">X（@kaberadi_mobuko）</div><div class="ld">新着やお知らせはこちら</div></a>
+        </div>
       </div>
 
       <div class="archive">
@@ -437,6 +468,7 @@
       booting = false; waveStop();
       setState('待機中'); refreshPlayBtn();
       if (after) after();
+      else if (!current) playWelcome();
     }, 1800);
   }
   powerBtn.addEventListener('click', function(){ powerOn(null); });
@@ -487,7 +519,11 @@
   }
 
   function refreshPlayBtn(){
-    if (!current){ playBtn.disabled = true; return; }
+    if (!current){
+      playBtn.disabled = !powered;
+      playBtn.textContent = 'あいさつ';
+      return;
+    }
     playBtn.disabled = false;
     playBtn.textContent = '紹介する';
   }
@@ -500,13 +536,14 @@
     homeBtn.classList.add('hidden');
     Array.prototype.forEach.call(epList.querySelectorAll('button'), function(x){ x.classList.remove('selected'); });
     epMeta.textContent = 'EPISODE';
-    epTitle.textContent = 'エピソードを選んでください';
+    epTitle.textContent = '壁ラジ放送局へようこそ';
     epLinks.innerHTML = '';
     msgWindow.classList.remove('done');
     msgMode.textContent = 'TEXT MODE';
-    msgText.textContent = '一覧から公開済みのエピソードを選ぶと、モブ子が紹介文を読み上げるように、1文字ずつ表示します。';
-    playBtn.disabled = true;
-    if (powered) setState('待機中');
+    refreshPlayBtn();
+    if (powered) playWelcome();
+    else msgText.textContent = 'CRTの「▶ 電源を入れる」を押すと、モブ子があいさつします。エピソード紹介はアーカイブから聞きたい回を選んでください。';
+    window.scrollTo(0, 0);
     stage.scrollTop = 0;
   }
   homeBtn.addEventListener('click', goHome);
@@ -533,7 +570,9 @@
     }
     typeText(current.description);
   }
-  playBtn.addEventListener('click', startIntro);
+  playBtn.addEventListener('click', function(){
+    if (current) startIntro(); else playWelcome();
+  });
 
   /* ---------- typewriter text mode (no-voice intro) ---------- */
   var typeTimer = null, mouthTimer = null, typeState = null;
@@ -555,7 +594,12 @@
     }
     refreshPlayBtn();
   }
-  function typeText(full){
+  var WELCOME_TEXT = '壁ラジへようこそ。ここは「バ美おじとLLMの壁打ち雑談ラジオ」のエピソード紹介ページです。アーカイブから聞きたい回を選ぶと、わたし、モブ子が紹介します。下には公式サイトやYouTube、Spotifyへのリンク集もあります。';
+  function playWelcome(){
+    if (!powered || current) return;
+    typeText(WELCOME_TEXT, 'あいさつ中');
+  }
+  function typeText(full, stateLabel){
     stopAll();
     msgWindow.classList.remove('done');
     msgMode.textContent = 'TEXT MODE';
@@ -568,7 +612,7 @@
     typing = true;
     typeState = { full: full, i: 0 };
     waveStart();
-    setState('紹介中');
+    setState(stateLabel || '紹介中');
     stationState.classList.add('live'); stationStateText.textContent = 'NOW INTRODUCING';
     stopBtn.disabled = false; playBtn.disabled = true;
     var mi = 0;
