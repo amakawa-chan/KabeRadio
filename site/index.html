@@ -362,14 +362,13 @@
     speaking = true; lastLoud = performance.now();
     audio.src = src;
     audio.play().then(function(){
-      setState('紹介中'); stationState.classList.add('live'); stationStateText.textContent = 'NOW INTRODUCING';
+      setState(label || '紹介中'); stationState.classList.add('live'); stationStateText.textContent = 'NOW INTRODUCING';
       infoPanel.classList.add('speaking');
       stopBtn.disabled = false; playBtn.disabled = true;
       if (analyser) mouthLoop(); else startFallbackMouth();
     }).catch(function(){
       speaking = false; setState('再生できませんでした');
     });
-    if (label) stateText.textContent = label;
   }
   function stopSpeech(){
     if (!audio.paused) audio.pause();
@@ -395,8 +394,7 @@
   stopBtn.addEventListener('click', stopSpeech);
   document.getElementById('test-btn').addEventListener('click', function(){
     if (!powered){ veil.scrollIntoView({behavior:'smooth', block:'center'}); powerBtn.focus(); return; }
-    playSrc('assets/sfx/lipsync-test.wav');
-    setState('同期テスト中');
+    playSrc('assets/sfx/lipsync-test.wav', '同期テスト中');
   });
 
   /* default selection: newest episode */
