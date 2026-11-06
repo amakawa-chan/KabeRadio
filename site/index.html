@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light">
+<title>壁ラジ放送局 | バ美おじとLLMの壁打ち雑談ラジオ</title>
+<style>
+  :root{
+    --ink:#22312a; --deep:#102c2d; --mid:#2e554a; --accent:#487557;
+    --paper:#f4f1e3; --panel:#eef0e2; --line:#c3cfb9;
+    --yellow:#fdec28; --red:#fb5c52; --navy:#04283a;
+  }
+  *{box-sizing:border-box}
+  html,body{margin:0;padding:0}
+  body{background:var(--paper);color:var(--ink);
+    font-family:"Hiragino Kaku Gothic ProN","Hiragino Sans","Noto Sans JP",system-ui,sans-serif;
+    -webkit-text-size-adjust:100%}
+  a{color:#1c5fa8}
+  .wrap{max-width:1080px;margin:0 auto;padding:18px 16px 56px}
+
+  /* ===== header ===== */
+  header{display:flex;align-items:center;gap:14px;flex-wrap:wrap;margin-bottom:18px}
+  .logo{background:var(--yellow);border:3px solid var(--navy);border-radius:12px;
+    padding:8px 16px 9px;box-shadow:4px 4px 0 var(--navy)}
+  .logo .name{font-weight:900;font-size:24px;letter-spacing:.04em;color:var(--navy);line-height:1.15}
+  .logo .sub{font-size:11px;font-weight:700;color:var(--navy);opacity:.75;letter-spacing:.08em}
+  .station-state{margin-left:auto;display:flex;align-items:center;gap:8px;
+    font:700 11px ui-monospace,Menlo,monospace;letter-spacing:.14em;color:var(--mid)}
+  .station-state .dot{width:10px;height:10px;border-radius:50%;background:#8aa583;box-shadow:0 0 0 3px #dfe5d2}
+  .station-state.live .dot{background:var(--red);box-shadow:0 0 0 3px #f6d9d4;animation:blinkdot 1.2s steps(2) infinite}
+  @keyframes blinkdot{50%{opacity:.35}}
+
+  /* ===== layout ===== */
+  .stage{display:grid;grid-template-columns:400px minmax(0,1fr);gap:22px;align-items:start}
+  @media(max-width:820px){.stage{grid-template-columns:1fr}}
+
+  /* ===== CRT (Office .hub-crt values ported) ===== */
+  .crt-panel{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:16px}
+  .operator-label{display:flex;justify-content:space-between;font:700 10px ui-monospace,Menlo,monospace;
+    letter-spacing:.14em;color:var(--accent);margin-bottom:10px}
+  .hub-crt{position:relative;background:radial-gradient(ellipse,#2e5850,#102c2d);
+    border:9px solid #4c5d52;box-shadow:inset 0 0 35px #071f20,0 6px 0 #b5bcb0;
+    border-radius:17px;height:400px;overflow:hidden}
+  @media(max-width:820px){.hub-crt{height:min(118vw,430px)}}
+  .hub-crt img{position:absolute;left:50%;top:3px;width:auto;height:112%;max-width:none;
+    transform:translateX(-50%);visibility:hidden}
+  .hub-crt img.front{z-index:2;mask-image:linear-gradient(to right,transparent,#000 7%,#000 93%,transparent);
+    -webkit-mask-image:linear-gradient(to right,transparent,#000 7%,#000 93%,transparent)}
+  .hub-crt img.portrait-completion{z-index:1;pointer-events:none;
+    mask-image:linear-gradient(to right,#000,#000 5%,transparent 18%,transparent 82%,#000 95%,#000);
+    -webkit-mask-image:linear-gradient(to right,#000,#000 5%,transparent 18%,transparent 82%,#000 95%,#000)}
+  .hub-crt.on img{visibility:visible}
+  .crt-scan{position:absolute;inset:0;z-index:3;pointer-events:none;
+    background:repeating-linear-gradient(transparent 0 3px,#002c241b 3px 4px);
+    box-shadow:inset 0 0 35px #001c2b66;animation:crt-flicker 6s steps(2) infinite}
+  @keyframes crt-flicker{0%,96%{opacity:.75}97%{opacity:.9}100%{opacity:.75}}
+  .hub-crt small{position:absolute;z-index:4;bottom:8px;left:11px;color:#bfdba8;
+    font:9px ui-monospace,Menlo,monospace;letter-spacing:1px}
+  .crt-boot-noise{position:absolute;inset:0;z-index:5;pointer-events:none;opacity:0;
+    background:repeating-linear-gradient(17deg,#b8c9b4aa 0 1px,#1a3333 2px 4px,transparent 5px 8px),
+               repeating-linear-gradient(91deg,#294840 0 2px,#e1ead333 3px 4px)}
+  .crt-static{position:absolute;inset:0;width:100%;height:100%;z-index:6;display:none;pointer-events:none;image-rendering:pixelated}
+  .hub-crt[data-boot=noise] .crt-boot-noise{animation:operator-signal-sf 1.8s steps(12) forwards}
+  .hub-crt[data-boot=noise] img.front,.hub-crt[data-boot=noise] img.portrait-completion{animation:operator-tune-sf 1.8s ease-out}
+  .hub-crt[data-boot=noise] .crt-static{display:block}
+  @keyframes operator-signal-sf{0%{opacity:.9;transform:translate(-8px,6px) skewX(9deg)}25%{opacity:.65;transform:translate(6px,-3px) skewX(-6deg)}55%{opacity:.45;transform:translate(-3px,2px) skewX(3deg)}80%{opacity:.2;transform:translate(1px,-1px)}100%{opacity:0;transform:none}}
+  @keyframes operator-tune-sf{0%{opacity:.1;filter:blur(4px) saturate(.3);transform:translateX(-46%) skewX(10deg) scaleY(.94)}25%{opacity:.4;transform:translateX(-54%) skewX(-7deg) scaleY(1.05)}52%{opacity:.6;filter:blur(1px);transform:translateX(-48%) skewX(3deg)}78%{opacity:.85;transform:translateX(-51%) skewX(-1deg)}100%{opacity:1;filter:none;transform:translateX(-50%)}}
+  .power-veil{position:absolute;inset:0;z-index:8;display:flex;align-items:center;justify-content:center;background:#0b201e55}
+  .hub-crt.on ~ .power-veil,.power-veil.hidden{display:none}
+  #power-btn{font:700 14px ui-monospace,Menlo,monospace;letter-spacing:.12em;cursor:pointer;
+    color:#dff0cd;background:#1d4038;border:2px solid #7fae7c;border-radius:10px;padding:14px 22px;
+    box-shadow:0 4px 0 #0d2a24}
+  #power-btn:active{transform:translateY(2px);box-shadow:0 2px 0 #0d2a24}
+
+  /* ===== controls ===== */
+  .controls{display:flex;gap:10px;align-items:center;margin-top:14px;flex-wrap:wrap}
+  .controls button{cursor:pointer;border-radius:9px;border:2px solid var(--navy);
+    font-weight:800;font-size:14px;padding:10px 18px;background:#fff;color:var(--navy)}
+  .controls button.primary{background:var(--yellow);box-shadow:3px 3px 0 var(--navy)}
+  .controls button:disabled{opacity:.45;cursor:not-allowed;box-shadow:none}
+  .controls button:not(:disabled):active{transform:translateY(1px)}
+  .progress{flex:1 1 120px;height:8px;background:#dde2cd;border-radius:99px;overflow:hidden;min-width:100px}
+  .progress i{display:block;height:100%;width:0;background:var(--accent);transition:width .2s linear}
+  .state-text{font:700 11px ui-monospace,Menlo,monospace;letter-spacing:.1em;color:var(--mid)}
+
+  /* ===== now playing / info ===== */
+  .info-panel{background:#fff;border:1px solid var(--line);border-radius:16px;padding:20px 22px}
+  .info-panel.speaking{border-color:var(--accent);box-shadow:0 0 0 3px #dcead3}
+  .ep-meta{font:700 11px ui-monospace,Menlo,monospace;letter-spacing:.12em;color:var(--accent);margin-bottom:6px}
+  .ep-title{font-size:22px;font-weight:900;line-height:1.35;margin:0 0 12px}
+  .ep-desc{font-size:15px;line-height:1.85;white-space:pre-wrap;margin:0}
+  .ep-desc.empty{color:#7a8272;font-size:13px}
+  .ep-links{display:flex;gap:10px;flex-wrap:wrap;margin-top:16px}
+  .ep-links a{display:inline-block;text-decoration:none;font-weight:800;font-size:13px;
+    border:2px solid var(--navy);border-radius:9px;padding:8px 14px;color:var(--navy);background:#fff}
+  .ep-links a.yt{background:#ffe9e7}.ep-links a.sp{background:#e6f4e4}.ep-links a.nt{background:#eef3ff}
+
+  /* ===== archive ===== */
+  .archive{margin-top:22px}
+  .archive h2{font-size:15px;letter-spacing:.06em;margin:0 0 10px;color:var(--deep)}
+  .archive h2 span{font:700 11px ui-monospace,Menlo,monospace;color:var(--accent);letter-spacing:.1em}
+  .ep-list{list-style:none;margin:0;padding:0;display:grid;gap:8px}
+  .ep-list button{width:100%;text-align:left;cursor:pointer;background:#fff;border:1px solid var(--line);
+    border-radius:11px;padding:11px 14px;display:flex;gap:12px;align-items:baseline;color:var(--ink)}
+  .ep-list button:hover{border-color:var(--accent)}
+  .ep-list button.selected{border-color:var(--navy);box-shadow:3px 3px 0 var(--navy);background:#fffef2}
+  .ep-list .no{font:800 11px ui-monospace,Menlo,monospace;color:var(--accent);white-space:nowrap}
+  .ep-list .t{font-weight:700;font-size:14px;line-height:1.45}
+  .ep-list .d{margin-left:auto;font:10px ui-monospace,Menlo,monospace;color:#8a917c;white-space:nowrap}
+  .test-card{margin-top:18px;background:#fdf6d8;border:1px dashed #b7a94e;border-radius:12px;padding:14px 16px;font-size:13px;line-height:1.7}
+  .test-card button{cursor:pointer;margin-top:8px;font-weight:800;font-size:13px;border:2px solid var(--navy);
+    border-radius:9px;padding:8px 14px;background:#fff;color:var(--navy)}
+  footer{margin-top:34px;font-size:11px;color:#8a917c;line-height:1.8}
+  @media (prefers-reduced-motion: reduce){
+    .crt-scan{animation:none}
+    .hub-crt[data-boot=noise] img.front,.hub-crt[data-boot=noise] img.portrait-completion,
+    .hub-crt[data-boot=noise] .crt-boot-noise{animation:none}
+    .hub-crt[data-boot=noise] .crt-static{display:none}
+    .station-state.live .dot{animation:none}
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <div class="logo">
+      <div class="name">壁ラジ放送局</div>
+      <div class="sub">バ美おじとLLMの壁打ち雑談ラジオ</div>
+    </div>
+    <div class="station-state" id="station-state"><span class="dot"></span><span id="station-state-text">STATION READY</span></div>
+  </header>
+
+  <div class="stage">
+    <section class="crt-panel" aria-label="モブ子のCRT">
+      <div class="operator-label"><span>MOBUKO // OPERATOR</span><span id="op-state">STANDBY</span></div>
+      <div class="hub-crt" id="crt" data-boot="idle">
+        <img class="portrait-completion" id="img-completion" src="assets/mobuko/maid/completion-v1.webp" alt="" aria-hidden="true">
+        <img class="front" id="img-front" src="assets/mobuko/maid/normal.webp" alt="モブ子">
+        <div class="crt-scan"></div>
+        <small>KABE RADIO STATION</small>
+        <div class="crt-boot-noise"></div>
+        <canvas class="crt-static" id="crt-static" width="160" height="160"></canvas>
+        <div class="power-veil" id="power-veil"><button id="power-btn" type="button">▶ 電源を入れる</button></div>
+      </div>
+      <div class="controls">
+        <button class="primary" id="play-btn" type="button" disabled>紹介を聞く</button>
+        <button id="stop-btn" type="button" disabled>停止</button>
+        <div class="progress" aria-hidden="true"><i id="progress-bar"></i></div>
+        <span class="state-text" id="state-text">電源オフ</span>
+      </div>
+    </section>
+
+    <section>
+      <div class="info-panel" id="info-panel">
+        <div class="ep-meta" id="ep-meta">EPISODE</div>
+        <h1 class="ep-title" id="ep-title">エピソードを選んでください</h1>
+        <p class="ep-desc" id="ep-desc">一覧から公開済みのエピソードを選ぶと、ここに台本の紹介文がそのまま表示されます。「紹介を聞く」では、モブ子が紹介文を読み上げます。</p>
+        <div class="ep-links" id="ep-links"></div>
+      </div>
+
+      <div class="archive">
+        <h2>アーカイブ <span id="ep-count"></span></h2>
+        <ul class="ep-list" id="ep-list"></ul>
+        <div class="test-card">
+          <strong>検証用：口パク同期テスト</strong><br>
+          紹介音声（モブ子の声）はまだ生成されていないため、音量で口形が動く仕組みの確認用に、テスト音（声ではありません）で再生を確認できます。
+          <br><button id="test-btn" type="button">テスト音で口パクを確認</button>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <footer>
+    壁ラジ放送局（試作）— 紹介文は各エピソードの台本「Episode Description」からそのまま抽出しています。掲載は公開が確認できたエピソードのみです。
+  </footer>
+</div>
+
+<audio id="audio" preload="none"></audio>
+<audio id="se" preload="auto" src="assets/sfx/crt-tuning-v1.wav"></audio>
+<script src="episode-index.js"></script>
+<script>
+(function(){
+  "use strict";
+  var FRAMES = {
+    normal:    "assets/mobuko/maid/normal.webp",
+    blinkHalf: "assets/mobuko/maid/blink_half.webp",
+    blink:     "assets/mobuko/maid/blink.webp",
+    close:     "assets/mobuko/maid/talk_close.webp",
+    small:     "assets/mobuko/maid/talk_small.webp",
+    medium:    "assets/mobuko/maid/talk_medium.webp",
+    big:       "assets/mobuko/maid/talk_big.webp"
+  };
+  // preload all frames for flicker-free swaps
+  Object.keys(FRAMES).forEach(function(k){ var i = new Image(); i.src = FRAMES[k]; });
+
+  var crt = document.getElementById('crt');
+  var front = document.getElementById('img-front');
+  var veil = document.getElementById('power-veil');
+  var powerBtn = document.getElementById('power-btn');
+  var playBtn = document.getElementById('play-btn');
+  var stopBtn = document.getElementById('stop-btn');
+  var bar = document.getElementById('progress-bar');
+  var stateText = document.getElementById('state-text');
+  var opState = document.getElementById('op-state');
+  var stationState = document.getElementById('station-state');
+  var stationStateText = document.getElementById('station-state-text');
+  var infoPanel = document.getElementById('info-panel');
+  var epMeta = document.getElementById('ep-meta');
+  var epTitle = document.getElementById('ep-title');
+  var epDesc = document.getElementById('ep-desc');
+  var epLinks = document.getElementById('ep-links');
+  var epList = document.getElementById('ep-list');
+  var epCount = document.getElementById('ep-count');
+  var audio = document.getElementById('audio');
+  var se = document.getElementById('se');
+  var staticCanvas = document.getElementById('crt-static');
+  var staticCtx = staticCanvas.getContext('2d');
+
+  var powered = false, speaking = false, current = null, baseFrame = 'normal';
+  var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  function setFrame(name){
+    if (FRAMES[name] && front.getAttribute('src') !== FRAMES[name]) front.src = FRAMES[name];
+  }
+  function setState(t){ stateText.textContent = t; opState.textContent = t; }
+
+  /* ---------- blink: half(70ms) -> closed(150ms) -> half(70ms), every 3-7s ---------- */
+  function blinkLoop(){
+    if (powered && !speaking){
+      setFrame('blinkHalf');
+      setTimeout(function(){ if(!speaking) setFrame('blink');
+        setTimeout(function(){ if(!speaking) setFrame('blinkHalf');
+          setTimeout(function(){ if(!speaking) setFrame(baseFrame); }, 70);
+        }, 150);
+      }, 70);
+    }
+    setTimeout(blinkLoop, 3000 + Math.random()*4000);
+  }
+  setTimeout(blinkLoop, 2500);
+
+  /* ---------- boot ---------- */
+  var staticTimer = null;
+  function runStatic(){
+    var img = staticCtx.createImageData(160,160), d = img.data;
+    for (var i=0;i<d.length;i+=4){ var v = Math.random()*255|0; d[i]=d[i+1]=d[i+2]=v; d[i+3]=70; }
+    staticCtx.putImageData(img,0,0);
+  }
+  powerBtn.addEventListener('click', function(){
+    ensureAudioGraph();
+    veil.classList.add('hidden');
+    if (reduceMotion){
+      crt.classList.add('on'); powered = true; setState('待機中');
+      if (current) refreshPlayBtn();
+      return;
+    }
+    crt.dataset.boot = 'noise';
+    try { se.currentTime = 0; se.play().catch(function(){}); } catch(e){}
+    staticTimer = setInterval(runStatic, 90);
+    setTimeout(function(){
+      clearInterval(staticTimer);
+      crt.dataset.boot = 'idle'; crt.classList.add('on'); powered = true;
+      setState('待機中');
+      if (current) refreshPlayBtn();
+    }, 1800);
+  });
+
+  /* ---------- episode list ---------- */
+  var episodes = (window.EPISODE_INDEX || []);
+  epCount.textContent = episodes.length + ' EPISODES';
+  episodes.forEach(function(ep, idx){
+    var li = document.createElement('li');
+    var b = document.createElement('button');
+    b.type = 'button';
+    var no = document.createElement('span'); no.className = 'no';
+    no.textContent = ep.episodeNumber ? ('#' + ep.episodeNumber) : '—';
+    var t = document.createElement('span'); t.className = 't'; t.textContent = ep.title || ep.episodeKey;
+    var d = document.createElement('span'); d.className = 'd';
+    d.textContent = ep.publishedAt ? ep.publishedAt.slice(0,10) : '';
+    b.appendChild(no); b.appendChild(t); b.appendChild(d);
+    b.addEventListener('click', function(){ selectEpisode(ep, b); });
+    li.appendChild(b); epList.appendChild(li);
+    ep._btn = b;
+  });
+
+  function selectEpisode(ep, btn){
+    stopSpeech();
+    current = ep;
+    Array.prototype.forEach.call(epList.querySelectorAll('button'), function(x){ x.classList.remove('selected'); });
+    if (btn) btn.classList.add('selected');
+    epMeta.textContent = (ep.episodeNumber ? ('EPISODE #' + ep.episodeNumber) : 'EPISODE') +
+      (ep.publishedAt ? (' ／ ' + ep.publishedAt.slice(0,10)) : '');
+    epTitle.textContent = ep.title || ep.episodeKey;
+    if (ep.description){
+      epDesc.textContent = ep.description; epDesc.classList.remove('empty');
+    } else {
+      epDesc.textContent = 'この回は台本に紹介文（Episode Description）が未設定のため、紹介音声はありません。';
+      epDesc.classList.add('empty');
+    }
+    epLinks.innerHTML = '';
+    function link(href, label, cls){
+      var a = document.createElement('a');
+      a.href = href; a.target = '_blank'; a.rel = 'noopener'; a.textContent = label; a.className = cls;
+      epLinks.appendChild(a);
+    }
+    if (ep.youtubeUrl) link(ep.youtubeUrl, 'YouTubeで聴く', 'yt');
+    if (ep.spotifyUrl) link(ep.spotifyUrl, 'Spotifyで聴く', 'sp');
+    if (ep.noteUrl) link(ep.noteUrl, '制作ノートを読む', 'nt');
+    refreshPlayBtn();
+  }
+
+  function refreshPlayBtn(){
+    if (!powered || !current){ playBtn.disabled = true; return; }
+    if (current.introAudio){ playBtn.disabled = false; playBtn.textContent = '紹介を聞く'; }
+    else { playBtn.disabled = true; playBtn.textContent = '紹介音声は準備中'; }
+  }
+
+  /* ---------- speech / lip-sync ---------- */
+  var actx = null, analyser = null, sourceNode = null, rafId = null, lastMouth = 0;
+  function ensureAudioGraph(){
+    if (actx) { if (actx.state === 'suspended') actx.resume(); return; }
+    var AC = window.AudioContext || window.webkitAudioContext;
+    if (!AC) return;
+    try {
+      actx = new AC();
+      sourceNode = actx.createMediaElementSource(audio);
+      analyser = actx.createAnalyser(); analyser.fftSize = 512;
+      sourceNode.connect(analyser); analyser.connect(actx.destination);
+    } catch(e){ actx = null; analyser = null; }
+  }
+  var mouthSeq = ['close','small','big','small'], mouthIdx = 0, seqTimer = null;
+  function mouthLoop(){
+    if (!speaking) return;
+    if (analyser){
+      var buf = new Uint8Array(analyser.fftSize);
+      analyser.getByteTimeDomainData(buf);
+      var sum = 0; for (var i=0;i<buf.length;i++){ var v=(buf[i]-128)/128; sum += v*v; }
+      var rms = Math.sqrt(sum/buf.length), now = performance.now();
+      if (now - lastMouth > 55){
+        lastMouth = now;
+        setFrame(rms < 0.015 ? 'close' : rms < 0.06 ? 'small' : rms < 0.14 ? 'medium' : 'big');
+      }
+      rafId = requestAnimationFrame(mouthLoop);
+    }
+  }
+  function startFallbackMouth(){
+    seqTimer = setInterval(function(){
+      if (!speaking) return;
+      setFrame(mouthSeq[mouthIdx % mouthSeq.length]); mouthIdx++;
+    }, 130);
+  }
+  function playSrc(src, label){
+    if (!powered){ powerBtn.focus(); return; }
+    ensureAudioGraph();
+    stopSpeech();
+    speaking = true;
+    audio.src = src;
+    audio.play().then(function(){
+      setState('紹介中'); stationState.classList.add('live'); stationStateText.textContent = 'NOW INTRODUCING';
+      infoPanel.classList.add('speaking');
+      stopBtn.disabled = false; playBtn.disabled = true;
+      if (analyser) mouthLoop(); else startFallbackMouth();
+    }).catch(function(){
+      speaking = false; setState('再生できませんでした');
+    });
+    if (label) stateText.textContent = label;
+  }
+  function stopSpeech(){
+    if (!audio.paused) audio.pause();
+    if (audio.getAttribute('src')) { audio.removeAttribute('src'); audio.load(); }
+    speaking = false;
+    if (rafId) cancelAnimationFrame(rafId);
+    if (seqTimer) clearInterval(seqTimer);
+    setFrame(baseFrame);
+    bar.style.width = '0%';
+    stationState.classList.remove('live'); stationStateText.textContent = 'STATION READY';
+    infoPanel.classList.remove('speaking');
+    stopBtn.disabled = true;
+    if (powered) setState('待機中');
+    refreshPlayBtn();
+  }
+  audio.addEventListener('timeupdate', function(){
+    if (audio.duration) bar.style.width = (audio.currentTime/audio.duration*100) + '%';
+  });
+  audio.addEventListener('ended', function(){ stopSpeech(); if (powered) setState('待機中'); });
+  playBtn.addEventListener('click', function(){
+    if (current && current.introAudio) playSrc(current.introAudio);
+  });
+  stopBtn.addEventListener('click', stopSpeech);
+  document.getElementById('test-btn').addEventListener('click', function(){
+    if (!powered){ veil.scrollIntoView({behavior:'smooth', block:'center'}); powerBtn.focus(); return; }
+    playSrc('assets/sfx/lipsync-test.wav');
+    setState('同期テスト中');
+  });
+
+  /* default selection: newest episode */
+  if (episodes.length) selectEpisode(episodes[0], episodes[0]._btn);
+})();
+</script>
+</body>
+</html>
