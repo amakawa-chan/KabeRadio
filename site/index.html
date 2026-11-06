@@ -328,7 +328,7 @@
       sourceNode.connect(analyser); analyser.connect(actx.destination);
     } catch(e){ actx = null; analyser = null; }
   }
-  var mouthSeq = ['close','small','big','small'], mouthIdx = 0, seqTimer = null, zeroSince = 0;
+  var mouthSeq = ['close','small','big','small'], mouthIdx = 0, seqTimer = null, lastLoud = 0;
   function mouthLoop(){
     if (!speaking) return;
     if (analyser){
@@ -336,14 +336,12 @@
       analyser.getByteTimeDomainData(buf);
       var sum = 0; for (var i=0;i<buf.length;i++){ var v=(buf[i]-128)/128; sum += v*v; }
       var rms = Math.sqrt(sum/buf.length), now = performance.now();
-      /* If the analyser keeps reading silence while audio is playing
-         (muted/headless environments), fall back to the mouth sequence,
-         the same fallback the Office uses when volume analysis is unavailable. */
-      if (rms > 0.001){ zeroSince = 0; }
-      else {
-        if (!zeroSince) zeroSince = now;
-        if (now - zeroSince > 1200){ startFallbackMouth(); return; }
-      }
+      /* If the analysed level never rises enough to open the mouth while
+         audio is playing (muted/headless environments), volume analysis is
+         effectively unavailable: fall back to the mouth sequence, the same
+         fallback the Office uses in that case. */
+      if (rms >= 0.015) lastLoud = now;
+      if (lastLoud && now - lastLoud > 1200){ startFallbackMouth(); return; }
       if (now - lastMouth > 55){
         lastMouth = now;
         setFrame(rms < 0.015 ? 'close' : rms < 0.06 ? 'small' : rms < 0.14 ? 'medium' : 'big');
@@ -361,7 +359,7 @@
     if (!powered){ powerBtn.focus(); return; }
     ensureAudioGraph();
     stopSpeech();
-    speaking = true; zeroSince = 0;
+    speaking = true; lastLoud = performance.now();
     audio.src = src;
     audio.play().then(function(){
       setState('紹介中'); stationState.classList.add('live'); stationStateText.textContent = 'NOW INTRODUCING';
