@@ -82,8 +82,22 @@
     body{height:auto;min-height:100dvh;overflow:visible}
     .stage{overflow:visible !important;flex:0 0 auto}
     body.mode-intro #list-btn{display:block}
-    header{gap:8px}
+    header{gap:8px;padding:8px 12px 6px}
+    .logo .name{font-size:18px}
+    .logo .sub{font-size:9px}
     #home-btn{white-space:nowrap;padding:7px 10px}
+    /* home: fit everything down to the message window in the first screen */
+    .stage.home{gap:12px;padding:2px 10px 12px}
+    .stage.home .crt-panel{padding:10px 12px;margin-top:0}
+    .stage.home .operator-label{margin-bottom:6px}
+    .stage.home .hub-crt{width:min(216px,56vw)}
+    .stage.home .controls{margin-top:8px;gap:6px}
+    .stage.home .controls button{padding:7px 12px;font-size:12.5px}
+    .stage.home .controls .wave{height:24px}
+    .stage.home .info-panel{padding:12px 14px}
+    .stage.home .ep-title{font-size:19px;margin-bottom:6px}
+    .stage.home .msg-window{margin-top:10px;padding:16px 13px 9px}
+    .stage.home .msg-text{height:calc(1.85em * 4);font-size:12.5px}
     .stage.intro{gap:10px;padding:2px 10px 10px;grid-template-rows:auto auto}
     .stage.intro .content-col{overflow:visible}
     .stage.intro .ep-scroll{overflow:visible}
