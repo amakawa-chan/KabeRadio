@@ -5,6 +5,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="color-scheme" content="light">
 <title>壁ラジ放送局 | バ美おじとLLMの壁打ち雑談ラジオ</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DotGothic16&display=swap" rel="stylesheet">
 <style>
   :root{
     --ink:#22312a; --deep:#102c2d; --mid:#2e554a; --accent:#487557;
@@ -51,7 +54,22 @@
     border-radius:17px;overflow:hidden;aspect-ratio:1/1}
   .stage.home .hub-crt{width:min(400px,86vw);margin:0 auto}
   .stage.intro .hub-crt{width:100%}
-  @media(max-width:820px){.stage.intro .hub-crt{width:min(200px,54vw);margin:0 auto}}
+  @media(max-width:820px){
+    .stage.intro{gap:10px;padding:2px 10px 10px}
+    .stage.intro .crt-panel{padding:10px}
+    .stage.intro .operator-label{margin-bottom:6px}
+    .stage.intro .hub-crt{width:min(148px,42vw);margin:0 auto}
+    .stage.intro .controls{margin-top:8px;gap:6px}
+    .stage.intro .controls button{padding:6px 10px;font-size:12px}
+    .stage.intro .progress{min-width:56px}
+    .stage.intro .info-panel{padding:12px 14px}
+    .stage.intro .ep-title{font-size:17px;margin-bottom:6px}
+    .stage.intro .msg-window{margin-top:10px;padding:16px 13px 9px}
+    .stage.intro .msg-text{height:calc(1.8em * 4)}
+    .stage.intro .ep-links{margin-top:9px}
+    .stage.intro .ep-links a{padding:6px 11px;font-size:12px}
+    .stage.intro .archive{margin-top:12px}
+  }
   .hub-crt img{position:absolute;left:50%;top:3px;width:auto;height:112%;max-width:none;
     transform:translateX(-50%);visibility:hidden}
   .hub-crt img.front{z-index:2;mask-image:linear-gradient(to right,transparent,#000 7%,#000 93%,transparent);
@@ -105,13 +123,16 @@
 
   /* ===== game message window ===== */
   .msg-window{position:relative;margin-top:14px;background:var(--win-bg);color:var(--win-fg);
-    border:3px solid var(--win-line);border-radius:10px;
+    border:3px solid var(--win-line);border-radius:6px;
     box-shadow:0 0 0 3px var(--win-bg),0 0 0 6px var(--win-line), inset 0 0 24px #00000055;
     padding:20px 18px 14px;cursor:pointer}
   .msg-name{position:absolute;top:-11px;left:14px;background:var(--win-bg);border:2px solid var(--win-line);
-    border-radius:7px;padding:1px 12px;font-weight:900;font-size:12px;letter-spacing:.14em;color:#ffe98a}
-  .msg-text{font-size:15px;line-height:1.9;white-space:pre-wrap;word-break:break-all;
-    height:calc(1.9em * 6);overflow-y:auto;scrollbar-width:thin}
+    border-radius:5px;padding:1px 12px;font-weight:400;font-size:12px;letter-spacing:.14em;color:#ffe98a;
+    font-family:"DotGothic16","Hiragino Kaku Gothic ProN",sans-serif}
+  .msg-text{font-family:"DotGothic16","Hiragino Kaku Gothic ProN",monospace;
+    font-size:14px;line-height:1.85;letter-spacing:.02em;white-space:pre-wrap;word-break:break-all;
+    height:calc(1.85em * 6);overflow-y:auto;scrollbar-width:thin}
+  @media(max-width:820px){.msg-text{font-size:13px}}
   .msg-text .cursor{display:inline-block;width:.6em;height:1em;background:var(--win-fg);
     vertical-align:-.08em;animation:blinkdot .8s steps(2) infinite}
   .msg-hint{display:flex;justify-content:space-between;align-items:center;margin-top:8px;
@@ -290,13 +311,13 @@
     try {
       var t = actx.currentTime;
       var o = actx.createOscillator(), g = actx.createGain();
-      o.type = 'triangle';
-      o.frequency.value = 760 + Math.random()*280;
+      o.type = 'square';
+      o.frequency.value = 620 + Math.random()*160;
       g.gain.setValueAtTime(0.0001, t);
-      g.gain.exponentialRampToValueAtTime(0.07, t + 0.008);
-      g.gain.exponentialRampToValueAtTime(0.0001, t + 0.055);
+      g.gain.exponentialRampToValueAtTime(0.045, t + 0.006);
+      g.gain.exponentialRampToValueAtTime(0.0001, t + 0.045);
       o.connect(g); g.connect(actx.destination);
-      o.start(t); o.stop(t + 0.06);
+      o.start(t); o.stop(t + 0.05);
     } catch(e){}
   }
   soundBtn.addEventListener('click', function(){
@@ -426,7 +447,7 @@
     var mi = 0;
     mouthTimer = setInterval(function(){
       setFrame(MOUTH_SEQ[mi % MOUTH_SEQ.length]); mi++;
-    }, 115);
+    }, 130);
     msgText.textContent = '';
     (function tick(){
       if (!typing || !typeState) return;
@@ -436,11 +457,11 @@
       msgText.textContent = st.full.slice(0, st.i);
       msgText.scrollTop = msgText.scrollHeight;
       bar.style.width = (st.i / st.full.length * 100) + '%';
-      if (st.i % 2 === 0 && ch !== ' ' && ch !== '　' && ch !== '\n') blip();
-      var delay = 34;
-      if ('、。，．'.indexOf(ch) >= 0) delay = 150;
-      if ('。！？'.indexOf(ch) >= 0) delay = 300;
-      if (ch === '\n') delay = 200;
+      if (ch !== ' ' && ch !== '　' && ch !== '\n') blip();
+      var delay = 60;
+      if ('、。，．'.indexOf(ch) >= 0) delay = 220;
+      if ('。！？'.indexOf(ch) >= 0) delay = 480;
+      if (ch === '\n') delay = 260;
       typeTimer = setTimeout(tick, delay);
     })();
   }
