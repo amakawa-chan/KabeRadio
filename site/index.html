@@ -90,14 +90,14 @@
     .stage.home{gap:12px;padding:2px 10px 12px}
     .stage.home .crt-panel{padding:10px 12px;margin-top:0}
     .stage.home .operator-label{margin-bottom:6px}
-    .stage.home .hub-crt{width:min(216px,56vw)}
+    .stage.home .hub-crt{width:min(292px,76vw)}
     .stage.home .controls{margin-top:8px;gap:6px}
     .stage.home .controls button{padding:7px 12px;font-size:12.5px}
     .stage.home .controls .wave{height:24px}
     .stage.home .info-panel{padding:12px 14px}
     .stage.home .ep-title{font-size:19px;margin-bottom:6px}
     .stage.home .msg-window{margin-top:10px;padding:16px 13px 9px}
-    .stage.home .msg-text{height:calc(1.85em * 4);font-size:12.5px}
+    .stage.home .msg-text{font-size:12.5px}
     .stage.intro{gap:10px;padding:2px 10px 10px;grid-template-rows:auto auto}
     .stage.intro .content-col{overflow:visible}
     .stage.intro .ep-scroll{overflow:visible}
@@ -105,7 +105,7 @@
       grid-template-columns:auto minmax(0,1fr);grid-template-areas:"label label" "crt controls";
       column-gap:12px;align-items:start}
     .stage.intro .operator-label{grid-area:label;margin-bottom:6px}
-    .stage.intro .hub-crt{grid-area:crt;width:min(196px,50vw);margin:0}
+    .stage.intro .hub-crt{grid-area:crt;width:min(212px,54vw);margin:0}
     .stage.intro .controls{grid-area:controls;margin-top:2px;gap:7px;flex-direction:column;align-items:stretch;flex-wrap:nowrap}
     .stage.intro .controls button{padding:9px 8px;font-size:13px;width:100%}
     .stage.intro .controls .wave{flex:0 0 30px;height:30px;min-width:0;width:100%}
@@ -113,7 +113,7 @@
     .stage.intro .info-panel{padding:12px 14px}
     .stage.intro .ep-title{font-size:17px;margin-bottom:6px}
     .stage.intro .msg-window{margin-top:10px;padding:16px 13px 9px}
-    .stage.intro .msg-text{height:calc(1.8em * 4);font-size:12.5px}
+    .stage.intro .msg-text{font-size:12.5px}
     .stage.intro .ep-links{margin-top:9px}
     .stage.intro .ep-links a{padding:6px 11px;font-size:12px}
     .stage.intro .archive{margin-top:12px}
@@ -179,14 +179,15 @@
     font-family:"DotGothic16","Hiragino Kaku Gothic ProN",sans-serif}
   .msg-text{font-family:"DotGothic16","Hiragino Kaku Gothic ProN",monospace;
     font-size:14px;line-height:1.85;letter-spacing:.02em;white-space:pre-wrap;word-break:break-all;
-    height:calc(1.85em * 6);overflow-y:auto;scrollbar-width:thin}
-  @media(max-width:820px){.msg-text{font-size:13px}}
+    height:calc(1.85em * 4);overflow:hidden;scrollbar-width:thin}
+  @media(max-width:820px){.msg-text{font-size:12.5px;height:calc(1.85em * 3)}}
   .msg-text .cursor{display:inline-block;width:.6em;height:1em;background:var(--win-fg);
     vertical-align:-.08em;animation:blinkdot .8s steps(2) infinite}
   .msg-hint{display:flex;justify-content:space-between;align-items:center;margin-top:8px;
     font:700 10px ui-monospace,Menlo,monospace;letter-spacing:.12em;color:#9db98a}
   .msg-hint .next{visibility:hidden;animation:bob 1s ease-in-out infinite}
   .msg-window.done .msg-hint .next{visibility:visible}
+  .msg-window.wait .msg-hint .next{visibility:visible}
   @keyframes bob{50%{transform:translateY(3px)}}
 
   /* ===== archive (only this area scrolls in intro mode) ===== */
@@ -588,72 +589,139 @@
     if (current) startIntro(); else playWelcome();
   });
 
-  /* ---------- typewriter text mode (no-voice intro) ---------- */
-  var typeTimer = null, mouthTimer = null, typeState = null;
-  var MOUTH_SEQ = ['small','close','big','close','small','close'];
-  function stopTyping(finished){
-    if (typeTimer) clearTimeout(typeTimer);
-    if (mouthTimer) clearInterval(mouthTimer);
-    typeTimer = mouthTimer = null;
-    typing = false;
-    waveStop();
-    setFrame(baseFrame);
-    stationState.classList.remove('live'); stationStateText.textContent = 'STATION READY';
-    stopBtn.disabled = true;
-    if (powered) setState('待機中');
-    if (finished && typeState){
-      msgText.textContent = typeState.full;
-      msgWindow.classList.add('done');
-      if (currentIndex >= 0 && currentIndex < episodes.length - 1) nextBtn.classList.remove('hidden');
-    }
-    refreshPlayBtn();
-  }
+  /* ---------- typewriter text mode: paged game-style window ---------- */
   var WELCOME_TEXT = '壁ラジへようこそ。ここは「バ美おじとLLMの壁打ち雑談ラジオ」のエピソード紹介ページです。アーカイブから聞きたい回を選ぶと、わたし、モブ子が紹介します。下には公式サイトやYouTube、Spotifyへのリンク集もあります。';
   function playWelcome(){
     if (!powered || current) return;
     typeText(WELCOME_TEXT, 'あいさつ中');
   }
-  function typeText(full, stateLabel){
-    stopAll();
-    msgWindow.classList.remove('done');
-    msgMode.textContent = 'TEXT MODE';
-    if (reduceMotion){
-      typing = false;
-      msgText.textContent = full;
-      msgWindow.classList.add('done');
-      return;
+  var typeTimer = null, mouthTimer = null, waitTimer = null, typeState = null;
+  var MOUTH_SEQ = ['small','close','big','close','small','close'];
+  var msgClone = document.createElement('div');
+  msgClone.className = 'msg-text';
+  msgClone.style.cssText = 'position:absolute;left:0;top:0;height:auto;overflow:visible;visibility:hidden;pointer-events:none;';
+  msgWindow.appendChild(msgClone);
+
+  function computePages(full){
+    var maxH = msgText.clientHeight;
+    msgClone.style.width = msgText.clientWidth + 'px';
+    var pages = [], start = 0;
+    msgClone.textContent = '';
+    for (var i = 0; i < full.length; i++){
+      msgClone.textContent = full.slice(start, i + 1);
+      if (msgClone.scrollHeight > maxH + 2 && i > start){
+        pages.push(full.slice(start, i));
+        start = i;
+        msgClone.textContent = full.charAt(i);
+      }
     }
-    typing = true;
-    typeState = { full: full, i: 0 };
-    waveStart();
-    setState(stateLabel || '紹介中');
-    stationState.classList.add('live'); stationStateText.textContent = 'NOW INTRODUCING';
-    stopBtn.disabled = false; playBtn.disabled = true;
+    pages.push(full.slice(start));
+    return pages;
+  }
+  function startMouth(){
+    stopMouth();
     var mi = 0;
     mouthTimer = setInterval(function(){
       setFrame(MOUTH_SEQ[mi % MOUTH_SEQ.length]); mi++;
     }, 130);
+  }
+  function stopMouth(){
+    if (mouthTimer) clearInterval(mouthTimer);
+    mouthTimer = null;
+  }
+  function stopTyping(finished){
+    if (typeTimer) clearTimeout(typeTimer);
+    if (waitTimer) clearTimeout(waitTimer);
+    typeTimer = waitTimer = null;
+    stopMouth();
+    typing = false;
+    waveStop();
+    setFrame(baseFrame);
+    msgWindow.classList.remove('wait');
+    stationState.classList.remove('live'); stationStateText.textContent = 'STATION READY';
+    stopBtn.disabled = true;
+    if (powered) setState('待機中');
+    if (finished && typeState){
+      msgText.textContent = typeState.pages[typeState.page];
+      msgWindow.classList.add('done');
+      if (currentIndex >= 0 && currentIndex < episodes.length - 1) nextBtn.classList.remove('hidden');
+    }
+    refreshPlayBtn();
+  }
+  function typeText(full, stateLabel){
+    stopAll();
+    msgWindow.classList.remove('done');
+    msgWindow.classList.remove('wait');
+    msgMode.textContent = 'TEXT MODE';
+    if (reduceMotion){
+      typing = false;
+      msgText.style.overflowY = 'auto';
+      msgText.textContent = full;
+      msgWindow.classList.add('done');
+      return;
+    }
+    msgText.style.overflowY = 'hidden';
+    typing = true;
+    typeState = { full: full, pages: computePages(full), page: 0, i: 0, waiting: false };
+    waveStart();
+    setState(stateLabel || '紹介中');
+    stationState.classList.add('live'); stationStateText.textContent = 'NOW INTRODUCING';
+    stopBtn.disabled = false; playBtn.disabled = true;
+    typePage();
+  }
+  function typePage(){
+    var st = typeState;
+    st.i = 0; st.waiting = false;
+    msgWindow.classList.remove('wait');
     msgText.textContent = '';
-    (function tick(){
-      if (!typing || !typeState) return;
-      var st = typeState;
-      if (st.i >= st.full.length){ stopTyping(true); return; }
-      var ch = st.full.charAt(st.i); st.i++;
-      msgText.textContent = st.full.slice(0, st.i);
-      msgText.scrollTop = msgText.scrollHeight;
-      if (ch !== ' ' && ch !== '　' && ch !== '\n'){
-        blip();
-        wavePulse(('、。，．'.indexOf(ch) >= 0) ? 0.35 : 0.55 + Math.random() * 0.45);
-      }
-      var delay = 60;
-      if ('、。，．'.indexOf(ch) >= 0) delay = 220;
-      if ('。！？'.indexOf(ch) >= 0) delay = 480;
-      if (ch === '\n') delay = 260;
-      typeTimer = setTimeout(tick, delay);
-    })();
+    startMouth();
+    tickType();
+  }
+  function tickType(){
+    if (!typing || !typeState) return;
+    var st = typeState, pageText = st.pages[st.page];
+    if (st.i >= pageText.length){ finishPage(); return; }
+    var ch = pageText.charAt(st.i); st.i++;
+    msgText.textContent = pageText.slice(0, st.i);
+    if (ch !== ' ' && ch !== '　' && ch !== '\n'){
+      blip();
+      wavePulse(('、。，．'.indexOf(ch) >= 0) ? 0.35 : 0.55 + Math.random() * 0.45);
+    }
+    var delay = 60;
+    if ('、。，．'.indexOf(ch) >= 0) delay = 220;
+    if ('。！？'.indexOf(ch) >= 0) delay = 480;
+    if (ch === '\n') delay = 260;
+    typeTimer = setTimeout(tickType, delay);
+  }
+  function finishPage(){
+    var st = typeState;
+    if (st.page >= st.pages.length - 1){ stopTyping(true); return; }
+    st.waiting = true;
+    stopMouth();
+    setFrame(baseFrame);
+    msgWindow.classList.add('wait');
+    waitTimer = setTimeout(advancePage, 1100);
+  }
+  function advancePage(){
+    if (!typing || !typeState || !typeState.waiting) return;
+    if (waitTimer) clearTimeout(waitTimer);
+    waitTimer = null;
+    typeState.page++;
+    typePage();
+  }
+  function completePage(){
+    if (!typing || !typeState || typeState.waiting) return;
+    if (typeTimer) clearTimeout(typeTimer);
+    var st = typeState;
+    msgText.textContent = st.pages[st.page];
+    st.i = st.pages[st.page].length;
+    finishPage();
   }
   msgWindow.addEventListener('click', function(){
-    if (typing) { stopTyping(true); return; }
+    if (typing && typeState){
+      if (typeState.waiting) advancePage(); else completePage();
+      return;
+    }
     if (msgWindow.classList.contains('done')) goNext();
   });
 
@@ -707,10 +775,12 @@
 
   function stopAll(){
     nextBtn.classList.add('hidden');
+    msgWindow.classList.remove('wait');
     if (typing) { typing = false; }
     if (typeTimer) clearTimeout(typeTimer);
+    if (waitTimer) clearTimeout(waitTimer);
     if (mouthTimer) clearInterval(mouthTimer);
-    typeTimer = mouthTimer = null;
+    typeTimer = waitTimer = mouthTimer = null;
     if (!audio.paused) audio.pause();
     if (audio.getAttribute('src')) { audio.removeAttribute('src'); audio.load(); }
     speaking = false;
