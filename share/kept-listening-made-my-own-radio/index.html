@@ -14,68 +14,73 @@
 <meta property="og:image" content="https://amakawa-chan.github.io/KabeRadio/share/kept-listening-made-my-own-radio/card.png">
 <meta name="twitter:card" content="summary_large_image">
 <style>
-:root{font-family:-apple-system,BlinkMacSystemFont,"Hiragino Sans","Yu Gothic",sans-serif;line-height:1.85;--yellow:#fdec28;--navy:#04283a;--red:#fb5c52}
-body{margin:0;background:#f6f7f9;color:#17191c}
+:root{font-family:-apple-system,BlinkMacSystemFont,"Hiragino Sans","Yu Gothic",sans-serif;line-height:1.85;--yellow:#fdec28;--navy:#04283a;--red:#fb5c52;--paper:#fffef8}
+body{margin:0;background:var(--yellow);color:var(--navy)}
 main{max-width:760px;margin:auto;padding:28px 18px 72px}
-.toolbar{display:flex;gap:12px;align-items:center;margin-bottom:24px;flex-wrap:wrap}
-a.back{font:inherit;border:1px solid #cfd5dc;border-radius:10px;padding:9px 13px;background:#fff;color:inherit;text-decoration:none}
-article{background:#fff;border:1px solid #e4e7eb;border-radius:16px;padding:24px 22px;overflow:hidden}
-.hero{margin:-24px -22px 20px;background:var(--yellow);padding:14px 22px;display:flex;align-items:center;gap:12px}
-.pill{background:var(--navy);color:#fff;font-weight:700;border-radius:999px;padding:2px 14px;font-size:.95rem}
-.onair{display:flex;align-items:center;gap:7px;color:var(--navy);font-weight:700;font-size:.85rem;letter-spacing:.12em}
+.toolbar{display:flex;gap:12px;align-items:center;margin-bottom:20px;flex-wrap:wrap}
+a.back{font:inherit;font-weight:700;border:2px solid var(--navy);border-radius:10px;padding:7px 13px;background:var(--paper);color:var(--navy);text-decoration:none}
+.hero{display:flex;align-items:center;gap:12px;background:var(--navy);border-radius:14px;padding:12px 18px;margin-bottom:18px}
+.pill{background:var(--yellow);color:var(--navy);font-weight:700;border-radius:999px;padding:2px 14px;font-size:.95rem}
+.onair{display:flex;align-items:center;gap:7px;color:var(--yellow);font-weight:700;font-size:.85rem;letter-spacing:.12em}
 .onair::before{content:"";width:10px;height:10px;border-radius:50%;background:var(--red)}
-.hero img{width:100%;height:auto;display:block;border-radius:10px;margin-top:12px}
-h1{font-size:1.7rem;line-height:1.4;margin:.2em 0 .4em}
-.show{color:var(--navy);font-weight:700;margin:0}
-.cast{display:flex;gap:8px;flex-wrap:wrap;margin:14px 0 4px}
-.cast span{border:1px solid #cfd5dc;border-radius:999px;padding:3px 12px;font-size:.9rem;background:#f6f7f9}
-h2{margin-top:2em;font-size:1.2rem;border-left:6px solid var(--yellow);padding-left:10px}
-ol.rundown{padding-left:1.4em}
-ol.rundown li{margin:.9em 0}
-ol.rundown .hook{display:block;font-size:.92rem;opacity:.75}
-blockquote{margin:1em 0;padding:4px 16px;border-left:4px solid #e4e7eb;background:#f6f7f9;border-radius:0 10px 10px 0}
+.hero .show{color:#fff;margin-left:auto;font-size:.85rem}
+img.card{width:100%;height:auto;display:block;border-radius:14px;border:2px solid var(--navy);margin-bottom:20px}
+h1{font-size:1.8rem;line-height:1.4;margin:.1em 0 .3em;color:var(--navy)}
+.showname{font-weight:700;margin:0 0 2px}
+.cast{display:flex;gap:8px;flex-wrap:wrap;margin:14px 0 18px}
+.cast span{border:2px solid var(--navy);border-radius:999px;padding:3px 12px;font-size:.9rem;background:var(--paper);font-weight:700}
+.panel{background:var(--navy);color:#fff;border-radius:14px;padding:18px 20px;margin:18px 0}
+.panel p{margin:0}
+h2{margin-top:1.8em;font-size:1.2rem;color:var(--navy)}
+h2 .bar{background:var(--navy);color:var(--yellow);border-radius:8px;padding:2px 12px}
+ol.rundown{list-style:none;padding:0;margin:14px 0}
+ol.rundown li{background:var(--paper);border:2px solid var(--navy);border-radius:12px;padding:10px 16px;margin:10px 0;font-weight:700}
+ol.rundown .num{display:inline-block;background:var(--red);color:#fff;border-radius:50%;width:1.7em;height:1.7em;line-height:1.7em;text-align:center;margin-right:10px;font-size:.9rem}
+ol.rundown .hook{display:block;font-weight:400;font-size:.92rem;opacity:.75;margin-left:2.6em}
+blockquote{margin:14px 0;padding:10px 18px;background:var(--paper);border:2px solid var(--navy);border-radius:14px}
 blockquote p{margin:.6em 0}
-.who{font-weight:700;color:var(--navy)}
-.buttons{display:flex;gap:10px;flex-wrap:wrap;margin-top:28px}
-.buttons a{flex:1;min-width:180px;text-align:center;text-decoration:none;font-weight:700;border-radius:12px;padding:13px 10px;background:var(--navy);color:#fff}
-.buttons a.sub{background:#fff;color:var(--navy);border:1px solid var(--navy)}
-footer{margin-top:26px;font-size:.85rem;opacity:.65;text-align:center}
+.who{font-weight:700;color:var(--red)}
+.buttons{display:flex;gap:10px;flex-wrap:wrap;margin-top:26px}
+.buttons a{flex:1;min-width:180px;text-align:center;text-decoration:none;font-weight:700;border-radius:12px;padding:13px 10px;background:var(--navy);color:#fff;border:2px solid var(--navy)}
+.buttons a.sub{background:var(--paper);color:var(--navy)}
+footer{margin-top:26px;font-size:.85rem;text-align:center;font-weight:700;color:var(--navy)}
 @media(prefers-color-scheme:dark){
 body{background:#0d1117;color:#e6edf3}
-article{background:#151b23;border-color:#30363d}
-a.back{background:#151b23;border-color:#30363d}
-.cast span{background:#0d1117;border-color:#30363d}
-blockquote{background:#0d1117;border-color:#30363d}
-.who{color:#fdec28}
+h1,.showname,footer{color:#e6edf3}
+.cast span{background:#151b23;color:#e6edf3;border-color:#30363d}
+ol.rundown li{background:#151b23;border-color:#30363d}
+blockquote{background:#151b23;border-color:#30363d}
+a.back{background:#151b23;color:#e6edf3;border-color:#30363d}
 .buttons a.sub{background:#151b23;color:#e6edf3;border-color:#e6edf3}
+h2{color:#e6edf3}
 }
 </style>
 </head>
 <body>
 <main>
 <div class="toolbar"><a class="back" href="../../">← 壁ラジ公式サイト</a></div>
-<article>
 <div class="hero">
 <span class="pill">壁ラジ</span>
 <span class="onair">ON AIR</span>
+<span class="show">バ美おじとLLMの壁打ち雑談ラジオ</span>
 </div>
-<img src="card.png" alt="ずっとラジオを聞いてきたら、気づけば自分用のラジオを作っていた" style="width:100%;height:auto;border-radius:10px;margin-bottom:18px">
-<p class="show">バ美おじとLLMの壁打ち雑談ラジオ</p>
+<img class="card" src="card.png" alt="ずっとラジオを聞いてきたら、気づけば自分用のラジオを作っていた">
+<p class="showname">バ美おじとLLMの壁打ち雑談ラジオ</p>
 <h1>ずっとラジオを聞いてきたら、気づけば自分用のラジオを作っていた</h1>
 <div class="cast"><span>出演：あまかわちゃん（Host）</span><span>モブ子（Guest）</span></div>
-<p>ラジオとの付き合いを振り返っていたら、音楽を探していた頃から、人の視点を聞く今までが一本につながっていました。最初から番組を作りたかったわけではないのに、思考を残す方法を探した結果、自分用のラジオに戻ってきた話です。</p>
+<div class="panel"><p>ラジオとの付き合いを振り返っていたら、音楽を探していた頃から、人の視点を聞く今までが一本につながっていました。最初から番組を作りたかったわけではないのに、思考を残す方法を探した結果、自分用のラジオに戻ってきた話です。</p></div>
 
-<h2>この回の流れ</h2>
+<h2><span class="bar">この回の流れ</span></h2>
 <ol class="rundown">
-<li>車内のラジオ<span class="hook">親の車でラジオが普通に流れていた記憶</span></li>
-<li>そこ喋らんといて<span class="hook">新曲を録音したらパーソナリティの声まで残った</span></li>
-<li>音楽すら重い日<span class="hook">音楽好きでも今日は音楽じゃない日がある</span></li>
-<li>他人の人生を借りる<span class="hook">欲しいのは情報ではなく人の視点だと気づく</span></li>
-<li>ラジオを作る予定はなかった<span class="hook">最初から番組を作りたかったわけではない</span></li>
-<li>壁ラジ、そのまま<span class="hook">壁打ち雑談ラジオを略して壁ラジ</span></li>
+<li><span class="num">1</span>車内のラジオ<span class="hook">親の車でラジオが普通に流れていた記憶</span></li>
+<li><span class="num">2</span>そこ喋らんといて<span class="hook">新曲を録音したらパーソナリティの声まで残った</span></li>
+<li><span class="num">3</span>音楽すら重い日<span class="hook">音楽好きでも今日は音楽じゃない日がある</span></li>
+<li><span class="num">4</span>他人の人生を借りる<span class="hook">欲しいのは情報ではなく人の視点だと気づく</span></li>
+<li><span class="num">5</span>ラジオを作る予定はなかった<span class="hook">最初から番組を作りたかったわけではない</span></li>
+<li><span class="num">6</span>壁ラジ、そのまま<span class="hook">壁打ち雑談ラジオを略して壁ラジ</span></li>
 </ol>
 
-<h2>台本の冒頭</h2>
+<h2><span class="bar">台本の冒頭</span></h2>
 <blockquote>
 <p><span class="who">あまかわちゃん：</span>そういえばさ、ラジオの話を文章にしようと思って振り返ってたんだけど、思ったよりずっと聞いてきてるんよね。</p>
 <p><span class="who">モブ子：</span>最近好きになった趣味というより、生活の横にずっとあった感じですか。</p>
@@ -88,7 +93,6 @@ blockquote{background:#0d1117;border-color:#30363d}
 <a href="https://www.youtube.com/@kaberadi">YouTubeチャンネル</a>
 <a class="sub" href="https://amakawa-chan.github.io/KabeRadio/notes/kept-listening-made-my-own-radio/">制作ノートを読む</a>
 </div>
-</article>
 <footer>バ美おじとLLMの壁打ち雑談ラジオ（壁ラジ）</footer>
 </main>
 </body>
