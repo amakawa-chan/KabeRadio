@@ -8,19 +8,22 @@
 
 ## 目標
 
-`episodes/<episode-key>/`へ次の3ファイルを用意し、Podcast／Video Render可能な状態にします。加えて、制作記として残す思考の移動がある場合は、Radio Runtimeから独立したnote companionを`notes/<episode-key>/`へ作成します。
+`episodes/<episode-key>/`へ必須の3ファイルを用意し、Podcast／Video Render可能な状態にします。加えて、制作記として残す思考の移動がある場合は、Radio Runtimeから独立したnote companionを`notes/<episode-key>/`へ作成します。
 
 ```text
 episodes/<episode-key>/
 ├─ README.md
 ├─ script.md
-└─ production.json
+├─ production.json
+└─ pr.txt
 
 notes/<episode-key>/
 ├─ article.md
 ├─ article.html
 └─ index.html
 ```
+
+X告知用のPR文を`episodes/<episode-key>/pr.txt`へ用意します。PR文は放送局（モブ子の放送局）の案内役であるモブ子が書くもので、Radio Runtimeからは独立しています。
 
 ## 正本
 
@@ -205,18 +208,33 @@ note companionをskipして構いません。
 
 詳細は [note記事契約](../docs/note-article-contract-v1.md) に従ってください。
 
+## PR文（X告知）契約
+
+Episode Packageの必須3ファイルとは別に、X告知用のPR文を`episodes/<episode-key>/pr.txt`へ作成します。
+PR文は放送局の案内役であるモブ子が、台本全体から題材を1つ選んで紹介する短い文章です。
+放送局の「Xでポスト」ボタンが、見出し・タイトル・URL・ハッシュタグを付けて投稿画面へ渡します。
+
+- 書き手はモブ子とし、丁寧語（です・ます）で書きます。一人称を使う場合は「私」に統一します。Guestがモブ美の回でも、案内役はモブ子で統一します。
+- 題材は1つだけ選びます。会話の中で印象に残ったテーマ、場面、一言のいずれかを紹介します。「今回の題材は〜です」は基本形の一例であり、毎回の定型句にはしません。
+- 単なる内容紹介よりも、モブ子が面白がった点、意外に思った点、引っかかった点を優先します。少しとぼけた観察や控えめなツッコミは許可しますが、毎回同じ言い回しに固定せず、無理にキャラクター性を誇張しません。
+- Episode Descriptionの言い換えや流用はしません。あちらは発端のあらすじ、こちらはモブ子の誘い文です。
+- 長さは本文のみ60〜90文字程度（改行を除く通常の文字数）を目安とし、不自然な水増しはしません。見出し、タイトル、URL、ハッシュタグは書きません。放送局側が付けます。
+- ファイルには本文だけを1段落で書きます。引用符や箇条書き、本文全体を囲む「」などの装飾は使いません。
+- 元ログや台本にない事実・実体験・数値は追加しません。結末を明かし切るネタバレは避け、聞いてみたくなる所で止めます。思慮時間は書きません。
+- 純粋な動作検証など、告知に値する内容がほぼない場合だけ作成をskipして構いません。
+
 ## 保存と出力
 
 ファイル操作が利用できる場合：
 
 1. `episodes/<episode-key>/`を作成
-2. UTF-8の`README.md`、`script.md`、`production.json`を保存
+2. UTF-8の`README.md`、`script.md`、`production.json`を保存し、PR文を作成する場合は`pr.txt`も保存
 3. `episodes/README.md` のEpisode一覧へ新しいEpisodeを追加
 4. note companion対象なら`notes/<episode-key>/`を作成し、UTF-8の`article.md`、`article.html`、`index.html`を保存
 5. note companion対象なら`episodes/<episode-key>/README.md`へ制作ノートの公開URLを追加
 6. `notes/index.html` / `notes/README.md` の一覧へ新しい制作ノートを追加
-7. JSON構文、必須見出し、Role見出し、episode key、Episode一覧、note companion、README導線を検査
-8. 最終回答はepisode key、保存したEpisode Package、note companionの有無と公開URL、Casting、検査結果だけを簡潔に報告
+7. JSON構文、必須見出し、Role見出し、episode key、Episode一覧、note companion、PR文、README導線を検査
+8. 最終回答はepisode key、保存したEpisode Package、note companionの有無と公開URL、PR文の有無、Casting、検査結果だけを簡潔に報告
 
 ファイル操作が利用できない場合：
 
@@ -225,13 +243,16 @@ note companionをskipして構いません。
 3. 同様に`script.md`と`production.json`を出力
 4. note companion対象なら`FILE: notes/<episode-key>/article.md`、`FILE: notes/<episode-key>/article.html`、`FILE: notes/<episode-key>/index.html`も続けて出力
 5. 対象外なら`NOTE_COMPANION: skipped`を1行出力
-6. 指定ファイル以外の候補、解説、別案を追加しない
+6. PR文を作成する場合は`FILE: episodes/<episode-key>/pr.txt`と書き、その直後に内容をコードブロックで出力
+7. PR文をskipする場合は`PR_TEXT: skipped`を1行出力
+8. 指定ファイル以外の候補、解説、別案を追加しない
 
 ## 成功条件
 
 - 終了カードは対応デスクトップRadioの「レンダー・配信」出力条件で生成前に選べるため、台本のOUTRO指定は必須にしない。台本で指定したい場合のみ `## Ending Sequence` に `[OUTRO: fixed-aftertalk-v1]` を置く。YouTubeのおすすめ動画・壁ラジプレイリストの2リンクはStudioで最後の6秒へ設定する別工程であり、画像やOUTRO指定だけでリンクが設定されたと報告しない。
 
-- 3ファイルが同じepisode key配下に揃っている
+- 必須3ファイルが同じepisode key配下に揃っている
+- PR文を作成する場合、`episodes/<episode-key>/pr.txt`にモブ子の視点で題材を1つ選んだ60〜90文字程度の本文だけが書かれ、見出し・タイトル・URL・ハッシュタグ・思慮時間を含んでいない
 - `episodes/README.md` のEpisode一覧から新しいEpisodeへ辿れる
 - script.mdをRadio ParserがHost／Guest Turnとして解析できる
 - production.jsonが有効なJSONで`status=ready`
