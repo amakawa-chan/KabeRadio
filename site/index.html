@@ -222,6 +222,21 @@
     border-radius:9px;padding:7px 13px;background:#0e2721;color:#e9f4da}
   footer{flex:0 0 auto;padding:0 16px 10px;font-size:10.5px;color:#77876c}
   .stage.home ~ footer{display:block}
+
+  /* ===== operator settings (costume / portrait / startup) ===== */
+  .settings-panel{margin-top:12px;background:#0b120c;border:1px solid var(--line);border-radius:12px;
+    padding:12px 14px;display:grid;gap:9px}
+  .settings-panel label{display:flex;align-items:center;gap:8px;font-size:12.5px;font-weight:700}
+  .settings-panel select{margin-left:auto;background:#182118;color:var(--ink);border:1px solid #5a7263;
+    border-radius:7px;padding:5px 8px;font-size:12.5px;font-family:inherit;max-width:55%}
+  .settings-panel input[type=checkbox]{width:16px;height:16px;accent-color:var(--yellow);flex:0 0 auto}
+  .settings-panel .asset-note{margin:0;font-size:11px;color:#9aa78d;line-height:1.5}
+  /* costume: military / punk use no completion backdrop and no edge mask (per original hub.css) */
+  .hub-crt[data-costume="military"] img.front,.hub-crt[data-costume="punk"] img.front{
+    mask-image:none;-webkit-mask-image:none}
+  .hub-crt[data-costume="military"] img.portrait-completion,.hub-crt[data-costume="punk"] img.portrait-completion{display:none}
+  /* forehead (deko) mode: original composition — height 500%, top -82% */
+  .hub-crt[data-portrait-mode="forehead"] img{height:500%;top:-82%}
   @media (prefers-reduced-motion: reduce){
     .crt-scan{animation:none}
     .hub-crt[data-boot=noise] img.front,.hub-crt[data-boot=noise] img.portrait-completion,
@@ -257,8 +272,30 @@
         <button class="primary" id="play-btn" type="button" disabled>紹介する</button>
         <button id="stop-btn" type="button" disabled>止める</button>
         <button id="sound-btn" type="button">音：オン</button>
+        <button id="settings-btn" type="button">⚙ 設定</button>
         <canvas class="wave" id="wave" height="30" aria-hidden="true"></canvas>
         <span class="state-text" id="state-text">電源オフ</span>
+      </div>
+      <div class="settings-panel hidden" id="settings-panel">
+        <label>衣装
+          <select id="set-costume">
+            <option value="maid">メイド服</option>
+            <option value="military">軍服・軍帽</option>
+            <option value="punk">パンク</option>
+          </select></label>
+        <label>表示
+          <select id="set-portrait">
+            <option value="normal">通常</option>
+            <option value="forehead">でこモード</option>
+          </select></label>
+        <label><input type="checkbox" id="set-random">起動衣装ランダム</label>
+        <label><input type="checkbox" id="set-prank">起動でこ抽選（15%）</label>
+        <label>でこ復帰
+          <select id="set-prank-mode">
+            <option value="manual">手動で解除</option>
+            <option value="auto">自動で戻す</option>
+          </select></label>
+        <p class="asset-note" id="asset-note"></p>
       </div>
     </section>
 
@@ -346,15 +383,47 @@
 <script>
 (function(){
   "use strict";
-  var FRAMES = {
-    normal:    "assets/mobuko/maid/normal.webp",
-    blinkHalf: "assets/mobuko/maid/blink_half.webp",
-    blink:     "assets/mobuko/maid/blink.webp",
-    close:     "assets/mobuko/maid/talk_close.webp",
-    small:     "assets/mobuko/maid/talk_small.webp",
-    medium:    "assets/mobuko/maid/talk_medium.webp",
-    big:       "assets/mobuko/maid/talk_big.webp"
+  /* ---------- operator prefs (costume / portrait / startup) ---------- */
+  var COSTUMES = {
+    maid:     { label: 'メイド服',   dir: 'assets/mobuko/maid/' },
+    military: { label: '軍服・軍帽', dir: 'assets/mobuko/military/' },
+    punk:     { label: 'パンク',     dir: 'assets/mobuko/punk/' }
   };
+  var FRAME_FILES = {
+    normal: 'normal.webp', blinkHalf: 'blink_half.webp', blink: 'blink.webp',
+    close: 'talk_close.webp', small: 'talk_small.webp', medium: 'talk_medium.webp', big: 'talk_big.webp'
+  };
+  var PREF_KEY = 'mobuko-station-prefs';
+  var prefs = { costumeId: 'maid', portraitMode: 'normal', startupRandom: true, startupPrank: true, startupPrankMode: 'manual' };
+  try {
+    var savedPrefs = JSON.parse(localStorage.getItem(PREF_KEY) || 'null');
+    if (savedPrefs) Object.keys(prefs).forEach(function(k){ if (savedPrefs[k] !== undefined) prefs[k] = savedPrefs[k]; });
+  } catch(e){}
+  function savePrefs(){ try { localStorage.setItem(PREF_KEY, JSON.stringify(prefs)); } catch(e){} }
+  if (!COSTUMES[prefs.costumeId]) prefs.costumeId = 'maid';
+  if (prefs.portraitMode !== 'forehead') prefs.portraitMode = 'normal';
+  if (prefs.startupPrankMode !== 'auto') prefs.startupPrankMode = 'manual';
+
+  /* startup costume: drawn once per browser session when random is on
+     (the Office original draws on new process start only, never on reload) */
+  var costume = prefs.costumeId;
+  var costumeDrawnRandom = false;
+  if (prefs.startupRandom){
+    var ids = Object.keys(COSTUMES);
+    try {
+      var drawn = sessionStorage.getItem('mobuko-station-costume');
+      if (!drawn || !COSTUMES[drawn]){
+        drawn = ids[Math.floor(Math.random() * ids.length)];
+        sessionStorage.setItem('mobuko-station-costume', drawn);
+      }
+      costume = drawn; costumeDrawnRandom = true;
+    } catch(e){
+      costume = ids[Math.floor(Math.random() * ids.length)]; costumeDrawnRandom = true;
+    }
+  }
+
+  var FRAMES = {};
+  Object.keys(FRAME_FILES).forEach(function(k){ FRAMES[k] = COSTUMES[costume].dir + FRAME_FILES[k]; });
   Object.keys(FRAMES).forEach(function(k){ var i = new Image(); i.src = FRAMES[k]; });
 
   var stage = document.getElementById('stage');
@@ -389,7 +458,9 @@
   var soundOn = true;
   var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
+  var frameName = 'normal';
   function setFrame(name){
+    frameName = name;
     if (FRAMES[name] && front.getAttribute('src') !== FRAMES[name]) front.src = FRAMES[name];
   }
   function setState(t){ stateText.textContent = t; opState.textContent = t; }
@@ -513,6 +584,7 @@
   function powerOn(after){
     ensureAudioGraph();
     veil.classList.add('hidden');
+    var firePrank = !after && !current && prefs.startupPrank && Math.random() < 0.15;
     if (reduceMotion){
       crt.classList.add('on'); powered = true; setState('待機中'); refreshPlayBtn();
       if (after) after();
@@ -528,6 +600,7 @@
       booting = false; waveStop();
       setState('待機中'); refreshPlayBtn();
       if (after) after();
+      else if (firePrank) startPrank();
       else if (!current) playWelcome();
     }, 1800);
   }
@@ -845,6 +918,106 @@
     if (!powered){ powerOn(function(){ playVoice('assets/sfx/lipsync-test.wav', '同期テスト中'); }); return; }
     playVoice('assets/sfx/lipsync-test.wav', '同期テスト中');
   });
+
+  /* ---------- costume switching (preload all frames, then swap; failure keeps current) ---------- */
+  var costumeVersion = 0, requestedCostume = null;
+  var assetNote = document.getElementById('asset-note');
+  function applyCostume(id, initial){
+    if (!COSTUMES[id]) return;
+    if (id === costume && !initial) return;
+    if (requestedCostume === id) return;
+    requestedCostume = id;
+    var version = ++costumeVersion;
+    var failed = false;
+    var loads = Object.keys(FRAME_FILES).map(function(k){
+      return new Promise(function(res){
+        var i = new Image();
+        i.onload = function(){ res(); };
+        i.onerror = function(){ failed = true; res(); };
+        i.src = COSTUMES[id].dir + FRAME_FILES[k];
+      });
+    });
+    Promise.all(loads).then(function(){
+      if (version !== costumeVersion) return;
+      requestedCostume = null;
+      if (failed){
+        assetNote.textContent = '衣装の読み込みに失敗しました。直前の表示を維持しています。';
+        var sel = document.getElementById('set-costume'); if (sel) sel.value = costume;
+        return;
+      }
+      costume = id;
+      Object.keys(FRAME_FILES).forEach(function(k){ FRAMES[k] = COSTUMES[id].dir + FRAME_FILES[k]; });
+      crt.dataset.costume = id;
+      front.alt = 'モブ子（' + COSTUMES[id].label + '）';
+      setFrame(frameName || 'normal');
+      assetNote.textContent = 'モブ子v2 / ' + COSTUMES[id].label;
+      if (!initial){ prefs.costumeId = id; savePrefs(); }
+    });
+  }
+
+  /* ---------- portrait (forehead / deko) mode + startup deko lottery ---------- */
+  var prankActive = false, prankTimer = null, prankCancelled = false;
+  function cancelPrank(){
+    prankCancelled = true; prankActive = false;
+    if (prankTimer) clearTimeout(prankTimer);
+    prankTimer = null;
+  }
+  function setPortraitMode(mode){
+    crt.dataset.portraitMode = mode;
+    var sel = document.getElementById('set-portrait'); if (sel) sel.value = mode;
+    prefs.portraitMode = mode; savePrefs();
+  }
+  function startPrank(){
+    prankActive = true; prankCancelled = false;
+    crt.dataset.portraitMode = 'forehead';
+    typeText('あわわっ！ 近すぎます！ すぐ直します！💦', '起動でこ抽選');
+    prankTimer = setTimeout(function(){
+      prankTimer = null;
+      if (!prankActive || prankCancelled) return;
+      prankActive = false;
+      if (prefs.startupPrankMode === 'auto'){
+        crt.dataset.boot = 'noise';
+        try { se.currentTime = 0; se.play().catch(function(){}); } catch(e){}
+        setTimeout(function(){ if (crt.dataset.boot === 'noise') crt.dataset.boot = 'idle'; }, 650);
+        crt.dataset.portraitMode = prefs.portraitMode;
+      } else {
+        /* manual release (default): the drawn forehead stays as the deko selection until set back */
+        setPortraitMode('forehead');
+        if (!current) typeText('……戻りませんね💦 設定の「表示」を「通常」に戻してください。', 'でこモード');
+      }
+    }, 4000);
+  }
+
+  /* ---------- settings panel ---------- */
+  var settingsBtn = document.getElementById('settings-btn');
+  var settingsPanel = document.getElementById('settings-panel');
+  settingsBtn.addEventListener('click', function(){ settingsPanel.classList.toggle('hidden'); });
+  var costumeSel = document.getElementById('set-costume');
+  var portraitSel = document.getElementById('set-portrait');
+  var randomChk = document.getElementById('set-random');
+  var prankChk = document.getElementById('set-prank');
+  var prankModeSel = document.getElementById('set-prank-mode');
+  costumeSel.value = costume;
+  portraitSel.value = prefs.portraitMode;
+  randomChk.checked = !!prefs.startupRandom;
+  prankChk.checked = !!prefs.startupPrank;
+  prankModeSel.value = prefs.startupPrankMode;
+  crt.dataset.costume = costume;
+  crt.dataset.portraitMode = prefs.portraitMode;
+  front.alt = 'モブ子（' + COSTUMES[costume].label + '）';
+  if (front.getAttribute('src') !== FRAMES.normal) front.src = FRAMES.normal;
+  assetNote.textContent = 'モブ子v2 / ' + COSTUMES[costume].label + (costumeDrawnRandom ? '（起動ランダムで選択）' : '');
+  costumeSel.addEventListener('change', function(){ applyCostume(costumeSel.value, false); });
+  portraitSel.addEventListener('change', function(){
+    cancelPrank();
+    setPortraitMode(portraitSel.value);
+    if (portraitSel.value === 'forehead' && powered && !current){
+      typeText('あれ？ 表示がおかしいようです💦（通常表示へ戻すまで、でこモードです）', 'でこモード');
+    }
+  });
+  randomChk.addEventListener('change', function(){ prefs.startupRandom = randomChk.checked; savePrefs(); });
+  prankChk.addEventListener('change', function(){ prefs.startupPrank = prankChk.checked; savePrefs(); });
+  prankModeSel.addEventListener('change', function(){ prefs.startupPrankMode = prankModeSel.value; savePrefs(); });
 
   /* initial state: home, no selection (big CRT waiting) */
   waveDrawIdle();
