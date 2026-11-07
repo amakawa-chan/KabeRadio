@@ -165,6 +165,7 @@
     font-weight:800;font-size:13px;padding:8px 14px;background:#182118;color:var(--ink)}
   .controls button.primary{background:var(--yellow);border-color:var(--navy);color:var(--navy);box-shadow:3px 3px 0 #000}
   .controls button:disabled{opacity:.45;cursor:not-allowed;box-shadow:none}
+  #share-btn{background:#14171a;border-color:#000;color:#fff}
   .controls button:not(:disabled):active{transform:translateY(1px)}
   .wave{flex:1 1 90px;height:30px;min-width:80px;display:block;
     background:#131a12;border:1px solid var(--line);border-radius:8px}
@@ -273,6 +274,7 @@
         <button id="stop-btn" type="button" disabled>止める</button>
         <button id="sound-btn" type="button">音：オン</button>
         <button id="settings-btn" type="button">⚙ 設定</button>
+        <button id="share-btn" type="button" class="hidden">Xでポスト</button>
         <canvas class="wave" id="wave" height="30" aria-hidden="true"></canvas>
         <span class="state-text" id="state-text">電源オフ</span>
       </div>
@@ -380,6 +382,7 @@
 <audio id="audio" preload="none"></audio>
 <audio id="se" preload="auto" src="assets/sfx/crt-tuning-v1.wav"></audio>
 <script src="episode-index.js"></script>
+<script src="pr-texts.js"></script>
 <script>
 (function(){
   "use strict";
@@ -652,6 +655,8 @@
   }
 
   function refreshPlayBtn(){
+    var shareBtn = document.getElementById('share-btn');
+    if (shareBtn) shareBtn.classList.toggle('hidden', !current);
     if (!current){
       playBtn.disabled = !powered;
       playBtn.textContent = 'あいさつ';
@@ -660,6 +665,42 @@
     playBtn.disabled = false;
     playBtn.textContent = '紹介する';
   }
+
+  /* ---------- X PR post (Mobuko picks a topic from the script) ---------- */
+  function weightedLen(s){
+    var n = 0;
+    for (var i = 0; i < s.length; i++){
+      n += /[\u3000-\u9fff\uff00-\uffef]/.test(s[i]) ? 2 : 1;
+    }
+    return n;
+  }
+  function prComment(ep){
+    if (window.PR_TEXTS && window.PR_TEXTS[ep.episodeKey]) return window.PR_TEXTS[ep.episodeKey];
+    var d = (ep.description || '').replace(/\s+/g, '');
+    return '今回の題材は「' + (ep.title || '') + '」です。' +
+      (d ? d.slice(0, 55) + '。' : '') + 'ぜひ聞いてみてください。';
+  }
+  function shareText(ep){
+    var head = '【モブ子のおすすめ】\n';
+    var comment = prComment(ep);
+    var withTitle = head + comment + '\n「' + (ep.title || '') + '」';
+    if (weightedLen(withTitle) <= 250) return withTitle;
+    var noTitle = head + comment;
+    if (weightedLen(noTitle) <= 250) return noTitle;
+    var budget = 250 - weightedLen(head) - 2, out = '';
+    for (var i = 0; i < comment.length; i++){
+      if (weightedLen(out + comment[i]) > budget) break;
+      out += comment[i];
+    }
+    return head + out + '…';
+  }
+  document.getElementById('share-btn').addEventListener('click', function(){
+    if (!current || !current.youtubeUrl) return;
+    var url = 'https://twitter.com/intent/tweet?text=' + encodeURIComponent(shareText(current)) +
+      '&url=' + encodeURIComponent(current.youtubeUrl) +
+      '&hashtags=' + encodeURIComponent('壁ラジ');
+    window.open(url, '_blank', 'noopener');
+  });
 
   function goHome(){
     stopAll();
