@@ -950,6 +950,26 @@
       }).catch(function(){});
     } catch(e){}
   }
+  var voiceTypeTimer = null, voiceTypeText = '', voiceTypeShown = 0, voiceTypeStart = 0;
+  function startVoiceType(){
+    if (!voiceTypeText || reduceMotion) return;
+    voiceTypeStart = performance.now();
+    voiceTypeTimer = setInterval(function(){
+      if (!voiceEl) return;
+      var target;
+      var d = voiceEl.duration, t = voiceEl.currentTime;
+      if (isFinite(d) && d > 0) target = Math.floor(voiceTypeText.length * Math.min(1, t / d));
+      else target = Math.min(voiceTypeText.length, Math.floor((performance.now() - voiceTypeStart) / 90));
+      if (target > voiceTypeShown){
+        voiceTypeShown = target;
+        msgText.textContent = voiceTypeText.slice(0, voiceTypeShown);
+        msgText.scrollTop = msgText.scrollHeight;
+      }
+      if (voiceTypeShown >= voiceTypeText.length){
+        clearInterval(voiceTypeTimer); voiceTypeTimer = null;
+      }
+    }, 60);
+  }
   function playVoice(src, label, opts){
     opts = opts || {};
     ensureAudioGraph();
@@ -958,9 +978,11 @@
     speaking = true; lastLoud = performance.now();
     msgMode.textContent = 'VOICE MODE';
     msgWindow.classList.remove('done');
+    voiceTypeText = opts.text || ''; voiceTypeShown = 0;
     if (opts.text){
       msgText.style.overflowY = 'auto';
-      msgText.textContent = opts.text;
+      msgText.textContent = reduceMotion ? opts.text : '';
+      if (reduceMotion) voiceTypeShown = opts.text.length;
     }
     /* iOS: Web Audio output can be muted (silent mode / in-app webview) even
        while playback progresses, so use the plain media element there and
@@ -971,6 +993,7 @@
     voiceEl.src = src;
     voiceEl.play().then(function(){
       waveStart();
+      startVoiceType();
       setState(label || '紹介中');
       stationState.classList.add('live'); stationStateText.textContent = 'NOW INTRODUCING';
       stopBtn.disabled = false; playBtn.disabled = true;
@@ -983,6 +1006,7 @@
   }
   function onVoiceEnded(){
     var wasEpisode = !!current;
+    if (voiceTypeText){ msgText.textContent = voiceTypeText; voiceTypeShown = voiceTypeText.length; }
     stopAll();
     msgWindow.classList.add('done');
     if (wasEpisode && currentIndex >= 0 && currentIndex < episodes.length - 1) nextBtn.classList.remove('hidden');
@@ -997,6 +1021,8 @@
     if (typeTimer) clearTimeout(typeTimer);
     if (waitTimer) clearTimeout(waitTimer);
     if (mouthTimer) clearInterval(mouthTimer);
+    if (voiceTypeTimer) clearInterval(voiceTypeTimer);
+    voiceTypeTimer = null;
     typeTimer = waitTimer = mouthTimer = null;
     [audio, audioPlain].forEach(function(el){
       try {
