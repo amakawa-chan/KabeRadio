@@ -386,7 +386,7 @@
     </section>
   </div>
 
-  <footer>壁ラジ放送局（試作）— 紹介文は各エピソードの台本「Episode Description」からそのまま抽出しています。掲載は公開が確認できたエピソードのみです。</footer>
+  <footer>壁ラジ放送局（試作）— 紹介音声は、モブ子が各エピソードの台本から題材を1つ選んだPR文を読み上げています。掲載は公開が確認できたエピソードのみです。</footer>
 
 <audio id="audio" preload="none"></audio>
 <audio id="se" preload="auto" src="assets/sfx/crt-tuning-v1.wav"></audio>
@@ -746,7 +746,7 @@
   function startIntro(){
     if (!current) return;
     if (!powered){ powerOn(function(){ startIntro(); }); return; }
-    if (current.introAudio){ playVoice(current.introAudio, '紹介中'); return; }
+    if (current.introAudio){ playVoice(current.introAudio, '紹介中', { text: prComment(current) }); return; }
     if (!current.description){
       typeText('この回は台本に紹介文（Episode Description）が未設定のため、紹介はありません。');
       return;
@@ -761,7 +761,10 @@
   var WELCOME_TEXT = '壁ラジへようこそ。ここは「バ美おじとLLMの壁打ち雑談ラジオ」のエピソード紹介ページです。アーカイブから聞きたい回を選ぶと、わたし、モブ子が紹介します。下には公式サイトやYouTube、Spotify、LINEスタンプへのリンク集もあります。';
   function playWelcome(){
     if (!powered || current) return;
-    typeText(WELCOME_TEXT, 'あいさつ中');
+    playVoice('intros/welcome.mp3', 'あいさつ中', {
+      text: WELCOME_TEXT,
+      onfail: function(){ typeText(WELCOME_TEXT, 'あいさつ中'); }
+    });
   }
   var typeTimer = null, mouthTimer = null, waitTimer = null, typeState = null;
   var MOUTH_SEQ = ['small','close','big','close','small','close'];
@@ -921,10 +924,17 @@
       wavePulse(0.3 + Math.random() * 0.6);
     }, 130);
   }
-  function playVoice(src, label){
+  function playVoice(src, label, opts){
+    opts = opts || {};
     ensureAudioGraph();
     stopAll();
     speaking = true; lastLoud = performance.now();
+    msgMode.textContent = 'VOICE MODE';
+    msgWindow.classList.remove('done');
+    if (opts.text){
+      msgText.style.overflowY = 'auto';
+      msgText.textContent = opts.text;
+    }
     audio.src = src;
     audio.play().then(function(){
       waveStart();
@@ -933,12 +943,16 @@
       stopBtn.disabled = false; playBtn.disabled = true;
       if (analyser) mouthLoop(); else startFallbackMouth();
     }).catch(function(){
-      speaking = false; setState('再生できませんでした');
+      speaking = false;
+      if (opts.onfail){ opts.onfail(); return; }
+      setState('再生できませんでした');
     });
   }
   audio.addEventListener('ended', function(){
+    var wasEpisode = !!current;
     stopAll();
-    if (currentIndex >= 0 && currentIndex < episodes.length - 1) nextBtn.classList.remove('hidden');
+    msgWindow.classList.add('done');
+    if (wasEpisode && currentIndex >= 0 && currentIndex < episodes.length - 1) nextBtn.classList.remove('hidden');
   });
 
   function stopAll(){
