@@ -1,0 +1,1131 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="dark">
+<title>壁ラジ放送局 | バ美おじとLLMの壁打ち雑談ラジオ</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DotGothic16&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#e9edda; --deep:#dfe8c8; --mid:#8fb996; --accent:#7fb069;
+    --paper:#07090a; --panel:#10160f; --line:#2b3a2c;
+    --yellow:#fdec28; --red:#fb5c52; --navy:#04283a;
+    --card:#131a13; --card-line:#2b3a2c;
+    --win-bg:#0e2721; --win-fg:#e9f4da; --win-line:#9db98a;
+  }
+  *{box-sizing:border-box}
+  html,body{margin:0;padding:0;height:100%}
+  body{background:var(--paper);color:var(--ink);height:100dvh;display:flex;flex-direction:column;overflow:hidden;
+    font-family:"Hiragino Kaku Gothic ProN","Hiragino Sans","Noto Sans JP",system-ui,sans-serif;
+    -webkit-text-size-adjust:100%}
+  a{color:#7db8e8}
+  button{font-family:inherit}
+
+  /* ===== header ===== */
+  header{flex:0 0 auto;display:flex;align-items:center;gap:12px;padding:10px 16px 8px}
+  .logo{background:var(--yellow);border:3px solid var(--navy);border-radius:11px;
+    padding:5px 14px 6px;box-shadow:3px 3px 0 var(--navy)}
+  .logo .name{font-weight:900;font-size:20px;letter-spacing:.04em;color:var(--navy);line-height:1.15}
+  .logo .sub{font-size:10px;font-weight:700;color:var(--navy);opacity:.75;letter-spacing:.08em}
+  .station-state{margin-left:auto;display:flex;align-items:center;gap:8px;
+    font:700 11px ui-monospace,Menlo,monospace;letter-spacing:.14em;color:var(--mid)}
+  #home-btn{cursor:pointer;border:2px solid #5a7263;border-radius:9px;background:#182118;color:var(--ink);
+    font-weight:800;font-size:12px;padding:7px 12px;box-shadow:2px 2px 0 #000}
+  #home-btn:active{transform:translateY(1px);box-shadow:1px 1px 0 #000}
+  .hidden{display:none !important}
+  #next-btn{cursor:pointer;margin-top:12px;width:100%;border:2px solid var(--navy);border-radius:9px;
+    background:var(--yellow);color:var(--navy);font-weight:900;font-size:14px;padding:10px 14px;
+    box-shadow:3px 3px 0 #000}
+  #next-btn:active{transform:translateY(1px)}
+  body.mode-intro footer{display:none}
+  .station-state .dot{width:10px;height:10px;border-radius:50%;background:#8aa583;box-shadow:0 0 0 3px #22301f}
+  .station-state.live .dot{background:var(--red);box-shadow:0 0 0 3px #3d1a16;animation:blinkdot 1.2s steps(2) infinite}
+  @keyframes blinkdot{50%{opacity:.35}}
+
+  /* ===== stage: home = big CRT / intro = fixed screen + scrolling list ===== */
+  .stage{flex:1 1 auto;min-height:0;display:grid;gap:18px;padding:4px 16px 16px;max-width:1120px;width:100%;margin:0 auto}
+  .stage.home{grid-template-columns:1fr;overflow-y:auto;align-content:start}
+  .stage.intro{grid-template-columns:302px minmax(0,1fr);overflow:hidden}
+  @media(max-width:820px){
+    .stage.intro{grid-template-columns:1fr;grid-template-rows:auto minmax(0,1fr)}
+  }
+
+  /* ===== CRT panel ===== */
+  .crt-panel{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:14px}
+  .stage.home .crt-panel{max-width:480px;width:100%;margin:6px auto 0}
+  .stage.intro .crt-panel{align-self:start}
+  .operator-label{display:flex;justify-content:space-between;font:700 10px ui-monospace,Menlo,monospace;
+    letter-spacing:.14em;color:var(--accent);margin-bottom:9px}
+  .hub-crt{position:relative;background:radial-gradient(ellipse,#2e5850,#102c2d);
+    border:9px solid #4c5d52;box-shadow:inset 0 0 35px #071f20,0 6px 0 #232d24;
+    border-radius:17px;overflow:hidden;aspect-ratio:1/1}
+  .stage.home .hub-crt{width:min(400px,86vw);margin:0 auto}
+  .stage.intro .hub-crt{width:100%}
+  #list-btn{display:none;cursor:pointer;margin-top:10px;width:100%;border:2px solid #5a7263;border-radius:9px;
+    background:#182118;color:var(--ink);font-weight:800;font-size:13px;padding:9px 14px}
+
+  /* ===== contents (top page link guide; hidden in intro mode) ===== */
+  .contents{margin-top:20px}
+  .stage.intro .contents{display:none}
+  .contents h2{font-size:14px;letter-spacing:.06em;margin:0 0 10px;color:var(--deep)}
+  .contents h2 span{font:700 11px ui-monospace,Menlo,monospace;color:var(--accent);letter-spacing:.1em}
+  .link-cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(228px,1fr));gap:10px}
+  .link-cards a{position:relative;display:flex;gap:12px;align-items:center;text-decoration:none;
+    background:linear-gradient(160deg,#182118,#10160f);border:1px solid var(--card-line);
+    border-radius:14px;padding:13px 14px;color:var(--ink);overflow:hidden;
+    transition:transform .15s ease,border-color .15s ease,box-shadow .15s ease}
+  .link-cards a::before{content:"";position:absolute;inset:0 0 auto 0;height:3px;background:var(--brand,#5a7263)}
+  .link-cards a:hover{transform:translateY(-2px);border-color:var(--brand,#5a7263);
+    box-shadow:0 8px 20px #00000099}
+  .lc-icon{flex:0 0 42px;width:42px;height:42px;border-radius:11px;display:flex;align-items:center;justify-content:center;
+    background:var(--brand,#5a7263);color:#fff;font-weight:900;font-size:17px;letter-spacing:.02em;
+    box-shadow:inset 0 -3px 0 #00000038}
+  .lc-icon.txt{font-size:10.5px;letter-spacing:.06em}
+  .link-cards .lt{font-weight:900;font-size:14.5px;color:#f2f5e4;line-height:1.3}
+  .link-cards .ld{font-size:11.5px;color:#9aa78d;margin-top:2px;line-height:1.5}
+  .lc-arrow{margin-left:auto;flex:0 0 auto;color:#77876c;font-weight:900;font-size:15px}
+  .link-cards a:hover .lc-arrow{color:var(--brand,#5a7263)}
+  .stamp-cards{margin-top:14px}
+  .stamp-cards .link-cards{grid-template-columns:repeat(auto-fill,minmax(200px,1fr))}
+
+  /* desktop home: operator beside the message column, bigger CRT, sticky panel.
+     Placed after the base home rules so it wins the cascade at equal specificity. */
+  @media(min-width:821px){
+    .stage.home{grid-template-columns:minmax(0,540px) minmax(0,1fr);max-width:1240px;align-items:start}
+    .stage.home .crt-panel{max-width:none;margin:6px 0 0;align-self:start;position:sticky;top:6px}
+    .stage.home .hub-crt{width:100%}
+    .stage.home .content-col{margin-top:6px}
+  }
+
+  @media(max-width:820px){
+    body{height:auto;min-height:100dvh;overflow:visible}
+    .stage{overflow:visible !important;flex:0 0 auto}
+    body.mode-intro #list-btn{display:block}
+    header{gap:8px;padding:8px 12px 6px}
+    .logo .name{font-size:18px}
+    .logo .sub{font-size:9px}
+    #home-btn{white-space:nowrap;padding:7px 10px}
+    /* home: fit everything down to the message window in the first screen */
+    .stage.home{gap:12px;padding:2px 10px 12px}
+    .stage.home .crt-panel{padding:10px 12px;margin-top:0}
+    .stage.home .operator-label{margin-bottom:6px}
+    .stage.home .hub-crt{width:min(292px,76vw)}
+    .stage.home .controls{margin-top:8px;gap:6px}
+    .stage.home .controls button{padding:7px 12px;font-size:12.5px}
+    .stage.home .controls .wave{height:24px}
+    .stage.home .info-panel{padding:12px 14px}
+    .stage.home .ep-title{font-size:19px;margin-bottom:6px}
+    .stage.home .msg-window{margin-top:10px;padding:16px 13px 9px}
+    .stage.home .msg-text{font-size:12.5px}
+    .stage.intro{gap:10px;padding:2px 10px 10px;grid-template-rows:auto auto}
+    .stage.intro .content-col{overflow:visible}
+    .stage.intro .ep-scroll{overflow:visible}
+    .stage.intro .crt-panel{padding:10px;display:grid;
+      grid-template-columns:auto minmax(0,1fr);grid-template-areas:"label label" "crt controls";
+      column-gap:12px;align-items:start}
+    .stage.intro .operator-label{grid-area:label;margin-bottom:6px}
+    .stage.intro .hub-crt{grid-area:crt;width:min(212px,54vw);margin:0}
+    .stage.intro .controls{grid-area:controls;margin-top:2px;gap:7px;flex-direction:column;align-items:stretch;flex-wrap:nowrap}
+    .stage.intro .controls button{padding:9px 8px;font-size:13px;width:100%}
+    .stage.intro .controls .wave{flex:0 0 30px;height:30px;min-width:0;width:100%}
+    .stage.intro .state-text{display:none}
+    .stage.intro .info-panel{padding:12px 14px}
+    .stage.intro .ep-title{font-size:17px;margin-bottom:6px}
+    .stage.intro .msg-window{margin-top:10px;padding:16px 13px 9px}
+    .stage.intro .msg-text{font-size:12.5px}
+    .stage.intro .ep-links{margin-top:9px}
+    .stage.intro .ep-links a{padding:6px 11px;font-size:12px}
+    .stage.intro .archive{margin-top:12px}
+  }
+  .hub-crt img{position:absolute;left:50%;top:3px;width:auto;height:112%;max-width:none;
+    transform:translateX(-50%);visibility:hidden}
+  .hub-crt img.front{z-index:2;mask-image:linear-gradient(to right,transparent,#000 7%,#000 93%,transparent);
+    -webkit-mask-image:linear-gradient(to right,transparent,#000 7%,#000 93%,transparent)}
+  .hub-crt img.portrait-completion{z-index:1;pointer-events:none;
+    mask-image:linear-gradient(to right,#000,#000 5%,transparent 18%,transparent 82%,#000 95%,#000);
+    -webkit-mask-image:linear-gradient(to right,#000,#000 5%,transparent 18%,transparent 82%,#000 95%,#000)}
+  .hub-crt.on img{visibility:visible}
+  .crt-scan{position:absolute;inset:0;z-index:3;pointer-events:none;
+    background:repeating-linear-gradient(transparent 0 3px,#002c241b 3px 4px);
+    box-shadow:inset 0 0 35px #001c2b66;animation:crt-flicker 6s steps(2) infinite}
+  @keyframes crt-flicker{0%,96%{opacity:.75}97%{opacity:.9}100%{opacity:.75}}
+  .hub-crt small{position:absolute;z-index:4;bottom:8px;left:11px;color:#bfdba8;
+    font:9px ui-monospace,Menlo,monospace;letter-spacing:1px}
+  .crt-boot-noise{position:absolute;inset:0;z-index:5;pointer-events:none;opacity:0;
+    background:repeating-linear-gradient(17deg,#b8c9b4aa 0 1px,#1a3333 2px 4px,transparent 5px 8px),
+               repeating-linear-gradient(91deg,#294840 0 2px,#e1ead333 3px 4px)}
+  .crt-static{position:absolute;inset:0;width:100%;height:100%;z-index:6;display:none;pointer-events:none;image-rendering:pixelated}
+  .hub-crt[data-boot=noise] .crt-boot-noise{animation:operator-signal-sf 1.8s steps(12) forwards}
+  .hub-crt[data-boot=noise] img.front,.hub-crt[data-boot=noise] img.portrait-completion{animation:operator-tune-sf 1.8s ease-out}
+  .hub-crt[data-boot=noise] .crt-static{display:block}
+  @keyframes operator-signal-sf{0%{opacity:.9;transform:translate(-8px,6px) skewX(9deg)}25%{opacity:.65;transform:translate(6px,-3px) skewX(-6deg)}55%{opacity:.45;transform:translate(-3px,2px) skewX(3deg)}80%{opacity:.2;transform:translate(1px,-1px)}100%{opacity:0;transform:none}}
+  @keyframes operator-tune-sf{0%{opacity:.1;filter:blur(4px) saturate(.3);transform:translateX(-46%) skewX(10deg) scaleY(.94)}25%{opacity:.4;transform:translateX(-54%) skewX(-7deg) scaleY(1.05)}52%{opacity:.6;filter:blur(1px);transform:translateX(-48%) skewX(3deg)}78%{opacity:.85;transform:translateX(-51%) skewX(-1deg)}100%{opacity:1;filter:none;transform:translateX(-50%)}}
+  .power-veil{position:absolute;inset:0;z-index:8;display:flex;align-items:center;justify-content:center;background:#0b201e55}
+  .power-veil.hidden{display:none}
+  #power-btn{font:700 13px ui-monospace,Menlo,monospace;letter-spacing:.12em;cursor:pointer;
+    color:#dff0cd;background:#1d4038;border:2px solid #7fae7c;border-radius:10px;padding:12px 18px;
+    box-shadow:0 4px 0 #0d2a24}
+  #power-btn:active{transform:translateY(2px);box-shadow:0 2px 0 #0d2a24}
+  .controls{display:flex;gap:8px;align-items:center;margin-top:12px;flex-wrap:wrap}
+  .controls button{cursor:pointer;border-radius:9px;border:2px solid #5a7263;
+    font-weight:800;font-size:13px;padding:8px 14px;background:#182118;color:var(--ink)}
+  .controls button.primary{background:var(--yellow);border-color:var(--navy);color:var(--navy);box-shadow:3px 3px 0 #000}
+  .controls button:disabled{opacity:.45;cursor:not-allowed;box-shadow:none}
+  #share-btn{background:#14171a;border-color:#000;color:#fff}
+  .controls button:not(:disabled):active{transform:translateY(1px)}
+  .wave{flex:1 1 90px;height:30px;min-width:80px;display:block;
+    background:#131a12;border:1px solid var(--line);border-radius:8px}
+  .state-text{font:700 10px ui-monospace,Menlo,monospace;letter-spacing:.1em;color:var(--mid)}
+
+  /* ===== content column ===== */
+  .content-col{min-height:0;display:flex;flex-direction:column}
+  .stage.home .content-col{overflow:visible}
+  .stage.intro .content-col{overflow:hidden}
+  .info-panel{background:#10160f;border:1px solid var(--line);border-radius:16px;padding:16px 20px}
+  .ep-meta{font:700 11px ui-monospace,Menlo,monospace;letter-spacing:.12em;color:var(--accent);margin-bottom:5px}
+  .ep-title{font-size:20px;font-weight:900;line-height:1.35;margin:0 0 10px}
+  .ep-links{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}
+  .ep-links a{display:inline-block;text-decoration:none;font-weight:800;font-size:13px;
+    border:2px solid #5a7263;border-radius:9px;padding:7px 13px;color:var(--ink);background:#182118}
+  .ep-links a.yt{background:#3a1512;border-color:#7a2d24}.ep-links a.sp{background:#12301c;border-color:#1f5c33}.ep-links a.nt{background:#16233d;border-color:#2c4a7a}
+
+  /* ===== game message window ===== */
+  .msg-window{position:relative;margin-top:14px;background:var(--win-bg);color:var(--win-fg);
+    border:3px solid var(--win-line);border-radius:6px;
+    box-shadow:0 0 0 3px var(--win-bg),0 0 0 6px var(--win-line), inset 0 0 24px #00000055;
+    padding:20px 18px 14px;cursor:pointer}
+  .msg-name{position:absolute;top:-11px;left:14px;background:var(--win-bg);border:2px solid var(--win-line);
+    border-radius:5px;padding:1px 12px;font-weight:400;font-size:12px;letter-spacing:.14em;color:#ffe98a;
+    font-family:"DotGothic16","Hiragino Kaku Gothic ProN",sans-serif}
+  .msg-text{font-family:"DotGothic16","Hiragino Kaku Gothic ProN",monospace;
+    font-size:14px;line-height:1.85;letter-spacing:.02em;white-space:pre-wrap;word-break:break-all;
+    height:calc(1.85em * 4);overflow:hidden;scrollbar-width:thin}
+  @media(max-width:820px){.msg-text{font-size:12.5px;height:calc(1.85em * 3)}}
+  .msg-text .cursor{display:inline-block;width:.6em;height:1em;background:var(--win-fg);
+    vertical-align:-.08em;animation:blinkdot .8s steps(2) infinite}
+  .msg-hint{display:flex;justify-content:space-between;align-items:center;margin-top:8px;
+    font:700 10px ui-monospace,Menlo,monospace;letter-spacing:.12em;color:#9db98a}
+  .msg-hint .next{visibility:hidden;animation:bob 1s ease-in-out infinite}
+  .msg-window.done .msg-hint .next{visibility:visible}
+  .msg-window.wait .msg-hint .next{visibility:visible}
+  @keyframes bob{50%{transform:translateY(3px)}}
+
+  /* ===== archive (only this area scrolls in intro mode) ===== */
+  .archive{margin-top:18px;min-height:0;display:flex;flex-direction:column}
+  .archive h2{font-size:14px;letter-spacing:.06em;margin:0 0 9px;color:var(--deep)}
+  .archive h2 span{font:700 11px ui-monospace,Menlo,monospace;color:var(--accent);letter-spacing:.1em}
+  .ep-scroll{min-height:0;overflow-y:auto;padding:2px 2px 8px;scrollbar-width:thin}
+  .stage.home .ep-scroll{overflow:visible}
+  .ep-list{list-style:none;margin:0;padding:0;display:grid;gap:8px}
+  .ep-list button{width:100%;text-align:left;cursor:pointer;background:#11170f;border:1px solid var(--line);
+    border-radius:11px;padding:10px 13px;display:flex;gap:11px;align-items:baseline;color:var(--ink)}
+  .ep-list button:hover{border-color:var(--accent)}
+  .ep-list button.selected{border-color:var(--yellow);box-shadow:3px 3px 0 #000;background:#1c1a08}
+  .ep-list .no{font:800 11px ui-monospace,Menlo,monospace;color:var(--accent);white-space:nowrap}
+  .ep-list .t{font-weight:700;font-size:14px;line-height:1.45}
+  .ep-list .d{margin-left:auto;font:10px ui-monospace,Menlo,monospace;color:#77876c;white-space:nowrap}
+  .test-card{margin-top:14px;background:#1d1807;border:1px dashed #b7a94e;border-radius:12px;padding:12px 15px;font-size:12.5px;line-height:1.7;color:#e6ddba}
+  .test-card button{cursor:pointer;margin-top:7px;font-weight:800;font-size:13px;border:2px solid #9db98a;
+    border-radius:9px;padding:7px 13px;background:#0e2721;color:#e9f4da}
+  footer{flex:0 0 auto;padding:0 16px 10px;font-size:10.5px;color:#77876c}
+  .stage.home ~ footer{display:block}
+
+  /* ===== operator settings (costume / portrait / startup) ===== */
+  .settings-panel{margin-top:12px;background:#0b120c;border:1px solid var(--line);border-radius:12px;
+    padding:12px 14px;display:grid;gap:9px}
+  .settings-panel label{display:flex;align-items:center;gap:8px;font-size:12.5px;font-weight:700}
+  .settings-panel select{margin-left:auto;background:#182118;color:var(--ink);border:1px solid #5a7263;
+    border-radius:7px;padding:5px 8px;font-size:12.5px;font-family:inherit;max-width:55%}
+  .settings-panel input[type=checkbox]{width:16px;height:16px;accent-color:var(--yellow);flex:0 0 auto}
+  .settings-panel .asset-note{margin:0;font-size:11px;color:#9aa78d;line-height:1.5}
+  /* costume: military / punk use no completion backdrop and no edge mask (per original hub.css) */
+  .hub-crt[data-costume="military"] img.front,.hub-crt[data-costume="punk"] img.front{
+    mask-image:none;-webkit-mask-image:none}
+  .hub-crt[data-costume="military"] img.portrait-completion,.hub-crt[data-costume="punk"] img.portrait-completion{display:none}
+  /* forehead (deko) mode: original composition — height 500%, top -82% */
+  .hub-crt[data-portrait-mode="forehead"] img{height:500%;top:-82%}
+  @media (prefers-reduced-motion: reduce){
+    .crt-scan{animation:none}
+    .hub-crt[data-boot=noise] img.front,.hub-crt[data-boot=noise] img.portrait-completion,
+    .hub-crt[data-boot=noise] .crt-boot-noise{animation:none}
+    .hub-crt[data-boot=noise] .crt-static{display:none}
+    .station-state.live .dot,.msg-text .cursor,.msg-hint .next{animation:none}
+  }
+</style>
+</head>
+<body>
+  <header>
+    <div class="logo">
+      <div class="name">壁ラジ放送局</div>
+      <div class="sub">バ美おじとLLMの壁打ち雑談ラジオ</div>
+    </div>
+    <button id="home-btn" class="hidden" type="button">← トップへ</button>
+    <div class="station-state" id="station-state"><span class="dot"></span><span id="station-state-text">STATION READY</span></div>
+  </header>
+
+  <div class="stage home" id="stage">
+    <section class="crt-panel" id="crt-panel" aria-label="モブ子のCRT">
+      <div class="operator-label"><span>MOBUKO // OPERATOR</span><span id="op-state">STANDBY</span></div>
+      <div class="hub-crt" id="crt" data-boot="idle">
+        <img class="portrait-completion" src="assets/mobuko/maid/completion-v1.webp" alt="" aria-hidden="true">
+        <img class="front" id="img-front" src="assets/mobuko/maid/normal.webp" alt="モブ子">
+        <div class="crt-scan"></div>
+        <small>KABE RADIO STATION</small>
+        <div class="crt-boot-noise"></div>
+        <canvas class="crt-static" id="crt-static" width="160" height="160"></canvas>
+        <div class="power-veil" id="power-veil"><button id="power-btn" type="button">▶ 電源を入れる</button></div>
+      </div>
+      <div class="controls">
+        <button class="primary" id="play-btn" type="button" disabled>紹介する</button>
+        <button id="stop-btn" type="button" disabled>止める</button>
+        <button id="sound-btn" type="button">音：オン</button>
+        <button id="settings-btn" type="button">⚙ 設定</button>
+        <button id="share-btn" type="button" class="hidden">Xでポスト</button>
+        <canvas class="wave" id="wave" height="30" aria-hidden="true"></canvas>
+        <span class="state-text" id="state-text">電源オフ</span>
+      </div>
+      <div class="settings-panel hidden" id="settings-panel">
+        <label>衣装
+          <select id="set-costume">
+            <option value="maid">メイド服</option>
+            <option value="military">軍服・軍帽</option>
+            <option value="punk">パンク</option>
+          </select></label>
+        <label>表示
+          <select id="set-portrait">
+            <option value="normal">通常</option>
+            <option value="forehead">でこモード</option>
+          </select></label>
+        <label><input type="checkbox" id="set-random">起動衣装ランダム</label>
+        <label><input type="checkbox" id="set-prank">起動でこ抽選（15%）</label>
+        <label>でこ復帰
+          <select id="set-prank-mode">
+            <option value="manual">手動で解除</option>
+            <option value="auto">自動で戻す</option>
+          </select></label>
+        <p class="asset-note" id="asset-note"></p>
+      </div>
+    </section>
+
+    <section class="content-col">
+      <div class="info-panel" id="info-panel">
+        <div class="ep-meta" id="ep-meta">EPISODE</div>
+        <h1 class="ep-title" id="ep-title">壁ラジ放送局へようこそ</h1>
+        <div class="msg-window" id="msg-window" title="タップで全文表示">
+          <span class="msg-name">モブ子</span>
+          <div class="msg-text" id="msg-text">CRTの「▶ 電源を入れる」を押すと、モブ子があいさつします。エピソード紹介はアーカイブから聞きたい回を選んでください。</div>
+          <div class="msg-hint"><span id="msg-mode">TEXT MODE</span><span class="next">▼</span></div>
+        </div>
+        <div class="ep-links" id="ep-links"></div>
+        <button id="next-btn" class="hidden" type="button">つぎのエピソード ▶</button>
+        <button id="list-btn" type="button">▼ エピソード一覧へ</button>
+      </div>
+
+      <div class="contents">
+        <h2>コンテンツ <span>CONTENTS</span></h2>
+        <div class="link-cards">
+          <a href="https://amakawa-chan.github.io/KabeRadio/" target="_blank" rel="noopener" style="--brand:#fdec28">
+            <span class="lc-icon" style="background:#fdec28;color:#04283a">壁</span>
+            <span><span class="lt">壁ラジについて</span><div class="ld">壁ラジの紹介ページとリンク集です</div></span>
+            <span class="lc-arrow">→</span></a>
+          <a href="https://www.youtube.com/@kaberadi" target="_blank" rel="noopener" style="--brand:#ff0033">
+            <span class="lc-icon" style="background:#ff0033">▶</span>
+            <span><span class="lt">YouTube</span><div class="ld">本編の動画はこちらで公開しています</div></span>
+            <span class="lc-arrow">→</span></a>
+          <a href="https://open.spotify.com/show/0345KBagDfhEyJFd4xstHI" target="_blank" rel="noopener" style="--brand:#1db954">
+            <span class="lc-icon" style="background:#1db954">♪</span>
+            <span><span class="lt">Spotify</span><div class="ld">音声だけでも聴けます</div></span>
+            <span class="lc-arrow">→</span></a>
+          <a href="https://note.com/loyal_okapi1848" target="_blank" rel="noopener" style="--brand:#e8e8e8">
+            <span class="lc-icon" style="background:#e8e8e8;color:#111">n</span>
+            <span><span class="lt">note（あまかわちゃん）</span><div class="ld">制作記や小説などを置いています</div></span>
+            <span class="lc-arrow">→</span></a>
+          <a href="https://x.com/kaberadi_mobuko" target="_blank" rel="noopener" style="--brand:#555f66">
+            <span class="lc-icon" style="background:#22282c">X</span>
+            <span><span class="lt">X（@kaberadi_mobuko）</span><div class="ld">新着やお知らせはこちら</div></span>
+            <span class="lc-arrow">→</span></a>
+          <a href="https://amakawa-chan.github.io/KabeRadio/extras/line-stickers.html" target="_blank" rel="noopener" style="--brand:#06c755">
+            <span class="lc-icon txt" style="background:#06c755">LINE</span>
+            <span><span class="lt">LINEスタンプ</span><div class="ld">販売中のスタンプ一覧はこちら</div></span>
+            <span class="lc-arrow">→</span></a>
+        </div>
+
+        <div class="stamp-cards">
+          <h2>LINEスタンプ <span>STAMPS</span></h2>
+          <div class="link-cards">
+            <a href="https://line.me/S/sticker/36573106/?lang=ja&utm_source=gnsh_stickerDetail" target="_blank" rel="noopener" style="--brand:#06c755">
+              <span class="lc-icon" style="background:#06c755">1</span>
+              <span><span class="lt">壁ラジ！スタンプ vol.1</span><div class="ld">キャラクターたちのスタンプ第1弾</div></span>
+              <span class="lc-arrow">→</span></a>
+            <a href="https://line.me/S/sticker/36573185/?lang=ja&utm_source=gnsh_stickerDetail" target="_blank" rel="noopener" style="--brand:#06c755">
+              <span class="lc-icon" style="background:#06c755">2</span>
+              <span><span class="lt">壁ラジ！スタンプ vol.2</span><div class="ld">壁ラジ！スタンプ第2弾</div></span>
+              <span class="lc-arrow">→</span></a>
+            <a href="https://line.me/S/sticker/36175605/?lang=ja&utm_source=gnsh_stickerDetail" target="_blank" rel="noopener" style="--brand:#06c755">
+              <span class="lc-icon" style="background:#06c755">モ</span>
+              <span><span class="lt">モブ子スタンプ Vol.1</span><div class="ld">モブ子のスタンプ第1弾</div></span>
+              <span class="lc-arrow">→</span></a>
+          </div>
+        </div>
+      </div>
+
+      <div class="archive">
+        <h2>アーカイブ <span id="ep-count"></span></h2>
+        <div class="ep-scroll" id="ep-scroll">
+          <ul class="ep-list" id="ep-list"></ul>
+          <div class="test-card">
+            <strong>検証用：口パク同期テスト（音声モード）</strong><br>
+            紹介音声MP3がある回は音声モードで再生します。その同期確認用に、テスト音（声ではありません）でも口パクを確認できます。
+            <br><button id="test-btn" type="button">テスト音で口パクを確認</button>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <footer>壁ラジ放送局 — 紹介音声は、モブ子が各エピソードの台本から題材を1つ選んだPR文を読み上げています。掲載は公開が確認できたエピソードのみです。</footer>
+
+<audio id="audio" preload="none"></audio>
+<audio id="audio-plain" preload="none"></audio>
+<audio id="se" preload="auto" src="assets/sfx/crt-tuning-v1.wav"></audio>
+<script src="episode-index.js"></script>
+<script src="pr-texts.js"></script>
+<script>
+(function(){
+  "use strict";
+  /* ---------- operator prefs (costume / portrait / startup) ---------- */
+  var COSTUMES = {
+    maid:     { label: 'メイド服',   dir: 'assets/mobuko/maid/' },
+    military: { label: '軍服・軍帽', dir: 'assets/mobuko/military/' },
+    punk:     { label: 'パンク',     dir: 'assets/mobuko/punk/' }
+  };
+  var FRAME_FILES = {
+    normal: 'normal.webp', blinkHalf: 'blink_half.webp', blink: 'blink.webp',
+    close: 'talk_close.webp', small: 'talk_small.webp', medium: 'talk_medium.webp', big: 'talk_big.webp'
+  };
+  var PREF_KEY = 'mobuko-station-prefs';
+  var prefs = { costumeId: 'maid', portraitMode: 'normal', startupRandom: true, startupPrank: true, startupPrankMode: 'manual' };
+  try {
+    var savedPrefs = JSON.parse(localStorage.getItem(PREF_KEY) || 'null');
+    if (savedPrefs) Object.keys(prefs).forEach(function(k){ if (savedPrefs[k] !== undefined) prefs[k] = savedPrefs[k]; });
+  } catch(e){}
+  function savePrefs(){ try { localStorage.setItem(PREF_KEY, JSON.stringify(prefs)); } catch(e){} }
+  if (!COSTUMES[prefs.costumeId]) prefs.costumeId = 'maid';
+  if (prefs.portraitMode !== 'forehead') prefs.portraitMode = 'normal';
+  if (prefs.startupPrankMode !== 'auto') prefs.startupPrankMode = 'manual';
+
+  /* startup costume: drawn once per browser session when random is on
+     (the Office original draws on new process start only, never on reload) */
+  var costume = prefs.costumeId;
+  var costumeDrawnRandom = false;
+  if (prefs.startupRandom){
+    var ids = Object.keys(COSTUMES);
+    try {
+      var drawn = sessionStorage.getItem('mobuko-station-costume');
+      if (!drawn || !COSTUMES[drawn]){
+        drawn = ids[Math.floor(Math.random() * ids.length)];
+        sessionStorage.setItem('mobuko-station-costume', drawn);
+      }
+      costume = drawn; costumeDrawnRandom = true;
+    } catch(e){
+      costume = ids[Math.floor(Math.random() * ids.length)]; costumeDrawnRandom = true;
+    }
+  }
+
+  var FRAMES = {};
+  Object.keys(FRAME_FILES).forEach(function(k){ FRAMES[k] = COSTUMES[costume].dir + FRAME_FILES[k]; });
+  Object.keys(FRAMES).forEach(function(k){ var i = new Image(); i.src = FRAMES[k]; });
+
+  var stage = document.getElementById('stage');
+  var crt = document.getElementById('crt');
+  var front = document.getElementById('img-front');
+  var veil = document.getElementById('power-veil');
+  var powerBtn = document.getElementById('power-btn');
+  var playBtn = document.getElementById('play-btn');
+  var stopBtn = document.getElementById('stop-btn');
+  var soundBtn = document.getElementById('sound-btn');
+  var wave = document.getElementById('wave');
+  var stateText = document.getElementById('state-text');
+  var opState = document.getElementById('op-state');
+  var stationState = document.getElementById('station-state');
+  var stationStateText = document.getElementById('station-state-text');
+  var homeBtn = document.getElementById('home-btn');
+  var nextBtn = document.getElementById('next-btn');
+  var epMeta = document.getElementById('ep-meta');
+  var epTitle = document.getElementById('ep-title');
+  var epLinks = document.getElementById('ep-links');
+  var epList = document.getElementById('ep-list');
+  var epCount = document.getElementById('ep-count');
+  var msgWindow = document.getElementById('msg-window');
+  var msgText = document.getElementById('msg-text');
+  var msgMode = document.getElementById('msg-mode');
+  var audio = document.getElementById('audio');
+  var audioPlain = document.getElementById('audio-plain');
+  var voiceEl = null;
+  var isIOS = /iP(hone|ad|od)/.test(navigator.userAgent || '');
+  var se = document.getElementById('se');
+  var staticCanvas = document.getElementById('crt-static');
+  var staticCtx = staticCanvas.getContext('2d');
+
+  var powered = false, speaking = false, typing = false, current = null, currentIndex = -1, baseFrame = 'normal';
+  var soundOn = true;
+  var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  var frameName = 'normal';
+  function setFrame(name){
+    frameName = name;
+    if (FRAMES[name] && front.getAttribute('src') !== FRAMES[name]) front.src = FRAMES[name];
+  }
+  function setState(t){ stateText.textContent = t; opState.textContent = t; }
+
+  /* ---------- blink ---------- */
+  function blinkLoop(){
+    if (powered && !speaking && !typing){
+      setFrame('blinkHalf');
+      setTimeout(function(){ if(!speaking && !typing) setFrame('blink');
+        setTimeout(function(){ if(!speaking && !typing) setFrame('blinkHalf');
+          setTimeout(function(){ if(!speaking && !typing) setFrame(baseFrame); }, 70);
+        }, 150);
+      }, 70);
+    }
+    setTimeout(blinkLoop, 3000 + Math.random()*4000);
+  }
+  setTimeout(blinkLoop, 2500);
+
+  /* ---------- Web Audio (shared ctx for blips + analyser) ---------- */
+  var actx = null, analyser = null;
+  function ensureAudioGraph(){
+    if (actx) { if (actx.state === 'suspended') actx.resume(); return; }
+    var AC = window.AudioContext || window.webkitAudioContext;
+    if (!AC) return;
+    try {
+      actx = new AC();
+      var src = actx.createMediaElementSource(audio);
+      analyser = actx.createAnalyser(); analyser.fftSize = 512;
+      src.connect(analyser); analyser.connect(actx.destination);
+    } catch(e){ actx = null; analyser = null; }
+  }
+  function blip(){
+    if (!soundOn || !actx || reduceMotion) return;
+    try {
+      var t = actx.currentTime;
+      var o = actx.createOscillator(), g = actx.createGain();
+      o.type = 'square';
+      o.frequency.value = 620 + Math.random()*160;
+      g.gain.setValueAtTime(0.0001, t);
+      g.gain.exponentialRampToValueAtTime(0.045, t + 0.006);
+      g.gain.exponentialRampToValueAtTime(0.0001, t + 0.045);
+      o.connect(g); g.connect(actx.destination);
+      o.start(t); o.stop(t + 0.05);
+    } catch(e){}
+  }
+  soundBtn.addEventListener('click', function(){
+    soundOn = !soundOn;
+    soundBtn.textContent = soundOn ? '音：オン' : '音：オフ';
+    if (soundOn) { ensureAudioGraph(); blip(); }
+  });
+
+  /* ---------- waveform meter ---------- */
+  var wctx = wave.getContext('2d');
+  var WAVE_N = 96;
+  var waveData = [];
+  for (var wi = 0; wi < WAVE_N; wi++) waveData.push(0);
+  var waveLevel = 0, waveRAF = null, waveLast = 0, booting = false;
+  var idleWave = (function(){
+    var arr = [], s = 42, env = 0.1;
+    function rnd(){ s = (s * 1103515245 + 12345) % 2147483648; return s / 2147483648; }
+    for (var i = 0; i < WAVE_N; i++){
+      if (i % 17 === 0) env = 0.25 + rnd() * 0.75;
+      if (i % 23 === 11) env = 0.05;
+      arr.push(Math.max(0.03, env * (0.35 + rnd() * 0.65)));
+    }
+    return arr;
+  })();
+  function drawWave(data, active){
+    var dpr = window.devicePixelRatio || 1;
+    var w = wave.clientWidth, h = wave.clientHeight;
+    if (!w || !h) return;
+    var W = Math.round(w * dpr), H = Math.round(h * dpr);
+    if (wave.width !== W || wave.height !== H){ wave.width = W; wave.height = H; }
+    wctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    wctx.clearRect(0, 0, w, h);
+    var cy = h / 2;
+    wctx.strokeStyle = '#2b3a2c'; wctx.lineWidth = 1;
+    wctx.beginPath(); wctx.moveTo(0, cy); wctx.lineTo(w, cy); wctx.stroke();
+    wctx.strokeStyle = active ? '#7fb069' : '#54704c';
+    wctx.lineWidth = 2; wctx.lineCap = 'round';
+    wctx.beginPath();
+    for (var i = 0; i < WAVE_N; i++){
+      var x = (i + 0.5) / WAVE_N * w;
+      var y = Math.max(1, data[i] * (cy - 2));
+      wctx.moveTo(x, cy - y); wctx.lineTo(x, cy + y);
+    }
+    wctx.stroke();
+  }
+  function waveDrawIdle(){ drawWave(idleWave, false); }
+  function waveTick(ts){
+    if (!waveLast) waveLast = ts;
+    if (ts - waveLast >= 28){
+      waveLast = ts;
+      waveData.shift();
+      waveData.push(Math.min(1, booting ? (0.25 + Math.random() * 0.75) : waveLevel));
+      waveLevel *= 0.8;
+    }
+    drawWave(waveData, true);
+    waveRAF = requestAnimationFrame(waveTick);
+  }
+  function waveStart(){
+    if (reduceMotion){ drawWave(waveData, true); return; }
+    if (waveRAF) return;
+    waveLast = 0;
+    waveRAF = requestAnimationFrame(waveTick);
+  }
+  function waveStop(){
+    if (waveRAF) cancelAnimationFrame(waveRAF);
+    waveRAF = null; waveLevel = 0;
+    waveDrawIdle();
+  }
+  function wavePulse(v){ if (v > waveLevel) waveLevel = v; }
+
+  /* ---------- boot ---------- */
+  var staticTimer = null;
+  function runStatic(){
+    var img = staticCtx.createImageData(160,160), d = img.data;
+    for (var i=0;i<d.length;i+=4){ var v = Math.random()*255|0; d[i]=d[i+1]=d[i+2]=v; d[i+3]=70; }
+    staticCtx.putImageData(img,0,0);
+  }
+  function powerOn(after){
+    ensureAudioGraph();
+    if (actx && actx.state === 'suspended'){ try { actx.resume(); } catch(e){} }
+    primePlain();
+    veil.classList.add('hidden');
+    var firePrank = !after && !current && prefs.startupPrank && Math.random() < 0.15;
+    if (reduceMotion){
+      crt.classList.add('on'); powered = true; setState('待機中'); refreshPlayBtn();
+      if (after) after();
+      return;
+    }
+    crt.dataset.boot = 'noise';
+    booting = true; waveStart();
+    try { se.currentTime = 0; se.play().catch(function(){}); } catch(e){}
+    staticTimer = setInterval(runStatic, 90);
+    setTimeout(function(){
+      clearInterval(staticTimer);
+      crt.dataset.boot = 'idle'; crt.classList.add('on'); powered = true;
+      booting = false; waveStop();
+      setState('待機中'); refreshPlayBtn();
+      if (after) after();
+      else if (firePrank) startPrank();
+      else if (!current) playWelcome();
+    }, 1800);
+  }
+  powerBtn.addEventListener('click', function(){ powerOn(null); });
+
+  /* ---------- episodes ---------- */
+  var episodes = (window.EPISODE_INDEX || []);
+  epCount.textContent = episodes.length + ' EPISODES';
+  episodes.forEach(function(ep){
+    var li = document.createElement('li');
+    var b = document.createElement('button');
+    b.type = 'button';
+    var no = document.createElement('span'); no.className = 'no';
+    no.textContent = ep.episodeNumber ? ('#' + ep.episodeNumber) : '—';
+    var t = document.createElement('span'); t.className = 't'; t.textContent = ep.title || ep.episodeKey;
+    var d = document.createElement('span'); d.className = 'd';
+    d.textContent = ep.publishedAt ? ep.publishedAt.slice(0,10) : '';
+    b.appendChild(no); b.appendChild(t); b.appendChild(d);
+    b.addEventListener('click', function(){ selectEpisode(ep, b, true); });
+    li.appendChild(b); epList.appendChild(li);
+    ep._btn = b;
+  });
+
+  function selectEpisode(ep, btn, autoplay){
+    stopAll();
+    current = ep;
+    currentIndex = episodes.indexOf(ep);
+    stage.classList.remove('home'); stage.classList.add('intro');
+    document.body.classList.add('mode-intro');
+    homeBtn.classList.remove('hidden');
+    Array.prototype.forEach.call(epList.querySelectorAll('button'), function(x){ x.classList.remove('selected'); });
+    if (btn) btn.classList.add('selected');
+    epMeta.textContent = (ep.episodeNumber ? ('EPISODE #' + ep.episodeNumber) : 'EPISODE') +
+      (ep.publishedAt ? (' ／ ' + ep.publishedAt.slice(0,10)) : '');
+    epTitle.textContent = ep.title || ep.episodeKey;
+    epLinks.innerHTML = '';
+    function link(href, label, cls){
+      var a = document.createElement('a');
+      a.href = href; a.target = '_blank'; a.rel = 'noopener'; a.textContent = label; a.className = cls;
+      epLinks.appendChild(a);
+    }
+    if (ep.youtubeUrl) link(ep.youtubeUrl, 'YouTubeで聴く', 'yt');
+    if (ep.spotifyUrl) link(ep.spotifyUrl, 'Spotifyで聴く', 'sp');
+    if (ep.noteUrl) link(ep.noteUrl, '制作ノートを読む', 'nt');
+    refreshPlayBtn();
+    var panel = document.getElementById('crt-panel');
+    if (panel) panel.scrollIntoView({ block: 'start' });
+    if (autoplay) startIntro();
+  }
+
+  function refreshPlayBtn(){
+    var shareBtn = document.getElementById('share-btn');
+    if (shareBtn) shareBtn.classList.toggle('hidden', !current);
+    if (!current){
+      playBtn.disabled = !powered;
+      playBtn.textContent = 'あいさつ';
+      return;
+    }
+    playBtn.disabled = false;
+    playBtn.textContent = '紹介する';
+  }
+
+  /* ---------- X PR post (Mobuko picks a topic from the script) ---------- */
+  function weightedLen(s){
+    var n = 0;
+    for (var i = 0; i < s.length; i++){
+      n += /[\u3000-\u9fff\uff00-\uffef]/.test(s[i]) ? 2 : 1;
+    }
+    return n;
+  }
+  function prComment(ep){
+    if (window.PR_TEXTS && window.PR_TEXTS[ep.episodeKey]) return window.PR_TEXTS[ep.episodeKey];
+    var d = (ep.description || '').replace(/\s+/g, '');
+    return '今回の題材は「' + (ep.title || '') + '」です。' +
+      (d ? d.slice(0, 55) + '。' : '') + 'ぜひ聞いてみてください。';
+  }
+  function shareText(ep){
+    var head = '【モブ子のおすすめ】\n';
+    var comment = prComment(ep);
+    var withTitle = head + comment + '\n「' + (ep.title || '') + '」';
+    if (weightedLen(withTitle) <= 250) return withTitle;
+    var noTitle = head + comment;
+    if (weightedLen(noTitle) <= 250) return noTitle;
+    var budget = 250 - weightedLen(head) - 2, out = '';
+    for (var i = 0; i < comment.length; i++){
+      if (weightedLen(out + comment[i]) > budget) break;
+      out += comment[i];
+    }
+    return head + out + '…';
+  }
+  document.getElementById('share-btn').addEventListener('click', function(){
+    if (!current || !current.youtubeUrl) return;
+    var url = 'https://twitter.com/intent/tweet?text=' + encodeURIComponent(shareText(current)) +
+      '&url=' + encodeURIComponent(current.youtubeUrl) +
+      '&hashtags=' + encodeURIComponent('壁ラジ');
+    window.open(url, '_blank', 'noopener');
+  });
+
+  function goHome(){
+    stopAll();
+    current = null; currentIndex = -1;
+    stage.classList.remove('intro'); stage.classList.add('home');
+    document.body.classList.remove('mode-intro');
+    homeBtn.classList.add('hidden');
+    Array.prototype.forEach.call(epList.querySelectorAll('button'), function(x){ x.classList.remove('selected'); });
+    epMeta.textContent = 'EPISODE';
+    epTitle.textContent = '壁ラジ放送局へようこそ';
+    epLinks.innerHTML = '';
+    msgWindow.classList.remove('done');
+    msgMode.textContent = 'TEXT MODE';
+    refreshPlayBtn();
+    if (powered) playWelcome();
+    else msgText.textContent = 'CRTの「▶ 電源を入れる」を押すと、モブ子があいさつします。エピソード紹介はアーカイブから聞きたい回を選んでください。';
+    window.scrollTo(0, 0);
+    stage.scrollTop = 0;
+  }
+  homeBtn.addEventListener('click', goHome);
+
+  function goNext(){
+    if (currentIndex < 0 || currentIndex >= episodes.length - 1) return;
+    var nx = episodes[currentIndex + 1];
+    selectEpisode(nx, nx._btn, true);
+    if (nx._btn) nx._btn.scrollIntoView({ block: 'nearest' });
+  }
+  nextBtn.addEventListener('click', goNext);
+  document.getElementById('list-btn').addEventListener('click', function(){
+    var a = document.querySelector('.archive');
+    if (a) a.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  });
+
+  function startIntro(){
+    if (!current) return;
+    if (!powered){ powerOn(function(){ startIntro(); }); return; }
+    if (current.introAudio){ playVoice(current.introAudio, '紹介中', { text: prComment(current) }); return; }
+    if (!current.description){
+      typeText('この回は台本に紹介文（Episode Description）が未設定のため、紹介はありません。');
+      return;
+    }
+    typeText(current.description);
+  }
+  playBtn.addEventListener('click', function(){
+    if (current) startIntro(); else playWelcome();
+  });
+
+  /* ---------- typewriter text mode: paged game-style window ---------- */
+  var WELCOME_TEXT = '壁ラジへようこそ。ここは「バ美おじとLLMの壁打ち雑談ラジオ」のエピソード紹介ページです。アーカイブから聞きたい回を選ぶと、わたし、モブ子が紹介します。下には公式サイトやYouTube、Spotify、LINEスタンプへのリンク集もあります。';
+  var DEKO_LEFT_TEXT = 'あわわ、まだ近すぎます……。前回のでこモード、そのまま残ってしまったようです。設定の「表示」で「通常」に戻せます。……このままでも、いいんですけど。';
+  function playWelcome(){
+    if (!powered || current) return;
+    if (crt.dataset.portraitMode === 'forehead'){ typeText(DEKO_LEFT_TEXT, 'あいさつ中'); return; }
+    playVoice('intros/welcome.mp3', 'あいさつ中', {
+      text: WELCOME_TEXT,
+      onfail: function(){ typeText(WELCOME_TEXT, 'あいさつ中'); }
+    });
+  }
+  var typeTimer = null, mouthTimer = null, waitTimer = null, typeState = null;
+  var MOUTH_SEQ = ['small','close','big','close','small','close'];
+  var msgClone = document.createElement('div');
+  msgClone.className = 'msg-text';
+  msgClone.style.cssText = 'position:absolute;left:0;top:0;height:auto;overflow:visible;visibility:hidden;pointer-events:none;';
+  msgWindow.appendChild(msgClone);
+
+  function computePages(full){
+    var maxH = msgText.clientHeight;
+    msgClone.style.width = msgText.clientWidth + 'px';
+    var pages = [], start = 0;
+    msgClone.textContent = '';
+    for (var i = 0; i < full.length; i++){
+      msgClone.textContent = full.slice(start, i + 1);
+      if (msgClone.scrollHeight > maxH + 2 && i > start){
+        pages.push(full.slice(start, i));
+        start = i;
+        msgClone.textContent = full.charAt(i);
+      }
+    }
+    pages.push(full.slice(start));
+    return pages;
+  }
+  function startMouth(){
+    stopMouth();
+    var mi = 0;
+    mouthTimer = setInterval(function(){
+      setFrame(MOUTH_SEQ[mi % MOUTH_SEQ.length]); mi++;
+    }, 130);
+  }
+  function stopMouth(){
+    if (mouthTimer) clearInterval(mouthTimer);
+    mouthTimer = null;
+  }
+  function stopTyping(finished){
+    if (typeTimer) clearTimeout(typeTimer);
+    if (waitTimer) clearTimeout(waitTimer);
+    typeTimer = waitTimer = null;
+    stopMouth();
+    typing = false;
+    waveStop();
+    setFrame(baseFrame);
+    msgWindow.classList.remove('wait');
+    stationState.classList.remove('live'); stationStateText.textContent = 'STATION READY';
+    stopBtn.disabled = true;
+    if (powered) setState('待機中');
+    if (finished && typeState){
+      msgText.textContent = typeState.pages[typeState.page];
+      msgWindow.classList.add('done');
+      if (currentIndex >= 0 && currentIndex < episodes.length - 1) nextBtn.classList.remove('hidden');
+    }
+    refreshPlayBtn();
+  }
+  function typeText(full, stateLabel){
+    stopAll();
+    msgWindow.classList.remove('done');
+    msgWindow.classList.remove('wait');
+    msgMode.textContent = 'TEXT MODE';
+    if (reduceMotion){
+      typing = false;
+      msgText.style.overflowY = 'auto';
+      msgText.textContent = full;
+      msgWindow.classList.add('done');
+      return;
+    }
+    msgText.style.overflowY = 'hidden';
+    typing = true;
+    typeState = { full: full, pages: computePages(full), page: 0, i: 0, waiting: false };
+    waveStart();
+    setState(stateLabel || '紹介中');
+    stationState.classList.add('live'); stationStateText.textContent = 'NOW INTRODUCING';
+    stopBtn.disabled = false; playBtn.disabled = true;
+    typePage();
+  }
+  function typePage(){
+    var st = typeState;
+    st.i = 0; st.waiting = false;
+    msgWindow.classList.remove('wait');
+    msgText.textContent = '';
+    startMouth();
+    tickType();
+  }
+  function tickType(){
+    if (!typing || !typeState) return;
+    var st = typeState, pageText = st.pages[st.page];
+    if (st.i >= pageText.length){ finishPage(); return; }
+    var ch = pageText.charAt(st.i); st.i++;
+    msgText.textContent = pageText.slice(0, st.i);
+    if (ch !== ' ' && ch !== '　' && ch !== '\n'){
+      blip();
+      wavePulse(('、。，．'.indexOf(ch) >= 0) ? 0.35 : 0.55 + Math.random() * 0.45);
+    }
+    var delay = 60;
+    if ('、。，．'.indexOf(ch) >= 0) delay = 220;
+    if ('。！？'.indexOf(ch) >= 0) delay = 480;
+    if (ch === '\n') delay = 260;
+    typeTimer = setTimeout(tickType, delay);
+  }
+  function finishPage(){
+    var st = typeState;
+    if (st.page >= st.pages.length - 1){ stopTyping(true); return; }
+    st.waiting = true;
+    stopMouth();
+    setFrame(baseFrame);
+    msgWindow.classList.add('wait');
+    waitTimer = setTimeout(advancePage, 1100);
+  }
+  function advancePage(){
+    if (!typing || !typeState || !typeState.waiting) return;
+    if (waitTimer) clearTimeout(waitTimer);
+    waitTimer = null;
+    typeState.page++;
+    typePage();
+  }
+  function completePage(){
+    if (!typing || !typeState || typeState.waiting) return;
+    if (typeTimer) clearTimeout(typeTimer);
+    var st = typeState;
+    msgText.textContent = st.pages[st.page];
+    st.i = st.pages[st.page].length;
+    finishPage();
+  }
+  msgWindow.addEventListener('click', function(){
+    if (typing && typeState){
+      if (typeState.waiting) advancePage(); else completePage();
+      return;
+    }
+    if (msgWindow.classList.contains('done')) goNext();
+  });
+
+  /* ---------- voice mode (intro MP3 / lip-sync test) ---------- */
+  var rafId = null, seqTimer = null, lastMouth = 0, lastLoud = 0;
+  var mouthSeq = ['close','small','big','small'], mouthIdx = 0;
+  function mouthLoop(){
+    if (!speaking) return;
+    if (analyser){
+      var buf = new Uint8Array(analyser.fftSize);
+      analyser.getByteTimeDomainData(buf);
+      var sum = 0; for (var i=0;i<buf.length;i++){ var v=(buf[i]-128)/128; sum += v*v; }
+      var rms = Math.sqrt(sum/buf.length), now = performance.now();
+      if (rms >= 0.015) lastLoud = now;
+      if (lastLoud && now - lastLoud > 1200){ startFallbackMouth(); return; }
+      wavePulse(Math.min(1, rms * 3.4));
+      if (now - lastMouth > 55){
+        lastMouth = now;
+        setFrame(rms < 0.015 ? 'close' : rms < 0.06 ? 'small' : rms < 0.14 ? 'medium' : 'big');
+      }
+      rafId = requestAnimationFrame(mouthLoop);
+    }
+  }
+  function startFallbackMouth(){
+    if (seqTimer) return;
+    seqTimer = setInterval(function(){
+      if (!speaking) return;
+      setFrame(mouthSeq[mouthIdx % mouthSeq.length]); mouthIdx++;
+      wavePulse(0.3 + Math.random() * 0.6);
+    }, 130);
+  }
+  /* iOS unlock: play a silent clip on the plain (non-WebAudio) element once
+     inside the tap, so timer-delayed playback later is allowed. A real file
+     at volume 0 does NOT work — iOS ignores element volume — so use silence. */
+  var SILENT_WAV = 'data:audio/wav;base64,UklGRmQGAABXQVZFZm10IBAAAAABAAEAQB8AAIA+AAACABAAZGF0YUAGAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA';
+  var plainPrimed = false;
+  function primePlain(){
+    if (plainPrimed) return;
+    plainPrimed = true;
+    try {
+      audioPlain.src = SILENT_WAV;
+      var p = audioPlain.play();
+      if (p && p.then) p.then(function(){
+        if (voiceEl === audioPlain) return;
+        audioPlain.pause();
+        try { audioPlain.currentTime = 0; } catch(e){}
+      }).catch(function(){});
+    } catch(e){}
+  }
+  function playVoice(src, label, opts){
+    opts = opts || {};
+    ensureAudioGraph();
+    if (actx && actx.state === 'suspended'){ try { actx.resume(); } catch(e){} }
+    stopAll();
+    speaking = true; lastLoud = performance.now();
+    msgMode.textContent = 'VOICE MODE';
+    msgWindow.classList.remove('done');
+    if (opts.text){
+      msgText.style.overflowY = 'auto';
+      msgText.textContent = opts.text;
+    }
+    /* iOS: Web Audio output can be muted (silent mode / in-app webview) even
+       while playback progresses, so use the plain media element there and
+       drive the mouth with the fallback sequence. Elsewhere prefer the
+       analyser graph when the context is actually running. */
+    var useGraph = !isIOS && !!(actx && analyser && actx.state === 'running');
+    voiceEl = useGraph ? audio : audioPlain;
+    voiceEl.src = src;
+    voiceEl.play().then(function(){
+      waveStart();
+      setState(label || '紹介中');
+      stationState.classList.add('live'); stationStateText.textContent = 'NOW INTRODUCING';
+      stopBtn.disabled = false; playBtn.disabled = true;
+      if (useGraph && analyser) mouthLoop(); else startFallbackMouth();
+    }).catch(function(){
+      speaking = false;
+      if (opts.onfail){ opts.onfail(); return; }
+      setState('再生できませんでした');
+    });
+  }
+  function onVoiceEnded(){
+    var wasEpisode = !!current;
+    stopAll();
+    msgWindow.classList.add('done');
+    if (wasEpisode && currentIndex >= 0 && currentIndex < episodes.length - 1) nextBtn.classList.remove('hidden');
+  }
+  audio.addEventListener('ended', onVoiceEnded);
+  audioPlain.addEventListener('ended', onVoiceEnded);
+
+  function stopAll(){
+    nextBtn.classList.add('hidden');
+    msgWindow.classList.remove('wait');
+    if (typing) { typing = false; }
+    if (typeTimer) clearTimeout(typeTimer);
+    if (waitTimer) clearTimeout(waitTimer);
+    if (mouthTimer) clearInterval(mouthTimer);
+    typeTimer = waitTimer = mouthTimer = null;
+    [audio, audioPlain].forEach(function(el){
+      try {
+        if (!el.paused) el.pause();
+        if (el.getAttribute('src')) { el.removeAttribute('src'); el.load(); }
+      } catch(e){}
+    });
+    voiceEl = null;
+    speaking = false;
+    if (rafId) cancelAnimationFrame(rafId);
+    if (seqTimer) clearInterval(seqTimer);
+    seqTimer = null;
+    setFrame(baseFrame);
+    booting = false;
+    waveStop();
+    stationState.classList.remove('live'); stationStateText.textContent = 'STATION READY';
+    stopBtn.disabled = true;
+    if (powered) setState('待機中');
+    refreshPlayBtn();
+  }
+  stopBtn.addEventListener('click', function(){ stopAll(); if (typing === false && typeState) msgWindow.classList.remove('done'); });
+  document.getElementById('test-btn').addEventListener('click', function(){
+    if (!powered){ powerOn(function(){ playVoice('assets/sfx/lipsync-test.wav', '同期テスト中'); }); return; }
+    playVoice('assets/sfx/lipsync-test.wav', '同期テスト中');
+  });
+
+  /* ---------- costume switching (preload all frames, then swap; failure keeps current) ---------- */
+  var costumeVersion = 0, requestedCostume = null;
+  var assetNote = document.getElementById('asset-note');
+  function applyCostume(id, initial){
+    if (!COSTUMES[id]) return;
+    if (id === costume && !initial) return;
+    if (requestedCostume === id) return;
+    requestedCostume = id;
+    var version = ++costumeVersion;
+    var failed = false;
+    var loads = Object.keys(FRAME_FILES).map(function(k){
+      return new Promise(function(res){
+        var i = new Image();
+        i.onload = function(){ res(); };
+        i.onerror = function(){ failed = true; res(); };
+        i.src = COSTUMES[id].dir + FRAME_FILES[k];
+      });
+    });
+    Promise.all(loads).then(function(){
+      if (version !== costumeVersion) return;
+      requestedCostume = null;
+      if (failed){
+        assetNote.textContent = '衣装の読み込みに失敗しました。直前の表示を維持しています。';
+        var sel = document.getElementById('set-costume'); if (sel) sel.value = costume;
+        return;
+      }
+      costume = id;
+      Object.keys(FRAME_FILES).forEach(function(k){ FRAMES[k] = COSTUMES[id].dir + FRAME_FILES[k]; });
+      crt.dataset.costume = id;
+      front.alt = 'モブ子（' + COSTUMES[id].label + '）';
+      setFrame(frameName || 'normal');
+      assetNote.textContent = 'モブ子v2 / ' + COSTUMES[id].label;
+      if (!initial){ prefs.costumeId = id; savePrefs(); }
+    });
+  }
+
+  /* ---------- portrait (forehead / deko) mode + startup deko lottery ---------- */
+  var prankActive = false, prankTimer = null, prankCancelled = false;
+  function cancelPrank(){
+    prankCancelled = true; prankActive = false;
+    if (prankTimer) clearTimeout(prankTimer);
+    prankTimer = null;
+  }
+  function setPortraitMode(mode){
+    crt.dataset.portraitMode = mode;
+    var sel = document.getElementById('set-portrait'); if (sel) sel.value = mode;
+    prefs.portraitMode = mode; savePrefs();
+  }
+  function startPrank(){
+    prankActive = true; prankCancelled = false;
+    crt.dataset.portraitMode = 'forehead';
+    typeText('あわわっ！ 近すぎます！ すぐ直します！💦', '起動でこ抽選');
+    prankTimer = setTimeout(function(){
+      prankTimer = null;
+      if (!prankActive || prankCancelled) return;
+      prankActive = false;
+      if (prefs.startupPrankMode === 'auto'){
+        crt.dataset.boot = 'noise';
+        try { se.currentTime = 0; se.play().catch(function(){}); } catch(e){}
+        setTimeout(function(){ if (crt.dataset.boot === 'noise') crt.dataset.boot = 'idle'; }, 650);
+        crt.dataset.portraitMode = prefs.portraitMode;
+      } else {
+        /* manual release (default): the drawn forehead stays as the deko selection until set back */
+        setPortraitMode('forehead');
+        if (!current) typeText('……戻りませんね💦 設定の「表示」を「通常」に戻してください。', 'でこモード');
+      }
+    }, 4000);
+  }
+
+  /* ---------- settings panel ---------- */
+  var settingsBtn = document.getElementById('settings-btn');
+  var settingsPanel = document.getElementById('settings-panel');
+  settingsBtn.addEventListener('click', function(){ settingsPanel.classList.toggle('hidden'); });
+  var costumeSel = document.getElementById('set-costume');
+  var portraitSel = document.getElementById('set-portrait');
+  var randomChk = document.getElementById('set-random');
+  var prankChk = document.getElementById('set-prank');
+  var prankModeSel = document.getElementById('set-prank-mode');
+  costumeSel.value = costume;
+  portraitSel.value = prefs.portraitMode;
+  randomChk.checked = !!prefs.startupRandom;
+  prankChk.checked = !!prefs.startupPrank;
+  prankModeSel.value = prefs.startupPrankMode;
+  crt.dataset.costume = costume;
+  crt.dataset.portraitMode = prefs.portraitMode;
+  front.alt = 'モブ子（' + COSTUMES[costume].label + '）';
+  if (front.getAttribute('src') !== FRAMES.normal) front.src = FRAMES.normal;
+  assetNote.textContent = 'モブ子v2 / ' + COSTUMES[costume].label + (costumeDrawnRandom ? '（起動ランダムで選択）' : '');
+  costumeSel.addEventListener('change', function(){ applyCostume(costumeSel.value, false); });
+  portraitSel.addEventListener('change', function(){
+    cancelPrank();
+    setPortraitMode(portraitSel.value);
+    if (portraitSel.value === 'forehead' && powered && !current){
+      typeText('あれ？ 表示がおかしいようです💦（通常表示へ戻すまで、でこモードです）', 'でこモード');
+    }
+  });
+  randomChk.addEventListener('change', function(){ prefs.startupRandom = randomChk.checked; savePrefs(); });
+  prankChk.addEventListener('change', function(){ prefs.startupPrank = prankChk.checked; savePrefs(); });
+  prankModeSel.addEventListener('change', function(){ prefs.startupPrankMode = prankModeSel.value; savePrefs(); });
+
+  /* initial state: home, no selection (big CRT waiting) */
+  waveDrawIdle();
+})();
+</script>
+</body>
+</html>
