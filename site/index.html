@@ -389,6 +389,7 @@
   <footer>壁ラジ放送局（試作）— 紹介音声は、モブ子が各エピソードの台本から題材を1つ選んだPR文を読み上げています。掲載は公開が確認できたエピソードのみです。</footer>
 
 <audio id="audio" preload="none"></audio>
+<audio id="audio-plain" preload="none"></audio>
 <audio id="se" preload="auto" src="assets/sfx/crt-tuning-v1.wav"></audio>
 <script src="episode-index.js"></script>
 <script src="pr-texts.js"></script>
@@ -462,6 +463,9 @@
   var msgText = document.getElementById('msg-text');
   var msgMode = document.getElementById('msg-mode');
   var audio = document.getElementById('audio');
+  var audioPlain = document.getElementById('audio-plain');
+  var voiceEl = null;
+  var isIOS = /iP(hone|ad|od)/.test(navigator.userAgent || '');
   var se = document.getElementById('se');
   var staticCanvas = document.getElementById('crt-static');
   var staticCtx = staticCanvas.getContext('2d');
@@ -595,6 +599,8 @@
   }
   function powerOn(after){
     ensureAudioGraph();
+    if (actx && actx.state === 'suspended'){ try { actx.resume(); } catch(e){} }
+    primePlain();
     veil.classList.add('hidden');
     var firePrank = !after && !current && prefs.startupPrank && Math.random() < 0.15;
     if (reduceMotion){
@@ -924,9 +930,28 @@
       wavePulse(0.3 + Math.random() * 0.6);
     }, 130);
   }
+  /* iOS unlock: play the plain (non-WebAudio) element once inside the tap,
+     muted, so timer-delayed playback later is allowed and audible. */
+  var plainPrimed = false;
+  function primePlain(){
+    if (plainPrimed) return;
+    plainPrimed = true;
+    try {
+      audioPlain.src = 'intros/welcome.mp3';
+      audioPlain.volume = 0;
+      var p = audioPlain.play();
+      if (p && p.then) p.then(function(){
+        if (voiceEl === audioPlain){ audioPlain.volume = 1; return; }
+        audioPlain.pause();
+        try { audioPlain.currentTime = 0; } catch(e){}
+        audioPlain.volume = 1;
+      }).catch(function(){ audioPlain.volume = 1; });
+    } catch(e){ audioPlain.volume = 1; }
+  }
   function playVoice(src, label, opts){
     opts = opts || {};
     ensureAudioGraph();
+    if (actx && actx.state === 'suspended'){ try { actx.resume(); } catch(e){} }
     stopAll();
     speaking = true; lastLoud = performance.now();
     msgMode.textContent = 'VOICE MODE';
@@ -935,25 +960,33 @@
       msgText.style.overflowY = 'auto';
       msgText.textContent = opts.text;
     }
-    audio.src = src;
-    audio.play().then(function(){
+    /* iOS: Web Audio output can be muted (silent mode / in-app webview) even
+       while playback progresses, so use the plain media element there and
+       drive the mouth with the fallback sequence. Elsewhere prefer the
+       analyser graph when the context is actually running. */
+    var useGraph = !isIOS && !!(actx && analyser && actx.state === 'running');
+    voiceEl = useGraph ? audio : audioPlain;
+    voiceEl.src = src;
+    voiceEl.play().then(function(){
       waveStart();
       setState(label || '紹介中');
       stationState.classList.add('live'); stationStateText.textContent = 'NOW INTRODUCING';
       stopBtn.disabled = false; playBtn.disabled = true;
-      if (analyser) mouthLoop(); else startFallbackMouth();
+      if (useGraph && analyser) mouthLoop(); else startFallbackMouth();
     }).catch(function(){
       speaking = false;
       if (opts.onfail){ opts.onfail(); return; }
       setState('再生できませんでした');
     });
   }
-  audio.addEventListener('ended', function(){
+  function onVoiceEnded(){
     var wasEpisode = !!current;
     stopAll();
     msgWindow.classList.add('done');
     if (wasEpisode && currentIndex >= 0 && currentIndex < episodes.length - 1) nextBtn.classList.remove('hidden');
-  });
+  }
+  audio.addEventListener('ended', onVoiceEnded);
+  audioPlain.addEventListener('ended', onVoiceEnded);
 
   function stopAll(){
     nextBtn.classList.add('hidden');
@@ -963,8 +996,13 @@
     if (waitTimer) clearTimeout(waitTimer);
     if (mouthTimer) clearInterval(mouthTimer);
     typeTimer = waitTimer = mouthTimer = null;
-    if (!audio.paused) audio.pause();
-    if (audio.getAttribute('src')) { audio.removeAttribute('src'); audio.load(); }
+    [audio, audioPlain].forEach(function(el){
+      try {
+        if (!el.paused) el.pause();
+        if (el.getAttribute('src')) { el.removeAttribute('src'); el.load(); }
+      } catch(e){}
+    });
+    voiceEl = null;
     speaking = false;
     if (rafId) cancelAnimationFrame(rafId);
     if (seqTimer) clearInterval(seqTimer);
