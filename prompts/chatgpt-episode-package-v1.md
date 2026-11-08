@@ -224,7 +224,7 @@ note companionをskipして構いません。
 
 1. 最初に`EPISODE_KEY: <episode-key>`を1行出力
 2. `FILE: episodes/<episode-key>/README.md`と書き、その直後に内容をMarkdownコードブロックで出力
-3. 同様に`script.md`と`production.json`を出力
+3. 同様に`script.md`と`production.json`を出力する。`script.md`全体をチャットで囲むときは外側をバッククォート4個のMarkdownコードブロックにし、各発話の内側はバッククォート3個のJSONコードブロックにする。ファイルへ保存する本文には外側の囲いを含めない。
 4. note companion対象なら`FILE: notes/<episode-key>/article.md`、`FILE: notes/<episode-key>/article.html`、`FILE: notes/<episode-key>/index.html`も続けて出力
 5. 対象外なら`NOTE_COMPANION: skipped`を1行出力
 6. 指定ファイル以外の候補、解説、別案を追加しない
