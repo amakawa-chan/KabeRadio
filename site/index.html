@@ -282,6 +282,7 @@
         <button class="primary" id="play-btn" type="button" disabled>紹介する</button>
         <button id="stop-btn" type="button" disabled>止める</button>
         <button id="sound-btn" type="button">音：オン</button>
+        <button id="mode-btn" type="button">紹介：ボイス</button>
         <button id="settings-btn" type="button">⚙ 設定</button>
         <button id="share-btn" type="button" class="hidden">Xでポスト</button>
         <canvas class="wave" id="wave" height="30" aria-hidden="true"></canvas>
@@ -407,7 +408,7 @@
     close: 'talk_close.webp', small: 'talk_small.webp', medium: 'talk_medium.webp', big: 'talk_big.webp'
   };
   var PREF_KEY = 'mobuko-station-prefs';
-  var prefs = { costumeId: 'maid', portraitMode: 'normal', startupRandom: true, startupPrank: true, startupPrankMode: 'manual' };
+  var prefs = { costumeId: 'maid', portraitMode: 'normal', startupRandom: true, startupPrank: true, startupPrankMode: 'manual', introMode: 'voice' };
   try {
     var savedPrefs = JSON.parse(localStorage.getItem(PREF_KEY) || 'null');
     if (savedPrefs) Object.keys(prefs).forEach(function(k){ if (savedPrefs[k] !== undefined) prefs[k] = savedPrefs[k]; });
@@ -416,6 +417,7 @@
   if (!COSTUMES[prefs.costumeId]) prefs.costumeId = 'maid';
   if (prefs.portraitMode !== 'forehead') prefs.portraitMode = 'normal';
   if (prefs.startupPrankMode !== 'auto') prefs.startupPrankMode = 'manual';
+  if (prefs.introMode !== 'pico') prefs.introMode = 'voice';
 
   /* startup costume: drawn once per browser session when random is on
      (the Office original draws on new process start only, never on reload) */
@@ -527,6 +529,14 @@
     soundBtn.textContent = soundOn ? '音：オン' : '音：オフ';
     if (soundOn) { ensureAudioGraph(); blip(); }
   });
+  var modeBtn = document.getElementById('mode-btn');
+  function refreshModeBtn(){ modeBtn.textContent = prefs.introMode === 'pico' ? '紹介：ぴこぴこ' : '紹介：ボイス'; }
+  modeBtn.addEventListener('click', function(){
+    prefs.introMode = prefs.introMode === 'pico' ? 'voice' : 'pico';
+    savePrefs(); refreshModeBtn();
+    if (soundOn) blip();
+  });
+  refreshModeBtn();
 
   /* ---------- waveform meter ---------- */
   var wctx = wave.getContext('2d');
@@ -753,7 +763,7 @@
     if (!current) return;
     if (!powered){ powerOn(function(){ startIntro(); }); return; }
     if (current.introAudio){
-      if (soundOn){ playVoice(current.introAudio, '紹介中', { text: prComment(current) }); }
+      if (prefs.introMode === 'voice' && soundOn){ playVoice(current.introAudio, '紹介中', { text: prComment(current) }); }
       else { typeText(prComment(current), '紹介中'); }
       return;
     }
@@ -773,7 +783,7 @@
   function playWelcome(){
     if (!powered || current) return;
     if (crt.dataset.portraitMode === 'forehead'){ typeText(DEKO_LEFT_TEXT, 'あいさつ中'); return; }
-    if (!soundOn){ typeText(WELCOME_TEXT, 'あいさつ中'); return; }
+    if (prefs.introMode !== 'voice' || !soundOn){ typeText(WELCOME_TEXT, 'あいさつ中'); return; }
     playVoice('intros/welcome.mp3', 'あいさつ中', {
       text: WELCOME_TEXT,
       onfail: function(){ typeText(WELCOME_TEXT, 'あいさつ中'); }
