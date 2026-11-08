@@ -49,6 +49,30 @@
  },
  {
   "schemaVersion": 1,
+  "episodeKey": "mobumi-audit-room",
+  "episodeNumber": null,
+  "title": "モブ美監査室：趣味の規模が合っていない",
+  "description": "久しぶりにHost席へ戻ったモブ美が活動状況を確認。壁ラジ24、アーカイブス、多言語の別企画が次々に発覚し、監査そのものまで一本の番組になってしまう。",
+  "introAudio": null,
+  "youtubeUrl": "https://www.youtube.com/watch?v=4JzH9RKJ0ko",
+  "spotifyUrl": null,
+  "noteUrl": null,
+  "publishedAt": "2026-10-29T10:28:17.683225+00:00"
+ },
+ {
+  "schemaVersion": 1,
+  "episodeKey": "butterfly-lifespan-human-longevity",
+  "episodeNumber": null,
+  "title": "蝶々は短命なのか、人間が長生きすぎるのか？",
+  "description": "蝶々は羽化するのも死ぬのも早い。そんな疑問から、成虫と幼虫の時間の数え方、セミの地中生活、そして人間の長寿へと話が移っていった。",
+  "introAudio": null,
+  "youtubeUrl": "https://www.youtube.com/watch?v=idxtkdqtP3M",
+  "spotifyUrl": null,
+  "noteUrl": "https://amakawa-chan.github.io/KabeRadio/notes/butterfly-lifespan-human-longevity/",
+  "publishedAt": "2026-10-29T10:20:09.348399+00:00"
+ },
+ {
+  "schemaVersion": 1,
   "episodeKey": "vivant-drum-mirishira-hayashibara",
   "episodeNumber": null,
   "title": "【ミリしら】VIVANTのドラムを考察したら、エヴァになった",
