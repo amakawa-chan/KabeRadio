@@ -13,7 +13,7 @@
   "youtube": {
     "videoId": "idxtkdqtP3M",
     "url": "https://www.youtube.com/watch?v=idxtkdqtP3M",
-    "actualPrivacy": "private",
+    "actualPrivacy": "public",
     "status": "uploaded",
     "uploadedAt": "2026-10-29T10:20:09.348399+00:00",
     "sha256": "e01d5f26929a2ccedade731f8e946999c02329ab6fcedac2fe91a0dc58572e61",
