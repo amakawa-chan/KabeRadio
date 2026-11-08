@@ -765,8 +765,10 @@
 
   /* ---------- typewriter text mode: paged game-style window ---------- */
   var WELCOME_TEXT = '壁ラジへようこそ。ここは「バ美おじとLLMの壁打ち雑談ラジオ」のエピソード紹介ページです。アーカイブから聞きたい回を選ぶと、わたし、モブ子が紹介します。下には公式サイトやYouTube、Spotify、LINEスタンプへのリンク集もあります。';
+  var DEKO_LEFT_TEXT = 'あわわ、まだ近すぎます……。前回のでこモード、そのまま残ってしまったようです。設定の「表示」で「通常」に戻せます。……このままでも、いいんですけど。';
   function playWelcome(){
     if (!powered || current) return;
+    if (crt.dataset.portraitMode === 'forehead'){ typeText(DEKO_LEFT_TEXT, 'あいさつ中'); return; }
     playVoice('intros/welcome.mp3', 'あいさつ中', {
       text: WELCOME_TEXT,
       onfail: function(){ typeText(WELCOME_TEXT, 'あいさつ中'); }
