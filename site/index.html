@@ -684,6 +684,7 @@
     return n;
   }
   function prComment(ep){
+    if (ep.prText) return ep.prText;
     if (window.PR_TEXTS && window.PR_TEXTS[ep.episodeKey]) return window.PR_TEXTS[ep.episodeKey];
     var d = (ep.description || '').replace(/\s+/g, '');
     return '今回の題材は「' + (ep.title || '') + '」です。' +
@@ -747,6 +748,7 @@
     if (!current) return;
     if (!powered){ powerOn(function(){ startIntro(); }); return; }
     if (current.introAudio){ playVoice(current.introAudio, '紹介中', { text: prComment(current) }); return; }
+    if (current.prText){ typeText(current.prText); return; }
     if (!current.description){
       typeText('この回は台本に紹介文（Episode Description）が未設定のため、紹介はありません。');
       return;
