@@ -752,7 +752,11 @@
   function startIntro(){
     if (!current) return;
     if (!powered){ powerOn(function(){ startIntro(); }); return; }
-    if (current.introAudio){ playVoice(current.introAudio, '紹介中', { text: prComment(current) }); return; }
+    if (current.introAudio){
+      if (soundOn){ playVoice(current.introAudio, '紹介中', { text: prComment(current) }); }
+      else { typeText(prComment(current), '紹介中'); }
+      return;
+    }
     if (!current.description){
       typeText('この回は台本に紹介文（Episode Description）が未設定のため、紹介はありません。');
       return;
@@ -769,6 +773,7 @@
   function playWelcome(){
     if (!powered || current) return;
     if (crt.dataset.portraitMode === 'forehead'){ typeText(DEKO_LEFT_TEXT, 'あいさつ中'); return; }
+    if (!soundOn){ typeText(WELCOME_TEXT, 'あいさつ中'); return; }
     playVoice('intros/welcome.mp3', 'あいさつ中', {
       text: WELCOME_TEXT,
       onfail: function(){ typeText(WELCOME_TEXT, 'あいさつ中'); }
