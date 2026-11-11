@@ -3,6 +3,12 @@
 バ美おじとLLMの壁打ち雑談ラジオ「壁ラジ / KabeRadio」。
 番組のお知らせ、動画、制作の裏側はこちらから。
 
+## モブ子の放送局 — 公式サイト
+
+[モブ子の放送局](https://amakawa-chan.github.io/KabeRadio/site/)
+
+モブ子が各エピソードを紹介する公式サイトです。紹介は音声でも、文字でも聞けます。
+
 ## X — 壁ラジ公式
 
 [壁ラジ公式 @kaberadi_mobuko](https://x.com/kaberadi_mobuko)

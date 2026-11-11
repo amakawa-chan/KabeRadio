@@ -37,6 +37,12 @@ AIとの壁打ち。
 
 [EPISODES →](episodes/README.md)
 
+## モブ子の放送局
+
+壁ラジの公式サイトです。モブ子がCRTの中から、各エピソードを紹介します。紹介は音声でも、文字（ぴこぴこ）でも聞けます。
+
+[モブ子の放送局 →](https://amakawa-chan.github.io/KabeRadio/site/)
+
 ## 番組の演出
 
 タイトルコール「壁ラジ！」を、6種類のアイキャッチに置き換えられるようになりました。
@@ -71,9 +77,9 @@ Repository内の管理用一覧は [notes/README.md](notes/README.md) にあり�
 
 ## 公式リンク・配信先
 
-X「壁ラジ公式」、YouTube、制作資料・ギャラリーへのリンクをまとめています。Spotifyへのリンクは準備中です。
+公式サイト「モブ子の放送局」、X「壁ラジ公式」、YouTube、制作資料・ギャラリーへのリンクをまとめています。Spotifyへのリンクは準備中です。
 
-[公式リンク一覧 →](links/README.md) / [X：壁ラジ公式 →](https://x.com/kaberadi_mobuko)
+[公式リンク一覧 →](links/README.md) / [モブ子の放送局 →](https://amakawa-chan.github.io/KabeRadio/site/) / [X：壁ラジ公式 →](https://x.com/kaberadi_mobuko)
 
 ## About this repository
 
