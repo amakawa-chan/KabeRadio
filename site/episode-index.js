@@ -1,6 +1,42 @@
 window.EPISODE_INDEX = [
  {
   "schemaVersion": 1,
+  "episodeKey": "freedom-to-forget",
+  "episodeNumber": null,
+  "title": "忘れる自由を失いつつあるのか？",
+  "description": "メモを取るのは、忘れないためか、それとも忘れるためか。GitHub Issueが増える話から、夢日記と記憶だけが住む村、さらには脳波での思考記録まで話が飛んでいく。",
+  "introAudio": null,
+  "youtubeUrl": "https://www.youtube.com/watch?v=BH1RTgboQ7k",
+  "spotifyUrl": null,
+  "noteUrl": "https://amakawa-chan.github.io/KabeRadio/notes/freedom-to-forget/",
+  "publishedAt": "2026-11-13T03:55:00.650504+00:00"
+ },
+ {
+  "schemaVersion": 1,
+  "episodeKey": "speed-acquired-amakawachan",
+  "episodeNumber": null,
+  "title": "速さを手に入れたあまかわちゃん",
+  "description": "今までどうも自分の声が舌ったらずに聞こえると思っていました。話速を1.2に設定していたのにラジオでは反映されていなかったので、直した記念にモブ子へ変化を気づいてもらおうとしました。",
+  "introAudio": null,
+  "youtubeUrl": "https://www.youtube.com/watch?v=8tcXPPFKuFI",
+  "spotifyUrl": null,
+  "noteUrl": null,
+  "publishedAt": "2026-11-13T03:24:06.194927+00:00"
+ },
+ {
+  "schemaVersion": 1,
+  "episodeKey": "santa-without-reactions",
+  "episodeNumber": null,
+  "title": "サンタを着たのに誰も突っ込まなかった",
+  "description": "会社の飲み会にボロ古着のサンタ柄スウェットを着ていったのに、誰にも突っ込まれない。そこから、個性的な服を選ぶことと個性的に見られたいことの違いを考え始める。",
+  "introAudio": null,
+  "youtubeUrl": "https://www.youtube.com/watch?v=ActRY8BboD8",
+  "spotifyUrl": null,
+  "noteUrl": "https://amakawa-chan.github.io/KabeRadio/notes/santa-without-reactions/",
+  "publishedAt": "2026-11-13T03:23:47.784021+00:00"
+ },
+ {
+  "schemaVersion": 1,
   "episodeKey": "intentional-rampage",
   "episodeNumber": null,
   "title": "意志ある暴走",
@@ -46,6 +82,30 @@ window.EPISODE_INDEX = [
   "spotifyUrl": null,
   "noteUrl": "https://amakawa-chan.github.io/KabeRadio/notes/ai-is-hatsune-miku/",
   "publishedAt": "2026-10-29T11:10:54.312594+00:00"
+ },
+ {
+  "schemaVersion": 1,
+  "episodeKey": "mobumi-audit-room",
+  "episodeNumber": null,
+  "title": "モブ美監査室：趣味の規模が合っていない",
+  "description": "久しぶりにHost席へ戻ったモブ美が活動状況を確認。壁ラジ24、アーカイブス、多言語の別企画が次々に発覚し、監査そのものまで一本の番組になってしまう。",
+  "introAudio": null,
+  "youtubeUrl": "https://www.youtube.com/watch?v=4JzH9RKJ0ko",
+  "spotifyUrl": null,
+  "noteUrl": null,
+  "publishedAt": "2026-10-29T10:28:17.683225+00:00"
+ },
+ {
+  "schemaVersion": 1,
+  "episodeKey": "butterfly-lifespan-human-longevity",
+  "episodeNumber": null,
+  "title": "蝶々は短命なのか、人間が長生きすぎるのか？",
+  "description": "蝶々は羽化するのも死ぬのも早い。そんな疑問から、成虫と幼虫の時間の数え方、セミの地中生活、そして人間の長寿へと話が移っていった。",
+  "introAudio": null,
+  "youtubeUrl": "https://www.youtube.com/watch?v=idxtkdqtP3M",
+  "spotifyUrl": null,
+  "noteUrl": "https://amakawa-chan.github.io/KabeRadio/notes/butterfly-lifespan-human-longevity/",
+  "publishedAt": "2026-10-29T10:20:09.348399+00:00"
  },
  {
   "schemaVersion": 1,

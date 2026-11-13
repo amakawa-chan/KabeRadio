@@ -282,6 +282,7 @@
         <button class="primary" id="play-btn" type="button" disabled>紹介する</button>
         <button id="stop-btn" type="button" disabled>止める</button>
         <button id="sound-btn" type="button">音：オン</button>
+        <button id="mode-btn" type="button">紹介：ボイス</button>
         <button id="settings-btn" type="button">⚙ 設定</button>
         <button id="share-btn" type="button" class="hidden">Xでポスト</button>
         <canvas class="wave" id="wave" height="30" aria-hidden="true"></canvas>
@@ -329,7 +330,7 @@
         <div class="link-cards">
           <a href="https://amakawa-chan.github.io/KabeRadio/" target="_blank" rel="noopener" style="--brand:#fdec28">
             <span class="lc-icon" style="background:#fdec28;color:#04283a">壁</span>
-            <span><span class="lt">公式サイト</span><div class="ld">壁ラジの総合案内トップページです</div></span>
+            <span><span class="lt">壁ラジについて</span><div class="ld">壁ラジの紹介ページとリンク集です</div></span>
             <span class="lc-arrow">→</span></a>
           <a href="https://www.youtube.com/@kaberadi" target="_blank" rel="noopener" style="--brand:#ff0033">
             <span class="lc-icon" style="background:#ff0033">▶</span>
@@ -386,9 +387,10 @@
     </section>
   </div>
 
-  <footer>壁ラジ放送局（試作）— 紹介音声は、モブ子が各エピソードの台本から題材を1つ選んだPR文を読み上げています。掲載は公開が確認できたエピソードのみです。</footer>
+  <footer>壁ラジ放送局 — 紹介音声は、モブ子が各エピソードの台本から題材を1つ選んだPR文を読み上げています。掲載は公開が確認できたエピソードのみです。</footer>
 
 <audio id="audio" preload="none"></audio>
+<audio id="audio-plain" preload="none"></audio>
 <audio id="se" preload="auto" src="assets/sfx/crt-tuning-v1.wav"></audio>
 <script src="episode-index.js"></script>
 <script src="pr-texts.js"></script>
@@ -406,7 +408,7 @@
     close: 'talk_close.webp', small: 'talk_small.webp', medium: 'talk_medium.webp', big: 'talk_big.webp'
   };
   var PREF_KEY = 'mobuko-station-prefs';
-  var prefs = { costumeId: 'maid', portraitMode: 'normal', startupRandom: true, startupPrank: true, startupPrankMode: 'manual' };
+  var prefs = { costumeId: 'maid', portraitMode: 'normal', startupRandom: true, startupPrank: true, startupPrankMode: 'manual', introMode: 'voice' };
   try {
     var savedPrefs = JSON.parse(localStorage.getItem(PREF_KEY) || 'null');
     if (savedPrefs) Object.keys(prefs).forEach(function(k){ if (savedPrefs[k] !== undefined) prefs[k] = savedPrefs[k]; });
@@ -415,6 +417,7 @@
   if (!COSTUMES[prefs.costumeId]) prefs.costumeId = 'maid';
   if (prefs.portraitMode !== 'forehead') prefs.portraitMode = 'normal';
   if (prefs.startupPrankMode !== 'auto') prefs.startupPrankMode = 'manual';
+  if (prefs.introMode !== 'pico') prefs.introMode = 'voice';
 
   /* startup costume: drawn once per browser session when random is on
      (the Office original draws on new process start only, never on reload) */
@@ -462,6 +465,9 @@
   var msgText = document.getElementById('msg-text');
   var msgMode = document.getElementById('msg-mode');
   var audio = document.getElementById('audio');
+  var audioPlain = document.getElementById('audio-plain');
+  var voiceEl = null;
+  var isIOS = /iP(hone|ad|od)/.test(navigator.userAgent || '');
   var se = document.getElementById('se');
   var staticCanvas = document.getElementById('crt-static');
   var staticCtx = staticCanvas.getContext('2d');
@@ -523,6 +529,14 @@
     soundBtn.textContent = soundOn ? '音：オン' : '音：オフ';
     if (soundOn) { ensureAudioGraph(); blip(); }
   });
+  var modeBtn = document.getElementById('mode-btn');
+  function refreshModeBtn(){ modeBtn.textContent = prefs.introMode === 'pico' ? '紹介：ぴこぴこ' : '紹介：ボイス'; }
+  modeBtn.addEventListener('click', function(){
+    prefs.introMode = prefs.introMode === 'pico' ? 'voice' : 'pico';
+    savePrefs(); refreshModeBtn();
+    if (soundOn) blip();
+  });
+  refreshModeBtn();
 
   /* ---------- waveform meter ---------- */
   var wctx = wave.getContext('2d');
@@ -595,6 +609,8 @@
   }
   function powerOn(after){
     ensureAudioGraph();
+    if (actx && actx.state === 'suspended'){ try { actx.resume(); } catch(e){} }
+    primePlain();
     veil.classList.add('hidden');
     var firePrank = !after && !current && prefs.startupPrank && Math.random() < 0.15;
     if (reduceMotion){
@@ -747,7 +763,11 @@
   function startIntro(){
     if (!current) return;
     if (!powered){ powerOn(function(){ startIntro(); }); return; }
-    if (current.introAudio){ playVoice(current.introAudio, '紹介中', { text: prComment(current) }); return; }
+    if (current.introAudio){
+      if (prefs.introMode === 'voice' && soundOn){ playVoice(current.introAudio, '紹介中', { text: prComment(current) }); }
+      else { typeText(prComment(current), '紹介中'); }
+      return;
+    }
     if (current.prText){ typeText(current.prText); return; }
     if (!current.description){
       typeText('この回は台本に紹介文（Episode Description）が未設定のため、紹介はありません。');
@@ -761,8 +781,11 @@
 
   /* ---------- typewriter text mode: paged game-style window ---------- */
   var WELCOME_TEXT = '壁ラジへようこそ。ここは「バ美おじとLLMの壁打ち雑談ラジオ」のエピソード紹介ページです。アーカイブから聞きたい回を選ぶと、わたし、モブ子が紹介します。下には公式サイトやYouTube、Spotify、LINEスタンプへのリンク集もあります。';
+  var DEKO_LEFT_TEXT = 'あわわ、まだ近すぎます……。前回のでこモード、そのまま残ってしまったようです。設定の「表示」で「通常」に戻せます。……このままでも、いいんですけど。';
   function playWelcome(){
     if (!powered || current) return;
+    if (crt.dataset.portraitMode === 'forehead'){ typeText(DEKO_LEFT_TEXT, 'あいさつ中'); return; }
+    if (prefs.introMode !== 'voice' || !soundOn){ typeText(WELCOME_TEXT, 'あいさつ中'); return; }
     playVoice('intros/welcome.mp3', 'あいさつ中', {
       text: WELCOME_TEXT,
       onfail: function(){ typeText(WELCOME_TEXT, 'あいさつ中'); }
@@ -926,36 +949,87 @@
       wavePulse(0.3 + Math.random() * 0.6);
     }, 130);
   }
+  /* iOS unlock: play a silent clip on the plain (non-WebAudio) element once
+     inside the tap, so timer-delayed playback later is allowed. A real file
+     at volume 0 does NOT work — iOS ignores element volume — so use silence. */
+  var SILENT_WAV = 'data:audio/wav;base64,UklGRmQGAABXQVZFZm10IBAAAAABAAEAQB8AAIA+AAACABAAZGF0YUAGAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA';
+  var plainPrimed = false;
+  function primePlain(){
+    if (plainPrimed) return;
+    plainPrimed = true;
+    try {
+      audioPlain.src = SILENT_WAV;
+      var p = audioPlain.play();
+      if (p && p.then) p.then(function(){
+        if (voiceEl === audioPlain) return;
+        audioPlain.pause();
+        try { audioPlain.currentTime = 0; } catch(e){}
+      }).catch(function(){});
+    } catch(e){}
+  }
+  var voiceTypeTimer = null, voiceTypeText = '', voiceTypeShown = 0, voiceTypeStart = 0;
+  function startVoiceType(){
+    if (!voiceTypeText || reduceMotion) return;
+    voiceTypeStart = performance.now();
+    voiceTypeTimer = setInterval(function(){
+      if (!voiceEl) return;
+      var target;
+      var d = voiceEl.duration, t = voiceEl.currentTime;
+      if (isFinite(d) && d > 0) target = Math.floor(voiceTypeText.length * Math.min(1, t / d));
+      else target = Math.min(voiceTypeText.length, Math.floor((performance.now() - voiceTypeStart) / 90));
+      if (target > voiceTypeShown){
+        voiceTypeShown = target;
+        msgText.textContent = voiceTypeText.slice(0, voiceTypeShown);
+        msgText.scrollTop = msgText.scrollHeight;
+      }
+      if (voiceTypeShown >= voiceTypeText.length){
+        clearInterval(voiceTypeTimer); voiceTypeTimer = null;
+      }
+    }, 60);
+  }
   function playVoice(src, label, opts){
     opts = opts || {};
     ensureAudioGraph();
+    if (actx && actx.state === 'suspended'){ try { actx.resume(); } catch(e){} }
     stopAll();
     speaking = true; lastLoud = performance.now();
     msgMode.textContent = 'VOICE MODE';
     msgWindow.classList.remove('done');
+    voiceTypeText = opts.text || ''; voiceTypeShown = 0;
     if (opts.text){
       msgText.style.overflowY = 'auto';
-      msgText.textContent = opts.text;
+      msgText.textContent = reduceMotion ? opts.text : '';
+      if (reduceMotion) voiceTypeShown = opts.text.length;
     }
-    audio.src = src;
-    audio.play().then(function(){
+    /* iOS: Web Audio output can be muted (silent mode / in-app webview) even
+       while playback progresses, so use the plain media element there and
+       drive the mouth with the fallback sequence. Elsewhere prefer the
+       analyser graph when the context is actually running. */
+    var useGraph = !isIOS && !!(actx && analyser && actx.state === 'running');
+    voiceEl = useGraph ? audio : audioPlain;
+    voiceEl.src = src;
+    voiceEl.play().then(function(){
       waveStart();
+      startVoiceType();
       setState(label || '紹介中');
       stationState.classList.add('live'); stationStateText.textContent = 'NOW INTRODUCING';
       stopBtn.disabled = false; playBtn.disabled = true;
-      if (analyser) mouthLoop(); else startFallbackMouth();
+      if (useGraph && analyser) mouthLoop(); else startFallbackMouth();
     }).catch(function(){
       speaking = false;
       if (opts.onfail){ opts.onfail(); return; }
       setState('再生できませんでした');
     });
   }
-  audio.addEventListener('ended', function(){
+  function onVoiceEnded(){
     var wasEpisode = !!current;
+    if (voiceTypeText){ msgText.textContent = voiceTypeText; voiceTypeShown = voiceTypeText.length; }
     stopAll();
     msgWindow.classList.add('done');
     if (wasEpisode && currentIndex >= 0 && currentIndex < episodes.length - 1) nextBtn.classList.remove('hidden');
-  });
+  }
+  audio.addEventListener('ended', onVoiceEnded);
+  audioPlain.addEventListener('ended', onVoiceEnded);
 
   function stopAll(){
     nextBtn.classList.add('hidden');
@@ -964,9 +1038,16 @@
     if (typeTimer) clearTimeout(typeTimer);
     if (waitTimer) clearTimeout(waitTimer);
     if (mouthTimer) clearInterval(mouthTimer);
+    if (voiceTypeTimer) clearInterval(voiceTypeTimer);
+    voiceTypeTimer = null;
     typeTimer = waitTimer = mouthTimer = null;
-    if (!audio.paused) audio.pause();
-    if (audio.getAttribute('src')) { audio.removeAttribute('src'); audio.load(); }
+    [audio, audioPlain].forEach(function(el){
+      try {
+        if (!el.paused) el.pause();
+        if (el.getAttribute('src')) { el.removeAttribute('src'); el.load(); }
+      } catch(e){}
+    });
+    voiceEl = null;
     speaking = false;
     if (rafId) cancelAnimationFrame(rafId);
     if (seqTimer) clearInterval(seqTimer);

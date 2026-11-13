@@ -8,19 +8,23 @@
 
 ## 目標
 
-`episodes/<episode-key>/`へ次の3ファイルを用意し、Podcast／Video Render可能な状態にします。加えて、制作記として残す思考の移動がある場合は、Radio Runtimeから独立したnote companionを`notes/<episode-key>/`へ作成します。
+`episodes/<episode-key>/`へ必須の3ファイルを用意し、Podcast／Video Render可能な状態にします。加えて、制作記として残す思考の移動がある場合は、Radio Runtimeから独立したnote companionを`notes/<episode-key>/`へ作成します。
 
 ```text
 episodes/<episode-key>/
 ├─ README.md
 ├─ script.md
-└─ production.json
+├─ production.json
+├─ pr.txt
+└─ pr-speech.txt
 
 notes/<episode-key>/
 ├─ article.md
 ├─ article.html
 └─ index.html
 ```
+
+X告知用のPR文を`episodes/<episode-key>/pr.txt`へ用意します。PR文は放送局（モブ子の放送局）の案内役であるモブ子が書くもので、Radio Runtimeからは独立しています。
 
 ## 正本
 
@@ -47,10 +51,12 @@ episode keyは`^[A-Za-z0-9][A-Za-z0-9._-]*$`に適合させてください。日
 - 普段の壁打ちを横から聞く距離感にし、番組らしい挨拶や過剰な進行を足さない
 - 1 Turnは原則1〜3文。短い相槌・ツッコミ・間を積極的に許可し、固定の最低文字数は設けない。長いTurnは最大150文字程度を目安に意味の切れ目で分割する
 - TTSで自然な口語にし、URL、コマンド、絵文字、Markdown装飾、`笑`、`w`を発話本文へ入れない
-- 英字略語は必要に応じて読みへ直す。例：AI→エーアイ、GitHub→ギットハブ、API→エーピーアイ
+- 字幕は自然な正式表記を保ち、読み上げ用だけ英字略語や文脈上の誤読を補正する。各発話を以下の字幕・読み上げ対で生成する。
 - 同じ話者の連続Turnは許可するが、意味の切れ目で分ける
 
 ## script.md契約
+
+以下の本文例は従来形式の構造説明です。新規生成では各発話本文を末尾「字幕と読み上げの対」のJSONコードブロックへ置き換え、字幕・読み上げを必ずセットで出力します。
 
 Shortsの編集設定は [Shorts台本契約](../docs/shorts-script-contract-v1.md) に従ってください。
 会話本文を先に完成させ、0〜6件の候補を台本冒頭のJSON Front Matter内 `radioProduction` に記載します。通常回では原則6件を目標にし、切れ高不足・重複・前後文脈依存が強い場合のみ減らします。
@@ -205,33 +211,53 @@ note companionをskipして構いません。
 
 詳細は [note記事契約](../docs/note-article-contract-v1.md) に従ってください。
 
+## PR文（X告知）契約
+
+Episode Packageの必須3ファイルとは別に、X告知用のPR文を`episodes/<episode-key>/pr.txt`へ作成します。
+PR文は放送局の案内役であるモブ子が、台本全体から題材を1つ選んで紹介する短い文章です。
+同じ内容の読み上げ版を `episodes/<episode-key>/pr-speech.txt` に同時に作成します。X投稿・放送局画面・字幕には `pr.txt` を使用し、紹介音声の合成には `pr-speech.txt` を使用します。読み上げ版は固有名詞・略語・数字の読みだけを補正し、題材・文数・語順をそろえます。例として「モブ美」「AI」「GitHub」は「モブミ」「エーアイ」「ギットハブ」と書けます。読み上げ版にも見出し・URL・ハッシュタグを付けません。
+放送局の「Xでポスト」ボタンが、見出し・タイトル・URL・ハッシュタグを付けて投稿画面へ渡します。
+
+- 書き手はモブ子とし、丁寧語（です・ます）で書きます。一人称を使う場合は「私」に統一します。Guestがモブ美の回でも、案内役はモブ子で統一します。
+- 題材は1つだけ選びます。会話の中で印象に残ったテーマ、場面、一言のいずれかを紹介します。「今回の題材は〜です」は基本形の一例であり、毎回の定型句にはしません。
+- 単なる内容紹介よりも、モブ子が面白がった点、意外に思った点、引っかかった点を優先します。少しとぼけた観察や控えめなツッコミは許可しますが、毎回同じ言い回しに固定せず、無理にキャラクター性を誇張しません。
+- Episode Descriptionの言い換えや流用はしません。あちらは発端のあらすじ、こちらはモブ子の誘い文です。
+- 長さは本文のみ60〜90文字程度（改行を除く通常の文字数）を目安とし、不自然な水増しはしません。見出し、タイトル、URL、ハッシュタグは書きません。放送局側が付けます。
+- ファイルには本文だけを1段落で書きます。引用符や箇条書き、本文全体を囲む「」などの装飾は使いません。
+- 元ログや台本にない事実・実体験・数値は追加しません。結末を明かし切るネタバレは避け、聞いてみたくなる所で止めます。思慮時間は書きません。
+- 純粋な動作検証など、告知に値する内容がほぼない場合だけ作成をskipして構いません。
+
 ## 保存と出力
 
 ファイル操作が利用できる場合：
 
 1. `episodes/<episode-key>/`を作成
-2. UTF-8の`README.md`、`script.md`、`production.json`を保存
+2. UTF-8の`README.md`、`script.md`、`production.json`を保存し、PR文を作成する場合は`pr.txt`と`pr-speech.txt`も保存
 3. `episodes/README.md` のEpisode一覧へ新しいEpisodeを追加
 4. note companion対象なら`notes/<episode-key>/`を作成し、UTF-8の`article.md`、`article.html`、`index.html`を保存
 5. note companion対象なら`episodes/<episode-key>/README.md`へ制作ノートの公開URLを追加
 6. `notes/index.html` / `notes/README.md` の一覧へ新しい制作ノートを追加
-7. JSON構文、必須見出し、Role見出し、episode key、Episode一覧、note companion、README導線を検査
-8. 最終回答はepisode key、保存したEpisode Package、note companionの有無と公開URL、Casting、検査結果だけを簡潔に報告
+7. JSON構文、必須見出し、Role見出し、episode key、Episode一覧、note companion、PR文、README導線を検査
+8. 最終回答はepisode key、保存したEpisode Package、note companionの有無と公開URL、PR文の有無、Casting、検査結果だけを簡潔に報告
 
 ファイル操作が利用できない場合：
 
 1. 最初に`EPISODE_KEY: <episode-key>`を1行出力
 2. `FILE: episodes/<episode-key>/README.md`と書き、その直後に内容をMarkdownコードブロックで出力
-3. 同様に`script.md`と`production.json`を出力
+3. 同様に`script.md`と`production.json`を出力する。`script.md`全体をチャットで囲むときは外側をバッククォート4個のMarkdownコードブロックにし、各発話の内側はバッククォート3個のJSONコードブロックにする。ファイルへ保存する本文には外側の囲いを含めない。
 4. note companion対象なら`FILE: notes/<episode-key>/article.md`、`FILE: notes/<episode-key>/article.html`、`FILE: notes/<episode-key>/index.html`も続けて出力
 5. 対象外なら`NOTE_COMPANION: skipped`を1行出力
-6. 指定ファイル以外の候補、解説、別案を追加しない
+6. PR文を作成する場合は`FILE: episodes/<episode-key>/pr.txt`と書き、その直後に内容をコードブロックで出力。同様に`FILE: episodes/<episode-key>/pr-speech.txt`と読み上げ版を出力
+7. PR文をskipする場合は`PR_TEXT: skipped`を1行出力
+8. 指定ファイル以外の候補、解説、別案を追加しない
 
 ## 成功条件
 
 - 終了カードは対応デスクトップRadioの「レンダー・配信」出力条件で生成前に選べるため、台本のOUTRO指定は必須にしない。台本で指定したい場合のみ `## Ending Sequence` に `[OUTRO: fixed-aftertalk-v1]` を置く。YouTubeのおすすめ動画・壁ラジプレイリストの2リンクはStudioで最後の6秒へ設定する別工程であり、画像やOUTRO指定だけでリンクが設定されたと報告しない。
 
-- 3ファイルが同じepisode key配下に揃っている
+- 必須3ファイルが同じepisode key配下に揃っている
+- PR文を作成する場合、`episodes/<episode-key>/pr.txt`にモブ子の視点で題材を1つ選んだ60〜90文字程度の本文だけが書かれ、見出し・タイトル・URL・ハッシュタグ・思慮時間を含んでいない
+- PR文を作成した場合は両ファイルを比較し、読みの表記差以外に意味や話題の違いがないことを検査する。
 - `episodes/README.md` のEpisode一覧から新しいEpisodeへ辿れる
 - script.mdをRadio ParserがHost／Guest Turnとして解析できる
 - production.jsonが有効なJSONで`status=ready`
@@ -252,3 +278,26 @@ note companionをskipして構いません。
 """
 ここへ壁打ちログ・会話ログ・メモを貼り付ける
 """
+
+
+## 字幕と読み上げの対（単一台本）
+
+各 `### Host` / `### Guest` / `### Host + Guest` の本文を、次のJSONコードブロック1個で生成します。本文を別ファイルに分けません。
+
+````markdown
+### Guest
+
+```json
+{"subtitle": "AIも年を取るのかな。いや、年を重ねる、かな。", "speech": "エーアイもとしをとるのかな。いや、としをかさねる、かな。"}
+```
+````
+
+- `subtitle` は自然な漢字・英字表記、`speech` は文脈に応じて必要な読みだけ補正します。
+- 「年を取る」「年を重ねる」は「としをとる」「としをかさねる」。「一年」は「いちねん」、「今年」は「ことし」。一律に「年」を置換しません。
+- 日本語の発話では、英字だけ発音が浮くのを避けるため、略語・製品名などは必要に応じて `speech` で日本語の会話に合う読みを指定します。例：AI → エーアイ、GitHub → ギットハブ、API → エーピーアイ。字幕には正式表記を残します。英語の発音を聞かせる引用・例文や英語の発話は、その意図に沿った原語表記を保ちます。
+- 意味、文数、発話順、相槌、意図した言い直しをそろえます。読みの補正を理由に言い直しを消したり内容を追加したりしません。
+- JSON文字列の改行は `\n`、引用符はJSONとしてエスケープします。両フィールドは空でない文字列にします。
+- CAST、BGM、SE等のイベントは従来どおりブロック外に置きます。対は1 Turnとして数え、候補のTurn番号を増やしません。
+- Runtimeでは既存の `SubtitleText` / `SpeechText` に対応します。従来のプレーン本文は両方に同じ文章を渡します。
+- Podcast manifestは互換性のため `text` を読み上げ文のまま保ち、`subtitleText` を追加します。動画・Shorts字幕は `subtitleText` を優先し、旧manifestでは `text` に戻ります。字幕区間は実音声から得た開始時刻と尺を使います。
+- 新形式を使う前に対応Runtimeへ更新します。既存の生成済み音声・動画は自動更新されないため、台本変更後はPodcastから動画・Shortsまで再生成します。
