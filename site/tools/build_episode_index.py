@@ -67,20 +67,35 @@ def extract_description(script_path):
 
 
 def oembed_public(youtube_url):
-    """True=公開確認, False=非公開/到達不可, None=ネットワーク不明（候補に残す）"""
+    """Return (availability, YouTube title); keep candidates on network failure."""
     api = "https://www.youtube.com/oembed?url=" + urllib.parse.quote(
         youtube_url, safe=""
     ) + "&format=json"
     req = urllib.request.Request(api, headers={"User-Agent": "Mozilla/5.0"})
     try:
         with urllib.request.urlopen(req, timeout=15) as res:
-            return res.status == 200
+            if res.status != 200:
+                return False, None
+            try:
+                title = json.load(res).get("title")
+            except (ValueError, AttributeError):
+                title = None
+            return True, title
     except urllib.error.HTTPError as e:
         if e.code in (400, 401, 403, 404):
-            return False
-        return None
+            return False, None
+        return None, None
     except Exception:
-        return None
+        return None, None
+
+
+def episode_number(youtube_title, spotify_number):
+    match = re.match(r"^\s*【壁ラジ】\s*[#＃]([0-9]{1,9})(?![0-9])", youtube_title or "")
+    if match and int(match[1]) > 0:
+        return int(match[1])
+    if re.fullmatch(r"[0-9]{1,9}", str(spotify_number)) and int(spotify_number) > 0:
+        return int(spotify_number)
+    return None
 
 
 def build(root):
@@ -116,7 +131,7 @@ def build(root):
         )
         if not candidate:
             # 記録上は非公開でも、実際には公開されている取りこぼしを検出して知らせる
-            if oembed_public(youtube_url) is True:
+            if oembed_public(youtube_url)[0] is True:
                 print(
                     f"warning: RECORD MISMATCH {ep_dir.name}: publication.json says "
                     f"actualPrivacy={privacy} but the video is publicly reachable. "
@@ -125,7 +140,7 @@ def build(root):
                 )
             skipped.append((ep_dir.name, f"not public (actualPrivacy={privacy})"))
             continue
-        verdict = oembed_public(youtube_url)
+        verdict, youtube_title = oembed_public(youtube_url)
         if verdict is False:
             skipped.append((ep_dir.name, "oEmbed: not reachable as public"))
             continue
@@ -134,13 +149,14 @@ def build(root):
                   file=sys.stderr)
 
         sp = pub.get("spotify") or {}
-        ep_num = sp.get("episodeNumber")
-        try:
-            ep_num = int(ep_num) if ep_num is not None else None
-        except (TypeError, ValueError):
-            ep_num = None
+        ep_num = episode_number(youtube_title or yt.get("title"), sp.get("episodeNumber"))
 
         intro = intros_dir / f"{ep_dir.name}.mp3"
+        if ep_num is None or not intro.is_file():
+            missing = ", ".join(name for name, absent in (
+                ("episode number", ep_num is None), ("intro audio", not intro.is_file())
+            ) if absent)
+            print(f"warning: station incomplete {ep_dir.name}: {missing}", file=sys.stderr)
         entries.append(
             {
                 "schemaVersion": 1,
@@ -148,7 +164,7 @@ def build(root):
                 "episodeNumber": ep_num,
                 "title": extract_title(ep_dir / "README.md"),
                 "description": extract_description(ep_dir / "script.md"),
-                "introAudio": f"intros/{ep_dir.name}.mp3" if intro.exists() else None,
+                "introAudio": f"intros/{ep_dir.name}.mp3" if intro.is_file() else None,
                 "youtubeUrl": youtube_url,
                 "spotifyUrl": sp.get("episodeUrl"),
                 "noteUrl": (
