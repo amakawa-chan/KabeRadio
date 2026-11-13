@@ -15,7 +15,8 @@ episodes/<episode-key>/
 ├─ README.md
 ├─ script.md
 ├─ production.json
-└─ pr.txt
+├─ pr.txt
+└─ pr-speech.txt
 
 notes/<episode-key>/
 ├─ article.md
@@ -214,6 +215,7 @@ note companionをskipして構いません。
 
 Episode Packageの必須3ファイルとは別に、X告知用のPR文を`episodes/<episode-key>/pr.txt`へ作成します。
 PR文は放送局の案内役であるモブ子が、台本全体から題材を1つ選んで紹介する短い文章です。
+同じ内容の読み上げ版を `episodes/<episode-key>/pr-speech.txt` に同時に作成します。X投稿・放送局画面・字幕には `pr.txt` を使用し、紹介音声の合成には `pr-speech.txt` を使用します。読み上げ版は固有名詞・略語・数字の読みだけを補正し、題材・文数・語順をそろえます。例として「モブ美」「AI」「GitHub」は「モブミ」「エーアイ」「ギットハブ」と書けます。読み上げ版にも見出し・URL・ハッシュタグを付けません。
 放送局の「Xでポスト」ボタンが、見出し・タイトル・URL・ハッシュタグを付けて投稿画面へ渡します。
 
 - 書き手はモブ子とし、丁寧語（です・ます）で書きます。一人称を使う場合は「私」に統一します。Guestがモブ美の回でも、案内役はモブ子で統一します。
@@ -230,7 +232,7 @@ PR文は放送局の案内役であるモブ子が、台本全体から題材を
 ファイル操作が利用できる場合：
 
 1. `episodes/<episode-key>/`を作成
-2. UTF-8の`README.md`、`script.md`、`production.json`を保存し、PR文を作成する場合は`pr.txt`も保存
+2. UTF-8の`README.md`、`script.md`、`production.json`を保存し、PR文を作成する場合は`pr.txt`と`pr-speech.txt`も保存
 3. `episodes/README.md` のEpisode一覧へ新しいEpisodeを追加
 4. note companion対象なら`notes/<episode-key>/`を作成し、UTF-8の`article.md`、`article.html`、`index.html`を保存
 5. note companion対象なら`episodes/<episode-key>/README.md`へ制作ノートの公開URLを追加
@@ -245,7 +247,7 @@ PR文は放送局の案内役であるモブ子が、台本全体から題材を
 3. 同様に`script.md`と`production.json`を出力する。`script.md`全体をチャットで囲むときは外側をバッククォート4個のMarkdownコードブロックにし、各発話の内側はバッククォート3個のJSONコードブロックにする。ファイルへ保存する本文には外側の囲いを含めない。
 4. note companion対象なら`FILE: notes/<episode-key>/article.md`、`FILE: notes/<episode-key>/article.html`、`FILE: notes/<episode-key>/index.html`も続けて出力
 5. 対象外なら`NOTE_COMPANION: skipped`を1行出力
-6. PR文を作成する場合は`FILE: episodes/<episode-key>/pr.txt`と書き、その直後に内容をコードブロックで出力
+6. PR文を作成する場合は`FILE: episodes/<episode-key>/pr.txt`と書き、その直後に内容をコードブロックで出力。同様に`FILE: episodes/<episode-key>/pr-speech.txt`と読み上げ版を出力
 7. PR文をskipする場合は`PR_TEXT: skipped`を1行出力
 8. 指定ファイル以外の候補、解説、別案を追加しない
 
@@ -255,6 +257,7 @@ PR文は放送局の案内役であるモブ子が、台本全体から題材を
 
 - 必須3ファイルが同じepisode key配下に揃っている
 - PR文を作成する場合、`episodes/<episode-key>/pr.txt`にモブ子の視点で題材を1つ選んだ60〜90文字程度の本文だけが書かれ、見出し・タイトル・URL・ハッシュタグ・思慮時間を含んでいない
+- PR文を作成した場合は両ファイルを比較し、読みの表記差以外に意味や話題の違いがないことを検査する。
 - `episodes/README.md` のEpisode一覧から新しいEpisodeへ辿れる
 - script.mdをRadio ParserがHost／Guest Turnとして解析できる
 - production.jsonが有効なJSONで`status=ready`
