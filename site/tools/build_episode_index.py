@@ -9,9 +9,7 @@ site/episode-index.js を作り直す。
   - publication.json の youtube.actualPrivacy が "public"、または
     "private" かつ publishAt が現在時刻以前（予約公開済み）
   - かつ YouTube oEmbed が 200 を返す（実際に公開到達可能）
-紹介文（Episode Description）が無い回は description=None で掲載し、
-紹介音声は付けない。introAudio は site/intros/<key>.mp3 が
-存在する場合だけ設定する。
+pr.txt は表示・共有用の prText として掲載する。新形式の introAudio は PR文、読み上げ版、MP3 が生成時の記録と一致するとき設定する。
 
 使い方: python3 site/tools/build_episode_index.py [--root <repo root>]
 """
@@ -24,6 +22,8 @@ import urllib.parse
 import urllib.request
 from datetime import datetime, timezone
 from pathlib import Path
+
+from generate_pr_intro import paired_intro_is_current, read_pair
 
 SITE_BASE = "https://amakawa-chan.github.io/KabeRadio"
 
@@ -151,10 +151,16 @@ def build(root):
         sp = pub.get("spotify") or {}
         ep_num = episode_number(youtube_title or yt.get("title"), sp.get("episodeNumber"))
 
+        display, speech = read_pair(ep_dir)
         intro = intros_dir / f"{ep_dir.name}.mp3"
-        if ep_num is None or not intro.is_file():
+        has_pair_files = (ep_dir / "pr.txt").exists() or (ep_dir / "pr-speech.txt").exists()
+        if has_pair_files:
+            has_intro = paired_intro_is_current(intro, display, speech)
+        else:
+            has_intro = intro.exists() and not intro.with_suffix(".sha256").exists()
+        if ep_num is None or not has_intro:
             missing = ", ".join(name for name, absent in (
-                ("episode number", ep_num is None), ("intro audio", not intro.is_file())
+                ("episode number", ep_num is None), ("intro audio", not has_intro)
             ) if absent)
             print(f"warning: station incomplete {ep_dir.name}: {missing}", file=sys.stderr)
         entries.append(
@@ -164,7 +170,8 @@ def build(root):
                 "episodeNumber": ep_num,
                 "title": extract_title(ep_dir / "README.md"),
                 "description": extract_description(ep_dir / "script.md"),
-                "introAudio": f"intros/{ep_dir.name}.mp3" if intro.is_file() else None,
+                "prText": display,
+                "introAudio": f"intros/{ep_dir.name}.mp3" if has_intro else None,
                 "youtubeUrl": youtube_url,
                 "spotifyUrl": sp.get("episodeUrl"),
                 "noteUrl": (
