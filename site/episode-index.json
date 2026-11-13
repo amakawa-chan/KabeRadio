@@ -1,6 +1,18 @@
 [
  {
   "schemaVersion": 1,
+  "episodeKey": "freedom-to-forget",
+  "episodeNumber": null,
+  "title": "忘れる自由を失いつつあるのか？",
+  "description": "メモを取るのは、忘れないためか、それとも忘れるためか。GitHub Issueが増える話から、夢日記と記憶だけが住む村、さらには脳波での思考記録まで話が飛んでいく。",
+  "introAudio": null,
+  "youtubeUrl": "https://www.youtube.com/watch?v=BH1RTgboQ7k",
+  "spotifyUrl": null,
+  "noteUrl": "https://amakawa-chan.github.io/KabeRadio/notes/freedom-to-forget/",
+  "publishedAt": "2026-11-13T03:55:00.650504+00:00"
+ },
+ {
+  "schemaVersion": 1,
   "episodeKey": "speed-acquired-amakawachan",
   "episodeNumber": null,
   "title": "速さを手に入れたあまかわちゃん",
