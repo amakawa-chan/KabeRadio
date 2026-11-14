@@ -2,7 +2,7 @@
 
 - 種別: 日常つぶやき（画像添付）
 - シーン: 休日の早朝、キッチンで朝ごはん（目玉焼きトーストと温かい飲み物）
-- 画像: mobuko_early_morning.png（PixAI API生成、候補4枚から採用。残り候補はローカルの pixai-sets/tweets/2026-11-15_early-morning/ に保管）
+- 画像: mobuko_early_morning.png（PixAI API生成、候補4枚からユーザーが選択した候補3。残り候補はローカルの pixai-sets/tweets/2026-11-15_early-morning/ に保管）
 - X投稿: （リンク未確認。分かったらここに追記）
 
 ## 本文
