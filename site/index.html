@@ -700,7 +700,6 @@
     return n;
   }
   function prComment(ep){
-    if (ep.prText) return ep.prText;
     if (window.PR_TEXTS && window.PR_TEXTS[ep.episodeKey]) return window.PR_TEXTS[ep.episodeKey];
     var d = (ep.description || '').replace(/\s+/g, '');
     return '今回の題材は「' + (ep.title || '') + '」です。' +
@@ -722,9 +721,11 @@
   }
   document.getElementById('share-btn').addEventListener('click', function(){
     if (!current || !current.youtubeUrl) return;
-    var url = 'https://twitter.com/intent/tweet?text=' + encodeURIComponent(shareText(current)) +
-      '&url=' + encodeURIComponent(current.youtubeUrl) +
-      '&hashtags=' + encodeURIComponent('壁ラジ');
+    /* Single text parameter: the split text/url/hashtags form dropped the text
+       on the user's phone (only the YouTube link survived). Verified on device
+       2026-11-16; single-param form carries everything. */
+    var full = shareText(current) + '\n' + current.youtubeUrl + '\n#壁ラジ';
+    var url = 'https://twitter.com/intent/tweet?text=' + encodeURIComponent(full);
     window.open(url, '_blank', 'noopener');
   });
 
@@ -768,7 +769,6 @@
       else { typeText(prComment(current), '紹介中'); }
       return;
     }
-    if (current.prText){ typeText(current.prText); return; }
     if (!current.description){
       typeText('この回は台本に紹介文（Episode Description）が未設定のため、紹介はありません。');
       return;
