@@ -11,13 +11,13 @@
     "sourceMatchesGitHub": true
   },
   "youtube": {
-    "videoId": "Tzk9YzsAq70",
-    "url": "https://www.youtube.com/watch?v=Tzk9YzsAq70",
-    "actualPrivacy": "private",
+    "videoId": "mh7hitRsliU",
+    "url": "https://www.youtube.com/watch?v=mh7hitRsliU",
+    "actualPrivacy": "public",
     "status": "uploaded",
-    "uploadedAt": "2026-10-21T00:13:41.381822+00:00",
+    "uploadedAt": "2026-10-21T06:45:50+00:00",
     "sha256": "13d722feba3d13715be8b638d692adf36adcefb28ee37999afc7a383c17c166e",
     "verification": "upload-record-only"
   },
-  "updatedAt": "2026-10-22T03:36:46.456125+00:00"
+  "updatedAt": "2026-11-16T03:44:35+00:00"
 }
