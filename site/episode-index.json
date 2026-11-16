@@ -131,6 +131,19 @@
  },
  {
   "schemaVersion": 1,
+  "episodeKey": "sns-monetization-doubt",
+  "episodeNumber": 38,
+  "title": "SNSを見るたびに、勝手にダウトを始めてしまう",
+  "description": "レシピ動画を見ていたら、料理よりキッチンで立ち食いする画角が気になり始めた。配信を始めたことでSNSの舞台裏を勝手に推理する癖が育ち、情報探しの習慣や虎の着ぐるみまで話が転がる。",
+  "prText": null,
+  "introAudio": null,
+  "youtubeUrl": "https://www.youtube.com/watch?v=mh7hitRsliU",
+  "spotifyUrl": null,
+  "noteUrl": "https://amakawa-chan.github.io/KabeRadio/notes/sns-monetization-doubt/",
+  "publishedAt": "2026-10-21T06:45:50+00:00"
+ },
+ {
+  "schemaVersion": 1,
   "episodeKey": "yakisoba-main-or-side",
   "episodeNumber": 39,
   "title": "焼きそばは主食なのか、おかずなのか？",
