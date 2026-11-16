@@ -190,6 +190,7 @@ MVPではWorkerがGit commit／pushを行わないため、GitHubの`ready`とM6
 - CastingはVoice IDではなくCharacter Pack ID
 - script.mdの本編冒頭にHost・GuestのCASTがあり、production.json.castingとREADMEのCastに一致している
 - `publish.spotify/youtube`は初期値`false`
+- 公開後は初期値のまま放置しない。`publication.json`に公開が記録されたら、`tools/sync_publish_status.py`で`production.json.publish`を同期し、同じコミットに含める（正本は`publication.json`。詳細はAGENTS.md「公開状態の同期」）
 
 ## Render後チェック
 

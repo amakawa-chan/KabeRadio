@@ -11,6 +11,6 @@
   },
   "publish": {
     "spotify": false,
-    "youtube": false
+    "youtube": true
   }
 }

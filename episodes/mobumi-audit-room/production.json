@@ -3,5 +3,5 @@
   "status": "ready",
   "casting": {"Host": "mobumi", "Guest": "mobuko-v2"},
   "render": {"audio": "pending", "video": "pending"},
-  "publish": {"spotify": false, "youtube": false}
+  "publish": {"spotify": false, "youtube": true}
 }

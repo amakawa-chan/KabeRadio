@@ -9,3 +9,10 @@
 - 出典Turn・CAST・Parser・重複・公開可能な情報だけであることを確認して保存する。
 - リモートの保存コミットとファイルを確認して完了報告する。PRのみの場合は既定ブランチ未反映と明記する。
 - 音声生成・レンダー・投稿・予約公開はこの保存依頼には含まない。
+
+## 公開状態の同期
+
+公開状態の正本は各Episodeの `publication.json`（アップロード側が記録する）。`production.json` の `publish` は作成時の初期値 `false` のままでは実態とズレるため、公開を確認したら `tools/sync_publish_status.py` を実行し、`production.json.publish` の同期を同じコミットに含めること。
+
+- スクリプトは `publication.json` が公開を示す場合だけ `false → true` へ更新する（YouTubeは `actualPrivacy: public`、または `private` でも `publishAt` が過去。Spotifyは `status: published`）。
+- 逆向きの不一致（production が `true` で publication が非公開）はスクリプトでは自動修正せず、警告として人が確認する。
