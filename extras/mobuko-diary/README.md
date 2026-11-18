@@ -10,3 +10,6 @@ X（@kaberadi_mobuko）に投稿するモブ子の「業務日誌」と「日常
 ## 一覧
 
 - 2026-11-12（日誌・朝）「AIは初音ミクなのかもしれない。」 — diary/2026-11-12_ai-is-hatsune-miku/
+- 2026-11-15（つぶやき・早朝試作）休日の朝ごはん — tweets/2026-11-15_early-morning/
+- 2026-11-15（つぶやき・お昼）秋の公園でサンドイッチ — tweets/2026-11-15_autumn-park-lunch/
+- 2026-11-18（つぶやき・お昼）パン屋さん帰り — tweets/2026-11-18_bakery-shopping-noon/
