@@ -16,3 +16,4 @@ X（@kaberadi_mobuko）に投稿するモブ子の「業務日誌」と「日常
 - 2026-11-18（つぶやき・お昼）パン屋さん帰り — tweets/2026-11-18_bakery-shopping-noon/
 - 2026-11-19（つぶやき・夕方追加）監査室モブ子のメガネ差分 — tweets/2026-11-19_audit-glasses-mobuko/
 - 2026-11-19（つぶやき・夕方追加）モブ美のメガネ差分（掛け合い版つき） — tweets/2026-11-19_audit-glasses-mobumi/
+- 2026-11-21（日誌・朝）「モブ子の一言をnoteに載せたかっただけなのに、ジェネレーターが生えた」 — diary/2026-11-21_note-card-generator-grew/
