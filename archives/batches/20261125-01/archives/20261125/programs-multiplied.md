@@ -11,8 +11,7 @@
       1,
       2,
       3,
-      4,
-      5
+      4
     ],
     "sourceYouTubeVideoId": "4JzH9RKJ0ko",
     "sourceYouTubeUrl": "https://www.youtube.com/watch?v=4JzH9RKJ0ko",
@@ -43,7 +42,3 @@
 ### Guest
 
 監査。モブ美さん、会計士だったんですか。
-
-### Host
-
-違う！ まず壁ラジって雑談ラジオよね。
