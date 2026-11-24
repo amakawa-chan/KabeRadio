@@ -17,3 +17,4 @@ X（@kaberadi_mobuko）に投稿するモブ子の「業務日誌」と「日常
 - 2026-11-19（つぶやき・夕方追加）監査室モブ子のメガネ差分 — tweets/2026-11-19_audit-glasses-mobuko/
 - 2026-11-19（つぶやき・夕方追加）モブ美のメガネ差分（掛け合い版つき） — tweets/2026-11-19_audit-glasses-mobumi/
 - 2026-11-21（日誌・朝）「モブ子の一言をnoteに載せたかっただけなのに、ジェネレーターが生えた」 — diary/2026-11-21_note-card-generator-grew/
+- 2026-11-24（日誌・夕）「壁ラジ、また機能が増えました」 — diary/2026-11-24_wallradio-feature-update-eyecatch-stickers/
