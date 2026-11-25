@@ -20,3 +20,4 @@ X（@kaberadi_mobuko）に投稿するモブ子の「業務日誌」と「日常
 - 2026-11-24（日誌・夕）「壁ラジ、また機能が増えました」 — diary/2026-11-24_wallradio-feature-update-eyecatch-stickers/
 - 2026-11-25（日誌・朝）「ミニキャラを出したら、踊り始めた」 — diary/2026-11-25_petite-live-arrives/
 - 2026-11-25（つぶやき・お昼）商店街の花屋さんで花束 — tweets/2026-11-25_flower-shop-noon/
+- 2026-11-25（日誌・夕）「終わるはずだったのに、ミニキャラをBPM同期したくなった」 — diary/2026-11-25_petite-live-beat-sync/
