@@ -1,5 +1,7 @@
 # 制作ノート
 
+- [メタルバンドが新種のドラゴンに？？](https://amakawa-chan.github.io/KabeRadio/notes/metal-band-dragon/)
+
 - [サンタを着たのに誰も突っ込まなかった](https://amakawa-chan.github.io/KabeRadio/notes/santa-without-reactions/)
 
 ## 小説・ショートショート
