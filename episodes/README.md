@@ -26,6 +26,8 @@ GitHub上の正式Episodeは原則`status: ready`で保存し、M6ローカル�
 
 ## Episodes
 
+- [メタルバンドが新種のドラゴンに？？](metal-band-dragon/)
+
 - [サンタを着たのに誰も突っ込まなかった](santa-without-reactions/)
 
 - [速さを手に入れたあまかわちゃん](speed-acquired-amakawachan/)
