@@ -23,3 +23,4 @@ X（@kaberadi_mobuko）に投稿するモブ子の「業務日誌」と「日常
 - 2026-11-25（日誌・夕）「終わるはずだったのに、ミニキャラをBPM同期したくなった」 — diary/2026-11-25_petite-live-beat-sync/
 - 2026-11-26（日誌・朝）「AIが賢くなったら、人間が試され始めた」 — diary/2026-11-26_ai-prompt-engineering-reversal/
 - 2026-11-26（つぶやき・お昼）駅前ベンチで温かいコーンスープ — tweets/2026-11-26_warm-drink-bench-noon/
+- 2026-11-26（日誌・夕）「一度だけ作って、あとは届ける」 — diary/2026-11-26_remote-production-mvp-introduction/
