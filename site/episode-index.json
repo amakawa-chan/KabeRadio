@@ -1,6 +1,19 @@
 [
  {
   "schemaVersion": 1,
+  "episodeKey": "metal-band-dragon",
+  "episodeNumber": null,
+  "title": "メタルバンドが新種のドラゴンに？？",
+  "description": "自分用の朝刊に、新種の古代爬虫類がメタルバンドにちなんで命名されたというニュースが載っていた。初めてAmon Amarthを聴いたあまかわちゃんは、研究者がどんな場面でその音楽を聴いていたのか気になってしまう。",
+  "prText": "化石の名前になったメタルバンド。研究者はいつ聴いていたのでしょう。あまかわちゃんの想像では、解析の待ち時間にも小刻みなヘドバンが始まっています。",
+  "introAudio": null,
+  "youtubeUrl": "https://www.youtube.com/watch?v=fPvjDjSFxpQ",
+  "spotifyUrl": null,
+  "noteUrl": "https://amakawa-chan.github.io/KabeRadio/notes/metal-band-dragon/",
+  "publishedAt": "2026-11-26T14:53:35.217919+00:00"
+ },
+ {
+  "schemaVersion": 1,
   "episodeKey": "freedom-to-forget",
   "episodeNumber": 49,
   "title": "忘れる自由を失いつつあるのか？",
