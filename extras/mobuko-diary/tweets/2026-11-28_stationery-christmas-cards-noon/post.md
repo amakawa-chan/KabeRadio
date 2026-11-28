@@ -3,7 +3,7 @@
 - 日付: 2026-11-28（土）
 - 種別: 日常つぶやき
 - シーン: 土曜日のお昼、小さな文具屋さんでクリスマスカードを選ぶ（晩秋、窓からの柔らかい日差し）
-- 画像: mobuko_stationery_christmas_cards_noon.png（推し cand4 として仮採用。ユーザーが反応で別の候補を選んだ場合は配信側で差し替える。候補4枚はローカルの pixai-sets/tweets/2026-11-28_stationery-christmas-cards-noon/ に保管、生成タスク 2083254723198062305、seed 5258585013697041、1,200クレジット）
+- 画像: mobuko_stationery_christmas_cards_noon.png（v2 cand2 を採用。経緯：初回生成（タスク 2083254723198062305、seed 5258585013697041）のプロンプトに full body が入っていてキャラが小さかったため、社長指示で full body を外して再生成（v2、タスク 2083264062486893024、1,200クレジット）。2026-11-28 社長が反応で v2 cand2 を選択し、採用画像を差し替えた。v1候補4枚は cand1〜4.png、v2候補4枚は v2cand1〜4.png として併せて保管）
 - ハッシュタグ: #壁ラジ #ポッドキャスト #PixAI #クリスマスカード
 - X投稿: （リンク未確認。分かったらここに追記）
 
@@ -14,9 +14,14 @@
 
 ## おまけ写真
 
-生成候補4枚を、おまけ写真として併せて保管します。推し（仮採用）した1枚は cand4（= mobuko_stationery_christmas_cards_noon.png）です。
+生成候補を、おまけ写真として併せて保管します。v1の候補4枚（cand1〜4）と、再生成v2の候補4枚（v2cand1〜4）です。採用した1枚は v2 cand2（= mobuko_stationery_christmas_cards_noon.png）です。
 
 ![おまけ写真1](cand1.png)
 ![おまけ写真2](cand2.png)
 ![おまけ写真3](cand3.png)
 ![おまけ写真4](cand4.png)
+
+![おまけ写真5](v2cand1.png)
+![おまけ写真6](v2cand2.png)
+![おまけ写真7](v2cand3.png)
+![おまけ写真8](v2cand4.png)
