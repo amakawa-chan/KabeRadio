@@ -1,5 +1,7 @@
 # 制作ノート
 
+- [私たちはいつから音楽をカテゴライズして聴くようになったのか](https://amakawa-chan.github.io/KabeRadio/notes/music-before-genres/)
+
 - [メタルバンドが新種のドラゴンに？？](https://amakawa-chan.github.io/KabeRadio/notes/metal-band-dragon/)
 
 - [サンタを着たのに誰も突っ込まなかった](https://amakawa-chan.github.io/KabeRadio/notes/santa-without-reactions/)
