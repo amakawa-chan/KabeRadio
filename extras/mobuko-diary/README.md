@@ -27,3 +27,4 @@ X（@kaberadi_mobuko）に投稿するモブ子の「業務日誌」と「日常
 - 2026-11-27（日誌・朝）「ところで、この人何してるんですか？」 — diary/2026-11-27_kono-hito-nani/
 - 2026-11-27（日誌・夕）「それ、本人に聞かれますよ？」 — diary/2026-11-27_sore-honnin-ni-kikaremasu/
 - 2026-11-28（日誌・朝）「こうして深夜の壁打ちは終わらない」 — diary/2026-11-28_koushite-shinya-no-kabeuchi-wa-owaranai/
+- 2026-11-28（つぶやき）文房具店でクリスマスカード選び — tweets/2026-11-28_stationery-christmas-cards-noon/
