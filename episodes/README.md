@@ -26,6 +26,8 @@ GitHub上の正式Episodeは原則`status: ready`で保存し、M6ローカル�
 
 ## Episodes
 
+- [皮の境界](boundary-of-peel/)
+
 - [私たちはいつから音楽をカテゴライズして聴くようになったのか](music-before-genres/)
 
 - [私たちはいつから音楽をカテゴライズして聴くようになったのか](music-before-genres/)

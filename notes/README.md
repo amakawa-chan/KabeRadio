@@ -1,5 +1,7 @@
 # 制作ノート
 
+- [皮の境界](https://amakawa-chan.github.io/KabeRadio/notes/boundary-of-peel/)
+
 - [私たちはいつから音楽をカテゴライズして聴くようになったのか](https://amakawa-chan.github.io/KabeRadio/notes/music-before-genres/)
 
 - [メタルバンドが新種のドラゴンに？？](https://amakawa-chan.github.io/KabeRadio/notes/metal-band-dragon/)
